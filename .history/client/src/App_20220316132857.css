@@ -1,0 +1,22 @@
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  flex: 1;
+}
+
+main {
+  flex: 4;
+}
+
+footer{
+  flex: 1;
+}
+
+.dropzone {
+  border: dashed 1px red;
+  width: 100;
+}
