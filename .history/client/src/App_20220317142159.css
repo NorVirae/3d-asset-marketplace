@@ -1,0 +1,281 @@
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header, .header{
+  background-color: #646363;
+  flex: 1;
+}
+
+.header{
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: space-around;
+  color: #949494;
+  text-transform: uppercase;
+  height: 100%;
+  align-items: center;
+
+}
+
+.logo {
+  font-weight: bold;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header ul li {
+ margin-left: 3rem;
+ cursor: pointer;
+}
+
+.header ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #949494;
+  transition: color .4s ease-in-out;
+}
+
+.header ul li a:hover{
+  color: #e2dbdb ;
+}
+
+.main {
+  background-color: #949494;
+  flex: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-main {
+  flex: 9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+footer, .footer{
+  flex: 1;
+  background-color: #444444;
+}
+
+.dropzone {
+  border: dashed 3px rgb(180, 172, 172);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bolder;
+  background-color: #113;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  width: 100%;
+  height: 40%;
+}
+
+.dropzone.active {
+  border: dashed 4px rgb(0, 204, 255);
+}
+
+/* form styles */
+
+form {
+  padding: 4rem;
+}
+
+.form-control {
+  width: 20vw;
+  font-size: 1.4rem;
+  height: 2rem;
+  padding: .8rem;
+  border-radius:.4rem;
+  border: none;
+  transition: outline .4s ease-in-out;
+}
+
+.form-control:focus {
+  outline: 5rem dotted #555252;;
+}
+
+.form-group {
+  position: relative;
+}
+
+/* buttons */
+
+.btn {
+  height: 4rem;
+  width: 30%;
+  cursor: pointer;
+  border-radius: .4rem;
+  border: none;
+  cursor: pointer;
+  color:#555252;
+  font-weight: 1000;
+  text-transform: uppercase;
+
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.title-header{
+  color:#555252;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.placeholder {
+  position: absolute;
+  color:#5552529a;
+  font-weight: 1000;
+  top: -9%;
+  left: 6%;
+  text-transform: uppercase;
+}
+
+/* Folder */
+
+.folder {
+  padding: 2rem 4rem;
+  margin: .4rem;
+  border-radius: .4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #222222 ;
+  color: #fff;
+  height: 5rem;
+  width: 5rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: transform .4s ease-in-out, border .4s ease-in-out;
+
+}
+
+.folder:hover{
+  border: 3px solid #FAEBB6;
+  transform: scale(.95);
+
+}
+
+
+.folder-logo {
+  color: #FAEBB6;
+}
+
+
+.file {
+  padding: 2rem 4rem;
+  margin: .4rem;
+  border-radius: .4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #222222 ;
+  color: #fff;
+  height: 5rem;
+  width: 5rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: transform .4s ease-in-out, border .4s ease-in-out;
+}
+
+.file:hover{
+  border: 3px solid #FAEBB6;
+  transform: scale(.98);
+}
+
+
+.file-logo {
+  color: #8b8b8a;
+}
+
+
+.file-left{
+  flex:2;
+  display: flex;
+  color: #fff ;
+  flex-direction: column;
+  height: 100%;
+  background-color: #8b8b8a ;
+  border-right: 1px solid;
+}
+
+.file-right { 
+  flex : 6;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+}
+
+/* Storage */
+
+.storage {
+  padding: .7rem;
+  font-size: 1.4rem;
+  border-bottom: .4rem solid;
+}
+
+.remaining {
+  padding: .7rem;
+  font-size: 1.4rem;
+  border-bottom: .4rem solid;
+}
+
+.remaining ul {
+  display: flex;
+  flex-direction: column;
+  gap:.4rem
+}
+.remaining ul li {
+  border: .1rem solid;
+  border-bottom: .2px;
+  padding: .4rem;
+  border-radius: .3rem;
+  transition: border-bottom .4s ease-in-out;
+  cursor: pointer;
+  
+}
+
+.remaining ul li:hover{
+  border-bottom: .3rem solid;
+
+}
+
+.file-inner-top{
+  flex: 3;
+  display: flex;
+}
+
+.file-inner-bottom{
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background-color: #8b8b8a;
+}
+
+.buy-space-btn {
+  font-size: 1.5rem;
+  border: .2rem solid;
+  padding: .3rem;
+  border: .3rem dotted ;
+}
+
+.buy-space-btn:hover {
+  transform: scale(1.02);
+}
