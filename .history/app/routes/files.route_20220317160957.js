@@ -3,7 +3,6 @@ const { uploadFile } = require("../controller/file/uploadFile");
 
 const router = express.router();
 
-router.post("/add/folder", addFolder);
-router.post("/delete/folder", deleteFolder);
-router.post("/edit/folder", editFolder);
-
+router.post("/upload/file", uploadFile);
+router.post("/delete/file", deleteFile);
+router.post("/edit/file", deleteFile);

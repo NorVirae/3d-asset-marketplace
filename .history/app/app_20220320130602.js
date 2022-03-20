@@ -3,7 +3,7 @@ const app = express();
 
 require("dotenv").config()
 require("./middleware/app.middleware")(app)
-// require("./db/index")
+require("./db/")
 
 
 app.use("/api", require("./routes/payment.route"))
