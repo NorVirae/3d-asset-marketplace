@@ -7,7 +7,7 @@ require("./middleware/app.middleware")(app)
 
 
 app.use("/api", require("./routes/payment.route"))
-app.use("/file", require("./routes/files.route"))
+app.use("/file", require("./routes/"))
 
 app.get("/", (req, res) => {
     res.status(200).json({

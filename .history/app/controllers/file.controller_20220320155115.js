@@ -5,11 +5,11 @@ require("dotenv").config();
 const fileServ = require("../services/files.service")
 
 const uploadFile = async (req, res) => {
-    console.log(req.query)
+    console.log(req)
     try{
-        // const result = await fileServ.uploadFile();
-        console.log(req.body, "HErE");
-        res.status(200).json("OK");
+        const result = await fileServ.uploadFile();
+        console.log(result, "HErE");
+        res.status(200).json(result);
     }catch(err){
         res.status(401).json({
             message:"error fetch data"
@@ -18,7 +18,7 @@ const uploadFile = async (req, res) => {
 }
 
 const deleteFile = async (req, res) =>{
-    console.log(req.body)
+    console.log(req.quer.body)
     try{
         const result = await fileServ.deleteFile(req.body);
         console.log(result, "HErE");
