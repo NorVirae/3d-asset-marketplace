@@ -3,11 +3,13 @@ const app = express();
 
 require("dotenv").config()
 require("./middleware/app.middleware")(app)
-// require("./db/index")
+require("./db/index")
 
 
 app.use("/api", require("./routes/payment.route"))
 app.use("/file", require("./routes/files.route"))
+app.use("/auth", require("./routes/auth.route"))
+
 
 app.get("/", (req, res) => {
     res.status(200).json({
