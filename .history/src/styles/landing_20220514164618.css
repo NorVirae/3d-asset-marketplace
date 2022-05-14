@@ -155,12 +155,6 @@
 
 .landing__freebies-container{
     background-color: #1B1A24;
-    height: 40vh;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.landing__card{
     
 }
 

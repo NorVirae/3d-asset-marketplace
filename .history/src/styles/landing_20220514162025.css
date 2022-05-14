@@ -3,7 +3,7 @@
 .landing__header{
     background-color: #7C187A;
     background-image: url("../assets//image/homepage.jpg");
-    background-position: 0% 77%;
+    background-position: 0% 80%;
     background-repeat: no-repeat;
     background-size: cover;
     height: 50vh;
@@ -103,69 +103,9 @@
 }
 
 /* header stops here */
-
-/* Main section starts here */
 .landing__main{
 
 }
-
-.landing__search-section{
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #232230;
-    max-width: 110rem;
-    margin: 0 auto;
-
-}
-
-.landing__search-group-container{
-    position: relative;
-}
-
-.landing__search-stuff{
-    width: 40vw;
-    padding: 1rem 12rem;
-    transform: skewX(-15deg);
-    background-color: #15151C;
-    border: .2rem solid #2B2B38;
-    color: white;
-}
-
-.landing__weekly-freebies-container{
-    color: white;
-    align-self: flex-start;
-    justify-self: flex-end;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: flex-end;
-}
-
-.landing__weekly-freebies-container span{
-    background-color: #15151C;
-    padding: 1rem 4rem;
-    transform: skewX(-15deg);
-    font-size: .8rem;
-    border-left: 1rem solid #7C187A ;
-
-}
-
-.landing__freebies-container{
-    background-color: #1B1A24;
-    height: 40vh;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.landing__card{
-    
-}
-
-
-/* Search section ends here */
 
 .landing__footer{
 

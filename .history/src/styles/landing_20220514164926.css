@@ -150,18 +150,13 @@
     transform: skewX(-15deg);
     font-size: .8rem;
     border-left: 1rem solid #7C187A ;
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%)
 
 }
 
 .landing__freebies-container{
     background-color: #1B1A24;
     height: 40vh;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.landing__card{
-    
 }
 
 

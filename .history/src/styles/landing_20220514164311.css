@@ -147,21 +147,8 @@
 .landing__weekly-freebies-container span{
     background-color: #15151C;
     padding: 1rem 4rem;
-    transform: skewX(-15deg);
-    font-size: .8rem;
-    border-left: 1rem solid #7C187A ;
+    transform: ske;
 
-}
-
-.landing__freebies-container{
-    background-color: #1B1A24;
-    height: 40vh;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.landing__card{
-    
 }
 
 

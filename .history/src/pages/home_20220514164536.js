@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom"
-import LandCard from "../component/landing/landCard"
-
 
 
 const Home = () => {
@@ -64,9 +62,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="landing__freebies-container">
-                    <LandCard img={""} title={""} titleAffirm={""}  />
-                </section>
+                <section className="landing__freebies-container"
 
             </main>
 

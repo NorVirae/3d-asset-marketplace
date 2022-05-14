@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom"
-import LandCard from "../component/landing/landCard"
-
 
 
 const Home = () => {
@@ -54,19 +52,10 @@ const Home = () => {
             </header>
 
             <main className="landing__main">
-                <section className="landing__search-section">
-                    <div className="landing__search-group-container">
-                        <input placeholder="Search for products artist or stores" className="landing__search-stuff" />
-                    </div>
-
-                    <div className="landing__weekly-freebies-container">
-                        <span>WEEKLY FREEBIES</span>
-                    </div>
-                </section>
-
-                <section className="landing__freebies-container">
-                    <LandCard img={""} title={""} titleAffirm={""}  />
-                </section>
+                <div className="landing__search-section">
+                    <div
+                    <input placeholder="Search for products artist or stores" className="landing__search-stuff" />
+                </div>
 
             </main>
 
