@@ -44,7 +44,7 @@ const Home = () => {
                         </button>
 
                         <button
-                            className="landing__slogan-sell"
+                            className="landind__slogan-sell"
                         >SELL</button>
                     </div>
                 </div>

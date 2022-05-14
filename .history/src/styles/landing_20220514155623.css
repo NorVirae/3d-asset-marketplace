@@ -1,12 +1,7 @@
 
 /* All header styles */
 .landing__header{
-    background-color: #7C187A;
-    background-image: url("../assets//image/homepage.jpg");
-    background-position: 0% 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50vh;
+
 }
 
 .landing__navbar{
@@ -60,8 +55,8 @@
 .landing__slogan {
     display: flex;
     flex-direction: column;
+    background-color: red;
     align-items: center;
-    
 }
 
 .landing__slogan-first-text{
@@ -75,30 +70,11 @@
     margin-bottom: 2rem;
 }
 
-.landing__instruct-btn-container{
-    display: flex;
-    gap: 1rem;
-}
-
 .landing__slogan-browse{
-    background-color: #7C187A;
-    color: white;
-    border: none;
-    padding: 1rem 8rem;
-
-    transform: skewX(-15deg);
+    color: #7C187A;
 }
 
 .landing__slogan-sell{
-    background-color: #FF9700;
-    color: white;
-    border: none;
-    padding: 1rem 8rem;
-
-    transform: skewX(-15deg);
-    
-    outline: 2px solid #FFC166;
-    outline-offset: -5px;
     
 }
 

@@ -97,8 +97,9 @@
 
     transform: skewX(-15deg);
     
-    outline: 2px solid #FFC166;
-    outline-offset: -5px;
+background: green;
+outline: 5px solid red;
+outline-offset: px;
     
 }
 
