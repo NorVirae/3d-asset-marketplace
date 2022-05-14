@@ -1,8 +1,0 @@
-
-
-
-
-const File = () => {
-
-    return <</fi>
-}

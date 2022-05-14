@@ -1,5 +1,0 @@
-
-
-const loginReducer = () => {
-    switch(action)
-}

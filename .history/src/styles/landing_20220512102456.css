@@ -1,0 +1,40 @@
+.landing__header{
+
+}
+
+.landing__main{
+
+}
+
+.landing__footer{
+
+}
+
+.landing__navbar{
+    display: flex;
+    justify-content: space-between;
+    max-width: 110rem;
+    margin: auto;
+    padding: 4rem 0;
+}
+
+.landing__navbar-brand{
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.landing__navbar-inner-container{
+    display: flex;
+    gap: .8rem;
+}
+
+.landing__nav-item{
+    background-color: #6A4657;
+    padding: 1.4rem 2.3rem;
+    transform: skewX(-10deg);
+    color: #fff;
+}
+
+.landing__nav-link{
+    color: #fff!important;
+}

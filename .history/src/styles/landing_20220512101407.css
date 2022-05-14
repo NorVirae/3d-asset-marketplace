@@ -1,0 +1,24 @@
+.landing__header{
+
+}
+
+.landing__main{
+
+}
+
+.landing__footer{
+
+}
+
+.landing__navbar{
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    max-width: 110rem;
+    margin: auto;
+}
+
+.landing__navbar-brand{
+    font-size: 1.4rem;
+    text-decoration: none;
+}

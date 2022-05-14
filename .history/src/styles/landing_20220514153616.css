@@ -1,0 +1,80 @@
+
+/* All header styles */
+.landing__header{
+
+}
+
+.landing__navbar{
+    display: flex;
+    justify-content: space-between;
+    max-width: 110rem;
+    margin: auto;
+    padding: 4rem 0;
+}
+
+.landing__navbar-brand{
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.landing__navbar-inner-container{
+    display: flex;
+    gap: .8rem;
+}
+
+.landing__nav-item{
+    background-color: #ffffff17;
+    border: 2px solid transparent;
+    padding: 1rem 2.3rem;
+    /* transform: skewX(-15deg); */
+    color: #fff;
+    transition: .4s ease-in-out border, .4s ease-in-out background-color;
+}
+
+.landing__nav-item:hover{
+    background-color: #ffffff3f;
+    border: 2px solid #A3A3A3;
+    cursor: pointer;
+}
+.landing__nav-link{
+    color: #fff!important;
+    /* transform: skew(10deg); */
+
+}
+
+.landing__navbar ul li {
+    transform: skewX(-15deg);
+
+}
+
+.landing__navbar ul li a{
+    transform: skewX(15deg);
+
+}
+
+.landing__slogan {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    align-items: center;
+}
+
+.landing__slogan-first-text{
+    color: white;
+
+}
+
+.landing__slogan-second-text{
+    font-size: 2rem;
+    color: white;
+}
+
+/* header stops here */
+.landing__main{
+
+}
+
+.landing__footer{
+
+}
+
