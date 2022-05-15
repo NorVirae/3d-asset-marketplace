@@ -1,6 +1,5 @@
 
 import {RiStarSFill} from "react-icons/ri"
-import {AiTwotoneMessage} from "react-icons/ai"
 
 
 const LandCard = ({img}) => {
@@ -30,12 +29,8 @@ const LandCard = ({img}) => {
                                     </span>
 
                                     <span className="landing__card-stats-comments">
-                                       <AiTwotoneMessage /> 25
+                                        25
                                     </span>
-                                </div>
-
-                                <div className="landing__price">
-                                    $0.0+
                                 </div>
                             </div>
 

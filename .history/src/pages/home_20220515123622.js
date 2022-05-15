@@ -66,7 +66,7 @@ const Home = () => {
                 </section>
 
                 <section className="landing__freebies-container">
-                    <LandCard img={WolfGuy} title={""} titleAffirm={""}  />
+                    <LandCard img={wo} title={""} titleAffirm={""}  />
                 </section>
 
             </main>

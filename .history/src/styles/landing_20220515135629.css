@@ -217,9 +217,10 @@
 }
 
 .landing__price{
-    justify-self: flex-end;
+    align-self: flex-end;
     color: #D2D7DB;
-    margin-left: 15%;
+    background-color: red;
+    width: 100%;
 }
 
 /* Search section ends here */

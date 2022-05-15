@@ -216,11 +216,7 @@
     gap: .1rem;
 }
 
-.landing__price{
-    justify-self: flex-end;
-    color: #D2D7DB;
-    margin-left: 15%;
-}
+.landing__price
 
 /* Search section ends here */
 

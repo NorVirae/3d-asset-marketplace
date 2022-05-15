@@ -33,10 +33,6 @@ const LandCard = ({img}) => {
                                        <AiTwotoneMessage /> 25
                                     </span>
                                 </div>
-
-                                <div className="landing__price">
-                                    $0.0+
-                                </div>
                             </div>
 
                         </div>

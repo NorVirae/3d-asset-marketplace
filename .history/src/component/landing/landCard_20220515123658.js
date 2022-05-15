@@ -1,12 +1,10 @@
 
-import {RiStarSFill} from "react-icons/ri"
-import {AiTwotoneMessage} from "react-icons/ai"
 
 
 const LandCard = ({img}) => {
     return(
         <div className="landing__card">
-                        <img src={img} alt="" className="landing-card-img"/>
+                        <img src={img} alt="" className="card"/>
                         <div className={"landing__card-body"}>
                             <h3 className={"landing__product-title"}>
                                 Beach House with Rumps
@@ -17,12 +15,7 @@ const LandCard = ({img}) => {
 
                             <div className="landing__rating-container">
                                 <div className="landing__rating-container-inner">
-                                    <RiStarSFill />
-                                    <RiStarSFill />
-                                    <RiStarSFill />
-                                    <RiStarSFill />
-                                    <RiStarSFill />
-
+                                    
                                 </div>
                                 <div className="landing__card-stats-container">
                                     <span className="landing__card-stats-views">
@@ -30,12 +23,8 @@ const LandCard = ({img}) => {
                                     </span>
 
                                     <span className="landing__card-stats-comments">
-                                       <AiTwotoneMessage /> 25
+                                        25
                                     </span>
-                                </div>
-
-                                <div className="landing__price">
-                                    $0.0+
                                 </div>
                             </div>
 

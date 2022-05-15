@@ -219,6 +219,7 @@
 .landing__price{
     justify-self: flex-end;
     color: #D2D7DB;
+    background-color: red;
     margin-left: 15%;
 }
 

@@ -189,37 +189,12 @@
 .landing__product-title-affirm{
     font-size: .7rem;
     color: #6D6D91;
-    margin-bottom: 1rem;
 
 }
 
 .landing__rating-container{
     display: flex;
-    align-items: center;
-}
-
-.landing__card-stats-container{
-    display: flex;
-    gap: .5rem;
-}
-
-.landing__card-stats-views{
-    color: #6D6D91;
-    font-size: .8rem;
-
-}
-
-.landing__card-stats-comments{
-    font-size: .8rem;
-    color: #6D6D91;
-    display: flex;
-    gap: .1rem;
-}
-
-.landing__price{
-    justify-self: flex-end;
-    color: #D2D7DB;
-    margin-left: 15%;
+    gap: 1rem;
 }
 
 /* Search section ends here */

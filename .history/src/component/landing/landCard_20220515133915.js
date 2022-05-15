@@ -35,7 +35,7 @@ const LandCard = ({img}) => {
                                 </div>
 
                                 <div className="landing__price">
-                                    $0.0+
+                                    
                                 </div>
                             </div>
 
