@@ -1,0 +1,289 @@
+
+/* All header styles */
+.landing__header{
+    background-color: #7C187A;
+    background-image: url("../assets//image/homepage.jpg");
+    background-position: 0% 77%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+
+.landing__navbar{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100rem;
+    margin: auto;
+    padding: 4rem 0;
+}
+
+.landing__navbar-brand{
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.landing__navbar-inner-container{
+    display: flex;
+    gap: .8rem;
+}
+
+.landing__nav-item{
+    background-color: #ffffff17;
+    border: 2px solid transparent;
+    padding: 1rem 2.3rem;
+    /* transform: skewX(-15deg); */
+    color: #fff;
+    transition: .4s ease-in-out border, .4s ease-in-out background-color;
+}
+
+.landing__nav-item:hover{
+    background-color: #ffffff3f;
+    border: 2px solid #A3A3A3;
+    cursor: pointer;
+}
+.landing__nav-link{
+    color: #fff!important;
+    /* transform: skew(10deg); */
+
+}
+
+.landing__navbar ul li {
+    transform: skewX(-15deg);
+
+}
+
+.landing__navbar ul li a{
+    transform: skewX(15deg);
+
+}
+
+.landing__slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.landing__slogan-first-text{
+    color: white;
+
+}
+
+.landing__slogan-second-text{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.landing__instruct-btn-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.landing__slogan-browse{
+    background-color: #7C187A;
+    color: white;
+    border: none;
+    padding: 1rem 8rem;
+
+    transform: skewX(-15deg);
+}
+
+.landing__slogan-sell{
+    background-color: #FF9700;
+    color: white;
+    border: none;
+    padding: 1rem 8rem;
+
+    transform: skewX(-15deg);
+    
+    outline: 2px solid #FFC166;
+    outline-offset: -5px;
+    
+}
+
+/* header stops here */
+
+/* Main section starts here */
+.landing__main{
+    background-color: #232230;
+}
+
+
+.landing__search-section{
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.landing__search-group-container{
+    position: relative;
+}
+
+.landing__search-stuff{
+    width: 40vw;
+    padding: 1rem 12rem;
+    transform: skewX(-15deg);
+    background-color: #15151C;
+    border: .2rem solid #2B2B38;
+    color: white;
+}
+
+.landing__weekly-freebies-container{
+    color: white;
+    align-self: flex-start;
+    justify-self: flex-end;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+    max-width: 100rem;
+    margin: 0 auto;
+
+    
+}
+
+.landing__weekly-freebies-container span{
+    background-color: #15151C;
+    padding: 1rem 4rem;
+    transform: skewX(-15deg);
+    font-size: .8rem;
+    border-left: 1rem solid #7C187A ;
+
+}
+
+.landing__freebies-container{
+    background-color: #1B1A24;
+    height: 40vh;
+    
+    padding: 4rem 0;
+    
+}
+
+.landing__freebies-inner-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.landing__card{
+    
+    background-color: #38384C;
+}
+
+.landing-card-img{
+   width: 100%;
+   height: 20vh;
+   object-fit: cover;
+
+}
+
+.landing__card-body{
+    display: flex;
+    flex-direction: column;
+    padding: .4rem .7rem;
+    gap: .3rem;
+}
+
+.landing__product-title{
+    color: white;
+    font-size: .9rem;
+}
+
+.landing__product-title-affirm{
+    font-size: .7rem;
+    color: #6D6D91;
+    margin-bottom: 1rem;
+
+}
+
+.landing__rating-container{
+    display: flex;
+    align-items: center;
+}
+
+.landing__card-stats-container{
+    display: flex;
+    gap: .5rem;
+}
+
+.landing__card-stats-views{
+    color: #6D6D91;
+    font-size: .8rem;
+
+}
+
+.landing__card-stats-comments{
+    font-size: .8rem;
+    color: #6D6D91;
+    display: flex;
+    gap: .1rem;
+}
+
+.landing__price{
+    justify-self: flex-end;
+    color: #D2D7DB;
+    margin-left: 15%;
+}
+
+
+.landing__cg-tutorials{
+    height: 20vh;
+    
+
+}
+
+.landing__cg-card-container{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    max-width: 110rem;
+    margin: 3rem auto;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    
+}
+
+.landing__cg-card{
+    position: relative;
+    height: 7vh;
+    transform: skewX(-17deg);
+
+}
+
+.landing__cg-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landing__cg-overlay-container{
+    background-color: rgba(0, 0, 0, 0.685);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.1rem;
+
+}
+
+.filters{
+    
+}
+/* Search section ends here */
+
+.landing__footer{
+
+}
+

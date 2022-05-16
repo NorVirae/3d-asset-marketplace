@@ -1,0 +1,8 @@
+
+
+
+const ProductTags = () => {
+    return (
+        
+    )
+}
