@@ -613,7 +613,6 @@
 .landing__open-label-header,
 .landing__partner-label-header{
     font-size: 4rem;
-    margin-bottom: .5rem;
 }
 
 .landing__partner-label-desc{
@@ -634,8 +633,8 @@
     background-color: black;
     opacity: .8;
     position: absolute;
-    right: 4.3%;
-    bottom: 15%;
+    right: 4%;
+    bottom: 20%;
     padding: 1rem;
     padding-right: 3rem;
     z-index: 11;

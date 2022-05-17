@@ -613,7 +613,6 @@
 .landing__open-label-header,
 .landing__partner-label-header{
     font-size: 4rem;
-    margin-bottom: .5rem;
 }
 
 .landing__partner-label-desc{
@@ -634,14 +633,13 @@
     background-color: black;
     opacity: .8;
     position: absolute;
-    right: 4.3%;
-    bottom: 15%;
-    padding: 1rem;
-    padding-right: 3rem;
+    right: 5%;
+    bottom: 25%;
+    padding: 3rem;
     z-index: 11;
     color: white;
     transform: skewX(-10deg);
-    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0% 0, 95% 0);
+    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0% 0, 96% 0);
     
 
 }

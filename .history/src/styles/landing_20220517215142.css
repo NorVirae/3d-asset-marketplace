@@ -565,7 +565,7 @@
     width: 80vw;
     height: 20vh;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 10%;
     display: flex;
     color: white;
@@ -574,10 +574,9 @@
 }
 
 .landing__bg-label-partner{
-    padding-left: 8%;
+    padding-left: 10%;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
     flex-direction: column;
     width: 100%;
     left: 0%;
@@ -591,12 +590,10 @@
 }
 
 .landing__bg-label-open{
-    padding-right: 8%;
+    padding-right: 10%;
     color: black;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
-
     flex-direction: column;
     width: 100%;
     right: 10%;
@@ -612,58 +609,7 @@
 
 .landing__open-label-header,
 .landing__partner-label-header{
-    font-size: 4rem;
-    margin-bottom: .5rem;
-}
-
-.landing__partner-label-desc{
-    text-align: start;
-    width: 75%;
-}
-
-.landing__open-label-desc{
-    text-align: start;
-    width: 70%;
-
-}
-
-.landing__partner-store-discuss{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: black;
-    opacity: .8;
-    position: absolute;
-    right: 4.3%;
-    bottom: 15%;
-    padding: 1rem;
-    padding-right: 3rem;
-    z-index: 11;
-    color: white;
-    transform: skewX(-10deg);
-    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0% 0, 95% 0);
-    
-
-}
-
-.landing__first-col-container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 3rem;
-}
-
-.landing__first-col-box{
-    width: 2rem;
-    height: 2rem;
-
-    background-color: #AE29D9;
-}
-
-.landing__first-col-text{
-    display: flex;
-    transform: skewX(10deg);
-
+    font-size: 2rem;
 }
 /* Search section ends here */
 

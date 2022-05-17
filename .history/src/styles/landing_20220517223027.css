@@ -613,7 +613,6 @@
 .landing__open-label-header,
 .landing__partner-label-header{
     font-size: 4rem;
-    margin-bottom: .5rem;
 }
 
 .landing__partner-label-desc{
@@ -634,36 +633,21 @@
     background-color: black;
     opacity: .8;
     position: absolute;
-    right: 4.3%;
-    bottom: 15%;
+    right: 5%;
+    bottom: 25%;
     padding: 1rem;
-    padding-right: 3rem;
     z-index: 11;
     color: white;
-    transform: skewX(-10deg);
-    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0% 0, 95% 0);
-    
-
 }
 
 .landing__first-col-container{
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     gap: 3rem;
 }
 
 .landing__first-col-box{
-    width: 2rem;
-    height: 2rem;
-
+    width: 2rem 2rem;
     background-color: #AE29D9;
-}
-
-.landing__first-col-text{
-    display: flex;
-    transform: skewX(10deg);
-
 }
 /* Search section ends here */
 

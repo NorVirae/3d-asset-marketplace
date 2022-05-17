@@ -9,39 +9,7 @@ const PartnerStore = () => {
     const [partnerOpen, setPartnerOpen] = useState(false)
 
     return (<section className="landing__open-partner-container">
-                    
                 <div className="landing__open-partner-inner-container">
-                    <section className="landing__partner-store-discuss">
-                                <div className="landing__first-col-container">
-                                    <div className="landing__first-col-box">
-
-                                    </div>
-
-                                    <p className="landing__first-col-text">
-                                        Earn money everytime someone you refered makes a purchase
-                                    </p>
-                                </div>
-
-                                <div className="landing__first-col-container">
-                                    <div className="landing__first-col-box">
-
-                                    </div>
-
-                                    <p className="landing__first-col-text">
-                                        passive income just from spreading the word about loooty
-                                    </p>
-                                </div>
-
-                                <div className="landing__first-col-container">
-                                    <div className="landing__first-col-box">
-
-                                    </div>
-
-                                    <p className="landing__first-col-text">
-                                        Epic Library of curated content to choose from
-                                    </p>
-                                </div>
-                            </section>
 
                    <div onMouseEnter={e=>setPartnerOpen(false)} className="landing__open-img-container">
                         <img src={deadManImg} alt="" className="landing__open-img" />
@@ -74,7 +42,11 @@ const PartnerStore = () => {
                         
                         </div>
 
-                        
+                        <section className="landing__partner-store-discuss">
+                            <div className="landing__first-col-container">
+                                <div className="landing__first-col-box"></div>
+                            </div>
+                        </section>
                     </div>
                 </div>
 
