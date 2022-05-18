@@ -64,7 +64,7 @@ const Home = () => {
                 </p>
 
                 <div className="landing__community-prem-cont">
-                    <span style={{color:"#34B6EA"}}>Leirie</span>
+                    <span>Leirie</span>
                     <span>16<sup>th</sup> March, 2022 </span>
                 </div>
             </div>
@@ -237,7 +237,6 @@ const Home = () => {
                     </section>
 
                     <section className="landing__post-container">
-                        <div className="landing__divider"></div>
                         <div className="landing__recent-blog-container">
                             <div className="landing__recent-blog-header-cont">
                                 <button className="landing__recent-blog-header-btn">
@@ -254,7 +253,7 @@ const Home = () => {
 
                         </div>
 
-                        <div className="landing__community-blog-container">
+                        <div className="landing__community-post-container">
                             <div className="landing__community-blog-header-cont">
                                     <button className="landing__community-blog-header-btn">
                                         <span className="landing__recent-blog-header-text">
@@ -262,9 +261,6 @@ const Home = () => {
                                         </span>
                                     </button>
                             </div>
-
-                            <CommunityPost />
-                            <CommunityPost />
 
 
                         </div>

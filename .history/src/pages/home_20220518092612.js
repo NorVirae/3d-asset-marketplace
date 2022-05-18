@@ -237,7 +237,7 @@ const Home = () => {
                     </section>
 
                     <section className="landing__post-container">
-                        <div className="landing__divider"></div>
+                        <div className=""
                         <div className="landing__recent-blog-container">
                             <div className="landing__recent-blog-header-cont">
                                 <button className="landing__recent-blog-header-btn">

@@ -35,11 +35,11 @@ const Home = () => {
     const RecentPost = () => {
         return (
             <div className="landing__recent-post">
-                <h2 className="landing__recent-post-title">
+                <h2 className="landing__post-title">
                     CG Arts Tutorials you don't want to miss: Part 1
                 </h2>
 
-                <p className="landing__recent-post-body">
+                <p className="landing__post-body">
                     it never hurts to want to up your game whether its from second vets or....
                 </p>
 
@@ -52,24 +52,7 @@ const Home = () => {
         )
     }
 
-    const CommunityPost = () => {
-        return (
-            <div className="landing__community-post">
-                <h2 className="landing__community-post-title">
-                   Leo art Journey
-                </h2>
-
-                <p className="landing__community-post-body">
-                    it never hurts to want to up your game whether you want to learn from second vets or....
-                </p>
-
-                <div className="landing__community-prem-cont">
-                    <span style={{color:"#34B6EA"}}>Leirie</span>
-                    <span>16<sup>th</sup> March, 2022 </span>
-                </div>
-            </div>
-        )
-    }
+    
 
     return (
         <div>
@@ -237,7 +220,6 @@ const Home = () => {
                     </section>
 
                     <section className="landing__post-container">
-                        <div className="landing__divider"></div>
                         <div className="landing__recent-blog-container">
                             <div className="landing__recent-blog-header-cont">
                                 <button className="landing__recent-blog-header-btn">
@@ -254,17 +236,14 @@ const Home = () => {
 
                         </div>
 
-                        <div className="landing__community-blog-container">
-                            <div className="landing__community-blog-header-cont">
-                                    <button className="landing__community-blog-header-btn">
+                        <div className="landing__community-post-container">
+                            <div className="landing__community-post-header-cont">
+                                    <button className="landing__recent-blog-header-btn">
                                         <span className="landing__recent-blog-header-text">
                                                 COMMUNITY POST
                                         </span>
                                     </button>
                             </div>
-
-                            <CommunityPost />
-                            <CommunityPost />
 
 
                         </div>

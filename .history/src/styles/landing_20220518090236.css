@@ -753,144 +753,32 @@
 .landing__post-container{
     height: 40vh;
     display: flex;
-    /* gap: 2rem; */
-    position: relative;
-    background-color: #16161E;
-}
-
-.landing__divider{
-    position: absolute;
-    height: 100%;
-    top: 0%;
-    left: 45%;
-    width: 4rem;
-    transform: skewX(-15deg);
-    background-color: #16161E;
 }
 
 .landing__recent-blog-container{
     width: 100%;
     display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    background-color: #2E2E35;
-    padding: 2rem 3rem;
-}
-
-.landing__recent-blog-header-cont{
-    display: flex;
     justify-content: center;
 }
 
-.landing__recent-blog-header-btn{
-    padding: 1rem 7rem;
-    font-size: .7rem;
-    background-color: #15151C;
-    transform: skewX(-15deg);
-    color: white;
-    border: none;
-    border-left: 1rem solid #7C187A;
-    display: flex;
-}
-
-.landing__recent-blog-header-text{
-    transform: skewX(15deg);
-
-}
-
+.landing__recent
 
 .landing__recent-post{
     display: flex;
     flex-direction: column;
-    gap: .4rem;
 }
 
-.landing__recent-post-title{
-    color: #E9F2F4;
-    font-size: 1.2rem;
-
-}
-
-.landing__recent-post-body{
-     color: #71747A;
-}
-
-.landing__recent-prem-cont{
-    color: #71747A;
-    display: flex;
-    gap: 3rem;
-
-}
-
-/* Community post starts here */
-.landing__community-post-container{
-    background-color: #2E2E35;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 2rem 1rem;
-}
-
-.landing__community-blog-container{
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    background-color: #2E2E35;
-    padding: 2rem 3rem;
-}
-
-.landing__community-blog-header-cont{
-    display: flex;
-    justify-content: center;
-}
-
-.landing__community-blog-header-btn{
-    padding: 1rem 7rem;
-    font-size: .7rem;
-    background-color: #15151C;
-    transform: skewX(-15deg);
+.landing__post-title{
     color: white;
-    border: none;
-    border-left: 1rem solid #7C187A;
-    display: flex;
-}
-
-.landing__community-blog-header-text{
-    transform: skewX(15deg);
-
-}
-
-
-.landing__community-post{
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
-}
-
-.landing__community-post-title{
-    color: #E9F2F4;
     font-size: 1.2rem;
 
 }
 
-.landing__community-post-body{
-     color: #71747A;
-}
-
-.landing__community-prem-cont{
-    color: #71747A;
+.landing__community-post-container{
+    width: 100%;
     display: flex;
-    gap: 3rem;
-
+    justify-content: center;
 }
-
-
-
 /* Search section ends here */
 
 .landing__footer{

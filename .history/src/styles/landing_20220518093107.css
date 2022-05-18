@@ -753,7 +753,7 @@
 .landing__post-container{
     height: 40vh;
     display: flex;
-    /* gap: 2rem; */
+    gap: 2rem;
     position: relative;
     background-color: #16161E;
 }
@@ -762,7 +762,7 @@
     position: absolute;
     height: 100%;
     top: 0%;
-    left: 45%;
+    left: 40%;
     width: 4rem;
     transform: skewX(-15deg);
     background-color: #16161E;

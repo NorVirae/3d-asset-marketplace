@@ -753,19 +753,20 @@
 .landing__post-container{
     height: 40vh;
     display: flex;
-    /* gap: 2rem; */
+    gap: 2rem;
     position: relative;
     background-color: #16161E;
 }
 
 .landing__divider{
-    position: absolute;
-    height: 100%;
-    top: 0%;
-    left: 45%;
-    width: 4rem;
-    transform: skewX(-15deg);
-    background-color: #16161E;
+    position: "absolute";
+    height: "100%";
+
+    top: "0%"
+
+    width: "4rem";
+     transform: "skewX(-15deg)",
+                         backgroundColor: "#16161E"
 }
 
 .landing__recent-blog-container{
