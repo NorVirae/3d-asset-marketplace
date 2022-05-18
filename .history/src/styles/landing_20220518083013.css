@@ -690,7 +690,6 @@
     background-color: #15151C;
     transform: skewX(-15deg);
     color: white;
-    border: none;
     border-left: 1rem solid #7C187A;
     display: flex;
 }

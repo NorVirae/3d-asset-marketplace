@@ -201,9 +201,7 @@ const Home = () => {
                         <div className="landing__recent-blog-container">
                             <div className="landing__recent-blog-header-cont">
                                 <button className="landing__recent-blog-header-btn">
-                                    <span className="landing__recent-blog-header-text">
-                                        
-                                    </span>
+                                    <span className="landing__recent-blog"
                                 </button>
                             </div>
 
