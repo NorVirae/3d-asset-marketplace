@@ -923,12 +923,3 @@
     gap: 2rem;
 }
 
-.landing__socials-container{
-    display: flex;
-    gap: 1rem;
-    
-}
-
-.landing__copyright-container{
-    color: #65686E;
-}

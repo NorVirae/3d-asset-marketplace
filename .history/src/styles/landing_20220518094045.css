@@ -906,29 +906,6 @@
 /* Search section ends here */
 
 .landing__footer{
-    height: 40vh;
-    background-color: #16161E;
-    color: white;
-    padding: 3rem 1rem;
-}
-
-.landing__footer-inner{
-    display: flex;
-    justify-content: space-around;
-}
-
-.landing__footer-socials{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.landing__socials-container{
-    display: flex;
-    gap: 1rem;
     
 }
 
-.landing__copyright-container{
-    color: #65686E;
-}

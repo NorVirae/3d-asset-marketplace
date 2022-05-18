@@ -19,7 +19,6 @@ import ProductTags from "../component/tags/productTags"
 import StartSelling from "../component/landing/startSelling"
 import DoubleCard from "../component/landing/cards/doubleCard"
 import PartnerStore from "../component/sections/partnerStore"
-import Footer from "../component/footer/footer"
 
 
 
