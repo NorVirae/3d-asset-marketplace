@@ -868,13 +868,12 @@
 
 .landing__community-post{
     display: flex;
+    flex-direction: column;
     gap: .4rem;
 }
 
 .landing__community-post-inner{
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
+    
 }
 
 .landing__community-post-title{
@@ -892,13 +891,6 @@
     display: flex;
     gap: 3rem;
 
-}
-
-.landing__community-img{
-    width: 4rem;
-    height: 4rem;
-    object-fit: cover;
-    object-position: center;
 }
 
 

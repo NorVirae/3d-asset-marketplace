@@ -55,10 +55,9 @@ const Home = () => {
     const CommunityPost = () => {
         return (
             <div className="landing__community-post">
-                <img src={CatmanImg} className="landing__community-img" alt="" />
                 <div className="landing__community-post-inner">
                     <h2 className="landing__community-post-title">
-                         Leo art Journey
+                     Leo art Journey
                     </h2>
 
                     <p className="landing__community-post-body">

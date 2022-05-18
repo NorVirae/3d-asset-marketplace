@@ -55,22 +55,19 @@ const Home = () => {
     const CommunityPost = () => {
         return (
             <div className="landing__community-post">
-                <img src={CatmanImg} className="landing__community-img" alt="" />
-                <div className="landing__community-post-inner">
-                    <h2 className="landing__community-post-title">
-                         Leo art Journey
-                    </h2>
+                <div className="landing__community-post-inner"
+                <h2 className="landing__community-post-title">
+                   Leo art Journey
+                </h2>
 
-                    <p className="landing__community-post-body">
-                        it never hurts to want to up your game whether you want to learn from second vets or....
-                    </p>
+                <p className="landing__community-post-body">
+                    it never hurts to want to up your game whether you want to learn from second vets or....
+                </p>
 
-                    <div className="landing__community-prem-cont">
-                        <span style={{color:"#34B6EA"}}>Leirie</span>
-                        <span>16<sup>th</sup> March, 2022 </span>
-                    </div>
+                <div className="landing__community-prem-cont">
+                    <span style={{color:"#34B6EA"}}>Leirie</span>
+                    <span>16<sup>th</sup> March, 2022 </span>
                 </div>
-                
             </div>
         )
     }
