@@ -968,15 +968,9 @@
     color: #65686E;
 }
 
-.landing__news-letter-form{
-    display: flex;
-}
-
 .landing__news-letter-form-group{
     display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
 }
 
 .landing__news-letter-form-control{
@@ -989,22 +983,5 @@
 }
 
 .landing__news-letter-btn{
-    background-color: #38383E;
-    transform: skewX(-15deg);
-
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .5rem 2rem;
-    height: 2.5rem;
-    border: none;
-    position: absolute;
-    top: 16%;
-    right: 2.5%;
-}
-
-.landing__news-letter-btn-text{
-    transform: skewX(15deg);
-
+    
 }

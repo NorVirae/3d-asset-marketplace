@@ -54,30 +54,6 @@ const Footer = () => {
                         <span className="landing__footer-resource-list">
                             Art draw Tuorials
                         </span>
-
-                        <span className="landing__footer-resource-list">
-                            CG Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            CG Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            CG Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
                     </div>
                 </div>
 
@@ -89,22 +65,6 @@ const Footer = () => {
                     <div className="landing__footer-resources-list-cont">
                         <span className="landing__footer-resource-list">
                             CG Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
                         </span>
 
                         <span className="landing__footer-resource-list">

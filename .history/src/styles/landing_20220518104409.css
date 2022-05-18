@@ -968,15 +968,9 @@
     color: #65686E;
 }
 
-.landing__news-letter-form{
-    display: flex;
-}
-
 .landing__news-letter-form-group{
     display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
 }
 
 .landing__news-letter-form-control{
@@ -999,9 +993,9 @@
     padding: .5rem 2rem;
     height: 2.5rem;
     border: none;
-    position: absolute;
-    top: 16%;
-    right: 2.5%;
+    position: relative;
+    top: 50%;
+    right: 20%;
 }
 
 .landing__news-letter-btn-text{

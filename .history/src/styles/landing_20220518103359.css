@@ -956,55 +956,6 @@
 .landing__footer-news-letter{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-
-}
-
-.landing__footer-news-letter-header{
-    
-}
-
-.landing__footer-news-letter-info{
-    color: #65686E;
-}
-
-.landing__news-letter-form{
-    display: flex;
-}
-
-.landing__news-letter-form-group{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-}
-
-.landing__news-letter-form-control{
-    padding: 1rem 4rem;
-    transform: skewX(-15deg);
-    background-color: #15151C;
-    border: .4rem solid #2B2B38;
-    color: white;
-    
-}
-
-.landing__news-letter-btn{
-    background-color: #38383E;
-    transform: skewX(-15deg);
-
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .5rem 2rem;
-    height: 2.5rem;
-    border: none;
-    position: absolute;
-    top: 16%;
-    right: 2.5%;
-}
-
-.landing__news-letter-btn-text{
-    transform: skewX(15deg);
+    gap: 2rem;
 
 }

@@ -47,67 +47,27 @@ const Footer = () => {
                     </h2>
 
                     <div className="landing__footer-resources-list-cont">
-                        <span className="landing__footer-resource-list">
+                        <span className="landing__footer-community-list">
                             CG Tuorials
                         </span>
 
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            CG Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            CG Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            CG Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
+                        <span className="landing__footer-community-list">
                             Art draw Tuorials
                         </span>
                     </div>
                 </div>
 
-                <div className="landing__footer-resources">
-                    <h2 className="landing__footer-resources-header">
+                <div className="landing__footer-company">
+                    <h2 className="landing__footer-company-header">
                         COMPANY
                     </h2>
 
-                    <div className="landing__footer-resources-list-cont">
+                    <div className="landing__footer-company-list-cont">
                         <span className="landing__footer-resource-list">
                             CG Tuorials
                         </span>
 
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
-                            Art draw Tuorials
-                        </span>
-
-                        <span className="landing__footer-resource-list">
+                        <span className="landing__footer-company-list">
                             Art draw Tuorials
                         </span>
                     </div>
