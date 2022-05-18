@@ -48,11 +48,6 @@
     
 }
 
-.landing__nav-item.signup:hover{
-    background-color: #7C187A;
-
-}
-
 .landing__nav-item:hover{
     background-color: #ffffff3f;
     border: 2px solid #A3A3A3;

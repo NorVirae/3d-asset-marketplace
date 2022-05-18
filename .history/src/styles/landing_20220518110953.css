@@ -33,23 +33,11 @@
     justify-content: center;
     background-color: #ffffff3d;
     border: 2px solid transparent;
-    padding: .5rem 2.3rem;
+    padding: .4rem 2.3rem;
     transform: skewX(-15deg);
     color: #fff;
     transition: .4s ease-in-out border, .4s ease-in-out background-color;
     display: flex;
-
-}
-
-.landing__nav-item.signup{
-    background-color: #7C187A;
-    padding: .5rem 3rem;
-
-    
-}
-
-.landing__nav-item.signup:hover{
-    background-color: #7C187A;
 
 }
 
@@ -58,9 +46,6 @@
     border: 2px solid #A3A3A3;
     cursor: pointer;
 }
-
-
-
 .landing__nav-link{
     color: #fff!important;
     transform: skewX(15deg);

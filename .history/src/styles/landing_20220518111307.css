@@ -43,14 +43,9 @@
 
 .landing__nav-item.signup{
     background-color: #7C187A;
-    padding: .5rem 3rem;
+    padding: .5rem 2.8rem;
 
     
-}
-
-.landing__nav-item.signup:hover{
-    background-color: #7C187A;
-
 }
 
 .landing__nav-item:hover{

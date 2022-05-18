@@ -22,7 +22,7 @@ const NavBar = () => {
                             <Link className="landing__nav-link" to={"landing__nav-link"}>Sign In</Link>
                         </li>
 
-                        <li className={"landing__nav-item signup"}>
+                        <li className={"landing__nav-item sig"}>
                             <Link className="landing__nav-link" to={"landing__nav-link"}>Sign Up</Link>
                         </li>
                     </ul>

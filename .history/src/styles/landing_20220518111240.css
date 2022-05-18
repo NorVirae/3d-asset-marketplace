@@ -42,14 +42,6 @@
 }
 
 .landing__nav-item.signup{
-    background-color: #7C187A;
-    padding: .5rem 3rem;
-
-    
-}
-
-.landing__nav-item.signup:hover{
-    background-color: #7C187A;
 
 }
 
@@ -93,7 +85,6 @@
 }
 
 .landing__slogan-browse{
-    background-color: #7C187A;
     color: white;
     border: none;
     padding: 1rem 8rem;

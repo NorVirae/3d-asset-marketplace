@@ -41,26 +41,13 @@
 
 }
 
-.landing__nav-item.signup{
-    background-color: #7C187A;
-    padding: .5rem 3rem;
-
-    
-}
-
-.landing__nav-item.signup:hover{
-    background-color: #7C187A;
-
-}
-
 .landing__nav-item:hover{
     background-color: #ffffff3f;
     border: 2px solid #A3A3A3;
     cursor: pointer;
 }
 
-
-
+..landing__nav-item
 .landing__nav-link{
     color: #fff!important;
     transform: skewX(15deg);
