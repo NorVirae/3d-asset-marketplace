@@ -709,13 +709,13 @@
     align-items: center;
     gap: 1rem;
     padding-top: 3rem;
-    padding-bottom: 6rem;
+    padding-bottom: 2rem;
 
 
 }
 
 .landing__gallery-first-move-container{
-    width: 100%;
+    width: 100vw;
 
     display: inline-flex;
     /* height: 15vh; */
@@ -726,11 +726,11 @@
 }
 
 .landing__gallery-second-move-container{
-    width: 100%;
+    width: 100vw;
     display: inline-flex;
     grid-template-columns: repeat(10, 1fr);
     gap: 1rem;
-    transform: translate3d(5%, 0, 0);
+    transform: translate3d(20px, 0, 0);
 
 }
 

@@ -199,7 +199,6 @@ const Home = () => {
 
                     <section className="landing__post-container">
                         
-
                     </section>
 
             </main>

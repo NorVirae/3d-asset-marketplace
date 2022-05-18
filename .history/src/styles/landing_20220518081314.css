@@ -730,7 +730,7 @@
     display: inline-flex;
     grid-template-columns: repeat(10, 1fr);
     gap: 1rem;
-    transform: translate3d(5%, 0, 0);
+    transform: translate3d(50%, 10%, 20%0);
 
 }
 

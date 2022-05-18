@@ -7,7 +7,7 @@ const NavBar = () => {
 
     return (
         <nav className="landing__navbar">
-                    <Link className="landing__navbar-brand" to = "/"><LoootyLogo /></Link>
+                    <Link className="landing__navbar-brand" to = "/"><LoootyLogo />></Link>
 
                     <ul className="landing__navbar-inner-container">
                         <li className={"landing__nav-item"}>

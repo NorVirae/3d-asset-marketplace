@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import LoootyLogo from "../loootyLogo"
 
 
 
@@ -7,7 +6,7 @@ const NavBar = () => {
 
     return (
         <nav className="landing__navbar">
-                    <Link className="landing__navbar-brand" to = "/"><LoootyLogo /></Link>
+                    <Link className="landing__navbar-brand" to = "/"><Loooty></Link>
 
                     <ul className="landing__navbar-inner-container">
                         <li className={"landing__nav-item"}>

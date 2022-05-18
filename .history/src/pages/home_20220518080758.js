@@ -197,11 +197,6 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className="landing__post-container">
-                        
-
-                    </section>
-
             </main>
 
             <footer className="landing__footer">

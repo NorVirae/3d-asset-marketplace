@@ -191,15 +191,12 @@ const Home = () => {
                             <ImageGalleryComp img={CatPinImg}/>
                             <ImageGalleryComp img={TsunamiImg}/>
                             <ImageGalleryComp img={CatmanImg}/>
-                            
+                            <ImageGalleryComp img={CatmanImg}/>
+                            <ImageGalleryComp img={CatmanImg}/>
+
                             <ImageGalleryComp img={WolfGuyImg}/>
 
                         </div>
-                    </section>
-
-                    <section className="landing__post-container">
-                        
-
                     </section>
 
             </main>
