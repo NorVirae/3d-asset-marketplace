@@ -511,7 +511,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: .3s transform ease-in-out;
+    transition: .3s transform eas;
     /* border-left: 1rem solid #7C187A ; */
 }
 

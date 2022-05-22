@@ -511,7 +511,6 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: .3s transform ease-in-out;
     /* border-left: 1rem solid #7C187A ; */
 }
 
@@ -628,10 +627,10 @@
     border: none;
     transform: skewX(-25deg);
     transition: transform .3s ease-in-out;
-    cursor: pointer;
+    pointer
 }
 
-.landing__browse-all-products-btn:active{
+.landing__browse-all-products-btn{
     transform: skewX(-25deg) scale(1.05);
 
 }

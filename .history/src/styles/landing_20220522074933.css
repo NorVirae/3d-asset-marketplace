@@ -498,7 +498,7 @@
     justify-content: center;
 }
 
-.landing__filter-tags-btn{
+.landing__filter-tags{
     background-color: #2C2C3D;
     color: white;
     padding: 1rem 4rem;
@@ -510,14 +510,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: .3s transform ease-in-out;
     /* border-left: 1rem solid #7C187A ; */
-}
-
-.landing__filter-tags-btn:active{
-    transform: skewX(-25deg) scale(1.05);
-    
 }
 
 
@@ -627,14 +620,10 @@
     font-size: .7rem;
     border: none;
     transform: skewX(-25deg);
-    transition: transform .3s ease-in-out;
-    cursor: pointer;
 }
 
-.landing__browse-all-products-btn:active{
-    transform: skewX(-25deg) scale(1.05);
+.landing__browse-all-products-btn{
 
-}
 
 .landing__browse-all-products-btn-text{
     transform: skewX(25deg);
