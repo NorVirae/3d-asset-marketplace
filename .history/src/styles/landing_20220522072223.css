@@ -317,7 +317,7 @@
 .landing__card{
     position: relative;
     background-color: #232230;
-    transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out, transform .3s ease-in-out;
+    transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out, transform .3s eas;
 }
 
 .landing__card:active{
