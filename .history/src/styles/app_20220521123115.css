@@ -1,0 +1,15 @@
+.app__checkbutton-container{
+    background-color: red;
+}
+
+.app__checkbutton{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #15151C;
+    border: .2rem solid #2;
+}
+
+.app__checkbutton-active{
+
+}

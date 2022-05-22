@@ -1,0 +1,294 @@
+.lgn__login-modal{
+    width: 29.2vw;
+    position: absolute;
+    z-index: 3;
+    background-color: #38383E;
+    top: 200%;
+    left: -80%;
+    transform: skewX(25deg);
+}
+
+.lgn__login-form{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    gap: 1rem;
+
+}
+
+.lgn__form-group{
+    background-color: #15151C;
+    border: .2rem solid #2B2B38;
+    transform: skewX(-25deg);
+}
+
+.lgn__form-control{
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    transform: skewX(25deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3E3E4F;
+
+}
+
+.lgn__form-control:focus{
+    outline: none;
+}
+.lgn__form-recovery-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-transform: none;
+}
+
+.lgn__form-btn-group{
+    display: flex;
+}
+
+.lgn__login-btn{
+    padding: 1.2rem 3rem;
+    width: 100%;
+    transform: skewX(-25deg);
+    background-color: #AF23AF;
+    outline: 2px solid #CF7BCF;
+    font-weight: 900;
+    outline-offset: -7px;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lgn__login-btn:active{
+    transform: scale(1.04) skewX(-25deg);
+}
+
+.lgn__login-btn-text{
+    transform: skewX(25deg);
+
+}
+
+.lgn__login-alternatives-container{
+    background-color: #2A2A30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    /* padding: 2rem 5rem; */
+    padding-bottom: 1rem!important;
+    gap: 1rem;
+}
+
+.lgn__btn-google, .lgn__btn-facebook{
+    background-color: #FFFFFF;
+    border: none;
+    padding: 1rem 4rem;
+    transform: skewX(-25deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.lgn__btn-google:active, .lgn__btn-facebook:active{
+    transform: scale(1.04) skewX(-25deg);
+    display: flex;
+}
+
+.lgn__btn-facebook{
+    background-color: #1071C1;
+    color: white;
+}
+
+.lgn__btn-google-text, .lgn__btn-facebook-text{
+    transform: skewX(25deg);
+}
+
+.lgn__form-recovery-container{
+    padding-top: 1rem;
+}
+
+.lgn__arrow{
+    width: 35px;
+    height: 35px;
+    left: 55%;
+    top: -2%;
+    background-color: #38383E;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+
+/* Sign up */
+
+
+.reg__sign-up-overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.729);
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg__sign-up-modal{
+    background-color: #232230;
+    display: flex;
+}
+
+.reg__loooty-innitials-container{
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+}
+
+.reg_logo-container{
+    display: flex;
+    justify-content: center;
+}
+
+.reg__loooty-about{
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .1rem;
+    /* width: 60%; */
+}
+
+.reg__loooty-features{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* justify-content: center; */
+}
+
+.reg__sign-up-forms-container{
+    padding: 1rem 2rem;
+    background-color: #38383E;
+}
+
+.reg__sign-up-form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.reg__form-group{
+    background-color: #15151C;
+    border: .2rem solid #2B2B38;
+    transform: skewX(-25deg);
+}
+
+.reg__form-control{
+    padding: .7rem 2rem;
+    width: 90%;
+    font-size: .8rem;
+    background-color: transparent;
+    border: none;
+    transform: skewX(25deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3E3E4F;
+}
+
+.reg__form-btn-group{
+    display: flex;
+}
+
+.reg__login-btn{
+    padding: 1.2rem 3rem;
+    width: 100%;
+    transform: skewX(-25deg);
+    background-color: #AF23AF;
+    outline: 2px solid #CF7BCF;
+    font-weight: 900;
+    outline-offset: -7px;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.reg__login-btn-text{
+    transform: skewX(25deg);
+
+}
+
+.reg__terms-container{
+    display: flex;
+    margin: 1.2rem 0;
+    gap: .3rem;
+    font-size: .9rem;
+
+}
+
+.reg__login-alternatives-container{
+    background-color: #2A2A30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    
+    /* padding: 2rem 5rem; */
+    padding-bottom: 1rem!important;
+    gap: 1rem;
+}
+
+.reg__btn-google, .reg__btn-facebook{
+    background-color: #FFFFFF;
+    border: none;
+    padding: 1rem 4rem;
+    transform: skewX(-25deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.reg__btn-google:active, .reg__btn-facebook:active{
+    transform: scale(1.04) skewX(-25deg);
+    display: flex;
+}
+
+.reg__btn-facebook{
+    background-color: #1071C1;
+    color: white;
+}
+
+.reg__btn-google-text, .reg__btn-facebook-text{
+    transform: skewX(25deg);
+}
+
+.reg__form-recovery-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-transform: none;
+}

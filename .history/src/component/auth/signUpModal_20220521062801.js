@@ -1,0 +1,8 @@
+
+
+
+const SignUpModal = () => {
+    return(
+        
+    )
+}
