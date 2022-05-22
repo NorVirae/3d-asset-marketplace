@@ -867,12 +867,10 @@
 @keyframes slide-in-frame-left {
     0%{
         left: 0%;
-        opacity: 0;
     }
 
     100%{
         left: 4.3%;
-        opacity: 1;
     }
     
 }
