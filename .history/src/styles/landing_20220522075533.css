@@ -1229,11 +1229,9 @@
     position: absolute;
     top: 16%;
     right: 2.5%;
-    cursor: pointer;
 }
 
-.landing__news-letter-btn:active{
-    transform: scale(1.05) skewX(-25deg);
+.landing__news-letter-btn{
 }
 
 .landing__news-letter-btn-text{
