@@ -206,9 +206,9 @@ const Home = () => {
                     </section>
 
                     <div className="landing__filter-tag-container">
-                        <div className="landing__filter-tag-inner-container">
-                            <ProductTags txt={"BROWSE ALL PRODUCTS"} />
-                        </div>
+                        <div className="landing__filter-tag-inner-container"
+                        <ProductTags txt={"Browse All products"} />
+                            
                     </div>
 
                     <section className="landing__start-selling">
@@ -218,11 +218,6 @@ const Home = () => {
                         </div> */}
                     </section>
 
-                    <section className="landing__weekly-freebies-container">
-                            <button className="landing__weekly-freebies-btn">
-                                <span style={{transform: "skewX(25deg)"}}>LATEST COLLECTIONS</span>
-                            </button>
-                    </section>
                     <section className="landing__latest-collection-cont">
                         <div className="landing__double-inner-container">
                             <DoubleCard img={CatmanImg}/>

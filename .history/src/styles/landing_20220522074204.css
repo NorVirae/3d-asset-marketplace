@@ -507,9 +507,6 @@
     width: 20vw;
     font-size: .8rem;
     border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     /* border-left: 1rem solid #7C187A ; */
 }
 
@@ -640,7 +637,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    max-width: 100rem;
+    max-width: 110rem;
     margin: 0 auto;
 }
 

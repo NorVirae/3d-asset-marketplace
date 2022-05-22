@@ -202,27 +202,19 @@ const Home = () => {
                             <LandCard img={CatmanImg} title={""} titleAffirm={""}  />
 
                         </div>
-                        
-                    </section>
-
-                    <div className="landing__filter-tag-container">
-                        <div className="landing__filter-tag-inner-container">
-                            <ProductTags txt={"BROWSE ALL PRODUCTS"} />
-                        </div>
-                    </div>
-
-                    <section className="landing__start-selling">
-                        <StartSelling />
-                        {/* <div className="landing__latest-collection-container">
-                            <ProductTags txt={"Latest Collections"} />
+                        {/* <div className="landing__filter-tag-container">
+                            <ProductTags txt={"Browse All products"} />
+                            
                         </div> */}
                     </section>
 
-                    <section className="landing__weekly-freebies-container">
-                            <button className="landing__weekly-freebies-btn">
-                                <span style={{transform: "skewX(25deg)"}}>LATEST COLLECTIONS</span>
-                            </button>
+                    <section className="landing__start-selling">
+                        <StartSelling />
+                        <div className="landing__latest-collection-container">
+                            <ProductTags txt={"Latest Collections"} />
+                        </div>
                     </section>
+
                     <section className="landing__latest-collection-cont">
                         <div className="landing__double-inner-container">
                             <DoubleCard img={CatmanImg}/>

@@ -220,7 +220,7 @@ const Home = () => {
 
                     <section className="landing__weekly-freebies-container">
                             <button className="landing__weekly-freebies-btn">
-                                <span style={{transform: "skewX(25deg)"}}>LATEST COLLECTIONS</span>
+                                <span style={{transform: "skewX(25deg)"}}>LATEST COLLEC</span>
                             </button>
                     </section>
                     <section className="landing__latest-collection-cont">

@@ -489,27 +489,19 @@
     background-color: #1B1A24;
 }
 
-.landing__filter-tag-inner-container{
+.landing__filter-tag-container{
     max-width: 100rem;
     margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
 }
-
 .landing__filter-tags{
     background-color: #2C2C3D;
     color: white;
     padding: 1rem 4rem;
-    margin-bottom: .3rem;
+    margin-bottom: 1rem;
     transform: skewX(-25deg);
     width: 20vw;
     font-size: .8rem;
     border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     /* border-left: 1rem solid #7C187A ; */
 }
 
@@ -640,7 +632,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    max-width: 100rem;
+    max-width: 110rem;
     margin: 0 auto;
 }
 
