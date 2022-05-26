@@ -1,0 +1,20 @@
+
+
+/* Buttons */
+
+.composite-btn {
+    background-color: #FF9700;
+    color: white;
+    border: none;
+    padding: 1rem 8rem;
+
+    transform: skewX(-25deg);
+    
+    outline: 2px solid #FFC166;
+    outline-offset: -5px;
+    display: flex;
+    cursor: pointer;
+}
+
+.composite-btn {
+}

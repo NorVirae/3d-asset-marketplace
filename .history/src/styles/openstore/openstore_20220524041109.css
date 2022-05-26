@@ -1,0 +1,54 @@
+.opnstore__app-container{
+    color: white;
+}
+
+/* Open store start selling section */
+
+.opnstore__start-selling-container{
+    background-color: #15151C;
+}
+
+.opnstore__start-selling-inner-container{
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+
+    align-items: center;
+}
+
+.opnstore__odd-card{
+    transform: skewX(-25deg);
+    height: 15vh;
+    background-color: #232230;
+    padding: 2rem 2rem;
+    position: relative;
+
+}
+
+.opnstore__odd-card-logo-overplace-container{
+    display: flex;
+}
+
+.opnstore__odd-card-logo-overplace{
+    transform: skewX(15deg);
+    background-color: #302F42;
+    position: absolute;
+    top: -50%;
+    padding: 1rem 2rem;
+    
+}
+
+.opnstore__odd-card-logo-backtrack{
+    transform: skewX(25deg);
+}
+
+.opnstore__odd-card-title{
+    transform: skewX(25deg);
+
+}
+
+.opnstore__odd-card-desc{
+    transform: skewX(25deg);
+    font-size: .7rem;
+    color: #919198;
+}

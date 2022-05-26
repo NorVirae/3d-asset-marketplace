@@ -1,0 +1,9 @@
+
+
+
+const FaqCard = () => {
+
+    return (
+        
+    )
+}
