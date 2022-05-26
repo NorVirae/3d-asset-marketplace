@@ -9,10 +9,6 @@
     animation: .7s fadeItIn ease-in-out;
 }
 
-.lgn__fade-out-anim {
-    animation: .7s fadeItOut ease-in-out !important;
-
-}
 @keyframes fadeItIn {
     0%{
         opacity: 0;
@@ -29,7 +25,7 @@
     }
 
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 

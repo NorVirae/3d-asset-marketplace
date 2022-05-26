@@ -21,13 +21,10 @@ const OpenStoreModal = () => {
             <div className="opn__open-store-modal">
                 <div className="opn__close-btn-container">
                     <div onClick={e=>{
-                        setFadeOut(prev => !prev)
-                        console.log(fadeOut)
-                        setTimeout(() =>{
-                            setShowRegModal({...showRegModal, openStore: false})
-                             console.log(fadeOut)
-                            //  setFadeOut(false)
-                            }, 700)
+                        setFadeOut(true)
+                        setTimeout(() =>setShowRegModal({...showRegModal, openStore: false}), 2000)
+                        setFadeOut(false)
+
                         // setShowRegModal({...showRegModal, openStore: false})
                         }} className="opn__close-btn">
                         <span className="opn__close-btn-text">X</span>

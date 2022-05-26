@@ -9,24 +9,15 @@ import { RegisterContext } from "./context/registerContext";
 
 const SignUpModal = () => {
     const [active, setActive] = useState(false)
-    const [fadeOut, setFadeOut] = useState(false)
-
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     return(
 
-        <div className={`reg__sign-up-overlay ${fadeOut? "lgn__fade-out-anim" : ""}`}>
+        <div className="reg__sign-up-overlay">
             <section className="reg__sign-up-modal">
                 <div className="reg__close-btn-container">
                     <div 
-                        onClick={e=>{
-                            setFadeOut(prev => !prev)
-                            console.log(fadeOut)
-                            setTimeout(() =>{
-                                setShowRegModal({...showRegModal, register: false})
-                                 console.log(fadeOut)
-                                //  setFadeOut(false)
-                                }, 700)}}
-                    className="reg__close-btn">
+                        
+                    onClick={e=>setShowRegModal({...showRegModal, register: false})} className="reg__close-btn">
                         <span className="reg__close-btn-text">X</span>
                     </div>
                 </div>

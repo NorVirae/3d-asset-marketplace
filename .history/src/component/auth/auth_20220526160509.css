@@ -10,6 +10,8 @@
 }
 
 .lgn__fade-out-anim {
+    background-color: red!imp;
+    transform: scale(1.5);
     animation: .7s fadeItOut ease-in-out !important;
 
 }

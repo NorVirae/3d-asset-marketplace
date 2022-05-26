@@ -6,7 +6,7 @@ import { RegisterContext } from "./context/registerContext";
 
 const OpenStoreModal = () => {
     const [active, setActive] = useState(false)
-    const [fadeOut, setFadeOut] = useState(false)
+    const [fadeOut, setFadeOut] = use
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
 
     const handleKey = (e) => {
@@ -17,17 +17,11 @@ const OpenStoreModal = () => {
         
     }
     return(
-        <div onKeyUp={e=>{handleKey(e)}} className={`opn__open-store-modal-overlay ${fadeOut? "lgn__fade-out-anim" : ""}`}>
+        <div onKeyUp={e=>{handleKey(e)}} className="opn__open-store-modal-overlay">
             <div className="opn__open-store-modal">
                 <div className="opn__close-btn-container">
                     <div onClick={e=>{
-                        setFadeOut(prev => !prev)
-                        console.log(fadeOut)
-                        setTimeout(() =>{
-                            setShowRegModal({...showRegModal, openStore: false})
-                             console.log(fadeOut)
-                            //  setFadeOut(false)
-                            }, 700)
+                        setTimeout(() =>setShowRegModal({...showRegModal, openStore: false}), 4000)
                         // setShowRegModal({...showRegModal, openStore: false})
                         }} className="opn__close-btn">
                         <span className="opn__close-btn-text">X</span>

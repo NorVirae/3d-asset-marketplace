@@ -14,7 +14,7 @@ const SignUpModal = () => {
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     return(
 
-        <div className={`reg__sign-up-overlay ${fadeOut? "lgn__fade-out-anim" : ""}`}>
+        <div className={`reg__sign-up-overlay}>
             <section className="reg__sign-up-modal">
                 <div className="reg__close-btn-container">
                     <div 

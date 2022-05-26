@@ -6,31 +6,10 @@
     top: 200%;
     left: -80%;
     transform: skewX(25deg);
-    animation: .7s fadeItIn ease-in-out;
 }
 
-.lgn__fade-out-anim {
-    animation: .7s fadeItOut ease-in-out !important;
-
-}
 @keyframes fadeItIn {
-    0%{
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeItOut {
-    0%{
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    
 }
 
 .lgn__login-form{
@@ -168,8 +147,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: .7s fadeItIn ease-in-out;
-
 }
 
 .reg__sign-up-modal{
@@ -412,10 +389,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: .7s fadeItIn ease-in-out;
-
 }
-
 
 .opn__open-store-modal{
     background-color: #232230;

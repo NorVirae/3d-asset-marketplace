@@ -28,6 +28,7 @@ const OpenStoreModal = () => {
                              console.log(fadeOut)
                             //  setFadeOut(false)
                             }, 700)
+                        
                         // setShowRegModal({...showRegModal, openStore: false})
                         }} className="opn__close-btn">
                         <span className="opn__close-btn-text">X</span>

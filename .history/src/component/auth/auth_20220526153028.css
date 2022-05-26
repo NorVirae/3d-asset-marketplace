@@ -10,7 +10,7 @@
 }
 
 .lgn__fade-out-anim {
-    animation: .7s fadeItOut ease-in-out !important;
+    animation: .7s fadeItIn ease-in-out;
 
 }
 @keyframes fadeItIn {
