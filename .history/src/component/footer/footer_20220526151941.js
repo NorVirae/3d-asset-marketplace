@@ -121,7 +121,7 @@ const Footer = () => {
                     <p className="landing__footer-news-letter-info">
                         <p>Suscribe to the loooty news letter to get your weekly dose of
                         news,</p>
-                        <p> updates, tips and special offers.</p>
+                        <p> updates, tips and special offers.
                     </p>
 
                     <form className="landing__news-letter-form">
