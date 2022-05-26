@@ -15,7 +15,7 @@
 .landing__navbar{
     display: flex;
     justify-content: space-between;
-    max-width: 100rem;
+    max-width: 90rem;
     margin: auto;
     padding: 3rem 0;
 }
@@ -1159,7 +1159,7 @@
     display: flex;
     justify-content: space-around;
     padding: 3rem 1rem;
-    max-width: 110rem;
+    max-width: 90rem;
     margin: 0 auto;
     gap: 2rem;
 }

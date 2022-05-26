@@ -10,7 +10,7 @@ const Footer = () => {
 
     return <div className="landing__footer-inner">
                 <div className="landing__footer-socials">
-                    <LoootyLogo style={{height: "60px"}}/>
+                    <LoootyLogo style={{height: "4px"}}/>
                     <div className="landing__socials-container">
                         <RiInstagramFill style={{fontSize: "1.5rem", padding: ".2rem", borderRadius: ".4rem", color:"white", backgroundColor: "#D22D89"}}/>
                         <FaTwitter style={{fontSize: "1.5rem", padding: ".2rem", borderRadius: ".4rem", color:"#54ABEE", backgroundColor: "transparent"}}/>

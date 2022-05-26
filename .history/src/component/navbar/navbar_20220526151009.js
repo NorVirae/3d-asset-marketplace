@@ -21,7 +21,7 @@ const NavBar = ({openStore, style}) => {
 
             <ul className="landing__navbar-inner-container">
                 <li onClick={e=>setShowRegModal({...showRegModal, openStore:!showRegModal.openStore})} className={"landing__nav-item"}>
-                    <Link className="landing__nav-link" to={"/open/store"}>Open a Store</Link>
+                    <Link className="landing__nav-link" to={""}>Open a Store</Link>
                 </li>
 
                 <li className={"landing__nav-item"}>

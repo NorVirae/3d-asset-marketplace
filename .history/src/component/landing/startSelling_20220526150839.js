@@ -1,11 +1,9 @@
-import { useContext } from "react"
-import { RegisterContext } from "../auth/context/registerContext"
 
 
 
 
 const StartSelling = () => {
-    const [showRegModal, setShowRegModal] = useContext(RegisterContext)
+    const [showRegModal, setShowRegModal] = useContex(RegisterContext)
     return (
         <div className="landing__start-selling-container">
             <h1 className="landing__start-selling-text">

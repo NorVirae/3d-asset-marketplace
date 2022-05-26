@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { RegisterContext } from "../auth/context/registerContext"
 import LoginModal from "../auth/loginModal"
 import LoootyLogo from "../loootyLogo"
@@ -10,7 +10,7 @@ import SearchBar from "../search/SearchBar"
 const NavBar = ({openStore, style}) => {
     const [showLogin, setShowLogin] = useState(false)
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
-    const navigate = useNavigate()
+    const navigate = 
 
     return (
         <nav style={style} className="landing__navbar">
@@ -21,7 +21,7 @@ const NavBar = ({openStore, style}) => {
 
             <ul className="landing__navbar-inner-container">
                 <li onClick={e=>setShowRegModal({...showRegModal, openStore:!showRegModal.openStore})} className={"landing__nav-item"}>
-                    <Link className="landing__nav-link" to={"/open/store"}>Open a Store</Link>
+                    <Link className="landing__nav-link" to={"#"}>Open a Store</Link>
                 </li>
 
                 <li className={"landing__nav-item"}>
