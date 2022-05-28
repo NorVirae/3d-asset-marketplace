@@ -21,7 +21,7 @@ const OddCarousel = () => {
             
             console.log(oddActive)
           
-        }, 8000)
+        }, 10000)
         console.log(oddActive)
        
     }, [])

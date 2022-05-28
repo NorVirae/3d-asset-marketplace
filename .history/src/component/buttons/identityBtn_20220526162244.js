@@ -28,7 +28,7 @@ const IdentityBtn = ({text, type, style, dropDownList}) => {
                         right:"-15%"}}/>}
                     
                 </span>
-                {dropDownList && (showDropdown && <IdenttyBtnDropdown />)}
+                {!dropDownList && (showDropdown && <IdenttyBtnDropdown />)}
             </button>
         </div>
             // {/* </div> */}

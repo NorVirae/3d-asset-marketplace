@@ -20,7 +20,7 @@ const NavBar = ({openStore, style}) => {
                 {openStore && <SearchBar />}
 
             <ul className="landing__navbar-inner-container">
-                <li onClick={e=>navigate("/open/store")} className={"landing__nav-item"}>
+                <li onClick={e=>navigate()} className={"landing__nav-item"}>
                     <Link className="landing__nav-link" to={"/open/store"}>Open a Store</Link>
                 </li>
 

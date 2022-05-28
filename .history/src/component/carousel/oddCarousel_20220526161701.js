@@ -4,7 +4,7 @@ import OddCard from "../card/oddcard"
 
 
 const OddCarousel = () => {
-    const [oddActive, setOddActive] = useState(2)
+    const [oddActive, setOddActive] = useState(1)
     useEffect(()=>{
         let activeInterval = setInterval(()=>{
             console.log(oddActive + 1)
@@ -21,7 +21,7 @@ const OddCarousel = () => {
             
             console.log(oddActive)
           
-        }, 8000)
+        }, 4000)
         console.log(oddActive)
        
     }, [])
