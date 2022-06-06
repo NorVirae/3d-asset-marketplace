@@ -1,0 +1,13 @@
+.cart{
+    display: flex;
+    gap: 3rem;
+}
+
+
+.cart__items-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+

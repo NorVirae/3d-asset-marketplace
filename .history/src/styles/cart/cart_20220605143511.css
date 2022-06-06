@@ -1,0 +1,21 @@
+.cart{
+    display: flex;
+    gap: 3rem;
+}
+
+
+.cart__items-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__category-container{
+    display: flex;
+    gap: 1rem;
+}
+
+
+.cart__cat-item{
+    border-right: .2rem solid #2A2A38;
+    color: white;
+}

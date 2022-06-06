@@ -1,0 +1,27 @@
+.cart{
+    display: flex;
+    gap: 3rem;
+}
+
+.cart__inner-container{
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+
+.cart__items-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #15151C;
+}
+
+.cart__category-container{
+    display: flex;
+    gap: 1rem;
+}
+
+
+.cart__cat-item{
+    border-right: .2rem solid #2A2A38;
+    color: white;
+}

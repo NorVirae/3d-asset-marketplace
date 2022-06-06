@@ -1,0 +1,14 @@
+
+
+
+.buy__empty-divider{
+    height: 5rem;
+    width: 100%;
+    background-color: #15151C;
+    margin-bottom: 2rem;
+}
+
+.buy__buy-preview-container{
+    background-color: #15151C;
+    padding: 2rem 2;
+}

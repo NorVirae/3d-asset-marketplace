@@ -1,0 +1,8 @@
+
+
+
+const BuyPage = () => {
+    return (
+        < di
+    )
+}

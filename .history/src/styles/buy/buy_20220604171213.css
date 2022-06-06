@@ -1,0 +1,94 @@
+
+
+
+.buy__empty-divider{
+    height: 3rem;
+    width: 100%;
+    background-color: #15151C;
+    margin-bottom: 2rem;
+}
+
+.buy__buy-preview-container{
+    background-color: #15151C;
+
+    padding: 2rem 2rem;
+}
+
+.buy__buy-preview-container-inner{
+    max-width: 100rem;
+    margin: 2rem auto;
+    display: flex;
+    gap: 3rem;
+    color: white;
+    justify-content: space-between;
+}
+
+.buy__carousel-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    flex: 1;
+}
+
+.buy__property-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.buy__rating-container{
+    display: flex;
+    gap: .1rem;
+}
+
+.buy__rating-qty{
+    color: #6D6D91;
+}
+
+.buy__comments-cont{
+    display: flex;
+    gap: .4rem;
+    color: #6D6D91;
+
+}
+
+.buy__product-name{
+    color: white;
+}
+
+.buy__carousel-img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.buy__carousel-preview{
+    display: inline-block;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.buy__carousel-preview::-webkit-scrollbar{
+    /* display: none; */
+}
+
+.buy__carousel-preview::-webkit-scrollbar-thumb{
+    background-color: red;
+}
+
+.buy__carousel-preview::-webkit-scrollbar-track{
+    background-color: blue;
+}
+
+.buy_carousel-preview-img{
+    width: 25%;
+    height: 10rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+
+}
+
+.buy__file-purchase-container{
+    flex: 1;
+}
