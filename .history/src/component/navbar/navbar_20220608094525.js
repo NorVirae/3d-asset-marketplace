@@ -15,12 +15,11 @@ const NavBar = ({search, style}) => {
     return (
         <nav style={style} className="landing__navbar">
             <GoThreeBars style={{color: "white", fontSize: "2rem"}}/>
-            {search && <SearchBar />}
             <Link className="landing__navbar-brand" to = "/">
-                <LoootyLogo color={"white"}/>
+                <LoootyLogo color={"white"} style={{height: "px", backgroundColor: "red"}}/>
             </Link>
 
-                
+                {search && <SearchBar />}
 
             <ul className="landing__navbar-inner-container">
                 <li onClick={e=>navigate("/open/store")} className={"landing__nav-item"}>

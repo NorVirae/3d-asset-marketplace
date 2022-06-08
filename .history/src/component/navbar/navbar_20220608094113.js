@@ -4,7 +4,7 @@ import { RegisterContext } from "../auth/context/registerContext"
 import LoginModal from "../auth/loginModal"
 import LoootyLogo from "../loootyLogo"
 import SearchBar from "../search/SearchBar"
-import {GoThreeBars} from "react-icons/go"
+import {GoThreeBars}
 
 
 const NavBar = ({search, style}) => {
@@ -14,13 +14,12 @@ const NavBar = ({search, style}) => {
 
     return (
         <nav style={style} className="landing__navbar">
-            <GoThreeBars style={{color: "white", fontSize: "2rem"}}/>
-            {search && <SearchBar />}
+            <GoThreeBars />
             <Link className="landing__navbar-brand" to = "/">
-                <LoootyLogo color={"white"}/>
+                <LoootyLogo color={"white"} style={{height: "10px"}}/>
             </Link>
 
-                
+                {search && <SearchBar />}
 
             <ul className="landing__navbar-inner-container">
                 <li onClick={e=>navigate("/open/store")} className={"landing__nav-item"}>

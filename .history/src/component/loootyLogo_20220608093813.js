@@ -5,8 +5,8 @@
 
 const LoootyLogo = ({style, color="#8383b2"}) => {
     const logoCol = color
-    return <div style={{ width: "7rem", height: "100%", alignItems: "center", display:"flex", justifyContent:"center", ...style}} className="loooty-logo">
-                <svg style={{height: "100%", width: "100%"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123.32 77.72">
+    return <div style={{ width: "7rem", height: "100%", ...style}} className="loooty-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123.32 77.72">
                     <title>loooty logo</title>
                     <g id="Layer_2" data-name="Layer 2">
                         <g id="Layer_1-2" data-name="Layer 1">
