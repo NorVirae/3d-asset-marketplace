@@ -6,7 +6,7 @@ const SearchBar = ({short, style}) => {
 
     return (
             <section className='search__skew-container'>
-                <div style={{...style, width: short? "60%": "100%"}} className="search__group-container">
+                <div style={} className="search__group-container">
                     <button className="search__btn">
                         <span style={{transform: "skewX(25deg) scaleX(-1)"}}><FaSearch /></span>
                     </button>

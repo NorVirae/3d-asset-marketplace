@@ -36,8 +36,7 @@
 .search__group-container{
     position: relative;
     transform: skewX(-25deg);
-    /* width: 35vw; */
-    width: 100%;
+    width: 100;
     background-color: #15151C;
     border: .2rem solid #2B2B38;
 }

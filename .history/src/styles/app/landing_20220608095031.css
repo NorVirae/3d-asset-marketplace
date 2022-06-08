@@ -19,7 +19,6 @@
     max-width: 110rem;
     margin: auto;
     padding: 3rem 0;
-
 }
 
 .landing__navbar-brand{
@@ -79,7 +78,6 @@
 .landing__nav-link{
     color: #fff!important;
     transform: skewX(25deg);
-    font-size: .8rem;
 }
 
 

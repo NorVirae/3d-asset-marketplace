@@ -46,7 +46,7 @@ const OpenAStore = () => {
              { showRegModal.register && <SignUpModal /> }
              { showRegModal.openStore && <OpenStoreModal/>}
             <header>
-                <NavBar shortSearch={true} style={{paddingBottom: "0"}} search={true}/>
+                <NavBar short={} style={{paddingBottom: "0"}} search={true}/>
                 <CGBar slim={true}/>
                 
                 <IdentityBtnWithBG style={{backgroundColor: "#15151C"}} type={"light"} text={"Frequently Asked Questions"}/>

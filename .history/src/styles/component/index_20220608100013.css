@@ -40,6 +40,7 @@
     width: 100%;
     background-color: #15151C;
     border: .2rem solid #2B2B38;
+    background-color: red;
 }
 
 .search__btn{

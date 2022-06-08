@@ -7,20 +7,17 @@ import SearchBar from "../search/SearchBar"
 import {GoThreeBars} from "react-icons/go"
 
 
-const NavBar = ({search, style, shortSearch}) => {
+const NavBar = ({search, style}) => {
     const [showLogin, setShowLogin] = useState(false)
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const navigate = useNavigate()
 
     return (
         <nav style={style} className="landing__navbar">
-            <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
-                <GoThreeBars style={{color: "white", fontSize: "2rem"}}/>
-                {search && <SearchBar short={shortSearch}/>}
-            </div>
-            
+            <><GoThreeBars style={{color: "white", fontSize: "2rem"}}/></>
+            {search && <SearchBar />}
             <Link className="landing__navbar-brand" to = "/">
-                <LoootyLogo color={"white"} style={{marginLeft: shortSearch? "-90%": "200%"}}/>
+                <LoootyLogo color={"white"} style={{paddingLeft: "2"}}/>
             </Link>
 
                 

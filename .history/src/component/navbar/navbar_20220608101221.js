@@ -20,7 +20,7 @@ const NavBar = ({search, style, shortSearch}) => {
             </div>
             
             <Link className="landing__navbar-brand" to = "/">
-                <LoootyLogo color={"white"} style={{marginLeft: shortSearch? "-90%": "200%"}}/>
+                <LoootyLogo color={"white"} style={{marginLeft: shortSearch? "-100%": "200%"}}/>
             </Link>
 
                 

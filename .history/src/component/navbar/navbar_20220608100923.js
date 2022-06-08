@@ -16,11 +16,11 @@ const NavBar = ({search, style, shortSearch}) => {
         <nav style={style} className="landing__navbar">
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
                 <GoThreeBars style={{color: "white", fontSize: "2rem"}}/>
-                {search && <SearchBar short={shortSearch}/>}
+                {search && <SearchBar short={short}/>}
             </div>
             
             <Link className="landing__navbar-brand" to = "/">
-                <LoootyLogo color={"white"} style={{marginLeft: shortSearch? "-90%": "200%"}}/>
+                <LoootyLogo color={"white"} style={{paddingLeft: "2"}}/>
             </Link>
 
                 
