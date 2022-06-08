@@ -294,7 +294,7 @@ const BuyPage = () => {
     return (
         <div>
             <header>
-                <NavBar shortSearch={true} search={true}/>
+                <NavBar shortSearch search={true}/>
             </header>
 
             <main>
