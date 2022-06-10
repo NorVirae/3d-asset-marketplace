@@ -1,0 +1,127 @@
+
+
+.user__profile-preview-container{
+    background-image: url("../../assets/image/wooden-stilgt.webp");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 2rem;
+    position: relative;
+}
+
+.user__profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user__profile-img{
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.user__profile-name{
+    font-size: 1.6rem;
+}
+
+.user__profile-suscribers{
+    color: #8C92A3;
+    font-size: .9rem;
+}
+
+.user__profile-caution{
+    color: #8C92A3;
+    width: 20%;
+    text-align: center;
+}
+
+.user__location-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.user__change-cover-btn{
+    background-color: rgba(255, 255, 255, 0.253);
+    padding: 1rem 1.2rem;
+    border: none;
+    position: absolute;
+    right: 5%;
+    top: 80%;
+    transform: skewX(-20deg);
+    color: #A5B6C3;
+    gap: .4rem;
+}
+
+.user__change-cover-btn-inner{
+    transform: skewX(20deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user__product-action-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: red;
+    height: 10vh;
+    gap: 2rem;
+}
+
+.user__upload-products-btn{
+     transform: skewX(-20deg);
+     padding: 1rem 2rem;
+     background-color: #AF23AF;
+     border: none;
+     outline: .2rem solid #CF7BCF;
+     outline-offset: -.4rem;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 15vw;
+
+}
+
+.user__upload-products-btn-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    transform: skewX(20deg);
+    
+
+}
+
+.user__admin-visitor-container{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+}
+
+.user__admin-visitor-container{
+    display: flex;
+    background-color: #15151C;
+    padding: .2rem;
+    transform: skewX(-20deg);
+}
+
+.user__AV-btn{
+    background-color: #38383E;
+    color: white;
+    padding: .5rem 1rem;
+}

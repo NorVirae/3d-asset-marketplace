@@ -1,0 +1,39 @@
+
+
+.user__profile-preview-container{
+    background-image: url("../../assets/image/wooden-stilgt.webp");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 2rem;
+}
+
+.user__profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user__profile-img{
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.user__profile-name{
+    font-size: 1.6rem;
+}
+
+.user__profile-suscribers{
+    color: #8C92A3;
+    font-size: .9rem;
+}

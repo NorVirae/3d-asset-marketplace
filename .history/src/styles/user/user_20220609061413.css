@@ -1,0 +1,9 @@
+
+
+.user__profile-preview-container{
+    background-image: url("../../assets/image/wooden-stilgt.webp");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30vh;
+}

@@ -1,0 +1,221 @@
+
+
+.user__profile-preview-container{
+    background-image: url("../../assets/image/wooden-stilgt.webp");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 2rem;
+    position: relative;
+}
+
+.user__profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user__profile-img{
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.user__profile-name{
+    font-size: 1.6rem;
+}
+
+.user__profile-suscribers{
+    color: #8C92A3;
+    font-size: .9rem;
+}
+
+.user__profile-caution{
+    color: #8C92A3;
+    width: 20%;
+    text-align: center;
+}
+
+.user__location-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.user__change-cover-btn{
+    background-color: rgba(255, 255, 255, 0.253);
+    padding: .7rem 1.2rem;
+    border: none;
+    position: absolute;
+    right: 5%;
+    top: 80%;
+    transform: skewX(-20deg);
+    color: #A5B6C3;
+    gap: .4rem;
+}
+
+.user__profile-switch-admin-btn{
+    background-color: #FF9700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.user__profile-switch-admin-btn:active{
+    transform: scale(1.05);
+}
+
+.user__change-cover-btn-inner{
+    transform: skewX(20deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user__product-action-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 10vh;
+    gap: 2rem;
+}
+
+.user__upload-products-btn{
+     transform: skewX(-20deg);
+     padding: 1rem 2rem;
+     background-color: #AF23AF;
+     border: none;
+     outline: .2rem solid #CF7BCF;
+     outline-offset: -.4rem;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 15vw;
+
+}
+
+.user__upload-products-btn-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    transform: skewX(20deg);
+    
+
+}
+
+
+.user__admin-visitor-container{
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    display: flex;
+    background-color: #15151C;
+    padding: .2rem;
+    transform: skewX(-20deg);
+    border: .2rem solid #2B2B38;
+}
+
+.user__AV-btn{
+    padding: .3rem .8rem;
+    background-color: #15151C;
+    color: white;
+    display: flex;
+    cursor: pointer;
+    transition: transform .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+
+.user__AV-btn:active{
+    transform: scale(1.05);
+}
+
+.user__AV-btn-inner{
+    transform: skewX(20deg);
+}
+
+.user_AV-btn-active{
+    background-color: #38383E!important;
+    color: white;
+    /* padding: .5rem 1rem; */
+}
+
+.user_AV-btn-active-dup{
+    background-color: #FF9700;
+    color: white;
+
+}
+
+
+.user__admin-page-section-header-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user__tags-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #191921;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.user__feature-tags-container{
+    display: flex;
+    gap: 4rem;
+}
+
+.user__feature-tags-item{
+    color: #3E3E4F;
+    padding: .4rem 1rem;
+    cursor: pointer;
+    transition: color .4s ease-in-out, border-bottom .4s ease-in-out;
+}
+
+.user__feature-tags-item-active{
+    color: #D2D7DB;
+    border-bottom: .2rem solid #7c187a
+}
+
+.user__main-profile-form-group{
+    background-color: #15151C;
+}
+
+.user__main-profile-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.user__main-profile-form-group{
+    display: flex;
+    color: white;
+    gap: 4rem;
+}
+
+.user__main-profile-label{
+    width: 20vw;
+    padding: 1rem 2rem;
+}
