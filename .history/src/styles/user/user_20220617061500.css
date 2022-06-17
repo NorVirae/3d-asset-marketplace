@@ -1,0 +1,591 @@
+.user__profile-preview-container {
+    background-image: url("../../assets/image/wooden-stilgt.webp");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 2rem;
+    position: relative;
+}
+
+.user__profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user__profile-img {
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.user__profile-name {
+    font-size: 1.6rem;
+}
+
+.user__profile-suscribers {
+    color: #8C92A3;
+    font-size: .9rem;
+}
+
+.user__profile-caution {
+    color: #8C92A3;
+    width: 20%;
+    text-align: center;
+}
+
+.user__location-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.user__change-cover-btn {
+    background-color: rgba(255, 255, 255, 0.253);
+    padding: .7rem 1.2rem;
+    border: none;
+    position: absolute;
+    right: 5%;
+    top: 80%;
+    transform: skewX(-20deg);
+    color: #A5B6C3;
+    gap: .4rem;
+}
+
+.user__profile-switch-admin-btn {
+    background-color: #FF9700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.user__profile-switch-admin-btn:active {
+    transform: scale(1.05);
+}
+
+.user__change-cover-btn-inner {
+    transform: skewX(20deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user__product-action-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 10vh;
+    gap: 2rem;
+}
+
+.user__upload-products-btn {
+    transform: skewX(-20deg);
+    padding: 1rem 2rem;
+    background-color: #AF23AF;
+    border: none;
+    outline: .2rem solid #CF7BCF;
+    outline-offset: -.4rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+
+}
+
+.user__upload-products-btn-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    transform: skewX(20deg);
+
+
+}
+
+
+.user__admin-visitor-container {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    display: flex;
+    background-color: #15151C;
+    padding: .2rem;
+    transform: skewX(-20deg);
+    border: .2rem solid #2B2B38;
+}
+
+.user__AV-btn {
+    padding: .3rem .8rem;
+    background-color: #15151C;
+    color: white;
+    display: flex;
+    cursor: pointer;
+    transition: transform .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+
+.user__AV-btn:active {
+    transform: scale(1.05);
+}
+
+.user__AV-btn-inner {
+    transform: skewX(20deg);
+}
+
+.user_AV-btn-active {
+    background-color: #38383E !important;
+    color: white;
+    /* padding: .5rem 1rem; */
+}
+
+.user_AV-btn-active-dup {
+    background-color: #FF9700;
+    color: white;
+
+}
+
+
+.user__admin-page-section-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user__tags-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #191921;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.user__feature-tags-container {
+    display: flex;
+    gap: 4rem;
+}
+
+.user__feature-tags-item {
+    color: #3E3E4F;
+    padding: .4rem 1rem;
+    cursor: pointer;
+    transition: color .4s ease-in-out, border-bottom .4s ease-in-out;
+}
+
+.user__feature-tags-item-active {
+    color: #D2D7DB;
+    border-bottom: .2rem solid #7c187a
+}
+
+.user__main-profile-container {
+    background-color: #15151C;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+}
+
+.user__main-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.user__main-profile-form-group {
+    display: flex;
+    color: white;
+    gap: 4rem;
+}
+
+.user__main-profile-label {
+    width: 30vw;
+    padding: .5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #232230;
+    transform: skewX(-20deg);
+    color: #919198;
+}
+
+.user__main-profile-label-inner {
+    transform: skewX(20deg);
+}
+
+
+.user__main-profile-form-control-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__main-profile-skew-container {
+    transform: skewX(-20deg);
+    border: .2rem solid #2B2B38;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user__main-profile-form-control {
+    width: 50vw;
+    padding: 1rem 1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.user__main-profile-form-control-edit-btn {
+    padding: .5rem .9rem;
+    background-color: #38383E;
+    margin: .15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user__main-profile-info {
+    color: #3E3E4F;
+    font-size: .8rem;
+    display: flex;
+    justify-content: center;
+    margin-top: .3rem;
+}
+
+/* Inpage Library */
+
+.user__library {
+    background-color: #15151C;
+}
+
+.user__library-inner {
+    max-width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 4rem 0;
+}
+
+.user__library-card {
+    transform: skewX(-20deg);
+    color: white;
+    display: flex;
+}
+
+.user__library-card-img {
+    width: 13rem;
+    height: 7rem;
+    object-fit: cover;
+}
+
+.user__library-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user__library-card-name {
+    background-color: #353449;
+    color: #515170;
+    font-weight: bold;
+    width: 20rem;
+    padding: 1.5rem 1.4rem;
+    position: relative;
+    display: flex;
+}
+
+.user__upload-pg-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 6%;
+    top: 12%;
+    transform: skewX(20deg);
+}
+
+.user__library-card-pg-container {
+    background-color: transparent;
+    height: .4rem;
+    width: 100%;
+}
+
+.user__upload-pg-stats {
+    font-size: .7rem;
+    color: #232230;
+}
+
+.user__library-pg-bar {
+    background-color: #FF9700;
+    width: 50%;
+    height: 100%;
+}
+
+/* Messages In page */
+
+.user__messages {
+    background-color: #191921;
+    color: white;
+}
+
+.user__messages-inner {
+    /* grid-template-columns: 25% 75%; */
+    display: flex;
+    gap: 1rem;
+}
+
+.user__message-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex: .9;
+    background-color: #232230;
+}
+
+.user__message-sidebar-header {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem .5rem;
+    background-color: #191921;
+}
+
+.user__message-sidebar-header-item {
+    padding: .3rem 2rem;
+    border-bottom: .2rem solid #7C187A;
+    position: relative;
+}
+
+.user__message-notify {
+    width: .3rem;
+    height: .3rem;
+    background-color: #FF9700;
+    border-radius: 100%;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+
+.user__message-sidebar-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 3rem;
+}
+
+
+
+.user__message-friend {
+    transform: skewX(-20deg);
+    border: .1rem solid transparent;
+    background-color: #353449;
+    color: white;
+    padding: .4rem .8rem;
+    transition: border .4s ease-in-out, transform .4s ease-in-out;
+    cursor: pointer;
+}
+
+.user__message-friend:hover {
+    border: .1rem solid #7E7D86;
+
+}
+
+
+.user__message-friend-active {
+    border: .1rem solid #7E7D86;
+    transform: scaleX(1.1) skewX(-20deg);
+
+}
+
+.user__message-friend-inner {
+    display: flex;
+    transform: skewX(20deg);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user__message-friend-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+}
+
+.user__message-friend-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user__msg-friend-name {
+    font-size: 1rem;
+    display: flex;
+    gap: .8rem;
+    color: #ffff;
+}
+
+
+.user__msg-time {
+    color: #6D6D91;
+    font-size: .8rem;
+
+}
+
+.user__msg-preview {
+    color: #6D6D91;
+    font-size: .8rem;
+}
+
+.user__message-sidebar-footer {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user__message-trash-btn {
+    transform: skewX(-20deg);
+    border: .2rem solid #353449;
+    background-color: #232230;
+    color: #7B7A83;
+    padding: .7rem .7rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.user__message-trash-btn-logo {
+    transform: skewX(20deg);
+    color: #FF0000;
+
+}
+
+.user__message-trash-btn-text {
+    transform: skewX(20deg);
+
+}
+
+
+.user__main-msg-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 3;
+    background-color: #15151C;
+
+}
+
+.user__main-msg-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 1.4rem 2rem; */
+    background-color: #191921;
+    height: 3.8rem;
+}
+
+.user__main-msg-header-text{
+    border-left: .2rem solid #2B2B38;
+    padding: .5rem 4rem;
+    position: relative;
+    left: -1.5%;
+
+}
+
+.user__main-msg-body {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 3rem;
+}
+
+.user__main-sender-msg-cont {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.user__main-sender-msg-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+}
+
+.user__main-sender-msg-inner {
+    display: flex;
+    flex-direction: column;
+    background-color: #232230;
+    padding: 2rem 3rem;
+    width: 70%;
+
+}
+
+.user__main-sender-talk {
+    flex: 3;
+    color: 'white';
+}
+
+.user__main-sender-time {
+    flex: 1;
+    color: 'white';
+
+}
+
+
+/* receiver */
+
+.user__main-receiver-msg-cont {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    gap: 2rem;
+
+}
+
+.user__main-receiver-msg-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+}
+
+.user__main-receiver-msg-inner {
+    display: flex;
+    flex-direction: column;
+    background-color: #232230;
+    padding: 2rem 3rem;
+    width: 70%;
+}
+
+.user__main-receiver-talk {
+    flex: 3;
+    color: 'white';
+}
+
+.user__main-receiver-time {
+    flex: 1;
+    color: 'white';
+
+}
