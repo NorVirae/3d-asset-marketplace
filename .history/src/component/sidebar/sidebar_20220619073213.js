@@ -4,6 +4,7 @@ import { RegisterContext } from "../auth/context/registerContext"
 import LoginModal from "../auth/loginModal"
 import IdentityBtn from "../buttons/identityBtn"
 import LoootyLogo from "../loootyLogo"
+import "./sidebar.css"
 
 
 const Sidebar = () => {
@@ -29,14 +30,13 @@ const Sidebar = () => {
             </section>
 
             <section className="sidebar__tags">
-                <IdentityBtn style={{width: "100%"}} text={"Item"}/>
-                <IdentityBtn style={{width: "100%"}} text={"Item"}/>
-                <IdentityBtn style={{width: "100%"}} text={"Item"}/>
-                <IdentityBtn style={{width: "100%"}} text={"Item"}/>
-                <IdentityBtn style={{width: "100%"}} text={"Item"}/>
-                <IdentityBtn style={{width: "100%"}} text={"Item"}/>
+                <IdentityBtn text={"Item"}/>
+                <IdentityBtn />
+                <IdentityBtn />
+                <IdentityBtn />
+                <IdentityBtn />
+                <IdentityBtn />
 
-                
             </section>
 
             <section className="sidebar__footer">
@@ -46,19 +46,19 @@ const Sidebar = () => {
                 </div>
 
                 <ul className="sidebar__socials">
-                    <li className="sidebar__socials-item">Newsletter</li>
-                    <li className="sidebar__socials-item">Facebook</li>
+                    <li>Newsletter</li>
+                    <li>Facebook</li>
 
-                    <li className="sidebar__socials-item">Instagram</li>
+                    <li>Instagram</li>
 
-                    <li className="sidebar__socials-item">Twitter</li>
+                    <li>Twitter</li>
 
                 </ul>
 
                 <ul className="sidebar__bottom">
-                    <li className="sidebar__bottom-item">F.A.Q</li>
-                    <li className="sidebar__bottom-item">Terms of Service</li>
-                    <li className="sidebar__bottom-item">Privacy Policy</li>
+                    <li>F.A.Q</li>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
 
                 </ul>
 

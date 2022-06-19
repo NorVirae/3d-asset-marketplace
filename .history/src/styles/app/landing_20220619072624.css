@@ -7,7 +7,6 @@
 .landing__app-container{
     position: relative;
     flex: 4;
-    width: 80vw;
     /* overflow-y: scroll; */
 }
 
@@ -69,11 +68,10 @@
     /* max-width: 110rem; */
     width: 100%;
     margin: auto;
-    padding: 2rem 2rem;
+    padding: 3rem 2rem;
     top: 0%;
     left: 0%;
     z-index: 5;
-    transition: background-color .4s ease-in-out, width .4s ease-in-out;
 
 }
 

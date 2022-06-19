@@ -57,8 +57,8 @@ const Sidebar = () => {
 
                 <ul className="sidebar__bottom">
                     <li className="sidebar__bottom-item">F.A.Q</li>
-                    <li className="sidebar__bottom-item">Terms of Service</li>
-                    <li className="sidebar__bottom-item">Privacy Policy</li>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
 
                 </ul>
 

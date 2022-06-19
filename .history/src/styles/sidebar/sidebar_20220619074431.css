@@ -1,0 +1,18 @@
+.sidebar{
+    background-color: #1B1A24;
+    flex: 4;
+    width: 0vw;
+    display: flex;
+    flex-direction: column;
+    /* padding: .3rem 2rem; */
+    /* height: ; */
+}
+
+.sidebar__auth-sec{
+    padding: 4rem;
+}
+
+.sidebar__tags{
+    padding: 4rem;
+
+}

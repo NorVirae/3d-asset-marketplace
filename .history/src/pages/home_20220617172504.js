@@ -99,7 +99,7 @@ const Home = () => {
     return (
         <section className="landing__main-app">
 
-            <Sidebar />
+            {/* <Sidebar /> */}
             <div className="landing__app-container">
                 { showRegModal.register && <SignUpModal /> }
                 { showRegModal.openStore && <OpenStoreModal/>}
