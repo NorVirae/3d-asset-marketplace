@@ -34,7 +34,6 @@
     position: sticky;
     top: 60%;
     display: flex;
-    flex-direction: column;
     gap: 2rem;
 }
 
@@ -42,18 +41,5 @@
     display: flex;
     gap: 2rem;
     align-items: center;
-
-}
-
-.sidebar__socials{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.sidebar__bottom{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 
 }
