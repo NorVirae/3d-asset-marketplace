@@ -77,7 +77,7 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
     })
 
     return (
-        <nav style={{...style, background: `${yScroll>50?"#232230": "transparent"}`, padding: `${yScroll > 50? "1rem": "2rem"}`, width: `${yScroll > 400? "80vw": "100%"}`, right: `${yScroll > 400? "-18%": "100%"}`, position: `${yScroll > 400? "fixed": "sticky"}`}} className="landing__navbar">
+        <nav style={{...style, background: `${yScroll>50?"#232230": "transparent"}`, padding: `${yScroll > 50? "1rem": "2rem"}`, width: `${yScroll > 400? "80vw": "100%"}`, right: `${yScroll > 400? "-30%": "100%"}`, position: `${yScroll > 400? "fixed": "sticky"}`}} className="landing__navbar">
             <div className="landing__sidebar-toggle" style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
                 <GoThreeBars style={{color: "white", fontSize: "2rem"}}/>
                 {search && <SearchBar short={shortSearch}/>}
