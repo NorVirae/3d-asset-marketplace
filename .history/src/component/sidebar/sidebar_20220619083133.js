@@ -8,9 +8,7 @@ import { FaMailBulk, FaTwitter } from "react-icons/fa"
 import { FaFacebook } from "react-icons/fa"
 import { FaInstagramSquare } from "react-icons/fa"
 import { FaQq } from "react-icons/fa"
-import { FaTerminal } from "react-icons/fa"
-import { FaPrint } from "react-icons/fa"
-
+import { FaQq } from "react-icons/fa"
 
 
 
@@ -68,8 +66,8 @@ const Sidebar = () => {
 
                 <ul className="sidebar__bottom">
                     <li className="sidebar__bottom-item"><FaQq/>F.A.Q</li>
-                    <li className="sidebar__bottom-item"><FaTerminal/>Terms of Service</li>
-                    <li className="sidebar__bottom-item"><FaPrint/>Privacy Policy</li>
+                    <li className="sidebar__bottom-item"><FaMailBulk/>Terms of Service</li>
+                    <li className="sidebar__bottom-item"><FaMailBulk/>Privacy Policy</li>
 
                 </ul>
 

@@ -68,8 +68,8 @@ const Sidebar = () => {
 
                 <ul className="sidebar__bottom">
                     <li className="sidebar__bottom-item"><FaQq/>F.A.Q</li>
-                    <li className="sidebar__bottom-item"><FaTerminal/>Terms of Service</li>
-                    <li className="sidebar__bottom-item"><FaPrint/>Privacy Policy</li>
+                    <li className="sidebar__bottom-item"><FaMailBulk/>Terms of Service</li>
+                    <li className="sidebar__bottom-item"><FaMailBulk/>Privacy Policy</li>
 
                 </ul>
 

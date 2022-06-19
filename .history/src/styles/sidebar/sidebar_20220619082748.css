@@ -52,8 +52,7 @@
 }
 
 .sidebar__socials-item{
-    display: flex;
-    gap: 1rem;
+    
 }
 
 .sidebar__bottom{
@@ -61,9 +60,4 @@
     flex-direction: column;
     gap: 1rem;
 
-}
-
-.sidebar__bottom-item{
-    display: flex;
-    gap: 1rem;
 }
