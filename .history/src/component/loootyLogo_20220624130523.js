@@ -39,7 +39,7 @@ const LoootyLogo = ({style, color="#8383b2"}) => {
         
         window.addEventListener("scroll", (e) =>handleScroll(e));
 
-    },[])
+    },)
 
     return <div style={{ width: "7rem", height: "100%", alignItems: "center", display:"flex", justifyContent:"center", ...style}} className="loooty-logo">
                 <svg style={{height: "100%", width: "100%"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123.32 77.72">
