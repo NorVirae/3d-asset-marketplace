@@ -7,7 +7,7 @@ import {FaEdit} from "react-icons/fa"
 import {FaPlusCircle} from "react-icons/fa"
 import {MdCloudDownload} from "react-icons/md"
 import {GiPriceTag} from "react-icons/gi"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import {MdAttachFile} from "react-icons/md"
 import {RiMailSendFill} from "react-icons/ri"
 
@@ -520,12 +520,6 @@ const User = () => {
     const [toggleVisAdmin, setToggleVisAdmin] = useState(true)
     const [selectedTag, setSelectedTag] = useState("feature")//Enum Types: feature, recent sellers, popular
     const [activeInpageHeader, setActiveInPageHeader] = useState('messages')//Enum types: store, profile, library, messages, sales, settings
-
-    useEffect(() => {
-        if (!toggleVisAdmin){
-            setActiveInPageHeader("store")
-        }
-    }, [toggleVisAdmin])
     return (
         <section>
             <header>
@@ -593,13 +587,12 @@ const User = () => {
                 
                     <IdentityBtn onClick={e=>setActiveInPageHeader("store")} 
                     style={{padding: "1rem 6rem", 
-                    marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
                     backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
                     color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
                     borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
                     dropDownList={true} text={"STORE"}/>
 
-                    { toggleVisAdmin && <><IdentityBtn onClick={e=>setActiveInPageHeader("profile")} 
+                    { toggleVisAdmin<IdentityBtn onClick={e=>setActiveInPageHeader("profile")} 
                     style={{padding: "1rem 6rem", 
                     backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
                     color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
@@ -632,7 +625,7 @@ const User = () => {
                     backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
                     color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
                     borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
-                    text={"SETTINGS"}/></>}
+                    text={"SETTINGS"}/>
                     
 
                 </section>

@@ -521,11 +521,7 @@ const User = () => {
     const [selectedTag, setSelectedTag] = useState("feature")//Enum Types: feature, recent sellers, popular
     const [activeInpageHeader, setActiveInPageHeader] = useState('messages')//Enum types: store, profile, library, messages, sales, settings
 
-    useEffect(() => {
-        if (!toggleVisAdmin){
-            setActiveInPageHeader("store")
-        }
-    }, [toggleVisAdmin])
+    useEffect(())
     return (
         <section>
             <header>
@@ -593,7 +589,6 @@ const User = () => {
                 
                     <IdentityBtn onClick={e=>setActiveInPageHeader("store")} 
                     style={{padding: "1rem 6rem", 
-                    marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
                     backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
                     color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
                     borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
