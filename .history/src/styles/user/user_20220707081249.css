@@ -85,7 +85,7 @@
     transform: skewX(20deg);
     display: flex;
     justify-content: center;
-    gap: .6rem;
+    gap: .5rem;
     align-items: center;
 }
 
