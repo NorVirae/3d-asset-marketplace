@@ -21,7 +21,7 @@ const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
             })
         }
 
-        return text
+        return 
     }
     return (
         // <section style={style} className="landing__earn-more-container">
