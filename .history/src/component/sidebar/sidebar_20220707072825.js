@@ -25,7 +25,7 @@ const Sidebar = () => {
     return (
         <section className="sidebar">
             <section className="sidebar__auth-sec">
-                <li style={{width: "100%"}} onClick={e=>setShowRegModal({...showRegModal, login:!showRegModal.register})} className={"landing__nav-item login"}>
+                <li style={{width: "100%"}} onClick={e=>setShowRegModal({...showRegModal, register:!showRegModal.register})} className={"landing__nav-item login"}>
                         <Link className="landing__nav-link" to={"#"}>
                             Sign In
                         </Link>

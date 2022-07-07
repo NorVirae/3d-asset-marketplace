@@ -29,7 +29,7 @@ const Sidebar = () => {
                         <Link className="landing__nav-link" to={"#"}>
                             Sign In
                         </Link>
-                        {/* {showLogin &&<LoginModal onClick={e=>e.stopPropagation()}/>} */}
+                        {showLogin &&<LoginModal onClick={e=>e.stopPropagation()}/>}
 
                     </li>
 

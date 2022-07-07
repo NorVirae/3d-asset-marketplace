@@ -105,7 +105,7 @@ const Home = () => {
             <div className="landing__app-container">
                 { showRegModal.isSidebarOpen && <section onClick={() => setShowRegModal(old => ({...old, isSidebarOpen: false}))} className="landing__overlay"></section>}
                 { showRegModal.register && <SignUpModal /> }
-                { showRegModal.login && <SignInModal /> }
+                { showRegModal.sign && <SignInModal /> }
 
                 { showRegModal.openStore && <OpenStoreModal/>}
 

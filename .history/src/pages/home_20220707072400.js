@@ -27,7 +27,6 @@ import OpenStoreModal from "../component/auth/openStoreModal"
 import OpenAStoreMain from "../component/sections/openAStoreMain"
 import CGBar from "../component/card/cbBar"
 import Sidebar from "../component/sidebar/sidebar"
-import SignInModal from "../component/auth/signInModal"
 
 
 
@@ -105,7 +104,7 @@ const Home = () => {
             <div className="landing__app-container">
                 { showRegModal.isSidebarOpen && <section onClick={() => setShowRegModal(old => ({...old, isSidebarOpen: false}))} className="landing__overlay"></section>}
                 { showRegModal.register && <SignUpModal /> }
-                { showRegModal.login && <SignInModal /> }
+                { showRegModal.register && <SignUpModal /> }
 
                 { showRegModal.openStore && <OpenStoreModal/>}
 

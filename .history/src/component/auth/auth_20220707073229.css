@@ -1,10 +1,10 @@
 .lgn__login-modal{
-    width: 25.2vw;
+    width: 29.2vw;
     position: absolute;
     z-index: 3;
     background-color: #38383E;
     top: 200%;
-    left: -170%;
+    left: -40%;
     transform: skewX(25deg);
     animation: .7s fadeItIn ease-in-out;
 }
@@ -50,7 +50,7 @@
 .lgn__form-control{
     padding: 1.5rem 2rem;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.2rem;
     background-color: transparent;
     border: none;
     transform: skewX(25deg);
@@ -146,7 +146,7 @@
 .lgn__arrow{
     width: 35px;
     height: 35px;
-    left: 65%;
+    left: 55%;
     top: -2%;
     background-color: #38383E;
     position: absolute;
