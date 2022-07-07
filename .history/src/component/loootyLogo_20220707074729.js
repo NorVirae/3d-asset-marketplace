@@ -114,7 +114,7 @@ export const LoootyLogo = ({style, color="#8383b2"}) => {
                 yBottomTwo: {x:0, y:0, scaleX:1, scaleY:1, display: "block"},
                 yBottomOne:{x:0, y:0, scaleX:1, scaleY:1, display: "block"},
             }))
-        }if (scrollLevel < 10 && scrollLevel > 1){
+        }if (scrollLevel < 10 ){
             setTextParts(old => ({
                 ...old,
                 lBottomRight: {x:0, y:0, scaleX:1, scaleY:1, display: "block"},
@@ -133,7 +133,7 @@ export const LoootyLogo = ({style, color="#8383b2"}) => {
                 yBottomTwo: {x:0, y:0, scaleX:1, scaleY:1, display: "block"},
                 yBottomOne:{x:7, y:-15, scaleX:1, scaleY:1, display: "block"},
             }))
-        }if (scrollLevel < 30 && scrollLevel > 10){
+        }if (scrollLevel < 30){
             setTextParts(old => ({
                 ...old,
                 lBottomRight: {x:0, y:0, scaleX:1, scaleY:1, display: "block"},
@@ -152,7 +152,7 @@ export const LoootyLogo = ({style, color="#8383b2"}) => {
                 yBottomTwo: {x:3, y:-6, scaleX:1, scaleY:1, display: "block"},
                 yBottomOne:{x:7, y:-15, scaleX:1, scaleY:1, display: "block"},
             }))
-        }if (scrollLevel < 50 && scrollLevel > 30){
+        }if (scrollLevel < 50 ){
             setTextParts(old => ({
                 ...old,
                 lBottomRight: {x:0, y:0, scaleX:1, scaleY:1, display: "block"},
@@ -172,7 +172,7 @@ export const LoootyLogo = ({style, color="#8383b2"}) => {
                 yBottomOne:{x:5, y:-16, scaleX:1, scaleY:1, display: "block"},
 
             }))
-        }if (scrollLevel < 70 && scrollLevel > 50){
+        }if (scrollLevel < 70 ){
             setTextParts(old => ({
                 ...old,
                 lBottomRight: {x:0, y:0, scaleX:1, scaleY:1, display: "block"},
@@ -192,7 +192,7 @@ export const LoootyLogo = ({style, color="#8383b2"}) => {
                 yBottomOne:{x:-1, y:-17.4, scaleX:1, scaleY:1, display: "block"},
 
             }))
-        }if (scrollLevel < 90 && scrollLevel > 70){
+        }if (scrollLevel < 90 ){
             setTextParts(old => ({
                 ...old,
                 lBottomRight: {x:0, y:0, scaleX:1, scaleY:1, display: "block"},
@@ -246,7 +246,7 @@ export const LoootyLogo = ({style, color="#8383b2"}) => {
                 yBottomThree: {x:-11., y:-3, scaleX:1, scaleY:1, display: "none"},
                 yBottomTwo: {x:-9, y:-8, scaleX:1, scaleY:1, display: "none"},
                 yBottomOne:{x:-6, y:-17.4, scaleX:1, scaleY:1, display: "none"}}))
-        }if ( scrollLevel > 140){
+        }if (scrollLevel < 160 && scrollLevel > 140){
             setTextParts(old => ({
                 ...old,
                 lBottomRight: {x:20, y:0, scaleX:.5, scaleY:1, display: "none"},
