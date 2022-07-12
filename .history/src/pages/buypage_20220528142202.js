@@ -1,8 +1,0 @@
-
-
-
-const BuyPage = () => {
-    return (
-        <
-    )
-}
