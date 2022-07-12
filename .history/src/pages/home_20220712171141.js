@@ -101,24 +101,22 @@ const Home = () => {
         )
     }
 
-   const  [slideIn, setSlideIn] = useState(false)
+    const closeSidebarWithDelay = () => {
+        const timeout = setTimeout(2000, () => {
+            console.log("CALLEd")
+            setShowRegModa(old => ({...old, isSidebarOpen: false}))
 
-    
+        })
+
+        clearTimeout(timeout)
+    }
+
     return (
         <section className="landing__main-app">
 
-            {showRegModal.isSidebarOpen && <Sidebar className={slideIn? 'fade-out-sidebar': ''} />}
+            {showRegModal.isSidebarOpen && <Sidebar />}
             <div className="landing__app-container">
-                { showRegModal.isSidebarOpen && <section onClick={() => {
-                    setSlideIn(old => true)
-                    setTimeout(() =>{
-                        setSlideIn(false)
-                        setShowRegModal({...showRegModal, isSidebarOpen: false})
-                        //  setFadeOut(false)
-                        }, 700)
-
-
-                }} className= {`landing__overlay ${slideIn? "landing__overlay-dismiss": ''}`}></section>}
+                { showRegModal.isSidebarOpen && <section onClick={() => closeSidebarWithDelay()} className="landing__overlay"></section>}
                 { showRegModal.register && <SignUpModal /> }
                 { showRegModal.login && <SignInModal /> }
 

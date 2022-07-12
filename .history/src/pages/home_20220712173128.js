@@ -118,7 +118,7 @@ const Home = () => {
                         }, 700)
 
 
-                }} className= {`landing__overlay ${slideIn? "landing__overlay-dismiss": ''}`}></section>}
+                }} className="landing__overlay"></section>}
                 { showRegModal.register && <SignUpModal /> }
                 { showRegModal.login && <SignInModal /> }
 

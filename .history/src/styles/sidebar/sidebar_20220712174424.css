@@ -36,7 +36,7 @@
 }
 
 .fade-out-sidebar{
-    animation: .69s fadeOutSidebar linear;
+    animation: 1.3s fadeOutSidebar linear;
 
 }
 

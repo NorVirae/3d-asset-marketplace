@@ -36,23 +36,21 @@
 }
 
 .fade-out-sidebar{
-    animation: .69s fadeOutSidebar linear;
+    animation: .5s fadeInSidebar ease-in-out;
 
 }
 
 @keyframes fadeOutSidebar {
     0%{
         opacity: 1;
+        width: 1rem;
+    }
+
+    70%{
         width: 20%;
     }
 
-    20%{
-        opacity: 0;
-        
-    }
-
     100%{
-        width: 0%;
         opacity: 0;
        
     }

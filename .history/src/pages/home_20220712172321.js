@@ -107,18 +107,17 @@ const Home = () => {
     return (
         <section className="landing__main-app">
 
-            {showRegModal.isSidebarOpen && <Sidebar className={slideIn? 'fade-out-sidebar': ''} />}
+            {showRegModal.isSidebarOpen && <Sidebar className={slideIn? 'fade-out-sidebar'} />}
             <div className="landing__app-container">
                 { showRegModal.isSidebarOpen && <section onClick={() => {
-                    setSlideIn(old => true)
+                    setSlideIn(!slideIn)
                     setTimeout(() =>{
-                        setSlideIn(false)
                         setShowRegModal({...showRegModal, isSidebarOpen: false})
                         //  setFadeOut(false)
                         }, 700)
 
 
-                }} className= {`landing__overlay ${slideIn? "landing__overlay-dismiss": ''}`}></section>}
+                }} className="landing__overlay"></section>}
                 { showRegModal.register && <SignUpModal /> }
                 { showRegModal.login && <SignInModal /> }
 

@@ -13,48 +13,15 @@
     animation: .5s fadeInSidebar ease-in-out;
 }
 
-.sidebar__inner-container{
-    width: 100%;
-    height: 100%;
-    /* overflow-x: scroll; */
-}
-
 @keyframes fadeInSidebar {
     0%{
         opacity: 0;
         width: 1rem;
     }
 
-    70%{
-        width: 20%;
-    }
-
     100%{
         opacity: 1;
-       
-    }
-}
-
-.fade-out-sidebar{
-    animation: .69s fadeOutSidebar linear;
-
-}
-
-@keyframes fadeOutSidebar {
-    0%{
-        opacity: 1;
-        width: 20%;
-    }
-
-    20%{
-        opacity: 0;
         
-    }
-
-    100%{
-        width: 0%;
-        opacity: 0;
-       
     }
 }
 

@@ -17,14 +17,13 @@ import { Link as Links} from "react-scroll"
 
 
 
-const Sidebar = ({className}) => {
+const Sidebar = () => {
     const [showLogin, setShowLogin] = useState(false)
     const [activeSidebar, setActiveSidebar] = useState(1)
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const navigate = useNavigate()
-
     return (
-        <section className={`sidebar ${className}`}>
+        <section className="sidebar">
             <div className="sidebar__inner-container">
 
                 <section className="sidebar__auth-sec">
@@ -78,8 +77,7 @@ const Sidebar = ({className}) => {
                     </ul>
 
                 </section>
-            </div>
-
+                
 
         </section>
     )

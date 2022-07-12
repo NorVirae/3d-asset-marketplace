@@ -1,8 +1,0 @@
-
-
-
-const SignUpModal = () => {
-    return(
-        <div
-    )
-}

@@ -28,17 +28,13 @@
 }
 
 .landing__overlay-dismiss {
-    animation: .7s overlayFadeOut ease-in-out;
+    animation: .5s fadeInSidebar ease-in-out;
 
 }
 
 @keyframes overlayFadeOut {
     0%{
         opacity: 1;
-    }
-
-    100%{
-        opacity: 0;
     }
 }
 

@@ -36,7 +36,7 @@
 }
 
 .fade-out-sidebar{
-    animation: .69s fadeOutSidebar linear;
+    animation: .7s fadeOutSidebar ease-in-out;
 
 }
 
@@ -46,8 +46,7 @@
         width: 20%;
     }
 
-    20%{
-        opacity: 0;
+    70%{
         
     }
 

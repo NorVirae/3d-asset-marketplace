@@ -115,7 +115,7 @@ const Home = () => {
                         setSlideIn(false)
                         setShowRegModal({...showRegModal, isSidebarOpen: false})
                         //  setFadeOut(false)
-                        }, 700)
+                        }, 500)
 
 
                 }} className= {`landing__overlay ${slideIn? "landing__overlay-dismiss": ''}`}></section>}

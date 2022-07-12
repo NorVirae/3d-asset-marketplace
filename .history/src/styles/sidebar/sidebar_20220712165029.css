@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    ove
     /* background-color: red; */
     padding: .3rem .5rem;
     /* height: ; */
@@ -25,36 +26,9 @@
         width: 1rem;
     }
 
-    70%{
-        width: 20%;
-    }
-
     100%{
         opacity: 1;
-       
-    }
-}
-
-.fade-out-sidebar{
-    animation: .69s fadeOutSidebar linear;
-
-}
-
-@keyframes fadeOutSidebar {
-    0%{
-        opacity: 1;
-        width: 20%;
-    }
-
-    20%{
-        opacity: 0;
-        
-    }
-
-    100%{
-        width: 0%;
-        opacity: 0;
-       
+        width: 4rem;
     }
 }
 
