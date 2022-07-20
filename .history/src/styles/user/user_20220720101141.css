@@ -1398,37 +1398,14 @@
 .upload__tags-container{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 
 .upload__tags-inner-container{
     display: grid;
-    gap: .2rem;
     grid-template-columns: repeat(4, 1fr);
-    width: 90%;
+    width: 80;
 }
 
 .upload__tag-btn{
     padding: .5rem 1rem;
-    background-color: #232230;
-    color: #69698B;
-    border: none;
-}
-
-.upload__tags-title-container{
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-.upload__tags-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    color: #D5DADE;
-}
-
-.upload__tag-select{
-    color: #5E5E7C;
-    font-size: .9rem;
 }

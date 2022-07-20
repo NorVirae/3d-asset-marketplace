@@ -53,19 +53,22 @@ const UploadPage = () => {
                             </div>
 
                             <div className="upload__image-item">
-                                <FaPlusCircle className="upload__image-iconister" />
+                            <FaPlusCircle className="upload__image-iconister" />
+
                                 <p>Preview Image</p>
                             </div>
                             <div className="upload__image-item">
-                                <FaPlusCircle className="upload__image-iconister" />
+                            <FaPlusCircle className="upload__image-iconister" />
+
                                 <p>Preview Image</p>
                             </div>
                             <div className="upload__image-item">
-                                <FaPlusCircle className="upload__image-iconister" />
+                            <FaPlusCircle className="upload__image-iconister" />
+
                                 <p>Preview Image</p>
                             </div>
                             <div className="upload__image-item">
-                                <FaPlusCircle className="upload__image-iconister" />
+                                <FaPlusCircle />
                                 <p>Preview Image</p>
                             </div>
                         </div>   
@@ -74,24 +77,25 @@ const UploadPage = () => {
             </section>
 
             <section className="upload__description-section">
-                <IdentityBtn style={{background: "#232230", fontSize: "1rem", padding: ".8rem 5rem"}} text={"Description"} />
+                <IdentityBtn text={"Description"} />
                 <section className="upload__text-area-container">
-                    <textarea rows={12} cols={70} className="upload__text-area">
+                    <textarea className="upload__text-area">
                     </textarea>
                     <button className="upload__text-area-btn">
-                        <MdEdit/>
+                        <FaEdit/>
                     </button>
                 </section>
 
                 <section className="upload__tags-container">
                     <div className="upload__tags-title-container">
                         <div className="upload__tags-title">
-                            <FaTag style={{fontSize: "1.5rem", color: "#EE8E03"}}/> Tags
+                            <FaTag /> Tags
                         </div>
-                        <p className="upload__tag-select">Choose up to five <span style={{color: "#B31FA6", fontSize: "1.1rem"}}>2/</span>5 tags</p>
+                        <p>Choose up to five 2/5 tags</p>
                     </div>
 
-                    <section className="upload__tags-inner-container">
+                    <section className="upload__tags-container">
+                        <button className="upload__tag-btn">3D Assets</button>
                         <button className="upload__tag-btn">3D Assets</button>
                         <button className="upload__tag-btn">3D Assets</button>
                         <button className="upload__tag-btn">3D Assets</button>

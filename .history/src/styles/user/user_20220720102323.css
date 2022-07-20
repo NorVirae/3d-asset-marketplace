@@ -1418,17 +1418,11 @@
 .upload__tags-title-container{
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 1rem;
 }
 .upload__tags-title{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
-    color: #D5DADE;
-}
-
-.upload__tag-select{
-    color: #5E5E7C;
-    font-size: .9rem;
+    gap: 1rem;
 }

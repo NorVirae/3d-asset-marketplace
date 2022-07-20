@@ -88,7 +88,7 @@ const UploadPage = () => {
                         <div className="upload__tags-title">
                             <FaTag style={{fontSize: "1.5rem", color: "#EE8E03"}}/> Tags
                         </div>
-                        <p className="upload__tag-select">Choose up to five <span style={{color: "#B31FA6", fontSize: "1.1rem"}}>2/</span>5 tags</p>
+                        <p className="upload__tag">Choose up to five 2/5 tags</p>
                     </div>
 
                     <section className="upload__tags-inner-container">
