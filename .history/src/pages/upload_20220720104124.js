@@ -105,11 +105,7 @@ const UploadPage = () => {
 
                 <section className="upload__main-file-upload-container">
                     <div className="upload__main-files-upload-twin">
-                        <div className="upload__main-files-upload-text">
-                            <FaPlusCircle /> Upload Files
-                        </div>
-                        <input className="upload__main-files-upload" type={"file"}/>
-                    </div>
+                    <input className="upload__main-files-upload" type={"file"}/>
                 </section>
 
                 <section className="upload__price-section">

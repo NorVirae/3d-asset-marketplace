@@ -113,7 +113,7 @@ const UploadPage = () => {
                 </section>
 
                 <section className="upload__price-section">
-                    <div className="upload__price-inner-section">
+                    <div className="nupload__price-inner-sectio">
                         <h3>Price</h3>
                         <div className="upload__form-group">
                             <span> Basic License</span>

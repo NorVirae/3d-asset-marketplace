@@ -1209,9 +1209,9 @@
 .upload__mock-up{
     display: flex;
     gap: 3rem;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #15151C;
-    padding: 3rem 0;
+    padding: 3rem;
 }
 
 .upload__title-section{
@@ -1318,10 +1318,10 @@
 
 .upload__image-preview{
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     padding: 2rem 0rem;
     padding-top: 0rem;
-    width: 45vw;
+    width: 50vw;
     overflow-x: scroll;
 }
 
@@ -1405,7 +1405,7 @@
     display: grid;
     gap: .2rem;
     grid-template-columns: repeat(4, 1fr);
-    width: 75%;
+    width: 90%;
 }
 
 .upload__tag-btn{
@@ -1434,48 +1434,10 @@
 }
 
 .upload__main-file-upload-container{
-    width: 76%;
-    height: 8rem;
+
 }
 
 .upload__main-files-upload-twin{
     border: .2rem solid #2B2B38;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.upload__main-files-upload-text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.upload__main-files-upload{
-    opacity: 0;
-    border: .2rem dotted blue;
-    position: absolute;
-    top: 7%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
-}
-
-.upload__price-section{
-    width: 76%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #232230;
-    padding: 2rem;
-
-}
-
-.upload__price-inner-section{
-    display: flex;
-    gap: 2rem;
 }

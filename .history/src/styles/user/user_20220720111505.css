@@ -1434,7 +1434,7 @@
 }
 
 .upload__main-file-upload-container{
-    width: 76%;
+    width: 8%;
     height: 8rem;
 }
 
@@ -1465,7 +1465,6 @@
 }
 
 .upload__price-section{
-    width: 76%;
     display: flex;
     flex-direction: column;
     justify-content: center;

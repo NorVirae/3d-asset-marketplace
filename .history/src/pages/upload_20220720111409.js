@@ -76,7 +76,7 @@ const UploadPage = () => {
             <section className="upload__description-section">
                 <IdentityBtn style={{background: "#232230", fontSize: "1rem", padding: ".8rem 5rem"}} text={"Description"} />
                 <section className="upload__text-area-container">
-                    <textarea rows={12} cols={70} className="upload__text-area">
+                    <textarea rows={12} cols={80} className="upload__text-area">
                     </textarea>
                     <button className="upload__text-area-btn">
                         <MdEdit/>
