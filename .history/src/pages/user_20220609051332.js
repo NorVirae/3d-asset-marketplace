@@ -1,9 +1,0 @@
-
-
-
-const User = () => {
-
-    return (
-        <sectin
-    )
-}
