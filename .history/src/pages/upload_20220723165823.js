@@ -135,7 +135,7 @@ const UploadPage = () => {
                         </div>
 
                         <div className="upload__form-group">
-                            <span className="upload__license-text"> Commercial License</span>
+                            <span className="upload__license-text"> Basic License</span>
                             <section className="upload__skew-container">
                                 <div className="upload__main-control-container">
                                     <div className="upload__control-switch-container">
@@ -153,6 +153,17 @@ const UploadPage = () => {
                             </section>
                         </div>
                         
+
+                        <div className="upload__form-group">
+                            <span className="upload__license-text"> Commercial License</span>
+                            <section className="upload__skew-container">
+                                <input className="upload__price-input" />
+                                <div className="upload__container-controller">
+                                    <button className="upload__controller-btn"><FaPlus/></button>
+                                    <button className="upload__controller-btn"><FaMinus/></button>
+                                </div>
+                            </section>
+                        </div>
                     </div>
                     <div className="upload__more-text">
                         More about license
@@ -164,7 +175,7 @@ const UploadPage = () => {
                         <span>Draft</span>
                     </button>
 
-                    <button className="upload__publish-btn">
+                    <button className="upload__draft-btn">
                         <span>Publish</span>
                     </button>
                 </section>

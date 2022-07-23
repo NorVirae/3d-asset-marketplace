@@ -114,7 +114,7 @@ const UploadPage = () => {
 
                 <section className="upload__price-section">
                     <div className="upload__price-inner-section">
-                        <h3>Price</h3>
+                        <h3 >Price</h3>
                         <div className="upload__form-group">
                             <span className="upload__license-text"> Basic License</span>
                             <section className="upload__skew-container">
@@ -164,7 +164,7 @@ const UploadPage = () => {
                         <span>Draft</span>
                     </button>
 
-                    <button className="upload__publish-btn">
+                    <button className="upload__draft-btn">
                         <span>Publish</span>
                     </button>
                 </section>

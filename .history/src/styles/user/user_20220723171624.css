@@ -1611,9 +1611,9 @@
 }
 
 .upload__publish-btn{
-    outline: .2rem solid #FFC268;
+    outline: .2rem solid #4E4D58;
     outline-offset: -5px;
     color: white;
     border: none;
-    background-color: #FF9700;
+    background-color: #232230;
 }

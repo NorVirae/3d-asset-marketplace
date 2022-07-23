@@ -1590,11 +1590,8 @@
 }
 
 .upload__draft-btn, .upload__publish-btn{
-    padding: 1.2rem 9rem;
+    padding: 1rem 9rem;
     display: flex;
-    outline-offset: -5px;
-    color: white;
-    border: none;
 }
 
 .upload__draft-btn span, .upload__publish-btn span{
@@ -1603,17 +1600,5 @@
 }
 
 .upload__draft-btn{
-    outline: .2rem solid #4E4D58;
-    outline-offset: -5px;
-    color: white;
-    border: none;
-    background-color: #232230;
-}
-
-.upload__publish-btn{
-    outline: .2rem solid #FFC268;
-    outline-offset: -5px;
-    color: white;
-    border: none;
-    background-color: #FF9700;
+    outline: ;
 }

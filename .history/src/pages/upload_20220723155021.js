@@ -76,7 +76,7 @@ const UploadPage = () => {
             <section className="upload__description-section">
                 <IdentityBtn style={{background: "#232230", fontSize: "1rem", padding: ".8rem 5rem"}} text={"Description"} />
                 <section className="upload__text-area-container">
-                    <textarea rows={8} cols={70} className="upload__text-area">
+                    <textarea rows={12} cols={70} className="upload__text-area">
                     </textarea>
                     <button className="upload__text-area-btn">
                         <MdEdit/>
@@ -106,7 +106,7 @@ const UploadPage = () => {
                 <section className="upload__main-file-upload-container">
                     <div className="upload__main-files-upload-twin">
                         <div className="upload__main-files-upload-text">
-                            <FaPlusCircle style={{fontSize: "1.7rem", color: "#747478"}}/> Upload Files
+                            <FaPlusCircle style={{fontSize: "1.7rem", }}/> Upload Files
                         </div>
                         <input className="upload__main-files-upload" type={"file"}/>
                     </div>
@@ -116,43 +116,26 @@ const UploadPage = () => {
                     <div className="upload__price-inner-section">
                         <h3>Price</h3>
                         <div className="upload__form-group">
-                            <span className="upload__license-text"> Basic License</span>
+                            <span> Basic License</span>
                             <section className="upload__skew-container">
-                                <div className="upload__main-control-container">
-                                    <div className="upload__control-switch-container">
-                                        <button className="upload__control-usd-btn">
-                                            <span>USD</span>
-                                        </button>
-                                        <input className="upload__price-input" />
-                                    </div>
-                                </div>
-                                
+                                <input className="upload__price-input" />
                                 <div className="upload__container-controller">
-                                    <button className="upload__controller-btn"><span><FaPlus/></span></button>
-                                    <button className="upload__controller-btn"><span><FaMinus/></span></button>
+                                    <button className="upload__controller-btn"><FaPlus/></button>
+                                    <button className="upload__controller-btn"><FaMinus/></button>
                                 </div>
                             </section>
                         </div>
 
                         <div className="upload__form-group">
-                            <span className="upload__license-text"> Commercial License</span>
+                            <span> Commercial License</span>
                             <section className="upload__skew-container">
-                                <div className="upload__main-control-container">
-                                    <div className="upload__control-switch-container">
-                                        <button className="upload__control-usd-btn">
-                                            <span>USD</span>
-                                        </button>
-                                        <input className="upload__price-input" />
-                                    </div>
-                                </div>
-                                
+                                <input className="upload__price-input" />
                                 <div className="upload__container-controller">
-                                    <button className="upload__controller-btn"><span><FaPlus/></span></button>
-                                    <button className="upload__controller-btn"><span><FaMinus/></span></button>
+                                    <button className="upload__controller-btn"><FaPlus/></button>
+                                    <button className="upload__controller-btn"><FaMinus/></button>
                                 </div>
                             </section>
                         </div>
-                        
                     </div>
                     <div className="upload__more-text">
                         More about license
@@ -164,7 +147,7 @@ const UploadPage = () => {
                         <span>Draft</span>
                     </button>
 
-                    <button className="upload__publish-btn">
+                    <button className="upload__draft-btn">
                         <span>Publish</span>
                     </button>
                 </section>

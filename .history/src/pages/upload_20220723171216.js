@@ -163,8 +163,8 @@ const UploadPage = () => {
                     <button className="upload__draft-btn">
                         <span>Draft</span>
                     </button>
-
-                    <button className="upload__publish-btn">
+upload__draft
+                    <button className="-btn">
                         <span>Publish</span>
                     </button>
                 </section>
