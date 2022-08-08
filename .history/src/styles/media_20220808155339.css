@@ -203,13 +203,12 @@
     
     }
     .reg__sign-up-modal{
-       flex-direction: column;
-       width: 100%!important;
-       margin: 1rem;
-    }
-
-    .reg__loooty-innitials-container{
-        width: 100%!important;
+        background-color: #232230;
+        display: flex;
+        outline: 3px solid #555155ac;
+        outline-offset: 10px;
+        width: 50vw;
+        position: relative;
     }
     html{
         font-size: 60%;

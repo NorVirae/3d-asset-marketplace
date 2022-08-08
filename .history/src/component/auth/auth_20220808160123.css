@@ -1,10 +1,10 @@
 .lgn__login-modal{
-    width: 29.2vw;
+    width: 25.2vw;
     position: absolute;
     z-index: 3;
     background-color: #38383E;
     top: 200%;
-    left: -190%;
+    left: -170%;
     transform: skewX(25deg);
     animation: .7s fadeItIn ease-in-out;
 }
@@ -146,7 +146,7 @@
 .lgn__arrow{
     width: 35px;
     height: 35px;
-    left: 55%;
+    left: 65%;
     top: -2%;
     background-color: #38383E;
     position: absolute;
@@ -183,6 +183,7 @@
 
 .reg__loooty-innitials-container{
     width: 80%;
+    background-color: rde;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -259,7 +260,7 @@
 .reg__form-control{
     padding: 1rem 4rem;
     width: 100%;
-    font-size: .8rem;
+    font-size: 1rem;
     background-color: transparent;
     border: none;
     transform: skewX(25deg);
@@ -344,7 +345,7 @@
     align-items: center;
     margin: 1.2rem 0;
     gap: .3rem;
-    font-size: .8rem;
+    font-size: 1rem;
     color: #BCBCBC;
 
 }
@@ -394,7 +395,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: .8rem;
+    font-size: 1rem;
     text-transform: none;
     color: #BCBCBC;
 }
@@ -490,7 +491,7 @@
     background-color: #69166D;
     transform: skewX(-25deg);
     width: 60%;
-    font-size: .8rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;

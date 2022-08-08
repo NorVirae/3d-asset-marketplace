@@ -203,13 +203,7 @@
     
     }
     .reg__sign-up-modal{
-       flex-direction: column;
-       width: 100%!important;
-       margin: 1rem;
-    }
-
-    .reg__loooty-innitials-container{
-        width: 100%!important;
+       flex
     }
     html{
         font-size: 60%;
