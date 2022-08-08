@@ -1,8 +1,0 @@
-
-
-
-const ProductTags = () => {
-    return (
-        
-    )
-}

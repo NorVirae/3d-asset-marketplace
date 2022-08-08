@@ -1,0 +1,29 @@
+
+
+/* NEW MEDIA QUERIES BREAK POINT */
+
+/* Mobile devices */
+/* small mobile phone 320px  -  480px */
+@media screen  and (min-width: 0px) and (max-width: 480px){
+
+  
+}
+
+/* Ipads and Tablets */
+@media screen  and (min-width: 481px) and (max-width: 768px){
+    
+   
+}
+
+@media screen  and (min-width: 768px) and (max-width: 1024px){
+
+}
+
+/* Desktops and large screens */
+@media screen  and (min-width: 1025px) and (max-width: 1200px){
+    
+}
+
+@media screen  and (min-width: 1501px){
+    
+}
