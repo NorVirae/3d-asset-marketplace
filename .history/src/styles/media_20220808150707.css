@@ -41,13 +41,15 @@
 
     .cart__cart-item-outer{
         width: 100vw!important;
+        background-color: red;
     }
 
     .cart__cart-items-container{
         display: flex;
         gap: 1rem;
         flex-direction: column;
-        padding: 1rem 0rem!important;
+        padding: 1rem 0rem;
+        background-color: rde;
     }
 
     .buy_socials-container{

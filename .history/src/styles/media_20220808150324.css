@@ -36,19 +36,9 @@
 
     .cart__category-container{
         width: 100%;
-        overflow-x: scroll;
+        over
     }
-
-    .cart__cart-item-outer{
-        width: 100vw!important;
-    }
-
-    .cart__cart-items-container{
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
-        padding: 1rem 0rem!important;
-    }
+    
 
     .buy_socials-container{
         width: auto;

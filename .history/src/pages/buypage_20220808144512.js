@@ -203,7 +203,7 @@ const FilePurchaseSec = ({descCommToggleMode, setDescCommToggleMode}) => {
                     </div>
 
                     {descCommToggleMode?
-                    <section className="buy__comment-tab-container">
+                <section className="buy__comment-tab-container">
                         <div className="buy__comment-description">
                             Here is the character model from my best-selling
                             tutorial http://cbr.sh/hdsvy made by me -ex senior artist blizzard

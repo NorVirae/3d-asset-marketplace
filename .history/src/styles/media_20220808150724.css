@@ -41,6 +41,7 @@
 
     .cart__cart-item-outer{
         width: 100vw!important;
+        background-color: red;
     }
 
     .cart__cart-items-container{
@@ -48,6 +49,7 @@
         gap: 1rem;
         flex-direction: column;
         padding: 1rem 0rem!important;
+        background-color: green;
     }
 
     .buy_socials-container{
