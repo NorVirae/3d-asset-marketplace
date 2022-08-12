@@ -1,6 +1,6 @@
 import {BsDisplay} from "react-icons/bs"
 
-const CGCard = ({img, slim, text, textStyle, logoStyle}) => {
+const CGCard = ({img, slim, text, textStyle}) => {
     return <div className="landing__cg-card">
                 <img src={img} className="landing__cg-img" alt="" />
                 <div style={{flexDirection: slim? "row" : "column"}} className="landing__cg-overlay-container">

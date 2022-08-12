@@ -10,7 +10,7 @@ const CGBar = ({slim, style}) => {
             <div style={style} className="landing__cg-card-container">
                 <CGCard text={"2D Assets"} slim={slim} img={CatmanImg} />
                 <CGCard text={"3D Assets"} slim={slim} img={CatmanImg} />
-                <CGCard logoStyle={{fontSize: "2.9rem"}} textStyle={{fontSize: ".8rem"}} text={"Game-ready, VR, AR Models"} slim={slim} img={CatmanImg} />
+                <CGCard textStyle={{fontSize: ".8rem"}} text={"Game-ready, VR, AR Models"} slim={slim} img={CatmanImg} />
                 <CGCard text={"Plugins/Tools"} slim={slim} img={CatmanImg} />
                 <CGCard text={"Materials/Shaders"} slim={slim} img={CatmanImg} />
                 <CGCard text={"Software Brushes"} slim={slim} img={CatmanImg} />
@@ -24,7 +24,7 @@ export const CGBarSlim = ({style}) => {
     return <div style={style} className="landing__cg-card-container-slim">
         <CGCardSlim text={"2D Assets"} img={CatmanImg} />
         <CGCardSlim text={"3D Assets"} img={CatmanImg} />
-        <CGCardSlim logoStyle={{fontSize: "3.6rem", paddingLeft: ".7rem"}} textStyle={{fontSize: ".9rem"}} text={"Game-ready, VR, AR Models"} img={CatmanImg} />
+        <CGCardSlim textStyle={{fontSize: ".9rem"}} text={"Game-ready, VR, AR Models"} img={CatmanImg} />
         <CGCardSlim  text={"Plugins/Tools"} img={CatmanImg} />
         <CGCardSlim text={"Materials/Shaders"} img={CatmanImg} />
         <CGCardSlim text={"Software Brushes"} img={CatmanImg} />

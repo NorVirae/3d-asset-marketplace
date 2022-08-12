@@ -593,15 +593,12 @@
 .landing__cg-text{
     /* height: 14vh; */
     text-align: center;
-    padding: .4rem;
     transform: skewX(17deg);
 
 }
 
 .landing__cg-text-slim{
     /* height: 14vh; */
-    text-align: center;
-    padding: .4rem;
     transform: skewX(17deg);
 
 }
@@ -663,13 +660,13 @@
 
 
 .landing__cg-img{
-    width: 12rem;
+    width: 10rem;
     height: 5rem;
     object-fit: cover;
  }
 
 .landing__cg-img-slim{
-   width: 12rem;
+   width: 10rem;
    height: 3rem;
    object-fit: cover;
 }

@@ -663,13 +663,13 @@
 
 
 .landing__cg-img{
-    width: 12rem;
+    width: 14rem;
     height: 5rem;
     object-fit: cover;
  }
 
 .landing__cg-img-slim{
-   width: 12rem;
+   width: 14rem;
    height: 3rem;
    object-fit: cover;
 }

@@ -35,10 +35,10 @@ const SignUpModal = () => {
                         <LoootyLogo style={{ width: "15rem"}}/>
                     </div>
                     <div className="reg__loooty-about">
-                    
-
-                        <div>Welcome to our little vault.</div>
-                        <div style={{width: "75%"}}>Grab your loot!</div>
+                    Welcome to our little vault.
+Grab your loot!
+                        <div>Welcome to Loooty.</div>
+                        <div style={{width: "75%"}}>The best is about to get better!</div>
                     </div>
 
                     <ul className="reg__loooty-features">

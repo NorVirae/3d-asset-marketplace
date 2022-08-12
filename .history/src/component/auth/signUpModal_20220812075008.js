@@ -38,7 +38,7 @@ const SignUpModal = () => {
                     
 
                         <div>Welcome to our little vault.</div>
-                        <div style={{width: "75%"}}>Grab your loot!</div>
+                        <div style={{width: "75%"}}>The best is about to get better!</div>
                     </div>
 
                     <ul className="reg__loooty-features">

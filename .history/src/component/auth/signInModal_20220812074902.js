@@ -7,7 +7,7 @@ import { RegisterContext } from "./context/registerContext";
 
 
 
-const SignUpModal = () => {
+const SignInModal = () => {
     const [active, setActive] = useState(false)
     const [fadeOut, setFadeOut] = useState(false)
 
@@ -22,7 +22,7 @@ const SignUpModal = () => {
                             setFadeOut(prev => !prev)
                             console.log(fadeOut)
                             setTimeout(() =>{
-                                setShowRegModal({...showRegModal, register: false})
+                                setShowRegModal({...showRegModal, login: false})
                                  console.log(fadeOut)
                                 //  setFadeOut(false)
                                 }, 700)}}
@@ -36,9 +36,8 @@ const SignUpModal = () => {
                     </div>
                     <div className="reg__loooty-about">
                     
-
-                        <div>Welcome to our little vault.</div>
-                        <div style={{width: "75%"}}>Grab your loot!</div>
+                        <div>Welcome back to Loooty.</div>
+                        <div style={{width: "75%"}}>The best is about to get better!</div>
                     </div>
 
                     <ul className="reg__loooty-features">
@@ -54,22 +53,13 @@ const SignUpModal = () => {
                 <div className="reg__sign-up-forms-container">
                     <form className="reg__sign-up-form">
                         <div className="reg__form-group-container">
-
-                        
-                            <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder="Username"/>
-                            </div>
-
+                            
                             <div className="reg__form-group">
                                 <input className="reg__form-control" placeholder=" Email"/>
                             </div>
 
                             <div className="reg__form-group">
                                 <input className="reg__form-control" placeholder="Password"/>
-                            </div>
-
-                            <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder="Re-Enter Password"/>
                             </div>
 
                         </div>
@@ -81,19 +71,19 @@ const SignUpModal = () => {
 
                         <div className="reg__form-btn-group">
                             <button className="reg__login-btn">
-                                <span className="reg__login-btn-text">SIGN UP</span>
+                                <span className="reg__login-btn-text">SIGN IN</span>
                             </button>
                         </div>
 
                         <div className="reg__login-alternatives-container">
                             <button className="reg__btn-google">
                                 <img style={{width: "25px", transform: "skewX(25deg)"}} src={googleImg} alt =""/>
-                                <span className="reg__btn-google-text">Sign in with Google</span>
+                                <span className="reg__btn-google-text">Sign In with Google</span>
                             </button>
                             <button className="reg__btn-facebook">
                                 <FaFacebookF style={{fontSize: "1.3rem", transform: "skewX(25deg)"}} />
                                 <span className="reg__btn-facebook-text">
-                                    Sign in with Facebook
+                                    Sign In with Facebook
                                 </span>
                             </button>
                             <div className="reg__form-recovery-container">
@@ -108,4 +98,4 @@ const SignUpModal = () => {
     )
 }
 
-export default SignUpModal;
+export default SignInModal;
