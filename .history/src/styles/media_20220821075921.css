@@ -194,20 +194,17 @@
      }
 
     .landing__cg-tutorials{
-       zoom: .5;
+       zoom: .6;
 
     }
 
     .landing__cg-card-container-slim{
         
-        width: 100%;
-        top: 5%;
-        zoom: .9;
-       
-    }
-
-    .landing__show-filters-container{
-        zoom: .3;
+        right: 0%;
+        width: 100vw;
+        z-index: 12;
+        background-color: #15151C;
+        animation: slide-down .7s ease-in-out;
     }
 
 

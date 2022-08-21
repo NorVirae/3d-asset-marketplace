@@ -194,15 +194,15 @@
      }
 
     .landing__cg-tutorials{
-       zoom: .5;
+       zoom: .6;
 
     }
 
     .landing__cg-card-container-slim{
         
+        right: 0%!important;
         width: 100%;
         top: 5%;
-        zoom: .9;
        
     }
 

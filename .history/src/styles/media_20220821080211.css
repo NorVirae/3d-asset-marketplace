@@ -194,21 +194,17 @@
      }
 
     .landing__cg-tutorials{
-       zoom: .5;
+       zoom: .6;
 
     }
 
     .landing__cg-card-container-slim{
         
-        width: 100%;
-        top: 5%;
-        zoom: .9;
+        right: 0%!important;
        
     }
 
-    .landing__show-filters-container{
-        zoom: .3;
-    }
+    .landing__show-filters-container
 
 
     .landing__search-section{
