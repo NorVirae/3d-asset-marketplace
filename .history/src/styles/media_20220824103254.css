@@ -357,12 +357,12 @@
     /*preview */
 
     .buy__buy-preview-container-inner{
-        flex-direction: column;
-        gap: 2rem!important;
-    }
-
-    .buy__carousel-container{
-        width: 100%!important;
+        max-width: 100rem;
+        margin: 1rem auto;
+        display: flex;
+        gap: 8rem;
+        color: white;
+        justify-content: space-between;
     }
 
 }

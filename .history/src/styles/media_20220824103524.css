@@ -358,7 +358,7 @@
 
     .buy__buy-preview-container-inner{
         flex-direction: column;
-        gap: 2rem!important;
+        gap: 2rem;
     }
 
     .buy__carousel-container{

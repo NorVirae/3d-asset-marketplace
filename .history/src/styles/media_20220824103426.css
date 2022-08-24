@@ -358,11 +358,11 @@
 
     .buy__buy-preview-container-inner{
         flex-direction: column;
-        gap: 2rem!important;
     }
 
     .buy__carousel-container{
-        width: 100%!important;
+        width: 100vw;
+        background-color: red;
     }
 
 }
