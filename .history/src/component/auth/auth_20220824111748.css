@@ -164,7 +164,7 @@
     top: 0%;
     left: 0%;
     background-color: rgba(0, 0, 0, 0.729);
-    z-index: 20;
+    z-index: 6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,8 +177,9 @@
     display: flex;
     outline: 3px solid #555155ac;
     outline-offset: 10px;
-    width: 50vw;
+    width: 100vw;
     position: relative;
+    zoom: .3;
 }
 
 .reg__loooty-innitials-container{

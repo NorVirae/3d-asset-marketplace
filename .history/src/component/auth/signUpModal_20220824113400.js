@@ -88,12 +88,12 @@ const SignUpModal = () => {
                         <div className="reg__login-alternatives-container">
                             <button className="reg__btn-google">
                                 <img style={{width: "25px", transform: "skewX(25deg)"}} src={googleImg} alt =""/>
-                                <span className="reg__btn-google-text">Sign&nbsp;in&nbsp;with&nbsp;Google</span>
+                                <span className="reg__btn-google-text">Sign in with Google</span>
                             </button>
                             <button className="reg__btn-facebook">
                                 <FaFacebookF style={{fontSize: "1.3rem", transform: "skewX(25deg)"}} />
                                 <span className="reg__btn-facebook-text">
-                                    Sign&nbsp;in&nbsp;with&nbsp;Facebook
+                                    Sign&nbsp;in&nbsp;with Facebook
                                 </span>
                             </button>
                             <div className="reg__form-recovery-container">

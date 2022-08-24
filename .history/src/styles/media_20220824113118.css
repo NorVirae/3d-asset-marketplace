@@ -369,7 +369,7 @@
 
     .reg__sign-up-overlay{
         padding: .8rem;
-        z-index: 25!important;
+        z-index: 20;
 
     
     }
@@ -383,9 +383,8 @@
        
     }
 
-    .reg__btn-google, .reg__btn-facebook{
-        font-size: .9rem;
-    }
+.reg__btn-google, .reg__btn-facebook{
+}
 
 }
 

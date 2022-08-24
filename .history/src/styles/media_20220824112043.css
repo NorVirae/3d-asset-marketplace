@@ -365,26 +365,11 @@
         width: 100%!important;
     }
 
-    /* modals */
-
-    .reg__sign-up-overlay{
-        padding: .8rem;
-        z-index: 25!important;
-
-    
-    }
-    
-
     .reg__sign-up-modal{
        
         
-        width: 100%!important;
-        zoom: .7;
+        width: 100vw;
        
-    }
-
-    .reg__btn-google, .reg__btn-facebook{
-        font-size: .9rem;
     }
 
 }

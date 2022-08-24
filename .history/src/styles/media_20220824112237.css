@@ -368,9 +368,17 @@
     /* modals */
 
     .reg__sign-up-overlay{
-        padding: .8rem;
-        z-index: 25!important;
-
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0%;
+        left: 0%;
+        background-color: rgba(0, 0, 0, 0.729);
+        z-index: 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: .7s fadeItIn ease-in-out;
     
     }
     
@@ -379,12 +387,8 @@
        
         
         width: 100%!important;
-        zoom: .7;
+        zoom: ;
        
-    }
-
-    .reg__btn-google, .reg__btn-facebook{
-        font-size: .9rem;
     }
 
 }

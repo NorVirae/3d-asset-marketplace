@@ -108,7 +108,7 @@
 }
 
 .landing__sidebar-toggler{
-    z-index: 15;
+    z-index: 40;
     transition: transform .4s ease-in-out, opacity .4s ease-in-out;
 }
 
