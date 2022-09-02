@@ -1,8 +1,0 @@
-
-
-
-const LandCard = () => {
-    return(
-        
-    )
-}

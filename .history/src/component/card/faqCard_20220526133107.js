@@ -1,9 +1,0 @@
-
-
-
-const FaqCard = () => {
-
-    return (
-        
-    )
-}

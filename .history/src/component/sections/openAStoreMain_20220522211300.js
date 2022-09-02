@@ -1,9 +1,0 @@
-
-
-
-const OpenAStoreMain = () => {
-
-    return (
-        
-    )
-}

@@ -24,7 +24,7 @@ const Sidebar = ({className}) => {
     const navigate = useNavigate()
 
     return (
-        <section className={`sidebar ${className}`}>
+        <section onClick={e=> navigate("/user")} className={`sidebar ${className}`}>
             <div className="sidebar__inner-container">
 
                 <section className="sidebar__auth-sec">

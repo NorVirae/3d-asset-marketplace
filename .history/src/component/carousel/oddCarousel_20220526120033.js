@@ -1,8 +1,0 @@
-
-
-
-const OddCarousel = () => {
-    return () =>{
-        
-    }
-}

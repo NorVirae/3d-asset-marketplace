@@ -1,7 +1,0 @@
-
-
-const UploadPage = () => {
-    return (
-        <header
-    )
-}
