@@ -96,8 +96,8 @@
 
 .buy_carousel-preview-img{
     flex: 3;
-    width: 50rem;
-    height: 7rem;
+    width: 100%;
+    height: 4rem;
     object-fit: cover;
     object-position: 50% 50%;
 

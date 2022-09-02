@@ -1,5 +1,5 @@
 import NavBar from "../component/navbar/navbar"
-import {FaComment} from "react-icons/fa"
+import {FaComment, FaPlusCircle} from "react-icons/fa"
 import {BsTags} from "react-icons/bs"
 import {MdOutlineMoreVert} from "react-icons/md"
 import {VscTriangleDown, VscTriangleUp} from "react-icons/vsc"
@@ -18,6 +18,7 @@ import CatmanImg from "../assets/image/catman.jpg"
 import MonkeyFaceImg from "../assets/image/monkeyface.jpg"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { MainTags } from "./upload"
 
 
 
@@ -173,15 +174,16 @@ const TagsComp = () => {
                 <BsTags style={{color: '#FF9700'}}/> Tags <VscTriangleUp className="buy__tag-arrow" style={{color: '#6D6D91', transform: `rotate(${isOpen? '45deg': '180deg'})`}}/>
             </div>
 
-            {isOpen && <div className="buy__tag-select">
-                <button className="buy__tag-btn">3D&nbsp;Assets</button>
-                <button className="buy__tag-btn">3D&nbsp;Assets</button>
-                <button className="buy__tag-btn">3D&nbsp;Assets</button>
-                <button className="buy__tag-btn">3D&nbsp;Assets</button>
-                <button className="buy__tag-btn">3D&nbsp;Assets</button>
-                <button className="buy__tag-btn">3D&nbsp;Assets</button>
-                
-            </div>}
+            {isOpen && <section className="upload__tags-inner-container">
+                        <MainTags text="3D Assets" defaultState={false}/>
+                        <MainTags text="Games" defaultState={true}/>
+                        <MainTags text="Anime" defaultState={true}/>
+                        <MainTags text="2D Assets" defaultState={true}/>
+                        <MainTags text="compose" defaultState={true}/>
+                        <MainTags text="Cinema" defaultState={true}/>
+                        <MainTags text="Mesh" defaultState={true}/>
+                        <MainTags text="Topo" defaultState={true}/>
+                    </section>}
         </div>
     )
 }
@@ -280,13 +282,27 @@ const CarouselSec = () => {
                 </div>
             </section>
 
-            <div className="buy__carousel-preview">
-                <img className="buy_carousel-preview-img" src={WolfGuyImg} alt=""/>
-                <img className="buy_carousel-preview-img" src={CatmanImg} alt=""/> 
-                <img className="buy_carousel-preview-img" src={MonkeyFaceImg} alt=""/> 
-                <img className="buy_carousel-preview-img" src={MonkeyFaceImg} alt=""/>
+            <section className="upload__image-preview">
+            
+                        <div className="upload__image-preview-inner">
+                            <div className="upload__image-item">
+                                <img className="buy_carousel-preview-img" src={WolfGuyImg} alt=""/>
+                            </div>
 
-            </div>
+                            <div className="upload__image-item">
+                                <img className="buy_carousel-preview-img" src={CatmanImg} alt=""/> 
+                            </div>
+                            <div className="upload__image-item">
+                                <img className="buy_carousel-preview-img" src={MonkeyFaceImg} alt=""/> 
+                            </div>
+                            <div className="upload__image-item">
+                                <img className="buy_carousel-preview-img" src={MonkeyFaceImg} alt=""/> 
+                            </div>
+                            <div className="upload__image-item">
+                                <img className="buy_carousel-preview-img" src={MonkeyFaceImg} alt=""/> 
+                            </div>
+                        </div>   
+                    </section>
         </div>
     )
 }

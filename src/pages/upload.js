@@ -3,12 +3,12 @@ import { FaEdit, FaMinus, FaPlus, FaPlusCircle, FaTag } from "react-icons/fa"
 import { GrEdit } from "react-icons/gr"
 import { MdEdit } from "react-icons/md"
 import IdentityBtn from "../component/buttons/identityBtn"
-import CGBar from "../component/card/cbBar"
+import CGBar, { CGBarSlim } from "../component/card/cbBar"
 import NavBar from "../component/navbar/navbar"
 import { OrderCheckbox } from "./user"
 
 
-const MainTags = ({text= "3D Assets", defaultState= false} ) => {
+export const MainTags = ({text= "3D Assets", defaultState= false} ) => {
     const [isSelected, setIsSelected] = useState(defaultState)
     return(
         <button onClick={e => setIsSelected(!isSelected)} className="upload__tag-btn">
@@ -25,7 +25,7 @@ const UploadPage = () => {
 
         <header>
             <NavBar />
-            <CGBar />
+            <CGBarSlim />
         </header>
 
         <main className="upload__mock-up">

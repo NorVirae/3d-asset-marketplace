@@ -387,6 +387,64 @@
         font-size: .9rem;
     }
 
+    /* upload */
+
+    .upload__mock-up{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .upload__title-section{
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        gap: 3rem;
+    }
+
+    .upload__image-preview{
+        
+        width: 100%;
+    }
+
+    .upload__description-section{
+        width: 100%;
+    }
+
+    .upload__publish-section{
+       zoom: .9;
+    }
+
+    .user__profile-caution {
+        width: 80%;
+    }
+
+    .user__product-action-container {
+        zoom: .7;
+    }
+
+    .user__upload-products-btn {
+       
+        width: 40%;
+    
+    }
+
+    .user__admin-visitor-container {
+        
+        right: 5%;
+        top: -40%;
+       
+    }
+
+    .user__admin-page-section-header-container {
+        zoom: .6;
+        overflow-x: scroll;
+    }
+
+    .user__admin-page-section-header-container::-webkit-scrollbar {
+        display: none;
+    }
+
 }
 
 /* Ipads and Tablets */
