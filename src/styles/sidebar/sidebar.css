@@ -11,6 +11,8 @@
     transition: width 1s ease-in-out;
     z-index: 12;
     animation: .5s fadeInSidebar ease-in-out;
+    height: 100%;
+    width: 20%;
 }
 
 .sidebar__inner-container{

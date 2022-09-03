@@ -103,24 +103,14 @@ const Home = () => {
         )
     }
 
-   const  [slideIn, setSlideIn] = useState(false)
 
     
     return (
         <section className="landing__main-app">
 
-            {showRegModal.isSidebarOpen && <Sidebar className={slideIn? 'fade-out-sidebar': ''} />}
+            
             <div className="landing__app-container">
-                { showRegModal.isSidebarOpen && <section onClick={() => {
-                    setSlideIn(old => true)
-                    setTimeout(() =>{
-                        setSlideIn(false)
-                        setShowRegModal({...showRegModal, isSidebarOpen: false})
-                        //  setFadeOut(false)
-                        }, 700)
-
-
-                }} className= {`landing__overlay ${slideIn? "landing__overlay-dismiss": ''}`}></section>}
+                
                 
 
                 <header className="landing__header">

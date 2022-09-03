@@ -445,6 +445,10 @@
         display: none;
     }
 
+    .sidebar{
+        width: 80%;
+    }
+
 }
 
 /* Ipads and Tablets */

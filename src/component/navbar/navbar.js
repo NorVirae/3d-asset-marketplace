@@ -15,6 +15,7 @@ import { useMediaQuery } from "react-responsive"
 import SignUpModal from "../auth/signUpModal"
 import SignInModal from "../auth/signInModal"
 import OpenStoreModal from "../auth/openStoreModal"
+import Sidebar from "../sidebar/sidebar"
 
 
 const NavLoggedIn = () => {
@@ -72,6 +73,8 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const isMobile = useMediaQuery({minWidth: 320, maxWidth: 480})
     const [yScroll, setYScroll] = useState(0)
+    const  [slideIn, setSlideIn] = useState(false)
+
     const handleScroll = (event) => {
         // console.log(window.scrollY, "hey")
         setYScroll(window.scrollY)
@@ -87,10 +90,11 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
     return (
         <nav style={{...style, background: `${yScroll>50?"#232230": "transparent"}`, width: `${isMobile?"auto":setShowRegModal.isSidebarOpen? "82vw": "100%"}`, right: `${setShowRegModal.isSidebarOpen? "-19%": "0%"}`, position: `${yScroll > 400? "fixed": "sticky"}`}} className="landing__navbar">
             { showRegModal.register && <SignUpModal /> }
-                { showRegModal.login && <SignInModal /> }
+            { showRegModal.login && <SignInModal /> }
 
-                { showRegModal.openStore && <OpenStoreModal/>}
+            { showRegModal.openStore && <OpenStoreModal/>}
 
+            {showRegModal.isSidebarOpen && <Sidebar className={slideIn? 'fade-out-sidebar': ''} />}
             <div className="landing__sidebar-toggle" style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
                 {!showRegModal.isSidebarOpen?<GoThreeBars className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:true}))} style={{color: "white", fontSize: "2rem"}}/>:<FaTimes className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:false}))} style={{color: "white", fontSize: "2rem"}} />}
                 {search && <div><NavSearchBar short={shortSearch}/></div>}
