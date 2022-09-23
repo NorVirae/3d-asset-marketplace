@@ -4,6 +4,7 @@ import googleImg from "../../assets/image/auth/google.svg"
 import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
 import { RegisterContext } from "./context/registerContext";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -25,7 +26,7 @@ const SignUpModal = () => {
                                 setShowRegModal({...showRegModal, register: false})
                                  console.log(fadeOut)
                                 //  setFadeOut(false)
-                                }, 700)}}
+                                }, 600)}}
                     className="reg__close-btn">
                         <span className="reg__close-btn-text">X</span>
                     </div>

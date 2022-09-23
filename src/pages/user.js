@@ -544,10 +544,11 @@ const User = () => {
         <section>
             <header>
                 <NavBar loggedIn={true} shortSearch={true} style={{paddingBottom: "0", paddingTop: "0"}} search={true}/>
+                <CGBarSlim style={{overflow: "scroll", position: "relative",}}/>
+
             </header>
 
             <main>
-                <CGBarSlim style={{overflow: "scroll"}}/>
 
                 <section className="user__profile-preview-container">
                     <button className="user__change-cover-btn">

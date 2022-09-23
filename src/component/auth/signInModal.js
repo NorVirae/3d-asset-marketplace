@@ -4,12 +4,15 @@ import googleImg from "../../assets/image/auth/google.svg"
 import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
 import { RegisterContext } from "./context/registerContext";
+import { useNavigate } from "react-router-dom";
 
 
 
 const SignInModal = () => {
     const [active, setActive] = useState(false)
     const [fadeOut, setFadeOut] = useState(false)
+    const navigate = useNavigate()
+
 
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     return(
@@ -25,7 +28,7 @@ const SignInModal = () => {
                                 setShowRegModal({...showRegModal, login: false})
                                  console.log(fadeOut)
                                 //  setFadeOut(false)
-                                }, 700)}}
+                                }, 600)}}
                     className="reg__close-btn">
                         <span className="reg__close-btn-text">X</span>
                     </div>
@@ -50,7 +53,8 @@ const SignInModal = () => {
                 </div>
 
                 <div className="reg__sign-up-forms-container">
-                    <form className="reg__sign-up-form">
+                                
+                    <form onSubmit={(e) =>{ navigate("/user"); e.preventDefault(); setShowRegModal({...showRegModal, login: false, isSidebarOpen: false}) }} className="reg__sign-up-form">
                         <div className="reg__form-group-container">
                             
                             <div className="reg__form-group">
@@ -79,7 +83,8 @@ const SignInModal = () => {
                                 <img style={{width: "25px", transform: "skewX(25deg)"}} src={googleImg} alt =""/>
                                 <span className="reg__btn-google-text">Sign&nbsp;In&nbsp;with&nbsp;Google</span>
                             </button>
-                            <button className="reg__btn-facebook">
+                            
+                            <button onClick={e => navigate("/user")} className="reg__btn-facebook">
                                 <FaFacebookF style={{fontSize: "1.3rem", transform: "skewX(25deg)"}} />
                                 <span className="reg__btn-facebook-text">
                                     Sign&nbsp;In&nbsp;with&nbsp;Facebook
