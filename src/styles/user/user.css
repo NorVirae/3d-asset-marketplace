@@ -171,6 +171,9 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    /* padding-right: 20rem; */
+    /* background-color: red; */
+
 }
 
 .user__tags-container {

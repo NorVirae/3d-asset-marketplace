@@ -23,6 +23,7 @@ import {FcSettings} from "react-icons/fc"
 import { SuscribeInput } from "../component/footer/footer"
 import {ImFolder, ImFolderOpen} from 'react-icons/im'
 import { useNavigate } from "react-router-dom"
+import { useMediaQuery } from "react-responsive"
 
 
 const Store = () => {
@@ -384,6 +385,7 @@ const OrderItem = () => {
 
 const Settings = () => {
     const [activeSideUser, setActiveSideUser] = useState(0)
+    const isDesktop = useMediaQuery({minWidth: 768})
     const settingsItems = ["Notification", "Account", "Messaging", "Password", "User Name", "Blocking", "Payment", "Store", "Profile", "Sales"]
     return (
         <section className="user__settings">
@@ -425,7 +427,7 @@ const Settings = () => {
                         <span className="user__main-sett-header-text">
                             the name will appear on your customers billing statement
                         </span>
-                        <SuscribeInput style={{}} btnStyle={{padding: ".1rem 2rem", height: "1.7rem", right: "1.7%"}} controlStyle={{padding: ".4rem 8rem"}}/>
+                        {isDesktop && <SuscribeInput style={{}} btnStyle={{padding: ".1rem 2rem", height: "1.7rem", right: "1.7%"}} controlStyle={{padding: ".4rem 8rem"}}/>}
                     </div>
 
                     <div className="user__main-sett-body">
@@ -529,9 +531,109 @@ const PageSelectComp = ({inPageName}) => {
 }
 
 
+const TagheaderCompDesktop = ({setActiveInPageHeader, activeInpageHeader, toggleVisAdmin}) => (
+    
+    <section className="user__admin-page-section-header-container">
+    
+        <IdentityBtn onClick={e=>setActiveInPageHeader("store")} 
+        style={{padding: "1rem 6rem", 
+        marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
+        backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
+        dropDownList={true} text={"STORE"}/>
+
+        { toggleVisAdmin && <><IdentityBtn onClick={e=>setActiveInPageHeader("profile")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
+        text={"PROFILE"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("library")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
+        text={"LIBRARY"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("messages")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
+        text={"MESSAGES"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("sales")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
+        text={"SALES"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("settings")} 
+        style={{padding: "1rem 3rem", 
+        backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
+        text={"SETTINGS"}/></>}
+        
+
+    </section>
+)
+
+const TagheaderCompMobile = ({setActiveInPageHeader, activeInpageHeader, toggleVisAdmin}) => (
+    <section className="user__admin-page-section-header-container">
+    
+        <IdentityBtn onClick={e=>setActiveInPageHeader("store")} 
+        style={{padding: "1rem 6rem", 
+        marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
+        backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
+        dropDownList={true} text={"STORE"}/>
+
+        { toggleVisAdmin && <><IdentityBtn onClick={e=>setActiveInPageHeader("profile")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
+        text={"PROFILE"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("library")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
+        text={"LIBRARY"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("messages")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
+        text={"MESSAGES"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("sales")} 
+        style={{padding: "1rem 6rem", 
+        backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
+        text={"SALES"}/>
+
+        <IdentityBtn onClick={e=>setActiveInPageHeader("settings")} 
+        style={{padding: "1rem 3rem", 
+        backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
+        color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
+        borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
+        text={"SETTINGS"}/></>}
+        
+    </section>
+)
 
 const User = () => {
     const [toggleVisAdmin, setToggleVisAdmin] = useState(true)
+    const isMobile = useMediaQuery({minWidth: 481, maxWidth: 768})
     const [selectedTag, setSelectedTag] = useState("feature")//Enum Types: feature, recent sellers, popular
     const [activeInpageHeader, setActiveInPageHeader] = useState('messages')//Enum types: store, profile, library, messages, sales, settings
     const navigate = useNavigate()
@@ -541,14 +643,14 @@ const User = () => {
         }
     }, [toggleVisAdmin])
     return (
-        <section>
+        <section className="user__main-container">
             <header>
                 <NavBar loggedIn={true} shortSearch={true} style={{paddingBottom: "0", paddingTop: "0"}} search={true}/>
                 <CGBarSlim style={{overflow: "scroll", position: "relative",}}/>
 
             </header>
 
-            <main>
+            <main className="user__main">
 
                 <section className="user__profile-preview-container">
                     <button className="user__change-cover-btn">
@@ -603,53 +705,8 @@ const User = () => {
 
                 </section>
 
-                <section className="user__admin-page-section-header-container">
-                
-                    <IdentityBtn onClick={e=>setActiveInPageHeader("store")} 
-                    style={{padding: "1rem 6rem", 
-                    marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
-                    backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
-                    color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
-                    borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
-                    dropDownList={true} text={"STORE"}/>
-
-                    { toggleVisAdmin && <><IdentityBtn onClick={e=>setActiveInPageHeader("profile")} 
-                    style={{padding: "1rem 6rem", 
-                    backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
-                    color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
-                    borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
-                    text={"PROFILE"}/>
-
-                    <IdentityBtn onClick={e=>setActiveInPageHeader("library")} 
-                    style={{padding: "1rem 6rem", 
-                    backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
-                    color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
-                    borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
-                    text={"LIBRARY"}/>
-
-                    <IdentityBtn onClick={e=>setActiveInPageHeader("messages")} 
-                    style={{padding: "1rem 6rem", 
-                    backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
-                    color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
-                    borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
-                    text={"MESSAGES"}/>
-
-                    <IdentityBtn onClick={e=>setActiveInPageHeader("sales")} 
-                    style={{padding: "1rem 6rem", 
-                    backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
-                    color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
-                    borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
-                    text={"SALES"}/>
-
-                    <IdentityBtn onClick={e=>setActiveInPageHeader("settings")} 
-                    style={{padding: "1rem 3rem", 
-                    backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
-                    color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
-                    borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
-                    text={"SETTINGS"}/></>}
-                    
-
-                </section>
+                { isMobile? <TagheaderCompDesktop toggleVisAdmin={toggleVisAdmin} setActiveInPageHeader={setActiveInPageHeader} activeInpageHeader={activeInpageHeader}/>:
+                <TagheaderCompMobile toggleVisAdmin={toggleVisAdmin} setActiveInPageHeader={setActiveInPageHeader} activeInpageHeader={activeInpageHeader}/>}
 
                 {/* <TagsComp selectedTag={selectedTag} setSelectedTag={setSelectedTag}/> */}
 
