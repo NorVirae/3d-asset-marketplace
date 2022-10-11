@@ -108,8 +108,8 @@ const OpenAStore = () => {
                 <section className="opnstore__faq-sec">
                     <div className="opnstore__faq-sec-inner">
                         {
-                            faq.map((fqItem =>{
-                                return <FaqCard 
+                            faq.map(((fqItem, index) =>{
+                                return <FaqCard key={fqItem.answer.toString(16) + String(index)}
                                 answer={fqItem.answer} 
                                 question={fqItem.question}/>
                             }))

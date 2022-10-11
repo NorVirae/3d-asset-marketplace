@@ -11,20 +11,36 @@ import { useNavigate } from "react-router-dom";
 const SignUpModal = () => {
     const [active, setActive] = useState(false)
     const [fadeOut, setFadeOut] = useState(false)
-
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
+    const [isLoading, setIsLoading] = useState(false)
+    const [regInfo, setRegInfo] = useState({
+        userName: "",
+        email: "",
+        password: "",
+        rePassword: ""
+    })
+
+    const handleSignUp = (e) => {
+        try {
+            e.preventDefault()
+            setIsLoading(true)
+        }catch(err){
+            setIsLoading(true)
+
+        }
+       
+    }
+
     return(
 
         <div className={`reg__sign-up-overlay ${fadeOut? "lgn__fade-out-anim" : ""}`}>
             <section className="reg__sign-up-modal">
                 <div className="reg__close-btn-container">
                     <div 
-                        onClick={e=>{
+                        onClick={()=>{
                             setFadeOut(prev => !prev)
-                            console.log(fadeOut)
                             setTimeout(() =>{
                                 setShowRegModal({...showRegModal, register: false})
-                                 console.log(fadeOut)
                                 //  setFadeOut(false)
                                 }, 600)}}
                     className="reg__close-btn">
@@ -53,24 +69,24 @@ const SignUpModal = () => {
                 </div>
 
                 <div className="reg__sign-up-forms-container">
-                    <form className="reg__sign-up-form">
+                    <form onSubmit={handleSignUp} className="reg__sign-up-form">
                         <div className="reg__form-group-container">
 
                         
                             <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder="Username"/>
+                                <input onChange={e => setRegInfo(old => ({...old, userName: e.target.value.target}))} value={regInfo.userName} className="reg__form-control" placeholder="Username"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder=" Email"/>
+                                <input onChange={e => setRegInfo(old => ({...old, email: e.target.value.target}))} value={regInfo.email} className="reg__form-control" placeholder=" Email"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder="Password"/>
+                                <input onChange={e => setRegInfo(old => ({...old, password: e.target.value.target}))} value={regInfo.password} className="reg__form-control" placeholder="Password"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder="Re-Enter Password"/>
+                                <input onChange={e => setRegInfo(old => ({...old, rePassword: e.target.value.target}))} value={regInfo.rePassword} className="reg__form-control" placeholder="Re-Enter Password"/>
                             </div>
 
                         </div>
@@ -81,8 +97,8 @@ const SignUpModal = () => {
                         </div>
 
                         <div className="reg__form-btn-group">
-                            <button className="reg__login-btn">
-                                <span className="reg__login-btn-text">SIGN UP</span>
+                            <button onClick={handleSignUp} className="reg__login-btn">
+                                <span className="reg__login-btn-text"> {!isLoading?<>SIGN UP</>: <>Loading...</>}</span>
                             </button>
                         </div>
 

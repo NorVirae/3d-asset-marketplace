@@ -129,11 +129,11 @@ const Footer = () => {
                         NEWSLETTER
                     </h2>
 
-                    <p className="landing__footer-news-letter-info">
+                    <div className="landing__footer-news-letter-info">
                         <p>Suscribe to the loooty news letter to get your weekly dose of
                         news,</p>
                         <p> updates, tips and special offers.</p>
-                    </p>
+                    </div>
 
                     <SuscribeInput />
                 </div>

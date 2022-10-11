@@ -10,7 +10,6 @@ const OpenStoreModal = () => {
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
 
     const handleKey = (e) => {
-        console.log(e)
         if (e.key === "esc"){
             setShowRegModal({...showRegModal, openStore: false})
         }
@@ -22,10 +21,8 @@ const OpenStoreModal = () => {
                 <div className="opn__close-btn-container">
                     <div onClick={e=>{
                         setFadeOut(prev => !prev)
-                        console.log(fadeOut)
                         setTimeout(() =>{
                             setShowRegModal({...showRegModal, openStore: false})
-                             console.log(fadeOut)
                             //  setFadeOut(false)
                             }, 700)
                         // setShowRegModal({...showRegModal, openStore: false})

@@ -7,22 +7,17 @@ const OddCarousel = () => {
     const [oddActive, setOddActive] = useState(2)
     useEffect(()=>{
         let activeInterval = setInterval(()=>{
-            console.log(oddActive + 1)
 
             setOddActive(oddAct => {
-                console.log(oddAct)
                 let newOddAct = oddAct + 1
                 if (oddAct + 1 > 4){
                     newOddAct = 0
-                    console.log("EXECUTED")
                 }
                 return newOddAct
             })
             
-            console.log(oddActive)
           
         }, 8000)
-        console.log(oddActive)
        
     }, [])
     return (

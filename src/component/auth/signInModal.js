@@ -23,10 +23,8 @@ const SignInModal = () => {
                     <div 
                         onClick={e=>{
                             setFadeOut(prev => !prev)
-                            console.log(fadeOut)
                             setTimeout(() =>{
                                 setShowRegModal({...showRegModal, login: false})
-                                 console.log(fadeOut)
                                 //  setFadeOut(false)
                                 }, 600)}}
                     className="reg__close-btn">

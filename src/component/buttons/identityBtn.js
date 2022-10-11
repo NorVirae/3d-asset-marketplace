@@ -17,7 +17,7 @@ const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
         let newtext = text.split(' ')
         if (newtext.length > 1){
             return newtext.map(itm => {
-                return <span>{itm}</span>
+                return <span key={itm}>{itm}</span>
             })
         }
 

@@ -76,7 +76,6 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
     const  [slideIn, setSlideIn] = useState(false)
 
     const handleScroll = (event) => {
-        // console.log(window.scrollY, "hey")
         setYScroll(window.scrollY)
         
     }
@@ -96,7 +95,10 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
 
             {showRegModal.isSidebarOpen && <Sidebar className={slideIn? 'fade-out-sidebar': ''} />}
             <div className="landing__sidebar-toggle" style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
-                {!showRegModal.isSidebarOpen?<GoThreeBars className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:true}))} style={{color: "white", fontSize: "2rem"}}/>:<FaTimes className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:false}))} style={{color: "white", fontSize: "2rem"}} />}
+                {/* {!showRegModal.isSidebarOpen? */}
+                <GoThreeBars className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:true}))} style={{color: "white", fontSize: "2rem"}}/>
+                {/* :<FaTimes className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:false}))} style={{color: "white", fontSize: "2rem"}} /> */}
+                {/* } */}
                 {search && <div><NavSearchBar short={shortSearch}/></div>}
             </div>
             

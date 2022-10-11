@@ -286,7 +286,7 @@ const Messages = () => {
                         </div>
 
                         <div className="user__message-sidebar-header-item">
-                            LOOTY
+                            LOOOTY
                             <div className="user__message-notify"></div>
                         </div>
                     </section>
@@ -410,8 +410,6 @@ const Settings = () => {
                         <SettingsItem itemName={"Store"} onClick={() => setActiveSideUser(7)} active={activeSideUser === 7}/>
                         <SettingsItem itemName={"Profile"} onClick={() => setActiveSideUser(8)} active={activeSideUser === 8}/>
                         <SettingsItem itemName={"Sales"} onClick={() => setActiveSideUser(9)} active={activeSideUser === 9}/>
-
-
                     </section>
 
                     <section className="user__settings-sidebar-footer">
@@ -438,8 +436,6 @@ const Settings = () => {
                             <OrderItem />
                             <OrderItem />
                             <OrderItem />
-
-
                         </div>
                         
                         <div className="user__main-sett-body-left">
@@ -450,9 +446,6 @@ const Settings = () => {
                             <OrderItem />
                             <OrderItem />
                             <OrderItem />
-
-
-
                         </div>
                     </div>
 

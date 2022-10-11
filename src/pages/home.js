@@ -42,7 +42,6 @@ const Home = () => {
     
 
     const handleScroll = (event) => {
-        // console.log(window.scrollY, "hey")
         setYScroll(window.scrollY)
         
     }

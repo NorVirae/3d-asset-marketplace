@@ -30,32 +30,32 @@ const Sidebar = ({className}) => {
         // { showRegModal.isSidebarOpen && 
         <section onClick={() => {
             setSlideIn(old => true)
-            // setTimeout(() =>{
-            //     setSlideIn(false)
-            //     setShowRegModal({...showRegModal, isSidebarOpen: false})
+            setTimeout(() =>{
+                setSlideIn(false)
+                setShowRegModal({...showRegModal, isSidebarOpen: false})
                 //  setFadeOut(false)
-                // }, 700)
+                }, 600)
 
 
         }} className= {`landing__overlay ${slideIn? "landing__overlay-dismiss": ''}`}>
      {/* } */}
-            <div className="landing__sidebar-toggle-close" style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
+            <div onClick={e => e.stopPropagation()} className="landing__sidebar-toggle-close" style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
                 {!showRegModal.isSidebarOpen?<GoThreeBars className="landing__sidebar-toggler-close"  style={{color: "white", fontSize: "2rem"}}/>:<FaTimes onClick={() => {
             setSlideIn(old => true)
             setTimeout(() =>{
                 setSlideIn(false)
                 setShowRegModal({...showRegModal, isSidebarOpen: false})
                 //  setFadeOut(false)
-                }, 700)
+                }, 600)
 
 
         }} className="landing__sidebar-toggler"  style={{color: "white", fontSize: "2rem"}} />}
             </div>
-            <section className={`sidebar ${className}`}>
-                <div className="sidebar__inner-container">
+            <section onClick={e => e.stopPropagation()} className={`sidebar ${className}`}>
+                <div onClick={e => e.stopPropagation()} className="sidebar__inner-container">
 
                     <section className="sidebar__auth-sec">
-                        <li style={{width: "100%"}} onClick={e=>setShowRegModal({...showRegModal, login:!showRegModal.register})} className={"landing__nav-item login"}>
+                        <li style={{width: "100%"}} onClick={e=>{setShowRegModal({...showRegModal, login:!showRegModal.register}); e.stopPropagation()}} className={"landing__nav-item login"}>
                                 <Link className="landing__nav-link" to={"#"}>
                                     Sign In
                                 </Link>
@@ -63,8 +63,8 @@ const Sidebar = ({className}) => {
 
                             </li>
 
-                            <li onClick={e=>setShowRegModal({...showRegModal, register:!showRegModal.register})} className={"landing__nav-item signup"}>
-                                <Link className="landing__nav-link" to={"#"}>
+                            <li onClick={e=>{setShowRegModal({...showRegModal, register:!showRegModal.register}); e.stopPropagation()}} className={"landing__nav-item signup"}>
+                                <Link onClick={e => e.stopPropagation()} className="landing__nav-link" to={"#"}>
                                     Sign Up
                                 </Link>
                             </li>

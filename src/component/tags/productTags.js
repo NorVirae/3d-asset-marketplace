@@ -3,7 +3,7 @@
 const handleTextSplit = (txt) =>{
     let splittedText = txt.split(" ")
     return splittedText.map(theSplitted => {
-        return <span>{theSplitted}</span>
+        return <span key={theSplitted}>{theSplitted}</span>
     })
 }
 const ProductTags = ({txt}) => {
