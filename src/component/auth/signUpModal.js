@@ -5,6 +5,9 @@ import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
 import { RegisterContext } from "./context/registerContext";
 import { useNavigate } from "react-router-dom";
+import { signUp } from "../../api/auth";
+import { toast } from 'react-toastify';
+
 
 
 
@@ -13,6 +16,7 @@ const SignUpModal = () => {
     const [fadeOut, setFadeOut] = useState(false)
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const [isLoading, setIsLoading] = useState(false)
+    
     const [regInfo, setRegInfo] = useState({
         userName: "",
         email: "",
@@ -20,13 +24,19 @@ const SignUpModal = () => {
         rePassword: ""
     })
 
-    const handleSignUp = (e) => {
+    const handleSignUp = async (e) => {
         try {
             e.preventDefault()
             setIsLoading(true)
-        }catch(err){
-            setIsLoading(true)
+            const signUpData = await signUp(regInfo)
+            console.log(signUpData)
+            setIsLoading(false)
+            toast.success("Sign up was successful")
 
+
+        }catch(err){
+            setIsLoading(false)
+            toast.error(err.message)
         }
        
     }

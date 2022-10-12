@@ -11,13 +11,17 @@ import OpenAStore from './pages/openAStore';
 import Experiment from './pages/experiment';
 import BuyPage from './pages/buypage';
 import Cart from './pages/cart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from './component/sidebar/sidebar';
 import User from './pages/user';
 import UploadPage from './pages/upload';
 
 function App() {
+
   return (
     <>
+    <ToastContainer/>
       <RegisterProvider>
         <Routes>
           <Route path='/' element={

@@ -5,6 +5,8 @@ import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
 import { RegisterContext } from "./context/registerContext";
 import { useNavigate } from "react-router-dom";
+import { signIn } from "../../api/auth";
+import { toast } from "react-toastify";
 
 
 
@@ -12,8 +14,31 @@ const SignInModal = () => {
     const [active, setActive] = useState(false)
     const [fadeOut, setFadeOut] = useState(false)
     const navigate = useNavigate()
+    const [loginInfo, setLoginInfo] = useState({email: '', password: ''})
+    const [isLoading, setIsLoading] = useState(false)
+
+    const handleSignIn = async (e) => {
+        try {
+            e.preventDefault();
+            
+            const signInData = await signIn(loginInfo)
+            toast.success("Sign in was successful")
+            console.log(signInData)
+            setIsLoading(false)
+            navigate("/user");
+            setShowRegModal({...showRegModal, login: false, isSidebarOpen: false}) 
+           
 
 
+        }catch(err){
+            setIsLoading(false)
+            toast.error(err.message)
+        }
+       
+    }
+
+
+    
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     return(
 
@@ -52,15 +77,15 @@ const SignInModal = () => {
 
                 <div className="reg__sign-up-forms-container">
                                 
-                    <form onSubmit={(e) =>{ navigate("/user"); e.preventDefault(); setShowRegModal({...showRegModal, login: false, isSidebarOpen: false}) }} className="reg__sign-up-form">
+                    <form onSubmit={handleSignIn} className="reg__sign-up-form">
                         <div className="reg__form-group-container">
                             
                             <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder=" Email"/>
+                                <input onChange={e => setLoginInfo(old =>({...old, email: e.target.value}))} value={loginInfo.email} className="reg__form-control" placeholder=" Email"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input className="reg__form-control" placeholder="Password"/>
+                                <input onChange={e => setLoginInfo(old =>({...old, password: e.target.value}))} value={loginInfo.password} className="reg__form-control" placeholder="Password"/>
                             </div>
 
                         </div>
@@ -72,7 +97,7 @@ const SignInModal = () => {
 
                         <div className="reg__form-btn-group">
                             <button className="reg__login-btn">
-                                <span className="reg__login-btn-text">SIGN IN</span>
+                                <span className="reg__login-btn-text">{isLoading ? "loading..." : "SIGN IN"}</span>
                             </button>
                         </div>
 

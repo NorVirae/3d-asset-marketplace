@@ -33,6 +33,12 @@
     display: flex;
     animation: fadeInAnimation .5s ease-in-out;
 }
+
+
+.search__nav-search-skew-container{
+    display: flex;
+    animation: fadeInAnimation .5s ease-in-out;
+}
  
 @keyframes fadeInAnimation {
     0% {
@@ -68,6 +74,23 @@
 }
 
 .search__btn:active{
+    transform: scale(1.05);
+}
+
+
+.search__nav-search-btn{
+    position: relative;
+    background-color: #38383E;
+    color: white;
+    font-size: 1rem;
+    padding: .3rem .7rem;
+    border: none;
+    
+    display: flex;
+    cursor: pointer;
+}
+
+.search__nav-search-btn:active{
     transform: scale(1.05);
 }
 
