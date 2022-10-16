@@ -47,3 +47,14 @@ export const signInAction = createAsyncThunk("auth/signin",
         }
     }
 )
+
+export const logOutAction = createAsyncThunk("auth/logout", 
+    async (_, thunkAPI) => {
+        try{
+            thunkAPI.dispatch(signUp({user: null}))
+            toast.success("Log out was successful!")
+        }catch(err){
+            toast.error(err.message)
+        }
+    }
+)

@@ -21,6 +21,8 @@ import { useSelector } from "react-redux"
 
 const NavLoggedIn = () => {
     const navigate = useNavigate()
+    const user = useSelector(state => state.user)
+   
     return (
         <ul className="landing__navbar-inner-container-li">
             <li className="landing__navbar-logo-items"><FcSettings/></li>
@@ -31,7 +33,7 @@ const NavLoggedIn = () => {
                     <img src={CatmanImg} alt="" className="landing__navbar-profile-img"/>
                  </div>
                  <div className="landing__navbar-user-name">
-                     Liqair studios
+                     {user && user.user? user.name : "Login"}
                  </div>
             </li>
             
@@ -113,7 +115,7 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
                 
 
             {
-                !isMobile? user? <NavLoggedIn />: <NavLoggedOut /> : null
+                !isMobile? user && user.user? <NavLoggedIn />: <NavLoggedOut /> : null
             }
 
             
