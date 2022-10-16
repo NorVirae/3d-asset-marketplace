@@ -13,6 +13,7 @@ import { FaPrint } from "react-icons/fa"
 
 import { Link as Links} from "react-scroll"
 import { GoThreeBars } from "react-icons/go"
+import { useSelector } from "react-redux"
 
 
 
@@ -22,6 +23,7 @@ const Sidebar = ({className}) => {
     const [showLogin, setShowLogin] = useState(false)
     const [activeSidebar, setActiveSidebar] = useState(1)
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
+    const user = useSelector(state => state.user)
     const navigate = useNavigate()
     const  [slideIn, setSlideIn] = useState(false)
 
@@ -55,19 +57,27 @@ const Sidebar = ({className}) => {
                 <div onClick={e => e.stopPropagation()} className="sidebar__inner-container">
 
                     <section className="sidebar__auth-sec">
-                        <li style={{width: "100%"}} onClick={e=>{setShowRegModal({...showRegModal, login:!showRegModal.register}); e.stopPropagation()}} className={"landing__nav-item login"}>
-                                <Link className="landing__nav-link" to={"#"}>
-                                    Sign In
-                                </Link>
-                                {/* {showLogin &&<LoginModal onClick={e=>e.stopPropagation()}/>} */}
+                        {!user? <>
+                            <li style={{width: "100%"}} onClick={e=>{setShowRegModal({...showRegModal, login:!showRegModal.register});}} className={"landing__nav-item login"}>
+                                    <Link className="landing__nav-link" to={"#"}>
+                                        Sign&nbsp;In
+                                    </Link>
+                                    {/* {showLogin &&<LoginModal onClick={e=>e.stopPropagation()}/>} */}
 
                             </li>
 
-                            <li onClick={e=>{setShowRegModal({...showRegModal, register:!showRegModal.register}); e.stopPropagation()}} className={"landing__nav-item signup"}>
+                            <li onClick={e=>{setShowRegModal({...showRegModal, register:!showRegModal.register});}} className={"landing__nav-item signup"}>
                                 <Link onClick={e => e.stopPropagation()} className="landing__nav-link" to={"#"}>
-                                    Sign Up
+                                    Sign&nbsp;Up
                                 </Link>
                             </li>
+                        </>:
+
+                        <li onClick={e=>{setShowRegModal({...showRegModal, register:!showRegModal.register});}} className={"landing__nav-item signup"}>
+                            <Link onClick={e => e.stopPropagation()} className="landing__nav-link" to={"#"}>
+                                Log&nbsp;Out
+                            </Link>
+                        </li>}
                     </section>
 
                     <section className="sidebar__tags">

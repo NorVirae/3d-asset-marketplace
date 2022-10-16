@@ -5,35 +5,41 @@ import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
 import { RegisterContext } from "./context/registerContext";
 import { useNavigate } from "react-router-dom";
-import { signIn } from "../../api/auth";
 import { toast } from "react-toastify";
+import { signInAction, signUpAction } from "../../api/auth";
+import { useDispatch } from "react-redux";
 
 
 
 const SignInModal = () => {
     const [active, setActive] = useState(false)
     const [fadeOut, setFadeOut] = useState(false)
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [loginInfo, setLoginInfo] = useState({email: '', password: ''})
     const [isLoading, setIsLoading] = useState(false)
 
     const handleSignIn = async (e) => {
-        try {
-            e.preventDefault();
-            
-            const signInData = await signIn(loginInfo)
+        e.preventDefault()
+        setIsLoading(true)
+        const signUpData = await dispatch(signInAction({signInData: loginInfo})).unwrap()
+        .then(async (result) => {
+            console.log(result)
+            setIsLoading(false)
             toast.success("Sign in was successful")
-            console.log(signInData)
+
+            setShowRegModal({...showRegModal, login:false})
+            navigate("/user")
+        })
+        .catch((err) => {
             setIsLoading(false)
-            navigate("/user");
-            setShowRegModal({...showRegModal, login: false, isSidebarOpen: false}) 
+            // console.log(signUpData, "UL")
+            if (err.response){
+                toast.error(err.response.data.message)
+            }
+
+        })
            
-
-
-        }catch(err){
-            setIsLoading(false)
-            toast.error(err.message)
-        }
        
     }
 

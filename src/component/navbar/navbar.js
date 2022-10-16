@@ -16,16 +16,18 @@ import SignUpModal from "../auth/signUpModal"
 import SignInModal from "../auth/signInModal"
 import OpenStoreModal from "../auth/openStoreModal"
 import Sidebar from "../sidebar/sidebar"
+import { useSelector } from "react-redux"
 
 
 const NavLoggedIn = () => {
+    const navigate = useNavigate()
     return (
         <ul className="landing__navbar-inner-container-li">
             <li className="landing__navbar-logo-items"><FcSettings/></li>
             <li className="landing__navbar-logo-items"><RiNotification3Fill/></li>
             <li className="landing__navbar-logo-items"><GrMail/></li>
             <li className="landing__navbar-profile-container">
-                <div className="landing__navbar-profile-img-container">
+                <div onClick={() => navigate("/user")} className="landing__navbar-profile-img-container">
                     <img src={CatmanImg} alt="" className="landing__navbar-profile-img"/>
                  </div>
                  <div className="landing__navbar-user-name">
@@ -72,6 +74,7 @@ const NavLoggedOut = () => {
 const NavBar = ({search, style, shortSearch, loggedIn}) => {
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const isMobile = useMediaQuery({minWidth: 320, maxWidth: 480})
+    const user = useSelector(state => state.user)
     const [yScroll, setYScroll] = useState(0)
     const  [slideIn, setSlideIn] = useState(false)
 
@@ -110,7 +113,7 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
                 
 
             {
-                !isMobile? loggedIn? <NavLoggedIn />: <NavLoggedOut /> : null
+                !isMobile? user? <NavLoggedIn />: <NavLoggedOut /> : null
             }
 
             

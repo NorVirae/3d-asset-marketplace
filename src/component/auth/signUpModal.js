@@ -5,8 +5,9 @@ import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
 import { RegisterContext } from "./context/registerContext";
 import { useNavigate } from "react-router-dom";
-import { signUp } from "../../api/auth";
+import { signUp, signUpAction } from "../../api/auth";
 import { toast } from 'react-toastify';
+import { useDispatch } from "react-redux";
 
 
 
@@ -14,31 +15,39 @@ import { toast } from 'react-toastify';
 const SignUpModal = () => {
     const [active, setActive] = useState(false)
     const [fadeOut, setFadeOut] = useState(false)
+    const dispatch = useDispatch()
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const [isLoading, setIsLoading] = useState(false)
     
     const [regInfo, setRegInfo] = useState({
-        userName: "",
+        name: "",
         email: "",
         password: "",
-        rePassword: ""
+        password_confirmation:"",
     })
 
     const handleSignUp = async (e) => {
-        try {
-            e.preventDefault()
-            setIsLoading(true)
-            const signUpData = await signUp(regInfo)
-            console.log(signUpData)
+      
+        e.preventDefault()
+        setIsLoading(true)
+        const signUpData = await dispatch(signUpAction({signUpData: regInfo})).unwrap()
+        .then(async (result) => {
+            console.log(result)
             setIsLoading(false)
             toast.success("Sign up was successful")
 
-
-        }catch(err){
+            setShowRegModal({...showRegModal, register:false})
+        })
+        .catch((err) => {
             setIsLoading(false)
-            toast.error(err.message)
-        }
-       
+            // console.log(signUpData, "UL")
+            if (err.response){
+                toast.error(err.response.data.message)
+            }
+
+        })
+           
+        
     }
 
     return(
@@ -84,19 +93,19 @@ const SignUpModal = () => {
 
                         
                             <div className="reg__form-group">
-                                <input onChange={e => setRegInfo(old => ({...old, userName: e.target.value.target}))} value={regInfo.userName} className="reg__form-control" placeholder="Username"/>
+                                <input onChange={e => setRegInfo(old => ({...old, name: e.target.value}))} value={regInfo.name} className="reg__form-control" placeholder="Username"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input onChange={e => setRegInfo(old => ({...old, email: e.target.value.target}))} value={regInfo.email} className="reg__form-control" placeholder=" Email"/>
+                                <input onChange={e => setRegInfo(old => ({...old, email: e.target.value}))} value={regInfo.email} className="reg__form-control" type={"email"} placeholder=" Email"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input onChange={e => setRegInfo(old => ({...old, password: e.target.value.target}))} value={regInfo.password} className="reg__form-control" placeholder="Password"/>
+                                <input onChange={e => setRegInfo(old => ({...old, password: e.target.value}))} value={regInfo.password} type={"password"} className="reg__form-control" placeholder="Password"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input onChange={e => setRegInfo(old => ({...old, rePassword: e.target.value.target}))} value={regInfo.rePassword} className="reg__form-control" placeholder="Re-Enter Password"/>
+                                <input onChange={e => setRegInfo(old => ({...old, password_confirmation: e.target.value}))} value={regInfo.password_confirmation} className="reg__form-control" type={"password"} placeholder="Re-Enter Password"/>
                             </div>
 
                         </div>
