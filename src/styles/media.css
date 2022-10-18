@@ -202,7 +202,8 @@
         
         width: 100%;
         top: 5%;
-        zoom: .9;
+        zoom: 2;
+        overflow-x: scroll;
        
     }
 
@@ -332,11 +333,12 @@
     }
 
     .landing__daily-picks-filters-container{
-        zoom: .72;
+        zoom: 1;
+        overflow-x: scroll;
     }
 
     .landing__weekly-freebies-container{
-        zoom: .6;
+        zoom: .8;
     }
 
     .landing__awesome-arts-sec{

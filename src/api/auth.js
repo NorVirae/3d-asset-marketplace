@@ -48,6 +48,27 @@ export const signInAction = createAsyncThunk("auth/signin",
     }
 )
 
+export const updateUserAction = createAsyncThunk("user/update", 
+    async (params, thunkAPI) => {
+        try{
+            // console.log(params.signUpData, "DATA")
+            const newConfig = {...config, "Authorization": `Bearer ${params.accessToken}`}
+
+            const data = await axios.post(`${baseUrl}/api/user/update`, params.signInData, config)
+            thunkAPI.dispatch(signUp({user: data.data.data}))
+            console.log(data.data.data, "HOLA")
+            return data
+
+        }catch(err){
+            
+            // console.log(err.response)
+            console.log(err, "HAIL")
+            
+            return thunkAPI.rejectWithValue(err)
+        }
+    }
+)
+
 export const logOutAction = createAsyncThunk("auth/logout", 
     async (_, thunkAPI) => {
         try{

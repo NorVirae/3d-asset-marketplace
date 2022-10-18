@@ -7,7 +7,7 @@ import {FaEdit} from "react-icons/fa"
 import {FaPlusCircle} from "react-icons/fa"
 import {MdCloudDownload} from "react-icons/md"
 import {GiPriceTag} from "react-icons/gi"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import {MdAttachFile} from "react-icons/md"
 import {RiMailSendFill} from "react-icons/ri"
 
@@ -19,11 +19,15 @@ import coloredhouseImg from "../assets/image/coloredhouse.webp"
 import LandCard from "../component/card/landCard"
 import SearchBar from "../component/search/SearchBar"
 import {BsTrash} from "react-icons/bs"
+import {FaSave} from "react-icons/fa"
 import {FcSettings} from "react-icons/fc"
 import { SuscribeInput } from "../component/footer/footer"
 import {ImFolder, ImFolderOpen} from 'react-icons/im'
 import { useNavigate } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
+import { useDispatch, useSelector } from "react-redux"
+import { RegisterContext } from "../component/auth/context/registerContext"
+import { updateUserAction } from "../api/auth"
 
 
 const Store = () => {
@@ -41,7 +45,8 @@ const Store = () => {
     )
 }
 
-const ProfileInput = ({labelName}) => {
+const ProfileInput = ({labelName, onChange, value, type}) => {
+    const [save, setIsSave] = useState(true)
     return (
         <div className="user__main-profile-form-group">
             <div className="user__label-container">
@@ -56,9 +61,9 @@ const ProfileInput = ({labelName}) => {
 
             <section className="user__main-profile-form-control-container">
                 <div className="user__main-profile-skew-container">
-                    <input className="user__main-profile-form-control" /> 
+                    <input type={type} disabled={save} onChange={onChange} value={value}  className="user__main-profile-form-control" /> 
                     <span className="user__main-profile-form-control-edit-btn">
-                        <FaEdit style={{transform: "skewX(20deg)"}}/>
+                        {save?<FaEdit onClick={() => setIsSave(old => !old)} style={{cursor: "pointer", transform: "skewX(20deg)"}}/>:  <FaSave  onClick={() => setIsSave(old => !old)} style={{cursor: "pointer", transform: "skewX(20deg)"}}/>}
                     </span>
                 </div>
 
@@ -71,14 +76,26 @@ const ProfileInput = ({labelName}) => {
 }
 
 const Profile = () => {
+    const user = useSelector(state => state.user)
+    const [userDetails, setUserDetails] = useState({username: "", email: "", phone: "", description: "", dob: "", location: ""})
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (user && user.user){
+            setUserDetails(old =>({...old, username: user.user.name, email: user.user.email, phone: user.user.phone, description: user.user.description, birth_date: user.user.birth_date, picture: user.user.picture}))
+        }
+    })
     return (
         <section className="user__main-profile-container">
             <form className="user__main-profile-form">
-                <ProfileInput labelName={"FIRST NAME"}/>
-                <ProfileInput labelName={"BIO"}/>
-                <ProfileInput labelName={"USERNAME"}/>
-                <ProfileInput labelName={"LOCATION"}/>
+               
+                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.username} onChange={e => setUserDetails(old => ({...old, username: e.target.value}))} labelName={"USERNAME"}/>
+                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.email}  labelName={"EMAIL"}/>
 
+                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} onChange={e => setUserDetails(old => ({...old, username: e.target.value}))} labelName={"PHONE"}/>
+                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.description} onChange={e => setUserDetails(old => ({...old, description: e.target.value}))} labelName={"BIO"}/>
+                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} type={"date"} value={userDetails.birth_date} onChange={e => setUserDetails(old => ({...old, birth_date: e.target.value}))} labelName={"DOB"}/>
+                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.picture} onChange={e => setUserDetails(old => ({...old, picture: e.target.value}))} labelName={"PROFILE PICTURE"}/>
 
             </form>
         </section>
@@ -627,6 +644,9 @@ const TagheaderCompMobile = ({setActiveInPageHeader, activeInpageHeader, toggleV
 const User = () => {
     const [toggleVisAdmin, setToggleVisAdmin] = useState(true)
     const isMobile = useMediaQuery({minWidth: 481, maxWidth: 768})
+    const user = useSelector(state => state.user)
+    const [showRegModal, setShowRegModal] = useContext(RegisterContext)
+
     const [selectedTag, setSelectedTag] = useState("feature")//Enum Types: feature, recent sellers, popular
     const [activeInpageHeader, setActiveInPageHeader] = useState('messages')//Enum types: store, profile, library, messages, sales, settings
     const navigate = useNavigate()
@@ -634,6 +654,14 @@ const User = () => {
         if (!toggleVisAdmin){
             setActiveInPageHeader("store")
         }
+
+        if (!user || !user.user){
+            navigate("/")
+            setShowRegModal({...showRegModal, login:true})
+
+        }
+
+
     }, [toggleVisAdmin])
     return (
         <section className="user__main-container">

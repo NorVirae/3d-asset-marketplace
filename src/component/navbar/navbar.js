@@ -32,8 +32,8 @@ const NavLoggedIn = () => {
                 <div onClick={() => navigate("/user")} className="landing__navbar-profile-img-container">
                     <img src={CatmanImg} alt="" className="landing__navbar-profile-img"/>
                  </div>
-                 <div className="landing__navbar-user-name">
-                     {user && user.user? user.name : "Login"}
+                 <div onClick={() => navigate("/user")} className="landing__navbar-user-name">
+                     {user && user.user? user.user.name : "Login"}
                  </div>
             </li>
             

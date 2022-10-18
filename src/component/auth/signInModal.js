@@ -87,11 +87,11 @@ const SignInModal = () => {
                         <div className="reg__form-group-container">
                             
                             <div className="reg__form-group">
-                                <input onChange={e => setLoginInfo(old =>({...old, email: e.target.value}))} value={loginInfo.email} className="reg__form-control" placeholder=" Email"/>
+                                <input type={"email"} onChange={e => setLoginInfo(old =>({...old, email: e.target.value}))} value={loginInfo.email} className="reg__form-control" placeholder=" Email"/>
                             </div>
 
                             <div className="reg__form-group">
-                                <input onChange={e => setLoginInfo(old =>({...old, password: e.target.value}))} value={loginInfo.password} className="reg__form-control" placeholder="Password"/>
+                                <input type={"password"} onChange={e => setLoginInfo(old =>({...old, password: e.target.value}))} value={loginInfo.password} className="reg__form-control" placeholder="Password"/>
                             </div>
 
                         </div>

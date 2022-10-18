@@ -210,11 +210,13 @@
     padding: .5rem;
     transform: skewX(-20deg);
     transition: transform .3s ease-in-out;
+    cursor: pointer;
 
 }
 
 .landing__navbar-profile-img-container:hover{
     background-color: #38383E;
+    cursor: pointer;
 }
 
 .landing__navbar-profile-img{
@@ -230,6 +232,7 @@
 
 .landing__navbar-user-name{
     color: #7E8993;
+    cursor: pointer;
 
 }
 

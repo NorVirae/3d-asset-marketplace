@@ -109,6 +109,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     width: 15vw;
 
 }
@@ -240,6 +241,7 @@
 .user__main-profile-form-control-container {
     display: flex;
     flex-direction: column;
+    color: aliceblue;
 }
 
 .user__main-profile-skew-container {
