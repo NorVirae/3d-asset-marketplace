@@ -84,12 +84,12 @@ const Profile = () => {
         if (user && user.user){
             setUserDetails(old =>({...old, username: user.user.name, email: user.user.email, phone: user.user.phone, description: user.user.description, birth_date: user.user.birth_date, picture: user.user.picture}))
         }
-    })
+    },[])
     return (
         <section className="user__main-profile-container">
             <form className="user__main-profile-form">
                
-                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.username} onChange={e => setUserDetails(old => ({...old, username: e.target.value}))} labelName={"USERNAME"}/>
+                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.username} onChange={e => {setUserDetails(old => ({...old, username: e.target.value})); console.log("called")}} labelName={"USERNAME"}/>
                 <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.email}  labelName={"EMAIL"}/>
 
                 <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} onChange={e => setUserDetails(old => ({...old, username: e.target.value}))} labelName={"PHONE"}/>
@@ -694,7 +694,7 @@ const User = () => {
                     </div>
 
                     <div className="user__profile-caution">
-                        We can only aocept the most qualified candidate, show us why you will the best shop
+                        We can only accept the most qualified candidate, show us why you will the best shop
                         owner
                     </div>
 

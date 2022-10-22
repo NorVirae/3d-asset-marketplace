@@ -25,7 +25,7 @@ const UploadPage = () => {
 
         <header>
             <NavBar />
-            <CGBarSlim />
+            {/* <CGBarSlim /> */}
         </header>
 
         <main className="upload__mock-up">

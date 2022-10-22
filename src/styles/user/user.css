@@ -256,6 +256,7 @@
     padding: 1rem 1rem;
     background-color: transparent;
     border: none;
+    color: white;
 }
 
 .user__main-profile-form-control-edit-btn {
