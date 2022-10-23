@@ -567,9 +567,9 @@
 }
 
 
-.user__sales-mc-item-btn:focus{
+/* .user__sales-mc-item-btn:focus{
     transform: scale(1.1);
-}
+} */
 .user__sales-mc-item-btn span{
     transform: skewX(20deg);
     
