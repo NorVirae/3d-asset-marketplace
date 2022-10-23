@@ -748,11 +748,11 @@ const User = () => {
             setActiveInPageHeader("store")
         }
 
-        // if (!user || !user.user){
-        //     navigate("/")
-        //     setShowRegModal({...showRegModal, login:true})
+        if (!user || !user.user){
+            navigate("/")
+            setShowRegModal({...showRegModal, login:true})
 
-        // }
+        }
 
 
     }, [toggleVisAdmin])
