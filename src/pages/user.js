@@ -479,11 +479,21 @@ const Settings = () => {
     )
 }
 
+const SalesDropdown = ({showDropdown=false, setShowDropdown, onMouseEnter, onMouseLeave, setSelected}) => {
+    return (
+       showDropdown? <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="user__sales-mc-dropdown-container">
+            <span onClick={e => setSelected("$30")}>$30</span>
+            <span onClick={e => setSelected("$40")}>$40</span>
+        </div>: null)
+}
+
 const Sales = () => {
     const [activeSideUser, setActiveSideUser] = useState(0)
     const settingsItems = ["Notification", "New Folder(1)", "New Folder(2)", "Loooty backup",]
     const [toggleFiatCrypto, setToggleFiatCrypto] = useState("fiat")
+    const [priceSelect, setPriceSelect] = useState("$20")
     const [selectedPaymentGateway, setSelectedPaymentGateway] = useState("paypal")
+    const [showDropdown, setShowDropdown] = useState(false)
 
     return (
         <section className="user__sales">
@@ -529,7 +539,11 @@ const Sales = () => {
 
                         <div className="user__sales-mc-item-body">
                             <div className="user__sales-form-group">
-                                <input className="user__sales-mc-dropdown"/>
+                                <div onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)} className="user__sales-mc-dropdown">
+                                    <span>{priceSelect}</span>
+                                </div>
+
+                                <SalesDropdown setSelected={setPriceSelect} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)} showDropdown={showDropdown} setShowDropdown={setShowDropdown}/>
                                 <IoMdArrowDropdown className="user__sales-mc-dropdown-icon"/>
                             </div>
                             <p>Payouts will only be sent when your balance reaches $20</p>
