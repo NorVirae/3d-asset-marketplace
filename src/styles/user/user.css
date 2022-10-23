@@ -563,7 +563,7 @@
 }
 
 .user__sales-mc-item-btn:active{
-    transform: scale(1.1);
+    transform: scale(1.1) skewX(-20deg);
 }
 
 
