@@ -56,7 +56,7 @@ const NavLoggedOut = () => {
                     <Link className="landing__nav-link" to={"#"}>Help</Link>
                 </li>
 
-                <li onClick={e=>setShowLogin(!showLogin)} className={"landing__nav-item login"}>
+                <li onClick={e=>{setShowLogin(!showLogin); e.stopPropagation();}} className={"landing__nav-item login"}>
                     <Link className="landing__nav-link" to={"#"}>
                         Sign&nbsp;In
                     </Link>
@@ -73,7 +73,7 @@ const NavLoggedOut = () => {
     )
 }
 
-const NavBar = ({search, style, shortSearch, loggedIn}) => {
+const NavBar = ({search, style, shortSearch, pageType, loggedIn}) => {
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const isMobile = useMediaQuery({minWidth: 320, maxWidth: 480})
     const user = useSelector(state => state.user)
@@ -98,7 +98,7 @@ const NavBar = ({search, style, shortSearch, loggedIn}) => {
 
             { showRegModal.openStore && <OpenStoreModal/>}
 
-            {showRegModal.isSidebarOpen && <Sidebar className={slideIn? 'fade-out-sidebar': ''} />}
+            {showRegModal.isSidebarOpen && <Sidebar pageType={pageType} className={slideIn? 'fade-out-sidebar': ''} />}
             <div className="landing__sidebar-toggle" style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2rem"}}>
                 {/* {!showRegModal.isSidebarOpen? */}
                 <GoThreeBars className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:true}))} style={{color: "white", fontSize: "2rem"}}/>

@@ -1,5 +1,5 @@
 import LoootyLogo from "../loootyLogo";
-import {FaFacebookF} from "react-icons/fa"
+import {FaEyeSlash, FaFacebookF} from "react-icons/fa"
 import googleImg from "../../assets/image/auth/google.svg"
 import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { signUp, signUpAction } from "../../api/auth";
 import { toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
+import { BsEyeFill } from "react-icons/bs";
 
 
 
@@ -18,6 +19,7 @@ const SignUpModal = () => {
     const dispatch = useDispatch()
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const [isLoading, setIsLoading] = useState(false)
+    const [hidePassword, setHidePassword] = useState({pass: true, rePass: true})
     
     const [regInfo, setRegInfo] = useState({
         name: "",
@@ -49,6 +51,7 @@ const SignUpModal = () => {
            
         
     }
+
 
     return(
 
@@ -101,11 +104,17 @@ const SignUpModal = () => {
                             </div>
 
                             <div className="reg__form-group">
-                                <input onChange={e => setRegInfo(old => ({...old, password: e.target.value}))} value={regInfo.password} type={"password"} className="reg__form-control" placeholder="Password"/>
+                                <input onChange={e => setRegInfo(old => ({...old, password: e.target.value}))} value={regInfo.password} type={hidePassword.pass? "password": "text"} className="reg__form-control" placeholder="Password"/>
+                                <span onClick={() => setHidePassword(old => ({...old, pass: !hidePassword.pass}))} className="sign__hide-sensitive-info-button">
+                                    {hidePassword.pass? <BsEyeFill className="lgn__hide-sensitive-ib-icon"/> : <FaEyeSlash className="lgn__hide-sensitive-ib-icon"/>}
+                                </span>
                             </div>
 
                             <div className="reg__form-group">
-                                <input onChange={e => setRegInfo(old => ({...old, password_confirmation: e.target.value}))} value={regInfo.password_confirmation} className="reg__form-control" type={"password"} placeholder="Re-Enter Password"/>
+                                <input onChange={e => setRegInfo(old => ({...old, password_confirmation: e.target.value}))} value={regInfo.password_confirmation} className="reg__form-control" type={hidePassword.rePass? "password": "text"} placeholder="Re-Enter Password"/>
+                                <span onClick={() => setHidePassword(old => ({...old, rePass: !hidePassword.rePass}))} className="sign__hide-sensitive-info-button">
+                                    {hidePassword.rePass? <BsEyeFill className="lgn__hide-sensitive-ib-icon"/> : <FaEyeSlash className="lgn__hide-sensitive-ib-icon"/>}
+                                </span>
                             </div>
 
                         </div>

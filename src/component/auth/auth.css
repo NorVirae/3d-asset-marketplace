@@ -9,6 +9,11 @@
     animation: .7s fadeItIn ease-in-out;
 }
 
+.lgn__login-modal:active{
+   
+    transform: skewX(25deg) scale(.97);
+}
+
 .lgn__fade-out-anim {
     animation: .7s fadeItOut ease-in-out !important;
 
@@ -45,7 +50,37 @@
     background-color: #15151C;
     border: .2rem solid #2B2B38;
     transform: skewX(-25deg);
+    position: relative;
 }
+
+
+.lgn__hide-sensitive-info-button, .sign__hide-sensitive-info-button{
+    position: absolute;
+    background-color: #2A162F;
+    padding: 1.05rem 1.5rem;
+    right: 1.5%;
+    top: 10%;
+    display: flex;
+    cursor: pointer;
+    transform: background-color .3s ease-in-out;
+}
+
+.lgn__hide-sensitive-info-button:active, .sign__hide-sensitive-info-button:active{
+    transform: scale(1.1);
+    background-color: #662077;
+}
+.lgn__hide-sensitive-ib-icon{
+    color: #38383E;
+    font-size: 1.2rem;
+    transform: skewX(20deg);
+}
+
+.sign__hide-sensitive-info-button{
+    right: 1.5%;
+    top: 2%;
+    padding: .9rem 1.5rem;
+}
+
 
 .lgn__form-control{
     padding: 1.5rem 2rem;
@@ -245,6 +280,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
     gap: 1rem;
 }
 

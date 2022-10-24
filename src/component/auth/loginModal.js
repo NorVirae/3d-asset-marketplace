@@ -1,21 +1,28 @@
 
 import "./auth.css"
 import googleImg from "../../assets/image/auth/google.svg"
-import {FaFacebookF} from "react-icons/fa"
+import {FaEyeSlash, FaFacebookF} from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
+import { BsEyeFill } from "react-icons/bs"
+import { useState } from "react"
 
 const LoginModal = ({onClick}) => {
     const navigate = useNavigate()
-    return <div onClick={onClick} className="lgn__login-modal">
+    const [hidePassword, setHidePassword] = useState(true)
+    return <div onClick={e => e.stopPropagation()} className="lgn__login-modal">
                 <div className="lgn__arrow">
                 </div> 
-                <form className="lgn__login-form">
+                <form onClick={e => e.stopPropagation()} className="lgn__login-form">
                     <div className="lgn__form-group">
-                        <input className="lgn__form-control" placeholder="Username / Email"/>
+                        <input onClick={e => e.stopPropagation()} className="lgn__form-control" placeholder="Username / Email"/>
                     </div>
 
                     <div className="lgn__form-group">
-                        <input className="lgn__form-control" placeholder="Password"/>
+                        <input onClick={e => e.stopPropagation()} type={hidePassword? "password": "text"} className="lgn__form-control" placeholder="Password"/>
+                        <span onClick={() => setHidePassword(!hidePassword)} className="lgn__hide-sensitive-info-button">
+                            {hidePassword? <BsEyeFill className="lgn__hide-sensitive-ib-icon"/> : <FaEyeSlash className="lgn__hide-sensitive-ib-icon"/>}
+                        </span>
+                        
                     </div>
 
                     <div className="lgn__form-recovery-container">

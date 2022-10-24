@@ -1,5 +1,5 @@
 import LoootyLogo from "../loootyLogo";
-import {FaFacebookF} from "react-icons/fa"
+import {FaEyeSlash, FaFacebookF} from "react-icons/fa"
 import googleImg from "../../assets/image/auth/google.svg"
 import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { signInAction, signUpAction } from "../../api/auth";
 import { useDispatch } from "react-redux";
+import { BsEyeFill } from "react-icons/bs";
 
 
 
@@ -46,6 +47,7 @@ const SignInModal = () => {
 
     
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
+    const [hidePassword, setHidePassword] = useState(true)
     return(
 
         <div className={`reg__sign-up-overlay ${fadeOut? "lgn__fade-out-anim" : ""}`}>
@@ -91,14 +93,17 @@ const SignInModal = () => {
                             </div>
 
                             <div className="reg__form-group">
-                                <input type={"password"} onChange={e => setLoginInfo(old =>({...old, password: e.target.value}))} value={loginInfo.password} className="reg__form-control" placeholder="Password"/>
+                                <input autoComplete="off" type={hidePassword? "password": "text"} onChange={e => setLoginInfo(old =>({...old, password: e.target.value}))} value={loginInfo.password} className="reg__form-control" placeholder="Password"/>
+                                <span onClick={() => setHidePassword(!hidePassword)} className="sign__hide-sensitive-info-button">
+                                    {hidePassword? <BsEyeFill className="lgn__hide-sensitive-ib-icon"/> : <FaEyeSlash className="lgn__hide-sensitive-ib-icon"/>}
+                                </span>
                             </div>
 
                         </div>
 
                         <div className="reg__terms-container">
-                            <CheckButtons active={active} setActive={setActive}/>
-                            You agree to the <span style={{color: "#FF9700"}}>Terms of Use</span> &amp; <span style={{color: "#FF9700"}}>Privacy policy</span>
+                            {/* <CheckButtons active={active} setActive={setActive}/> */}
+                            Forgot Your <span style={{color: "#FF9700", cursor: "pointer"}}>Password / Username</span>
                         </div>
 
                         <div className="reg__form-btn-group">

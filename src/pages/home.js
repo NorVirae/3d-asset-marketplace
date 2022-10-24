@@ -113,7 +113,7 @@ const Home = () => {
                 
 
                 <header className="landing__header">
-                    <NavBar shortSearch={yScroll > 470 } style={{paddingBottom: "0"}} search={yScroll > 470 }/>
+                    <NavBar pageType={"home"} shortSearch={yScroll > 470 } style={{paddingBottom: "0"}} search={yScroll > 470 }/>
                     
                     <Slogan/>
                 </header>

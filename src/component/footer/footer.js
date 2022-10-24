@@ -9,7 +9,7 @@ export const SuscribeInput = ({style, btnStyle, controlStyle}) => {
         <form style={style} className="landing__news-letter-form">
             <div className="landing__news-letter-form-group">
                 <input style={controlStyle} placeholder="Email Address" className="landing__news-letter-form-control" />
-                <button style={btnStyle} className="landing__news-letter-btn">
+                <button style={btnStyle} className="landing__news-letter-btn-2">
                     <span className="landing__news-letter-btn-text">SUSCRIBE</span>
                 </button>
             </div>

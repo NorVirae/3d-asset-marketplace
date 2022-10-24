@@ -30,6 +30,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { RegisterContext } from "../component/auth/context/registerContext"
 import { updateUserAction } from "../api/auth"
 import { GrStripe } from "react-icons/gr"
+import { setSelectedSubPage } from "../redux/reducers/userStateReducer"
 
 
 const Store = () => {
@@ -634,11 +635,65 @@ const PageSelectComp = ({inPageName}) => {
 }
 
 
-const TagheaderCompDesktop = ({setActiveInPageHeader, activeInpageHeader, toggleVisAdmin}) => (
+const TagheaderCompDesktop = ({ activeInpageHeader, toggleVisAdmin}) => {
     
-    <section className="user__admin-page-section-header-container">
+    const dispatch = useDispatch()
+    return (
     
-        <IdentityBtn onClick={e=>setActiveInPageHeader("store")} 
+        <section className="user__admin-page-section-header-container">
+        
+            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "store"}))} 
+            style={{padding: "1rem 6rem", 
+            marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
+            backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
+            color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
+            borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
+            dropDownList={true} text={"STORE"}/>
+
+            { toggleVisAdmin && <><IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "profile"}))}
+            style={{padding: "1rem 6rem", 
+            backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
+            color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
+            borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
+            text={"PROFILE"}/>
+
+            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "library"}))}
+            style={{padding: "1rem 6rem", 
+            backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
+            color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
+            borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
+            text={"LIBRARY"}/>
+
+            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "messages"}))}
+            style={{padding: "1rem 6rem", 
+            backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
+            color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
+            borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
+            text={"MESSAGES"}/>
+
+            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "sales"}))}
+            style={{padding: "1rem 6rem", 
+            backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
+            color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
+            borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
+            text={"SALES"}/>
+
+            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "settings"}))} 
+            style={{padding: "1rem 3rem", 
+            backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
+            color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
+            borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
+            text={"SETTINGS"}/></>}
+            
+
+        </section>
+)}
+
+const TagheaderCompMobile = ({ activeInpageHeader, toggleVisAdmin}) => {
+    const dispatch = useDispatch()
+    return (<section className="user__admin-page-section-header-container">
+    
+        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "store"}))}  
         style={{padding: "1rem 6rem", 
         marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
         backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
@@ -646,121 +701,74 @@ const TagheaderCompDesktop = ({setActiveInPageHeader, activeInpageHeader, toggle
         borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
         dropDownList={true} text={"STORE"}/>
 
-        { toggleVisAdmin && <><IdentityBtn onClick={e=>setActiveInPageHeader("profile")} 
+        { toggleVisAdmin && <><IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "profile"}))} 
         style={{padding: "1rem 6rem", 
         backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
         color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
         borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
         text={"PROFILE"}/>
 
-        <IdentityBtn onClick={e=>setActiveInPageHeader("library")} 
+        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "library"}))} 
         style={{padding: "1rem 6rem", 
         backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
         color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
         borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
         text={"LIBRARY"}/>
 
-        <IdentityBtn onClick={e=>setActiveInPageHeader("messages")} 
+        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "messages"}))} 
         style={{padding: "1rem 6rem", 
         backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
         color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
         borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
         text={"MESSAGES"}/>
 
-        <IdentityBtn onClick={e=>setActiveInPageHeader("sales")} 
+        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "sales"}))} 
         style={{padding: "1rem 6rem", 
         backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
         color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
         borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
         text={"SALES"}/>
 
-        <IdentityBtn onClick={e=>setActiveInPageHeader("settings")} 
+        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "settings"}))} 
         style={{padding: "1rem 3rem", 
         backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
         color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
         borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
         text={"SETTINGS"}/></>}
         
-
-    </section>
-)
-
-const TagheaderCompMobile = ({setActiveInPageHeader, activeInpageHeader, toggleVisAdmin}) => (
-    <section className="user__admin-page-section-header-container">
-    
-        <IdentityBtn onClick={e=>setActiveInPageHeader("store")} 
-        style={{padding: "1rem 6rem", 
-        marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
-        backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
-        dropDownList={true} text={"STORE"}/>
-
-        { toggleVisAdmin && <><IdentityBtn onClick={e=>setActiveInPageHeader("profile")} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
-        text={"PROFILE"}/>
-
-        <IdentityBtn onClick={e=>setActiveInPageHeader("library")} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
-        text={"LIBRARY"}/>
-
-        <IdentityBtn onClick={e=>setActiveInPageHeader("messages")} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
-        text={"MESSAGES"}/>
-
-        <IdentityBtn onClick={e=>setActiveInPageHeader("sales")} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
-        text={"SALES"}/>
-
-        <IdentityBtn onClick={e=>setActiveInPageHeader("settings")} 
-        style={{padding: "1rem 3rem", 
-        backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
-        text={"SETTINGS"}/></>}
-        
-    </section>
-)
+    </section>)
+}
 
 const User = () => {
     const [toggleVisAdmin, setToggleVisAdmin] = useState(true)
     const isMobile = useMediaQuery({minWidth: 481, maxWidth: 768})
     const user = useSelector(state => state.user)
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
+    const userSubPageSelected = useSelector(state => state.userSubPageState)
+    const dispatch = useDispatch()
 
     const [selectedTag, setSelectedTag] = useState("feature")//Enum Types: feature, recent sellers, popular
-    const [activeInpageHeader, setActiveInPageHeader] = useState('messages')//Enum types: store, profile, library, messages, sales, settings
+    const activeInpageHeader = useSelector(state => state.userSubPageState.selected)//Enum types: store, profile, library, messages, sales, settings
     const navigate = useNavigate()
     useEffect(() => {
         if (!toggleVisAdmin){
-            setActiveInPageHeader("store")
+            dispatch(setSelectedSubPage({selected: "store"}))
+            // setActiveInPageHeader("store")
         }
 
-        if (!user || !user.user){
-            navigate("/")
-            setShowRegModal({...showRegModal, login:true})
+        // if (!user || !user.user){
+        //     navigate("/")
+        //     setShowRegModal({...showRegModal, login:true})
 
-        }
+        // }
 
 
     }, [toggleVisAdmin])
     return (
         <section className="user__main-container">
             <header>
-                <NavBar loggedIn={true} shortSearch={true} style={{paddingBottom: "0", paddingTop: "0"}} search={true}/>
-                <CGBarSlim style={{overflow: "scroll", position: "relative",}}/>
+                <NavBar pageType={"user"} loggedIn={true} shortSearch={true} style={{paddingBottom: "0", paddingTop: "0"}} search={true}/>
+                {/* <CGBarSlim style={{overflow: "scroll", position: "relative",}}/> */}
 
             </header>
 
@@ -819,8 +827,8 @@ const User = () => {
 
                 </section>
 
-                { isMobile? <TagheaderCompDesktop toggleVisAdmin={toggleVisAdmin} setActiveInPageHeader={setActiveInPageHeader} activeInpageHeader={activeInpageHeader}/>:
-                <TagheaderCompMobile toggleVisAdmin={toggleVisAdmin} setActiveInPageHeader={setActiveInPageHeader} activeInpageHeader={activeInpageHeader}/>}
+                { isMobile? <TagheaderCompDesktop toggleVisAdmin={toggleVisAdmin}  activeInpageHeader={activeInpageHeader}/>:
+                <TagheaderCompMobile toggleVisAdmin={toggleVisAdmin} activeInpageHeader={activeInpageHeader}/>}
 
                 {/* <TagsComp selectedTag={selectedTag} setSelectedTag={setSelectedTag}/> */}
 

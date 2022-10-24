@@ -1499,7 +1499,7 @@
     outline: none;
 }
 
-.landing__news-letter-btn{
+.landing__news-letter-btn, .landing__news-letter-btn-2{
     background-color: #38383E;
 
     color: white;
@@ -1515,8 +1515,14 @@
     cursor: pointer;
 }
 
-.landing__news-letter-btn:active{
-    transform: scale(1.05) skewX(-25deg);
+.landing__news-letter-btn-2{
+    
+    right: .5%!important;
+    top: 4%;
+}
+
+.landing__news-letter-btn:active, .landing__news-letter-btn-2:active{
+    transform: scale(1.05) skewX(-20deg);
 }
 
 .landing__news-letter-btn-text{
