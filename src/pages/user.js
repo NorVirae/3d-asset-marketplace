@@ -3,7 +3,7 @@ import NavBar from "../component/navbar/navbar"
 import CatmanImg from "../assets/image/catman.jpg"
 import {RiInstagramFill} from "react-icons/ri"
 import {RiImageEditLine} from "react-icons/ri"
-import {FaEdit, FaPaypal} from "react-icons/fa"
+import {FaArrowAltCircleDown, FaArrowCircleDown, FaArrowDown, FaDownload, FaEdit, FaLongArrowAltDown, FaPaypal} from "react-icons/fa"
 import {FaPlusCircle} from "react-icons/fa"
 import {MdCloudDownload, MdModeEditOutline} from "react-icons/md"
 import {GiPriceTag} from "react-icons/gi"
@@ -31,7 +31,8 @@ import { RegisterContext } from "../component/auth/context/registerContext"
 import { updateUserAction } from "../api/auth"
 import { GrStripe } from "react-icons/gr"
 import { setSelectedSubPage } from "../redux/reducers/userStateReducer"
-
+import {BiMailSend} from "react-icons/bi"
+import { AiFillFileZip } from "react-icons/ai"
 
 const Store = () => {
     return (
@@ -160,7 +161,7 @@ const LibraryItem = ({onClick, prodNumber, active= false, itemName}) => {
     )
 }
 
-const LibraryCollectionCard = ({img}) => {
+const LibraryCollectionCard = ({img, isActive=false}) => {
     return (
         <section className="user__main-lib-card">
             <img className="user__main-lib-card-img" src={img} style={{width: ""}} alt="collections" />
@@ -174,6 +175,8 @@ const LibraryCollectionCard = ({img}) => {
             <div className="user__main-lib-card-footer">
                 <MdCloudDownload style={{fontSize: "1.2rem"}}/> DOWNLOAD FILES
             </div>
+
+            {isActive && <div className="user__pointy-arrow"></div>}
         </section>
     )
 }
@@ -223,15 +226,6 @@ const Library = () => {
                         <LandCard img={ScaryImg} title={""} titleAffirm={""}  />
                         <LandCard img={CatmanImg} title={""} titleAffirm={""}  />
                         <LandCard img={coloredhouseImg} title={""} titleAffirm={""}  />
-                    </div>
-
-                    <div className="user__main-lib-body-collections">
-                        <LibraryCollectionCard img={WolfGuyImg}/>
-                        <LibraryCollectionCard img={CatmanImg} title={""} titleAffirm={""}  />
-                        <LibraryCollectionCard img={TsunamiImg} title={""} titleAffirm={""}  />
-                        <LibraryCollectionCard img={ScaryImg} title={""} titleAffirm={""}  />
-                        <LibraryCollectionCard img={WolfGuyImg} title={""} titleAffirm={""}  />
-                        <LibraryCollectionCard img={coloredhouseImg} title={""} titleAffirm={""}  />
                     </div>
 
 
@@ -488,6 +482,129 @@ const SalesDropdown = ({showDropdown=false, setShowDropdown, onMouseEnter, onMou
         </div>: null)
 }
 
+const CollectionDescription = () => {
+    const [showDescription, setShowDescription] = useState(true)
+    const [showFiles, setShowfiles] = useState(true)
+    return (
+        <div className="user__main-collection-preview">
+            <div className="user__collection-preview">
+                <img className="user__main-images-main-preview" src={WolfGuyImg} />
+                <div className="user__main-images-preview-container">
+                    <img className="user__main-images-preview" src={ScaryImg} />
+                    <img className="user__main-images-preview" src={TsunamiImg} />
+                    <img className="user__main-images-preview" src={CatmanImg} />
+                    <img className="user__main-images-preview" src={CatmanImg} />
+                </div>
+            </div>
+
+            <section className="user__collection-details">
+                <h3>Black Panther | Character Modelling</h3>
+                <div className="user__collection-details-body">
+                    <img className="user__main-img-owner"  src={WolfGuyImg} />
+                    <span className="user__span-text">by:</span>
+                    <span className="user__collection-author-name">Jay Hills</span>
+                    <span className="user__span-text">in 3D Assets...</span>
+                    <button className="user__collection-send-message-btn">
+                        <span><BiMailSend style={{fontSize: "1.1rem"}}/> Message</span>
+                    </button>
+                </div>
+
+                <div className="user__collection-description">
+                    Description <IoMdArrowDropdown className="user__collection-drop-icon"/>
+                </div>
+
+                <div className="user__collection-file-container-title">
+                    <span onClick={() => setShowfiles(!showFiles)} className="user__collection-file">Files <IoMdArrowDropdown style={{transform: `${showFiles? "rotate(-45deg) ":"rotate(0deg)"}`}} className="user__collection-drop-icon"/></span>
+                    <button className="user__collection-download-all-btn">
+                        <span>
+                            <FaArrowAltCircleDown/> Download All
+                        </span>
+                    </button>
+                </div>
+
+                {showFiles && <section className="user__collection-file-container">
+                    {
+                        [1, 2, 3, 4, 5, 6].map(item =>(
+                            <div className="user__collection-main-file">
+                                <div className="user__collection-main-file-inner">
+                                    <AiFillFileZip className="user__collection-drop-icon"/>
+                                    <span >MaleBody </span>
+                                    <span className="user__span-text">ZIP / 1.6 GB </span>
+                                </div>
+                                <FaArrowAltCircleDown className="user__collection-individual-download" />
+                            </div>
+                        ))
+                    }
+                </section>}
+
+            </section>
+        </div>
+
+    )
+}
+
+const Collections = () => {
+    const [activeSideUser, setActiveSideUser] = useState(0)
+    const settingsItems = ["Notification", "New Folder(1)", "New Folder(2)", "Loooty backup",]
+    return (
+        <section className="user__library">
+        <div className="user__library-inner">
+
+            <section className="user__library-sidebar">
+                <section className="user__library-sidebar-header">
+                    <div className="user__library-sidebar-header-item">
+                        <span className="user__library-sidebar-header-item-text">
+                            {settingsItems[activeSideUser]}
+                        </span>
+                    </div>
+                </section>
+
+                <section className="user__library-sidebar-body">
+                    <button className="user__library-trash-btn">
+                        <span className="user__library-trash-btn-text">Create New Folder</span>
+                        <FaPlusCircle  className="user__library-trash-btn-logo"/> 
+                    </button>
+                </section>
+
+                <section className="user__library-sidebar-body">
+                   
+                    <LibraryItem prodNumber={21} itemName={"All Products"} onClick={() => setActiveSideUser(0)} active={activeSideUser === 0}/>
+                    <LibraryItem prodNumber={59} itemName={"New Folder(1)"} onClick={() => setActiveSideUser(1)} active={activeSideUser === 1}/>
+                    <LibraryItem prodNumber={0} itemName={"New Folder(2)"} onClick={() => setActiveSideUser(2)} active={activeSideUser === 2}/>
+                    <LibraryItem prodNumber={34} itemName={"Loooty backup"} onClick={() => setActiveSideUser(3)} active={activeSideUser === 3}/>
+
+                </section>
+            </section>
+
+            <section className="user__main-lib-container">
+                <div className="user__main-lib-header">
+                    
+                    <SuscribeInput style={{}} btnStyle={{padding: ".1rem 2rem", height: "1.7rem", right: "1.7%"}} controlStyle={{padding: ".4rem 8rem"}}/>
+                </div>
+
+
+                <div className="user__main-lib-body-collections">
+                    <LibraryCollectionCard img={WolfGuyImg}/>
+                    <LibraryCollectionCard img={CatmanImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard img={TsunamiImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard img={ScaryImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard img={WolfGuyImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard isActive={true} img={coloredhouseImg} title={""} titleAffirm={""}  />
+                </div>
+
+                
+                <CollectionDescription/>
+
+                <div className="user__main-lib-footer">
+                    
+                </div>
+            </section>
+        </div>
+
+    </section>
+    )
+}
+
 const Sales = () => {
     const [activeSideUser, setActiveSideUser] = useState(0)
     const settingsItems = ["Notification", "New Folder(1)", "New Folder(2)", "Loooty backup",]
@@ -619,6 +736,12 @@ const PageSelectComp = ({inPageName}) => {
         case "library":
             return <Library />
 
+        case "suscribers":
+            return <Library />
+
+        case "collections":
+            return <Collections />
+
         case "messages":
             return <Messages />
 
@@ -648,7 +771,7 @@ const TagheaderCompDesktop = ({ activeInpageHeader, toggleVisAdmin}) => {
             backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
             color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
             borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
-            dropDownList={true} text={"STORE"}/>
+            dropDownList={["SUSCRIBERS"]} text={"STORE"}/>
 
             { toggleVisAdmin && <><IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "profile"}))}
             style={{padding: "1rem 6rem", 
@@ -662,6 +785,7 @@ const TagheaderCompDesktop = ({ activeInpageHeader, toggleVisAdmin}) => {
             backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
             color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
             borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
+            dropDownList={["COLLECTIONS"]}
             text={"LIBRARY"}/>
 
             <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "messages"}))}
@@ -699,7 +823,7 @@ const TagheaderCompMobile = ({ activeInpageHeader, toggleVisAdmin}) => {
         backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
         color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
         borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
-        dropDownList={true} text={"STORE"}/>
+        dropDownList={["COLLECTIONS"]} text={"STORE"}/>
 
         { toggleVisAdmin && <><IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "profile"}))} 
         style={{padding: "1rem 6rem", 
@@ -827,7 +951,7 @@ const User = () => {
 
                 </section>
 
-                { isMobile? <TagheaderCompDesktop toggleVisAdmin={toggleVisAdmin}  activeInpageHeader={activeInpageHeader}/>:
+                { !isMobile? <TagheaderCompDesktop toggleVisAdmin={toggleVisAdmin}  activeInpageHeader={activeInpageHeader}/>:
                 <TagheaderCompMobile toggleVisAdmin={toggleVisAdmin} activeInpageHeader={activeInpageHeader}/>}
 
                 {/* <TagsComp selectedTag={selectedTag} setSelectedTag={setSelectedTag}/> */}

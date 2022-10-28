@@ -23,6 +23,30 @@
     justify-content: space-between;
 }
 
+.buy__btn-close-back{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buy__page-close-btn{
+    padding: .7rem 1.2rem;
+    display: flex;
+    transform: skewX(-20deg);
+    background-color: #38383e;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.buy__page-close-btn:active{
+    transform: scale(1.1) skewX(-20deg);
+}
+
+.buy__page-close-btn-icon{
+    transform: skewX(20deg)
+}
+
 .buy__carousel-container{
     display: flex;
     flex-direction: column;
@@ -32,7 +56,13 @@
 
 .buy__property-container{
     display: flex;
+    justify-content: space-between;
     gap: 2rem;
+}
+
+.buy__property-inner-container{
+    display: flex;
+    gap: .5rem;
 }
 
 .buy__rating-container{

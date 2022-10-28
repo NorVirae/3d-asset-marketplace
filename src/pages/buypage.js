@@ -1,5 +1,5 @@
 import NavBar from "../component/navbar/navbar"
-import {FaComment, FaPlusCircle} from "react-icons/fa"
+import {FaComment, FaPlusCircle, FaTimes} from "react-icons/fa"
 import {BsTags} from "react-icons/bs"
 import {MdOutlineMoreVert} from "react-icons/md"
 import {VscTriangleDown, VscTriangleUp} from "react-icons/vsc"
@@ -258,22 +258,22 @@ const CarouselSec = () => {
     return (
         <div className="buy__carousel-container">
             <div className="buy__property-container">
-                <div className="buy__product-name">
-                    Black Panther <span> | Character Modelling</span>
-                </div>
-                <div className="buy__rating-container">
-                    <RiStarSFill style={{color: "#FF9700"}}/>
-                    <RiStarSFill style={{color: "#FF9700"}}/>
-                    <RiStarSFill style={{color: "#FF9700"}}/>
-                    <RiStarSFill style={{color: "#FF9700"}}/>
+                    <div className="buy__product-name">
+                        Black Panther <span> | Character Modelling</span>
+                    </div>
+                    <div className="buy__rating-container">
+                        <RiStarSFill style={{color: "#FF9700"}}/>
+                        <RiStarSFill style={{color: "#FF9700"}}/>
+                        <RiStarSFill style={{color: "#FF9700"}}/>
+                        <RiStarSFill style={{color: "#FF9700"}}/>
 
-                </div>
-                <span className="buy__rating-qty">
-                    79
-                </span>
-                <span className="buy__comments-cont">
-                    <FaComment />5
-                </span>
+                    </div>
+                    <span className="buy__rating-qty">
+                        79
+                    </span>
+                    <span className="buy__comments-cont">
+                        <FaComment />5
+                    </span>
             </div>
 
             <section className="buy__carousel">
@@ -308,7 +308,7 @@ const CarouselSec = () => {
 }
 const BuyPage = () => {
     const [descCommToggleMode, setDescCommToggleMode] = useState(true)
-    
+    const navigate = useNavigate()
     return (
         <div>
             <header>
@@ -321,11 +321,17 @@ const BuyPage = () => {
                 </section>
 
                 <section className="buy__buy-preview-container">
+                    <div className="buy__btn-close-back">
+                        <button onClick={() =>  navigate("/") } className="buy__page-close-btn">
+                            <FaTimes className="buy__page-close-btn-icon"/>
+                        </button>
+                    </div>
                     <div className="buy__buy-preview-container-inner">
                         <CarouselSec />
                         
                         <FilePurchaseSec descCommToggleMode={descCommToggleMode} setDescCommToggleMode={setDescCommToggleMode} />                    
-                    </div>    
+                    </div>
+                       
                 </section>
             </main>
 

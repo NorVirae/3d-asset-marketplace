@@ -61,9 +61,7 @@ const Cart = () => {
         <div className="">
             <header>
                 <NavBar shortSearch={true} style={{paddingBottom: "0"}} search={true}/>
-                <div style={{backgroundColor: "#15151C", display: "flex", alignItems: "center", height: "5vh", padding: "0px"}}>
-                    <CGBarSlim style={{position: "relative", top: "1vh"}}/>
-                </div>
+                
             </header>
 
             <main className="cart">

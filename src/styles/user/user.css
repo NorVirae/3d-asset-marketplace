@@ -284,6 +284,169 @@
     height: 100%;
 }
 
+.user__pointy-arrow{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border: .3rem solid blue;
+    bottom: -30%;
+    left: 38%;
+    transform: rotate(45deg);
+    border-top: .2rem solid #2A2a37;
+    border-left: .2rem solid #2A2a37;
+    border-bottom: transparent;
+    border-right: transparent;
+    background-color: #15151C;
+}
+
+.user__main-collection-preview{
+    border-top: .2rem solid #2A2a37;
+    margin: 0 3rem;
+    display: flex;
+    padding: 3rem;
+    gap: 3rem;
+}
+
+.user__collection-file-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+}
+
+.user__collection-file-container-title{
+   display: flex;
+    
+    gap: 1rem;
+}
+
+.user__collection-preview{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.user__main-images-main-preview{
+    width: 20rem;
+    height: 13rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user__main-images-preview-container{
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+}
+
+.user__main-images-preview{
+    width: 4.2rem;
+    height: 3rem;
+    object-fit: cover;
+}
+
+.user__collection-details{
+    display: flex;
+    flex-direction: column;
+    
+    gap: .5rem;
+
+}
+
+.user__collection-details-body{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.user__collection-send-message-btn, .user__collection-download-all-btn{
+    background-color: #AF23AF;
+    transform: skewX(-20deg);
+    padding: .5rem .9rem;
+    border: none;
+    cursor: pointer;
+    outline: 4px solid #bc41bc;
+    display: flex;
+    color: white;
+}
+
+.user__collection-send-message-btn:active, .user__collection-download-all-btn:active{
+    transform: skewX(-20deg) scale(1.1);
+    
+}
+
+.user__collection-individual-download{
+    color: #15151c;
+    transform: skewX(20deg);
+    font-size: 1.4rem ;
+    margin-left: 7rem;
+    cursor: pointer;
+}
+.user__collection-individual-download:active{
+    transform: scale(1.1) skewX(20deg);
+}
+
+.user__collection-download-all-btn{
+    background-color: #FF9700;
+    padding: .5rem .8rem;
+    outline: none;
+    color: black;
+    font-weight: bold;
+    justify-content: center;
+}
+.user__collection-send-message-btn span, .user__collection-download-all-btn span {
+    transform: skewX(20deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+}
+
+.user__collection-description, .user__collection-file{
+    color: #d3d9dc;
+    cursor: pointer;
+}
+
+
+
+.user__main-img-owner{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+}
+
+.user__span-text{
+    color: #606080;
+}
+
+.user__collection-file, .user__collection-description{
+    display: flex;
+    align-items: center;
+    
+}
+
+
+
+.user__collection-drop-icon{
+    color: #717196;
+    font-size: 1.4rem;
+    transition: transform .4s ease-in-out;
+}
+
+.user__collection-main-file{
+    padding: .4rem;
+    display: flex;
+    gap: 1.2rem;
+    background-color: #232230;
+    transform: skewX(-20deg);
+
+}
+
+.user__collection-main-file-inner{
+    display: flex;
+    gap: .6rem;
+    align-items: center;
+    color: #989da4;
+    transform: skewX(20deg);
+}
 /* User Sales */
 
 .user__sales{
@@ -583,7 +746,7 @@
 .user__library-sidebar{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 38vw;
     width: 100%;
     flex: .9;
     background-color: #232230;
@@ -808,6 +971,7 @@
     display: flex;
     flex-direction: column;
     background-color: #232230;
+    position: relative;
 }
 
 .user__main-lib-card-img{

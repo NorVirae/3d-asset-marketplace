@@ -111,6 +111,7 @@
 
 .identity__btn-skew-container{
     display: flex;
+    z-index: 1;
 }
 
 .identity__btn {
@@ -159,8 +160,22 @@
 }
 
 .identity__btn-dropdown-item{
-    padding: 1rem 2rem;
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: center;
 }
+
+.identity__btn-dropdown-item:active{
+    padding: 1rem 2rem;
+    
+    background-color: #15151C;
+}
+
+.identity__btn-dropdown-item:hover{
+    transform: scale(1.1);
+}
+
+
 
 .identity__btn-inner-container{
     display: flex;

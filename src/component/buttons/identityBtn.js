@@ -1,11 +1,18 @@
 import { useState } from 'react'
 import {MdOutlineArrowDropDown} from 'react-icons/md'
+import { useDispatch } from 'react-redux'
+import { setSelectedSubPage } from '../../redux/reducers/userStateReducer'
 
-const IdenttyBtnDropdown = () => {
+const IdenttyBtnDropdown = ({dropDownList}) => {
+    const dispatch = useDispatch()
     return(
-        <div className='identity__btn-skew-container'>
-            <ul className='identity__btn-dropdown'>
-                <li className='identity__btn-dropdown-item'>Suscribers</li>
+        <div onClick={e=> e.stopPropagation()} className='identity__btn-skew-container'>
+            <ul onClick={e=> e.stopPropagation()} className='identity__btn-dropdown'>
+                {dropDownList.map(item =>{
+                    console.log(item.toLowerCase(), "CHECK")
+                    return <li onClick={ (e) => { dispatch(setSelectedSubPage({selected: item.toLowerCase()})); }} className='identity__btn-dropdown-item'>{item}</li>
+                })}
+                
             </ul>
         </div>
     )
@@ -13,6 +20,7 @@ const IdenttyBtnDropdown = () => {
 
 const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
     const [showDropdown, setShowDropdown] = useState(false)
+    console.log(dropDownList)
     const wrapHandler = (text) => {
         let newtext = text.split(' ')
         if (newtext.length > 1){
@@ -39,7 +47,7 @@ const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
                         right:"-75%"}}/>}
                     
                 </span>
-                {dropDownList && (showDropdown && <IdenttyBtnDropdown />)}
+                {dropDownList && (showDropdown && <IdenttyBtnDropdown dropDownList={dropDownList}/>)}
             </button>
         </div>
             // {/* </div> */}
