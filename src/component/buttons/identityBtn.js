@@ -3,14 +3,14 @@ import {MdOutlineArrowDropDown} from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { setSelectedSubPage } from '../../redux/reducers/userStateReducer'
 
-const IdenttyBtnDropdown = ({dropDownList}) => {
+const IdenttyBtnDropdown = ({dropDownList, setMainText}) => {
     const dispatch = useDispatch()
     return(
-        <div onClick={e=> e.stopPropagation()} className='identity__btn-skew-container'>
+        <div onClick={e=>{ e.stopPropagation();}} className='identity__btn-skew-container'>
             <ul onClick={e=> e.stopPropagation()} className='identity__btn-dropdown'>
                 {dropDownList.map(item =>{
                     console.log(item.toLowerCase(), "CHECK")
-                    return <li onClick={ (e) => { dispatch(setSelectedSubPage({selected: item.toLowerCase()})); }} className='identity__btn-dropdown-item'>{item}</li>
+                    return <li onClick={ (e) => { dispatch(setSelectedSubPage({selected: item.toLowerCase()}));  setMainText(item)}} className='identity__btn-dropdown-item'>{item}</li>
                 })}
                 
             </ul>
@@ -20,6 +20,7 @@ const IdenttyBtnDropdown = ({dropDownList}) => {
 
 const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
     const [showDropdown, setShowDropdown] = useState(false)
+    const [mainText, setMainText] = useState(text)
     console.log(dropDownList)
     const wrapHandler = (text) => {
         let newtext = text.split(' ')
@@ -37,7 +38,7 @@ const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
         <div className="identity__btn-skew-container">
             <button onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)} onClick={(e)=>{onClick();}} style={style} className={`identity__btn`}>
                 <span className={`identity__btn-text `}>
-                    {wrapHandler(text)}
+                    {wrapHandler(mainText)}
                     {dropDownList && <MdOutlineArrowDropDown 
                         style={{marginLeft: ".2rem", 
                         transform: `rotate${showDropdown?0: 180}deg`,
@@ -47,7 +48,7 @@ const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
                         right:"-75%"}}/>}
                     
                 </span>
-                {dropDownList && (showDropdown && <IdenttyBtnDropdown dropDownList={dropDownList}/>)}
+                {dropDownList && (showDropdown && <IdenttyBtnDropdown setMainText={setMainText} dropDownList={dropDownList}/>)}
             </button>
         </div>
             // {/* </div> */}

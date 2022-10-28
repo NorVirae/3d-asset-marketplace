@@ -1,6 +1,6 @@
 import NavBar from "../component/navbar/navbar"
-import {FaComment, FaPlusCircle, FaTimes} from "react-icons/fa"
-import {BsTags} from "react-icons/bs"
+import {FaComment, FaPlusCircle, FaStripe, FaTimes} from "react-icons/fa"
+import {BsPaypal, BsTags} from "react-icons/bs"
 import {MdOutlineMoreVert} from "react-icons/md"
 import {VscTriangleDown, VscTriangleUp} from "react-icons/vsc"
 import IdentityBtn from "../component/buttons/identityBtn"
@@ -150,15 +150,8 @@ const BuyCart = () => {
                     <p style={{color: "#6D6D91", fontSize: ".8rem"}}>Payment made easy! You can pay with any of this payment system:</p>
                     <div className="buy__payment-options">
                         <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-                        <GrPaypal className="buy__payment-options-logos" />
-
+                        <FaStripe className="buy__payment-options-logos" />
+                        <BsPaypal className="buy__payment-options-logos" />
                     </div>
                 </div>
             </div>

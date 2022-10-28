@@ -1,16 +1,16 @@
 import CGBar, { CGBarSlim } from "../component/card/cbBar"
 import NavBar from "../component/navbar/navbar"
 import CatmanImg from "../assets/image/catman.jpg"
-import {RiInstagramFill} from "react-icons/ri"
-import {RiImageEditLine} from "react-icons/ri"
-import {FaArrowAltCircleDown, FaArrowCircleDown, FaArrowDown, FaDownload, FaEdit, FaLongArrowAltDown, FaPaypal} from "react-icons/fa"
-import {FaPlusCircle} from "react-icons/fa"
-import {MdCloudDownload, MdModeEditOutline} from "react-icons/md"
-import {GiPriceTag} from "react-icons/gi"
+import { RiInstagramFill } from "react-icons/ri"
+import { RiImageEditLine } from "react-icons/ri"
+import { FaArrowAltCircleDown, FaArrowCircleDown, FaArrowDown, FaDownload, FaEdit, FaLongArrowAltDown, FaPaypal, FaSearchLocation } from "react-icons/fa"
+import { FaPlusCircle } from "react-icons/fa"
+import { MdCloudDownload, MdModeEditOutline } from "react-icons/md"
+import { GiPriceTag } from "react-icons/gi"
 import { useContext, useEffect, useState } from "react"
-import {MdAttachFile} from "react-icons/md"
-import {IoMdArrowDropdown} from "react-icons/io"
-import {RiMailSendFill} from "react-icons/ri"
+import { MdAttachFile } from "react-icons/md"
+import { IoMdArrowDropdown } from "react-icons/io"
+import { RiMailSendFill } from "react-icons/ri"
 
 import IdentityBtn from "../component/buttons/identityBtn"
 import WolfGuyImg from "../assets/image/wolfguyfeather.jpg"
@@ -19,11 +19,11 @@ import ScaryImg from "../assets/image/scary.jpg"
 import coloredhouseImg from "../assets/image/coloredhouse.webp"
 import LandCard from "../component/card/landCard"
 import SearchBar from "../component/search/SearchBar"
-import {BsTrash} from "react-icons/bs"
-import {FaSave} from "react-icons/fa"
-import {FcSettings} from "react-icons/fc"
+import { BsTrash } from "react-icons/bs"
+import { FaSave } from "react-icons/fa"
+import { FcSettings } from "react-icons/fc"
 import { SuscribeInput } from "../component/footer/footer"
-import {ImFolder, ImFolderOpen, ImOpt} from 'react-icons/im'
+import { ImFolder, ImFolderOpen, ImOpt } from 'react-icons/im'
 import { useNavigate } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 import { useDispatch, useSelector } from "react-redux"
@@ -31,25 +31,24 @@ import { RegisterContext } from "../component/auth/context/registerContext"
 import { updateUserAction } from "../api/auth"
 import { GrStripe } from "react-icons/gr"
 import { setSelectedSubPage } from "../redux/reducers/userStateReducer"
-import {BiMailSend} from "react-icons/bi"
+import { BiMailSend } from "react-icons/bi"
 import { AiFillFileZip } from "react-icons/ai"
 
 const Store = () => {
     return (
         <section className="landing__freebies-container">
             <div className="landing__freebies-inner-container">
-                <LandCard img={WolfGuyImg} title={""} titleAffirm={""}  />
-                <LandCard img={TsunamiImg} title={""} titleAffirm={""}  />
-                <LandCard img={ScaryImg} title={""} titleAffirm={""}  />
-                <LandCard img={CatmanImg} title={""} titleAffirm={""}  />
-                <LandCard img={coloredhouseImg} title={""} titleAffirm={""}  />
-
+                <LandCard img={WolfGuyImg} title={""} titleAffirm={""} />
+                <LandCard img={TsunamiImg} title={""} titleAffirm={""} />
+                <LandCard img={ScaryImg} title={""} titleAffirm={""} />
+                <LandCard img={CatmanImg} title={""} titleAffirm={""} />
+                <LandCard img={coloredhouseImg} title={""} titleAffirm={""} />
             </div>
         </section>
     )
 }
 
-const ProfileInput = ({labelName, onChange, value, type}) => {
+const ProfileInput = ({ labelName, onChange, value, type }) => {
     const [save, setIsSave] = useState(true)
     return (
         <div className="user__main-profile-form-group">
@@ -61,13 +60,13 @@ const ProfileInput = ({labelName, onChange, value, type}) => {
                     </span>
                 </label>
             </div>
-            
+
 
             <section className="user__main-profile-form-control-container">
                 <div className="user__main-profile-skew-container">
-                    <input type={type} disabled={save} onChange={onChange} value={value}  className="user__main-profile-form-control" /> 
+                    <input type={type} disabled={save} onChange={onChange} value={value} className="user__main-profile-form-control" />
                     <span className="user__main-profile-form-control-edit-btn">
-                        {save?<FaEdit onClick={() => setIsSave(old => !old)} style={{cursor: "pointer", transform: "skewX(20deg)"}}/>:  <FaSave  onClick={() => setIsSave(old => !old)} style={{cursor: "pointer", transform: "skewX(20deg)"}}/>}
+                        {save ? <FaEdit onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} /> : <FaSave onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} />}
                     </span>
                 </div>
 
@@ -81,46 +80,46 @@ const ProfileInput = ({labelName, onChange, value, type}) => {
 
 const Profile = () => {
     const user = useSelector(state => state.user)
-    const [userDetails, setUserDetails] = useState({username: "", email: "", phone: "", description: "", dob: "", location: ""})
+    const [userDetails, setUserDetails] = useState({ username: "", email: "", phone: "", description: "", dob: "", location: "" })
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (user && user.user){
-            setUserDetails(old =>({...old, username: user.user.name, email: user.user.email, phone: user.user.phone, description: user.user.description, birth_date: user.user.birth_date, picture: user.user.picture}))
+        if (user && user.user) {
+            setUserDetails(old => ({ ...old, username: user.user.name, email: user.user.email, phone: user.user.phone, description: user.user.description, birth_date: user.user.birth_date, picture: user.user.picture }))
         }
-    },[])
+    }, [])
     return (
         <section className="user__main-profile-container">
             <form className="user__main-profile-form">
-               
-                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.username} onChange={e => {setUserDetails(old => ({...old, username: e.target.value})); console.log("called")}} labelName={"USERNAME"}/>
-                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.email}  labelName={"EMAIL"}/>
 
-                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} onChange={e => setUserDetails(old => ({...old, username: e.target.value}))} labelName={"PHONE"}/>
-                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.description} onChange={e => setUserDetails(old => ({...old, description: e.target.value}))} labelName={"BIO"}/>
-                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} type={"date"} value={userDetails.birth_date} onChange={e => setUserDetails(old => ({...old, birth_date: e.target.value}))} labelName={"DOB"}/>
-                <ProfileInput onClick={e => dispatch(updateUserAction({updateData: userDetails, accessToken: user && user.user? user.user.access_token: ""}))} value={userDetails.picture} onChange={e => setUserDetails(old => ({...old, picture: e.target.value}))} labelName={"PROFILE PICTURE"}/>
+                <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} value={userDetails.username} onChange={e => { setUserDetails(old => ({ ...old, username: e.target.value })); console.log("called") }} labelName={"USERNAME"} />
+                <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} value={userDetails.email} labelName={"EMAIL"} />
+
+                <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} onChange={e => setUserDetails(old => ({ ...old, username: e.target.value }))} labelName={"PHONE"} />
+                <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} value={userDetails.description} onChange={e => setUserDetails(old => ({ ...old, description: e.target.value }))} labelName={"BIO"} />
+                <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} type={"date"} value={userDetails.birth_date} onChange={e => setUserDetails(old => ({ ...old, birth_date: e.target.value }))} labelName={"DOB"} />
+                <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} value={userDetails.picture} onChange={e => setUserDetails(old => ({ ...old, picture: e.target.value }))} labelName={"PROFILE PICTURE"} />
 
             </form>
         </section>
     )
 }
 
-const LibraryCard = ({percent="100%", current}) => {
+const LibraryCard = ({ percent = "100%", current }) => {
     return (
         <div className="user__library-card">
             <img src={WolfGuyImg} className="user__library-card-img" alt="" />
             <div className="user__library-card-body">
                 <div className="user__library-card-name">
-                    <span style={{transform: "skewX(20deg)"}}>PRODUCT NAME</span>
+                    <span style={{ transform: "skewX(20deg)" }}>PRODUCT NAME</span>
                     <div className="user__upload-pg-container">
-                        <MdCloudDownload style={{fontSize: "2.5rem"}}/>
+                        <MdCloudDownload style={{ fontSize: "2.5rem" }} />
                         <span className="user__upload-pg-stats">{current} of 10</span>
                     </div>
 
                 </div>
                 <div className="user__library-card-pg-container">
-                    <div style={{width: percent, backgroundColor: percent === "100%"? "#1AC422": "#FF9700"}} className={`user__library-pg-bar`}></div>
+                    <div style={{ width: percent, backgroundColor: percent === "100%" ? "#1AC422" : "#FF9700" }} className={`user__library-pg-bar`}></div>
 
                 </div>
             </div>
@@ -141,30 +140,30 @@ const LibraryCard = ({percent="100%", current}) => {
 //     )
 // }
 
-const LibraryItem = ({onClick, prodNumber, active= false, itemName}) => {
+const LibraryItem = ({ onClick, prodNumber, active = false, itemName }) => {
     return (
         <button onClick={onClick} className={`user__library-item ${active && "user__library-item-active"}`}>
             <div className="user__library-item-inner">
-                { active ? <ImFolderOpen className="user__lib-folder-large" style={{fontSize: "1.4rem"}}/>:
-                <ImFolder  className="user__lib-folder-large" style={{fontSize: "1rem"}}/>}
+                {active ? <ImFolderOpen className="user__lib-folder-large" style={{ fontSize: "1.4rem" }} /> :
+                    <ImFolder className="user__lib-folder-large" style={{ fontSize: "1rem" }} />}
                 <div className="user__library-item-body">
                     <h5 className="user__library-item-name">
                         {itemName}
                     </h5>
                 </div>
-                
+
             </div>
             <span className="user__library-item-info-count">
-                    {prodNumber} items
+                {prodNumber} items
             </span>
         </button>
     )
 }
 
-const LibraryCollectionCard = ({img, id, setIsActive, isActive}) => {
+const LibraryCollectionCard = ({ img, id, setIsActive, isActive }) => {
     return (
-        <section style={{transform: isActive == id && "scale(1)"}} onClick={() =>setIsActive(id) } className="user__main-lib-card">
-            <img className="user__main-lib-card-img" src={img} style={{width: ""}} alt="collections" />
+        <section style={{ transform: isActive == id && "scale(1)" }} onClick={() => setIsActive(id)} className="user__main-lib-card">
+            <img className="user__main-lib-card-img" src={img} style={{ width: "" }} alt="collections" />
             <div className="user__main-lib-card-body">
                 <h3 className="user__card-collection-title">
                     Beach House with Rumps
@@ -173,7 +172,7 @@ const LibraryCollectionCard = ({img, id, setIsActive, isActive}) => {
             </div>
 
             <div className="user__main-lib-card-footer">
-                <MdCloudDownload style={{fontSize: "1.2rem"}}/> DOWNLOAD FILES
+                <MdCloudDownload style={{ fontSize: "1.2rem" }} /> DOWNLOAD FILES
             </div>
 
             {isActive === id && <div className="user__pointy-arrow"></div>}
@@ -200,38 +199,38 @@ const Library = () => {
                     <section className="user__library-sidebar-body">
                         <button className="user__library-trash-btn">
                             <span className="user__library-trash-btn-text">Create New Folder</span>
-                            <FaPlusCircle  className="user__library-trash-btn-logo"/> 
+                            <FaPlusCircle className="user__library-trash-btn-logo" />
                         </button>
                     </section>
 
                     <section className="user__library-sidebar-body">
-                       
-                        <LibraryItem prodNumber={21} itemName={"All Products"} onClick={() => setActiveSideUser(0)} active={activeSideUser === 0}/>
-                        <LibraryItem prodNumber={59} itemName={"New Folder(1)"} onClick={() => setActiveSideUser(1)} active={activeSideUser === 1}/>
-                        <LibraryItem prodNumber={0} itemName={"New Folder(2)"} onClick={() => setActiveSideUser(2)} active={activeSideUser === 2}/>
-                        <LibraryItem prodNumber={34} itemName={"Loooty backup"} onClick={() => setActiveSideUser(3)} active={activeSideUser === 3}/>
+
+                        <LibraryItem prodNumber={21} itemName={"All Products"} onClick={() => setActiveSideUser(0)} active={activeSideUser === 0} />
+                        <LibraryItem prodNumber={59} itemName={"New Folder(1)"} onClick={() => setActiveSideUser(1)} active={activeSideUser === 1} />
+                        <LibraryItem prodNumber={0} itemName={"New Folder(2)"} onClick={() => setActiveSideUser(2)} active={activeSideUser === 2} />
+                        <LibraryItem prodNumber={34} itemName={"Loooty backup"} onClick={() => setActiveSideUser(3)} active={activeSideUser === 3} />
 
                     </section>
                 </section>
 
                 <section className="user__main-lib-container">
                     <div className="user__main-lib-header">
-                        
-                        <SuscribeInput style={{}} btnStyle={{padding: ".1rem 2rem", height: "1.7rem", right: "1.7%"}} controlStyle={{padding: ".4rem 8rem"}}/>
+
+                        <SuscribeInput style={{}} btnStyle={{ padding: ".1rem 2rem", height: "1.7rem", right: "1.7%" }} controlStyle={{ padding: ".4rem 8rem" }} />
                     </div>
 
                     <div className="user__main-lib-body">
-                        <LandCard img={WolfGuyImg} title={""} titleAffirm={""}  />
-                        <LandCard img={TsunamiImg} title={""} titleAffirm={""}  />
-                        <LandCard img={ScaryImg} title={""} titleAffirm={""}  />
-                        <LandCard img={CatmanImg} title={""} titleAffirm={""}  />
-                        <LandCard img={coloredhouseImg} title={""} titleAffirm={""}  />
+                        <LandCard img={WolfGuyImg} title={""} titleAffirm={""} />
+                        <LandCard img={TsunamiImg} title={""} titleAffirm={""} />
+                        <LandCard img={ScaryImg} title={""} titleAffirm={""} />
+                        <LandCard img={CatmanImg} title={""} titleAffirm={""} />
+                        <LandCard img={coloredhouseImg} title={""} titleAffirm={""} />
                     </div>
 
 
 
                     <div className="user__main-lib-footer">
-                        
+
                     </div>
                 </section>
             </div>
@@ -242,7 +241,7 @@ const Library = () => {
 
 
 
-const MessageFriend = ({onClick, active= false}) => {
+const MessageFriend = ({ onClick, active = false }) => {
     return (
         <button onClick={onClick} className={`user__message-friend ${active && "user__message-friend-active"}`}>
             <div className="user__message-friend-inner">
@@ -288,35 +287,77 @@ const ReceiverMsg = () => {
     )
 }
 
+const SuscribersCard = () => {
+    return (
+        <div className="users__suscribers-card">
+                <div className="users__top-bg-image">
+                    <img className="users__top-bg-image-img" src={WolfGuyImg} />
+                </div>
+
+                <div className="users__bottom-bg-image-container">
+                    <img className="users__top-bg-image-profile" src={CatmanImg} />
+                    <div className="users__suscribers-count-container">
+                        <h3 className="users__suscribers-count-title">Liqair Studios</h3>
+                        <small className="users__suscribers-count">219.9k suscribers</small>
+                    </div>
+
+                    <p className="users__suscribers-count-info">we can only accept the most qualified setters at the moment</p>
+                    <div className="users__suscribers-location">
+                        <FaSearchLocation /> Enugu, Nigeria.
+                    </div>
+                    <button className="users__suscribers-btn">
+                        <span>
+                            Suscribed
+                        </span>
+                    </button>
+                </div>
+            </div>
+    )
+}
+
+const Suscribers = () => {
+    return (
+        <section className="users__suscribers-container">
+            <div className="users__suscribers-container-inner">
+                <SuscribersCard />
+                <SuscribersCard />
+                <SuscribersCard />
+                <SuscribersCard />
+                <SuscribersCard />
+            </div>
+        </section>
+    )
+}
 
 const Messages = () => {
     const [activeSideUser, setActiveSideUser] = useState(0)
+    const [activeSideTab, setActiveSideTab] = useState("users")
     return (
         <section className="user__messages">
             <div className="user__messages-inner">
                 <section className="user__message-sidebar">
                     <section className="user__message-sidebar-header">
-                        <div className="user__message-sidebar-header-item">
+                        <div onClick={() => setActiveSideTab("users")} className={`user__message-sidebar-header-item ${activeSideTab === "users" && "user__message-sidebar-header-item-active"}`}>
                             USERS
                         </div>
 
-                        <div className="user__message-sidebar-header-item">
+                        <div onClick={() => setActiveSideTab("loooty")} className={`user__message-sidebar-header-item ${activeSideTab === "loooty" && "user__message-sidebar-header-item-active"}`}>
                             LOOOTY
                             <div className="user__message-notify"></div>
                         </div>
                     </section>
 
                     <section className="user__message-sidebar-body">
-                        <MessageFriend onClick={() => setActiveSideUser(0)} active={activeSideUser === 0}/>
-                        <MessageFriend onClick={() => setActiveSideUser(1)} active={activeSideUser === 1}/>
-                        <MessageFriend onClick={() => setActiveSideUser(2)} active={activeSideUser === 2}/>
+                        <MessageFriend onClick={() => setActiveSideUser(0)} active={activeSideUser === 0} />
+                        <MessageFriend onClick={() => setActiveSideUser(1)} active={activeSideUser === 1} />
+                        <MessageFriend onClick={() => setActiveSideUser(2)} active={activeSideUser === 2} />
 
 
                     </section>
 
                     <section className="user__message-sidebar-footer">
                         <button className="user__message-trash-btn">
-                            <BsTrash  className="user__message-trash-btn-logo"/> 
+                            <BsTrash className="user__message-trash-btn-logo" />
                             <span className="user__message-trash-btn-text">Trash</span>
                         </button>
                     </section>
@@ -343,8 +384,8 @@ const Messages = () => {
                                     <input className="user__msg-form-control" />
 
                                     <button className="user__msg-form-send-btn">
-                                        <RiMailSendFill style={{transform: "skewX(20deg)"}} />
-                                        <span style={{transform: "skewX(20deg)"}}> Send</span>
+                                        <RiMailSendFill style={{ transform: "skewX(20deg)" }} />
+                                        <span style={{ transform: "skewX(20deg)" }}> Send</span>
                                     </button>
                                 </div>
                             </div>
@@ -357,7 +398,7 @@ const Messages = () => {
     )
 }
 
-const SettingsItem = ({onClick, active= false, itemName}) => {
+const SettingsItem = ({ onClick, active = false, itemName }) => {
     return (
         <button onClick={onClick} className={`user__settings-item ${active && "user__settings-item-active"}`}>
             <div className="user__settings-item-inner">
@@ -372,11 +413,11 @@ const SettingsItem = ({onClick, active= false, itemName}) => {
     )
 }
 
-export const OrderCheckbox = ({isActive=true, setIsActive}) => {
+export const OrderCheckbox = ({ isActive = true, setIsActive }) => {
     return (
-        <div style={{opacity: "1"}} onClick={() => setIsActive(!isActive) } className="user__main-sett-checkbox">
-            <div style={{backgroundColor: `${isActive ? "transparent": "#FF9700"}`}} className="user__main-sett-checkbox-active">
-                
+        <div style={{ opacity: "1" }} onClick={() => setIsActive(!isActive)} className="user__main-sett-checkbox">
+            <div style={{ backgroundColor: `${isActive ? "transparent" : "#FF9700"}` }} className="user__main-sett-checkbox-active">
+
             </div>
         </div>
     )
@@ -387,7 +428,7 @@ const OrderItem = () => {
 
     return (
         <div onClick={() => setIsChecked(!isChecked)} className="user__main-sett-item">
-            <OrderCheckbox isActive={isChecked} setIsActive={setIsChecked}/>
+            <OrderCheckbox isActive={isChecked} setIsActive={setIsChecked} />
 
             <div className="user__main-sett-item-body">
                 <h4 className="user__main-sett-item-header"> Order Placed</h4>
@@ -400,7 +441,7 @@ const OrderItem = () => {
 
 const Settings = () => {
     const [activeSideUser, setActiveSideUser] = useState(0)
-    const isDesktop = useMediaQuery({minWidth: 768})
+    const isDesktop = useMediaQuery({ minWidth: 768 })
     const settingsItems = ["Notification", "Account", "Messaging", "Password", "User Name", "Blocking", "Payment", "Store", "Profile", "Sales"]
     return (
         <section className="user__settings">
@@ -415,21 +456,21 @@ const Settings = () => {
                     </section>
 
                     <section className="user__settings-sidebar-body">
-                        <SettingsItem itemName={"Notification"} onClick={() => setActiveSideUser(0)} active={activeSideUser === 0}/>
-                        <SettingsItem itemName={"Account"} onClick={() => setActiveSideUser(1)} active={activeSideUser === 1}/>
-                        <SettingsItem itemName={"Messaging"} onClick={() => setActiveSideUser(2)} active={activeSideUser === 2}/>
-                        <SettingsItem itemName={"Password"} onClick={() => setActiveSideUser(3)} active={activeSideUser === 3}/>
-                        <SettingsItem itemName={"User Name"} onClick={() => setActiveSideUser(4)} active={activeSideUser === 4}/>
-                        <SettingsItem itemName={"Blocking"} onClick={() => setActiveSideUser(5)} active={activeSideUser === 5}/>
-                        <SettingsItem itemName={"Payment"} onClick={() => setActiveSideUser(6)} active={activeSideUser === 6}/>
-                        <SettingsItem itemName={"Store"} onClick={() => setActiveSideUser(7)} active={activeSideUser === 7}/>
-                        <SettingsItem itemName={"Profile"} onClick={() => setActiveSideUser(8)} active={activeSideUser === 8}/>
-                        <SettingsItem itemName={"Sales"} onClick={() => setActiveSideUser(9)} active={activeSideUser === 9}/>
+                        <SettingsItem itemName={"Notification"} onClick={() => setActiveSideUser(0)} active={activeSideUser === 0} />
+                        <SettingsItem itemName={"Account"} onClick={() => setActiveSideUser(1)} active={activeSideUser === 1} />
+                        <SettingsItem itemName={"Messaging"} onClick={() => setActiveSideUser(2)} active={activeSideUser === 2} />
+                        <SettingsItem itemName={"Password"} onClick={() => setActiveSideUser(3)} active={activeSideUser === 3} />
+                        <SettingsItem itemName={"User Name"} onClick={() => setActiveSideUser(4)} active={activeSideUser === 4} />
+                        <SettingsItem itemName={"Blocking"} onClick={() => setActiveSideUser(5)} active={activeSideUser === 5} />
+                        <SettingsItem itemName={"Payment"} onClick={() => setActiveSideUser(6)} active={activeSideUser === 6} />
+                        <SettingsItem itemName={"Store"} onClick={() => setActiveSideUser(7)} active={activeSideUser === 7} />
+                        <SettingsItem itemName={"Profile"} onClick={() => setActiveSideUser(8)} active={activeSideUser === 8} />
+                        <SettingsItem itemName={"Sales"} onClick={() => setActiveSideUser(9)} active={activeSideUser === 9} />
                     </section>
 
                     <section className="user__settings-sidebar-footer">
                         <button className="user__settings-trash-btn">
-                            <FcSettings  className="user__settings-trash-btn-logo"/> 
+                            <FcSettings className="user__settings-trash-btn-logo" />
                             <span className="user__settings-trash-btn-text">STORE</span>
                         </button>
                     </section>
@@ -440,7 +481,7 @@ const Settings = () => {
                         <span className="user__main-sett-header-text">
                             the name will appear on your customers billing statement
                         </span>
-                        {isDesktop && <SuscribeInput style={{}} btnStyle={{padding: ".1rem 2rem", height: "1.7rem", right: "1.7%"}} controlStyle={{padding: ".4rem 8rem"}}/>}
+                        {isDesktop && <SuscribeInput style={{}} btnStyle={{ padding: ".1rem 2rem", height: "1.7rem", right: "1.7%" }} controlStyle={{ padding: ".4rem 8rem" }} />}
                     </div>
 
                     <div className="user__main-sett-body">
@@ -452,7 +493,7 @@ const Settings = () => {
                             <OrderItem />
                             <OrderItem />
                         </div>
-                        
+
                         <div className="user__main-sett-body-left">
                             <OrderItem />
                             <OrderItem />
@@ -465,7 +506,7 @@ const Settings = () => {
                     </div>
 
                     <div className="user__main-sett-footer">
-                        
+
                     </div>
                 </section>
             </div>
@@ -474,12 +515,12 @@ const Settings = () => {
     )
 }
 
-const SalesDropdown = ({showDropdown=false, setShowDropdown, onMouseEnter, onMouseLeave, setSelected}) => {
+const SalesDropdown = ({ showDropdown = false, setShowDropdown, onMouseEnter, onMouseLeave, setSelected }) => {
     return (
-       showDropdown? <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="user__sales-mc-dropdown-container">
+        showDropdown ? <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="user__sales-mc-dropdown-container">
             <span onClick={e => setSelected("$30")}>$30</span>
             <span onClick={e => setSelected("$40")}>$40</span>
-        </div>: null)
+        </div> : null)
 }
 
 const CollectionDescription = () => {
@@ -500,34 +541,34 @@ const CollectionDescription = () => {
             <section className="user__collection-details">
                 <h3>Black Panther | Character Modelling</h3>
                 <div className="user__collection-details-body">
-                    <img className="user__main-img-owner"  src={WolfGuyImg} />
+                    <img className="user__main-img-owner" src={WolfGuyImg} />
                     <span className="user__span-text">by:</span>
                     <span className="user__collection-author-name">Jay Hills</span>
                     <span className="user__span-text">in 3D Assets...</span>
                     <button className="user__collection-send-message-btn">
-                        <span><BiMailSend style={{fontSize: "1.1rem"}}/> Message</span>
+                        <span><BiMailSend style={{ fontSize: "1.1rem" }} /> Message</span>
                     </button>
                 </div>
 
                 <div className="user__collection-description">
-                    Description <IoMdArrowDropdown className="user__collection-drop-icon"/>
+                    Description <IoMdArrowDropdown className="user__collection-drop-icon" />
                 </div>
 
                 <div className="user__collection-file-container-title">
-                    <span onClick={() => setShowfiles(!showFiles)} className="user__collection-file">Files <IoMdArrowDropdown style={{transform: `${showFiles? "rotate(-45deg) ":"rotate(0deg)"}`}} className="user__collection-drop-icon"/></span>
+                    <span onClick={() => setShowfiles(!showFiles)} className="user__collection-file">Files <IoMdArrowDropdown style={{ transform: `${showFiles ? "rotate(-45deg) " : "rotate(0deg)"}` }} className="user__collection-drop-icon" /></span>
                     <button className="user__collection-download-all-btn">
                         <span>
-                            <FaArrowAltCircleDown/> Download All
+                            <FaArrowAltCircleDown /> Download All
                         </span>
                     </button>
                 </div>
 
                 {showFiles && <section className="user__collection-file-container">
                     {
-                        [1, 2, 3, 4, 5, 6].map(item =>(
+                        [1, 2, 3, 4, 5, 6].map(item => (
                             <div className="user__collection-main-file">
                                 <div className="user__collection-main-file-inner">
-                                    <AiFillFileZip className="user__collection-drop-icon"/>
+                                    <AiFillFileZip className="user__collection-drop-icon" />
                                     <span >MaleBody </span>
                                     <span className="user__span-text">ZIP / 1.6 GB </span>
                                 </div>
@@ -549,60 +590,60 @@ const Collections = () => {
     const [isActive, setIsActive] = useState(null)
     return (
         <section className="user__library">
-        <div className="user__library-inner">
+            <div className="user__library-inner">
 
-            <section className="user__library-sidebar">
-                <section className="user__library-sidebar-header">
-                    <div className="user__library-sidebar-header-item">
-                        <span className="user__library-sidebar-header-item-text">
-                            {settingsItems[activeSideUser]}
-                        </span>
+                <section className="user__library-sidebar">
+                    <section className="user__library-sidebar-header">
+                        <div className="user__library-sidebar-header-item">
+                            <span className="user__library-sidebar-header-item-text">
+                                {settingsItems[activeSideUser]}
+                            </span>
+                        </div>
+                    </section>
+
+                    <section className="user__library-sidebar-body">
+                        <button className="user__library-trash-btn">
+                            <span className="user__library-trash-btn-text">Create New Folder</span>
+                            <FaPlusCircle className="user__library-trash-btn-logo" />
+                        </button>
+                    </section>
+
+                    <section className="user__library-sidebar-body">
+
+                        <LibraryItem prodNumber={21} itemName={"All Products"} onClick={() => setActiveSideUser(0)} active={activeSideUser === 0} />
+                        <LibraryItem prodNumber={59} itemName={"New Folder(1)"} onClick={() => setActiveSideUser(1)} active={activeSideUser === 1} />
+                        <LibraryItem prodNumber={0} itemName={"New Folder(2)"} onClick={() => setActiveSideUser(2)} active={activeSideUser === 2} />
+                        <LibraryItem prodNumber={34} itemName={"Loooty backup"} onClick={() => setActiveSideUser(3)} active={activeSideUser === 3} />
+
+                    </section>
+                </section>
+
+                <section className="user__main-lib-container">
+                    <div className="user__main-lib-header">
+
+                        <SuscribeInput style={{}} btnStyle={{ padding: ".1rem 2rem", height: "1.7rem", right: "1.7%" }} controlStyle={{ padding: ".4rem 8rem" }} />
+                    </div>
+
+
+                    <div className="user__main-lib-body-collections">
+                        <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={1} img={WolfGuyImg} />
+                        <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={2} img={CatmanImg} title={""} titleAffirm={""} />
+                        <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={3} img={TsunamiImg} title={""} titleAffirm={""} />
+                        <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={4} img={ScaryImg} title={""} titleAffirm={""} />
+                        <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={5} img={WolfGuyImg} title={""} titleAffirm={""} />
+                        <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={6} img={coloredhouseImg} title={""} titleAffirm={""} />
+                    </div>
+
+
+                    {isActive && <CollectionDescription />}
+
+                    <div className="user__main-lib-footer">
+
                     </div>
                 </section>
+            </div>
 
-                <section className="user__library-sidebar-body">
-                    <button className="user__library-trash-btn">
-                        <span className="user__library-trash-btn-text">Create New Folder</span>
-                        <FaPlusCircle  className="user__library-trash-btn-logo"/> 
-                    </button>
-                </section>
-
-                <section className="user__library-sidebar-body">
-                   
-                    <LibraryItem prodNumber={21} itemName={"All Products"} onClick={() => setActiveSideUser(0)} active={activeSideUser === 0}/>
-                    <LibraryItem prodNumber={59} itemName={"New Folder(1)"} onClick={() => setActiveSideUser(1)} active={activeSideUser === 1}/>
-                    <LibraryItem prodNumber={0} itemName={"New Folder(2)"} onClick={() => setActiveSideUser(2)} active={activeSideUser === 2}/>
-                    <LibraryItem prodNumber={34} itemName={"Loooty backup"} onClick={() => setActiveSideUser(3)} active={activeSideUser === 3}/>
-
-                </section>
-            </section>
-
-            <section className="user__main-lib-container">
-                <div className="user__main-lib-header">
-                    
-                    <SuscribeInput style={{}} btnStyle={{padding: ".1rem 2rem", height: "1.7rem", right: "1.7%"}} controlStyle={{padding: ".4rem 8rem"}}/>
-                </div>
-
-
-                <div className="user__main-lib-body-collections">
-                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={1} img={WolfGuyImg}/>
-                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={2} img={CatmanImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={3} img={TsunamiImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={4} img={ScaryImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={5} img={WolfGuyImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={6} img={coloredhouseImg} title={""} titleAffirm={""}  />
-                </div>
-
-                
-                {isActive && <CollectionDescription/>}
-
-                <div className="user__main-lib-footer">
-                    
-                </div>
-            </section>
-        </div>
-
-    </section>
+        </section>
     )
 }
 
@@ -629,11 +670,11 @@ const Sales = () => {
 
                 <section className="user__sales-sidebar-body">
                     <div onClick={e => setSelectedPaymentGateway("paypal")} className={`user__sales-sidebar-body-item ${selectedPaymentGateway === "paypal" && "user__sales-sidebar-bi-selected"}`}>
-                        <span><FaPaypal/> Paypal</span>
+                        <span><FaPaypal /> Paypal</span>
                     </div>
 
                     <div onClick={e => setSelectedPaymentGateway("stripe")} className={`user__sales-sidebar-body-item ${selectedPaymentGateway === "stripe" && "user__sales-sidebar-bi-selected"}`}>
-                        <span><GrStripe/> Stripe</span>
+                        <span><GrStripe /> Stripe</span>
                     </div>
                 </section>
 
@@ -662,8 +703,8 @@ const Sales = () => {
                                     <span>{priceSelect}</span>
                                 </div>
 
-                                <SalesDropdown setSelected={setPriceSelect} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)} showDropdown={showDropdown} setShowDropdown={setShowDropdown}/>
-                                <IoMdArrowDropdown className="user__sales-mc-dropdown-icon"/>
+                                <SalesDropdown setSelected={setPriceSelect} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)} showDropdown={showDropdown} setShowDropdown={setShowDropdown} />
+                                <IoMdArrowDropdown className="user__sales-mc-dropdown-icon" />
                             </div>
                             <p>Payouts will only be sent when your balance reaches $20</p>
                         </div>
@@ -677,10 +718,10 @@ const Sales = () => {
                         <div className="user__sales-mc-item-body">
                             <div className="user__sales-form-group">
                                 <div className="user__sales-skew-container">
-                                    <input placeholder="Fill in your Email here" className="user__sales-mc-input"/>
+                                    <input placeholder="Fill in your Email here" className="user__sales-mc-input" />
                                 </div>
                                 <div className="user__sales-mc-input-edit-skew-container">
-                                    <MdModeEditOutline className="user__sales-mc-input-edit"/>
+                                    <MdModeEditOutline className="user__sales-mc-input-edit" />
                                 </div>
                             </div>
                             <p>This is the Email we use for payouts</p>
@@ -698,25 +739,25 @@ const Sales = () => {
     )
 }
 
-const TagsComp = ({selectedTag, setSelectedTag}) => {
+const TagsComp = ({ selectedTag, setSelectedTag }) => {
     return (
         <section className="user__tags-container">
             <div className="user__feature-tags-container">
-                <span onClick={e=>setSelectedTag("feature")}
+                <span onClick={e => setSelectedTag("feature")}
                     className={`user__feature-tags-item ${selectedTag === "feature" && "user__feature-tags-item-active"}`}>
                     FEATURED
                 </span>
 
-                <span onClick={e=>setSelectedTag("popular")} 
-                className={`user__feature-tags-item ${selectedTag === "popular" && "user__feature-tags-item-active"}`}> 
+                <span onClick={e => setSelectedTag("popular")}
+                    className={`user__feature-tags-item ${selectedTag === "popular" && "user__feature-tags-item-active"}`}>
                     POPULAR
                 </span>
-                <span onClick={e=>setSelectedTag("recent")}
+                <span onClick={e => setSelectedTag("recent")}
                     className={`user__feature-tags-item ${selectedTag === "recent" && "user__feature-tags-item-active"}`}>
                     RECENT
                 </span>
-                <span onClick={e=>setSelectedTag("seller")} 
-                className={`user__feature-tags-item ${selectedTag === "seller" && "user__feature-tags-item-active"}`}> 
+                <span onClick={e => setSelectedTag("seller")}
+                    className={`user__feature-tags-item ${selectedTag === "seller" && "user__feature-tags-item-active"}`}>
                     BEST SELLERS
                 </span>
 
@@ -727,8 +768,8 @@ const TagsComp = ({selectedTag, setSelectedTag}) => {
     )
 }
 
-const PageSelectComp = ({inPageName}) => {
-    switch(inPageName){
+const PageSelectComp = ({ inPageName }) => {
+    switch (inPageName) {
         case "profile":
             return <Profile />
         case "store":
@@ -737,11 +778,11 @@ const PageSelectComp = ({inPageName}) => {
         case "library":
             return <Library />
 
-        case "suscribers":
-            return <Library />
-
         case "collections":
             return <Collections />
+
+        case "suscribers":
+            return <Suscribers />
 
         case "messages":
             return <Messages />
@@ -751,7 +792,7 @@ const PageSelectComp = ({inPageName}) => {
 
         case "sales":
             return <Sales />
-    
+
 
         default:
             return <Store />
@@ -759,114 +800,139 @@ const PageSelectComp = ({inPageName}) => {
 }
 
 
-const TagheaderCompDesktop = ({ activeInpageHeader, toggleVisAdmin}) => {
-    
+const TagheaderCompDesktop = ({ activeInpageHeader, toggleVisAdmin }) => {
+
     const dispatch = useDispatch()
     return (
-    
+
         <section className="user__admin-page-section-header-container">
-        
-            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "store"}))} 
-            style={{padding: "1rem 6rem", 
-            marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
-            backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
-            color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
-            borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
-            dropDownList={["SUSCRIBERS"]} text={"STORE"}/>
 
-            { toggleVisAdmin && <><IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "profile"}))}
-            style={{padding: "1rem 6rem", 
-            backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
-            color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
-            borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
-            text={"PROFILE"}/>
+            <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "store" }))}
+                style={{
+                    padding: "1rem 6rem",
+                    marginRight: `${!toggleVisAdmin ? '61.5vw' : '0'}`,
+                    backgroundColor: `${activeInpageHeader === "store" ? "#15151C" : "#191921"}`,
+                    color: `${activeInpageHeader === "store" ? "#CECED8" : "#4D4D6B"}`,
+                    borderLeft: `1rem solid ${activeInpageHeader === "store" ? "#7C187A" : "#353449"}`
+                }}
+                dropDownList={["SUSCRIBERS", "STORE"]} text={"STORE"} />
 
-            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "library"}))}
-            style={{padding: "1rem 6rem", 
-            backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
-            color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
-            borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
-            dropDownList={["COLLECTIONS"]}
-            text={"LIBRARY"}/>
+            {toggleVisAdmin && <><IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "profile" }))}
+                style={{
+                    padding: "1rem 6rem",
+                    backgroundColor: `${activeInpageHeader === "profile" ? "#15151C" : "#191921"}`,
+                    color: `${activeInpageHeader === "profile" ? "#CECED8" : "#4D4D6B"}`,
+                    borderLeft: `1rem solid ${activeInpageHeader === "profile" ? "#7C187A" : "#353449"}`
+                }}
+                text={"PROFILE"} />
 
-            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "messages"}))}
-            style={{padding: "1rem 6rem", 
-            backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
-            color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
-            borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
-            text={"MESSAGES"}/>
+                <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "library" }))}
+                    style={{
+                        padding: "1rem 6rem",
+                        backgroundColor: `${activeInpageHeader === "library" ? "#15151C" : "#191921"}`,
+                        color: `${activeInpageHeader === "library" ? "#CECED8" : "#4D4D6B"}`,
+                        borderLeft: `1rem solid ${activeInpageHeader === "library" ? "#7C187A" : "#353449"}`
+                    }}
+                    dropDownList={["COLLECTIONS", "LIBRARY"]}
+                    text={"LIBRARY"} />
 
-            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "sales"}))}
-            style={{padding: "1rem 6rem", 
-            backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
-            color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
-            borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
-            text={"SALES"}/>
+                <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "messages" }))}
+                    style={{
+                        padding: "1rem 6rem",
+                        backgroundColor: `${activeInpageHeader === "messages" ? "#15151C" : "#191921"}`,
+                        color: `${activeInpageHeader === "messages" ? "#CECED8" : "#4D4D6B"}`,
+                        borderLeft: `1rem solid ${activeInpageHeader === "messages" ? "#7C187A" : "#353449"}`
+                    }}
+                    text={"MESSAGES"} />
 
-            <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "settings"}))} 
-            style={{padding: "1rem 3rem", 
-            backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
-            color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
-            borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
-            text={"SETTINGS"}/></>}
-            
+                <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "sales" }))}
+                    style={{
+                        padding: "1rem 6rem",
+                        backgroundColor: `${activeInpageHeader === "sales" ? "#15151C" : "#191921"}`,
+                        color: `${activeInpageHeader === "sales" ? "#CECED8" : "#4D4D6B"}`,
+                        borderLeft: `1rem solid ${activeInpageHeader === "sales" ? "#7C187A" : "#353449"}`
+                    }}
+                    text={"SALES"} />
+
+                <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "settings" }))}
+                    style={{
+                        padding: "1rem 3rem",
+                        backgroundColor: `${activeInpageHeader === "settings" ? "#15151C" : "#191921"}`,
+                        color: `${activeInpageHeader === "settings" ? "#CECED8" : "#4D4D6B"}`,
+                        borderLeft: `1rem solid ${activeInpageHeader === "settings" ? "#7C187A" : "#353449"}`
+                    }}
+                    text={"SETTINGS"} /></>}
+
 
         </section>
-)}
+    )
+}
 
-const TagheaderCompMobile = ({ activeInpageHeader, toggleVisAdmin}) => {
+const TagheaderCompMobile = ({ activeInpageHeader, toggleVisAdmin }) => {
     const dispatch = useDispatch()
     return (<section className="user__admin-page-section-header-container">
-    
-        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "store"}))}  
-        style={{padding: "1rem 6rem", 
-        marginRight: `${!toggleVisAdmin ? '61.5vw': '0'}`,
-        backgroundColor: `${activeInpageHeader==="store"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="store"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="store"?"#7C187A":"#353449"}`}} 
-        dropDownList={["COLLECTIONS"]} text={"STORE"}/>
 
-        { toggleVisAdmin && <><IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "profile"}))} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="profile"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="profile"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="profile"?"#7C187A":"#353449"}`}} 
-        text={"PROFILE"}/>
+        <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "store" }))}
+            style={{
+                padding: "1rem 6rem",
+                marginRight: `${!toggleVisAdmin ? '61.5vw' : '0'}`,
+                backgroundColor: `${activeInpageHeader === "store" ? "#15151C" : "#191921"}`,
+                color: `${activeInpageHeader === "store" ? "#CECED8" : "#4D4D6B"}`,
+                borderLeft: `1rem solid ${activeInpageHeader === "store" ? "#7C187A" : "#353449"}`
+            }}
+            dropDownList={["COLLECTIONS"]} text={"STORE"} />
 
-        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "library"}))} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="library"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="library"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="library"?"#7C187A":"#353449"}`}} 
-        text={"LIBRARY"}/>
+        {toggleVisAdmin && <><IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "profile" }))}
+            style={{
+                padding: "1rem 6rem",
+                backgroundColor: `${activeInpageHeader === "profile" ? "#15151C" : "#191921"}`,
+                color: `${activeInpageHeader === "profile" ? "#CECED8" : "#4D4D6B"}`,
+                borderLeft: `1rem solid ${activeInpageHeader === "profile" ? "#7C187A" : "#353449"}`
+            }}
+            text={"PROFILE"} />
 
-        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "messages"}))} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="messages"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="messages"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="messages"?"#7C187A":"#353449"}`}} 
-        text={"MESSAGES"}/>
+            <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "library" }))}
+                style={{
+                    padding: "1rem 6rem",
+                    backgroundColor: `${activeInpageHeader === "library" ? "#15151C" : "#191921"}`,
+                    color: `${activeInpageHeader === "library" ? "#CECED8" : "#4D4D6B"}`,
+                    borderLeft: `1rem solid ${activeInpageHeader === "library" ? "#7C187A" : "#353449"}`
+                }}
+                text={"LIBRARY"} />
 
-        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "sales"}))} 
-        style={{padding: "1rem 6rem", 
-        backgroundColor: `${activeInpageHeader==="sales"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="sales"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="sales"?"#7C187A":"#353449"}`}} 
-        text={"SALES"}/>
+            <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "messages" }))}
+                style={{
+                    padding: "1rem 6rem",
+                    backgroundColor: `${activeInpageHeader === "messages" ? "#15151C" : "#191921"}`,
+                    color: `${activeInpageHeader === "messages" ? "#CECED8" : "#4D4D6B"}`,
+                    borderLeft: `1rem solid ${activeInpageHeader === "messages" ? "#7C187A" : "#353449"}`
+                }}
+                text={"MESSAGES"} />
 
-        <IdentityBtn onClick={e=>dispatch(setSelectedSubPage({selected: "settings"}))} 
-        style={{padding: "1rem 3rem", 
-        backgroundColor: `${activeInpageHeader==="settings"?"#15151C":"#191921"}`,
-        color: `${activeInpageHeader==="settings"?"#CECED8":"#4D4D6B"}`,
-        borderLeft: `1rem solid ${activeInpageHeader==="settings"?"#7C187A":"#353449"}`}} 
-        text={"SETTINGS"}/></>}
-        
+            <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "sales" }))}
+                style={{
+                    padding: "1rem 6rem",
+                    backgroundColor: `${activeInpageHeader === "sales" ? "#15151C" : "#191921"}`,
+                    color: `${activeInpageHeader === "sales" ? "#CECED8" : "#4D4D6B"}`,
+                    borderLeft: `1rem solid ${activeInpageHeader === "sales" ? "#7C187A" : "#353449"}`
+                }}
+                text={"SALES"} />
+
+            <IdentityBtn onClick={e => dispatch(setSelectedSubPage({ selected: "settings" }))}
+                style={{
+                    padding: "1rem 3rem",
+                    backgroundColor: `${activeInpageHeader === "settings" ? "#15151C" : "#191921"}`,
+                    color: `${activeInpageHeader === "settings" ? "#CECED8" : "#4D4D6B"}`,
+                    borderLeft: `1rem solid ${activeInpageHeader === "settings" ? "#7C187A" : "#353449"}`
+                }}
+                text={"SETTINGS"} /></>}
+
     </section>)
 }
 
 const User = () => {
     const [toggleVisAdmin, setToggleVisAdmin] = useState(true)
-    const isMobile = useMediaQuery({minWidth: 481, maxWidth: 768})
+    const isMobile = useMediaQuery({ minWidth: 481, maxWidth: 768 })
     const user = useSelector(state => state.user)
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)
     const userSubPageSelected = useSelector(state => state.userSubPageState)
@@ -876,8 +942,8 @@ const User = () => {
     const activeInpageHeader = useSelector(state => state.userSubPageState.selected)//Enum types: store, profile, library, messages, sales, settings
     const navigate = useNavigate()
     useEffect(() => {
-        if (!toggleVisAdmin){
-            dispatch(setSelectedSubPage({selected: "store"}))
+        if (!toggleVisAdmin) {
+            dispatch(setSelectedSubPage({ selected: "store" }))
             // setActiveInPageHeader("store")
         }
 
@@ -892,7 +958,7 @@ const User = () => {
     return (
         <section className="user__main-container">
             <header>
-                <NavBar pageType={"user"} loggedIn={true} shortSearch={true} style={{paddingBottom: "0", paddingTop: "0"}} search={true}/>
+                <NavBar pageType={"user"} loggedIn={true} shortSearch={true} style={{ paddingBottom: "0", paddingTop: "0" }} search={true} />
                 {/* <CGBarSlim style={{overflow: "scroll", position: "relative",}}/> */}
 
             </header>
@@ -902,18 +968,18 @@ const User = () => {
                 <section className="user__profile-preview-container">
                     <button className="user__change-cover-btn">
                         <div className="user__change-cover-btn-inner">
-                            <RiImageEditLine 
-                            style={{color: "white", fontSize: "1.4rem"}}/>
+                            <RiImageEditLine
+                                style={{ color: "white", fontSize: "1.4rem" }} />
                             Change Cover
                         </div>
                     </button>
-                    
-                    {!toggleVisAdmin && <button onClick={e=>setToggleVisAdmin(true)} className="user__profile-switch-admin-btn">
+
+                    {!toggleVisAdmin && <button onClick={e => setToggleVisAdmin(true)} className="user__profile-switch-admin-btn">
                         Switch Admin Mode
                     </button>}
 
                     <div className="user__profile-container">
-                        <img src={CatmanImg} className="user__profile-img"/>
+                        <img src={CatmanImg} className="user__profile-img" />
                         <h3 className="user__profile-name">Liqair Studios</h3>
                         <div className="user__profile-suscribers">219.9k Subscribers</div>
 
@@ -925,26 +991,26 @@ const User = () => {
                     </div>
 
                     <div className="user__location-container">
-                       <RiInstagramFill/> Enugu, Nigeria.
+                        <RiInstagramFill /> Enugu, Nigeria.
                     </div>
                 </section>
                 <section className="user__product-action-container">
                     <button className="user__upload-products-btn">
                         <div onClick={e => navigate("/user/upload")} className="user__upload-products-btn-inner">
-                            UPLOAD PRODUCTS <FaPlusCircle style={{fontSize: "1.3rem"}}/>
+                            UPLOAD PRODUCTS <FaPlusCircle style={{ fontSize: "1.3rem" }} />
                         </div>
                     </button>
                     <button className="user__upload-products-btn">
                         <div className="user__upload-products-btn-inner">
-                            DISCOUNTS <GiPriceTag style={{fontSize: "1.3rem", transform: "scaleX(-1)"}}/>
-                        </div>  
+                            DISCOUNTS <GiPriceTag style={{ fontSize: "1.3rem", transform: "scaleX(-1)" }} />
+                        </div>
                     </button>
 
                     <div className="user__admin-visitor-container">
-                        <button onClick={e=>setToggleVisAdmin(true)} className={`user__AV-btn ${toggleVisAdmin && "user_AV-btn-active"}`}>
+                        <button onClick={e => setToggleVisAdmin(true)} className={`user__AV-btn ${toggleVisAdmin && "user_AV-btn-active"}`}>
                             <span className="user__AV-btn-inner">Admin</span>
                         </button>
-                        <button onClick={e=>setToggleVisAdmin(false)} className={`user__AV-btn ${!toggleVisAdmin && "user_AV-btn-active-dup"}`}>
+                        <button onClick={e => setToggleVisAdmin(false)} className={`user__AV-btn ${!toggleVisAdmin && "user_AV-btn-active-dup"}`}>
                             <span className="user__AV-btn-inner">Visitor</span>
                         </button>
 
@@ -952,8 +1018,8 @@ const User = () => {
 
                 </section>
 
-                { !isMobile? <TagheaderCompDesktop toggleVisAdmin={toggleVisAdmin}  activeInpageHeader={activeInpageHeader}/>:
-                <TagheaderCompMobile toggleVisAdmin={toggleVisAdmin} activeInpageHeader={activeInpageHeader}/>}
+                {!isMobile ? <TagheaderCompDesktop toggleVisAdmin={toggleVisAdmin} activeInpageHeader={activeInpageHeader} /> :
+                    <TagheaderCompMobile toggleVisAdmin={toggleVisAdmin} activeInpageHeader={activeInpageHeader} />}
 
                 {/* <TagsComp selectedTag={selectedTag} setSelectedTag={setSelectedTag}/> */}
 

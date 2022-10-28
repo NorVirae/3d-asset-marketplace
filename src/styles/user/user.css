@@ -1178,10 +1178,109 @@
 
 .user__message-sidebar-header-item {
     padding: .3rem 2rem;
-    border-bottom: .2rem solid #7C187A;
     position: relative;
+    cursor: pointer;
+    transition: border-bottom .4s ease-in-out;
+    border-bottom: .2rem solid transparent
 }
 
+.user__message-sidebar-header-item-active {
+    border-bottom: .2rem solid #7C187A;
+}
+
+.users__suscribers-container{
+   
+    display: flex;
+    
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #15151C;
+   
+    
+}
+
+.users__suscribers-container-inner{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1rem;
+    max-width: 90rem;
+    gap: 2rem;
+}
+.users__suscribers-card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 25rem;
+    background-color: #232230;
+}
+
+
+.users__suscribers-count-title{
+    color: white;
+    font-weight: bold;
+}
+
+.users__suscribers-count-info{
+    color: #7b7a83;
+    text-align: center;
+}
+
+.users__suscribers-count-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.users__bottom-bg-image-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 3;
+    padding: .5rem;
+    padding-top: 4rem;
+    gap: 1rem;
+}
+
+.users__top-bg-image-profile{
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    top: 25%;
+}
+
+.users__suscribers-location{
+    color: white;
+}
+
+.users__suscribers-btn{
+    padding: .6rem 1.2rem;
+    color: white;
+    display: flex;
+    transform: skewX(-20deg);
+    border: none;
+    background-color: #15151C;
+}
+
+.users__suscribers-btn span{
+    transform: skewX(20deg);
+}
+.users__suscribers-count{
+    color: #94949b;
+}
+.users__top-bg-image{
+    background-color: blue;
+    flex: 1;
+    height: 35%;
+}
+.users__top-bg-image-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: blue;
+}
 .user__message-notify {
     width: .3rem;
     height: .3rem;

@@ -400,7 +400,7 @@
     flex-direction: column;
     gap: 2rem;
     overflow-y: scroll;
-    height: 50vh;
+    height: 62.5vh;
 }
 
 .buy__comments-main-container::-webkit-scrollbar{

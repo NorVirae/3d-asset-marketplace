@@ -1506,7 +1506,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: .5rem 2rem;
+    padding: 1.4rem 2rem;
     height: 2.5rem;
     border: none;
     position: absolute;
@@ -1518,7 +1518,7 @@
 .landing__news-letter-btn-2{
     
     right: .5%!important;
-    top: 4%;
+    top: 3.5%;
 }
 
 .landing__news-letter-btn:active, .landing__news-letter-btn-2:active{
