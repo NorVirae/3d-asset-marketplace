@@ -305,6 +305,7 @@
     display: flex;
     padding: 3rem;
     gap: 3rem;
+    animation: fade-in .4s ease-in-out;
 }
 
 .user__collection-file-container{
@@ -423,7 +424,7 @@
     
 }
 
-
+.
 
 .user__collection-drop-icon{
     color: #717196;
@@ -972,6 +973,12 @@
     flex-direction: column;
     background-color: #232230;
     position: relative;
+    cursor: pointer;
+    transition: transform .4s ease-in-out;
+}
+
+.user__main-lib-card:hover{
+    transform: scale(1.05);
 }
 
 .user__main-lib-card-img{

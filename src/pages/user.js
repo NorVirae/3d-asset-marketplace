@@ -161,9 +161,9 @@ const LibraryItem = ({onClick, prodNumber, active= false, itemName}) => {
     )
 }
 
-const LibraryCollectionCard = ({img, isActive=false}) => {
+const LibraryCollectionCard = ({img, id, setIsActive, isActive}) => {
     return (
-        <section className="user__main-lib-card">
+        <section style={{transform: isActive == id && "scale(1)"}} onClick={() =>setIsActive(id) } className="user__main-lib-card">
             <img className="user__main-lib-card-img" src={img} style={{width: ""}} alt="collections" />
             <div className="user__main-lib-card-body">
                 <h3 className="user__card-collection-title">
@@ -176,7 +176,7 @@ const LibraryCollectionCard = ({img, isActive=false}) => {
                 <MdCloudDownload style={{fontSize: "1.2rem"}}/> DOWNLOAD FILES
             </div>
 
-            {isActive && <div className="user__pointy-arrow"></div>}
+            {isActive === id && <div className="user__pointy-arrow"></div>}
         </section>
     )
 }
@@ -546,6 +546,7 @@ const CollectionDescription = () => {
 const Collections = () => {
     const [activeSideUser, setActiveSideUser] = useState(0)
     const settingsItems = ["Notification", "New Folder(1)", "New Folder(2)", "Loooty backup",]
+    const [isActive, setIsActive] = useState(null)
     return (
         <section className="user__library">
         <div className="user__library-inner">
@@ -584,16 +585,16 @@ const Collections = () => {
 
 
                 <div className="user__main-lib-body-collections">
-                    <LibraryCollectionCard img={WolfGuyImg}/>
-                    <LibraryCollectionCard img={CatmanImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard img={TsunamiImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard img={ScaryImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard img={WolfGuyImg} title={""} titleAffirm={""}  />
-                    <LibraryCollectionCard isActive={true} img={coloredhouseImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={1} img={WolfGuyImg}/>
+                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={2} img={CatmanImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={3} img={TsunamiImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={4} img={ScaryImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={5} img={WolfGuyImg} title={""} titleAffirm={""}  />
+                    <LibraryCollectionCard isActive={isActive} setIsActive={setIsActive} id={6} img={coloredhouseImg} title={""} titleAffirm={""}  />
                 </div>
 
                 
-                <CollectionDescription/>
+                {isActive && <CollectionDescription/>}
 
                 <div className="user__main-lib-footer">
                     
