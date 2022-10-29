@@ -244,11 +244,41 @@
     color: aliceblue;
 }
 
+.user__main-profile-form-control-container-social {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    
+    color: aliceblue;
+    gap: 3rem;
+}
+
+.user__main-profile-form-control-container-social-inner{
+    display: flex;
+    gap: .7rem;
+    flex-direction: column;
+}
+
 .user__main-profile-skew-container {
     transform: skewX(-20deg);
     border: .2rem solid #2B2B38;
     display: flex;
     justify-content: space-between;
+}
+
+.user__main-profile-skew-container-social {
+    transform: skewX(-20deg);
+    border: .2rem solid #2B2B38;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user__main-profile-social-icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(20deg);
+    padding-left: .7rem;
 }
 
 .user__main-profile-form-control {
@@ -257,6 +287,16 @@
     background-color: transparent;
     border: none;
     color: white;
+}
+
+.user__main-profile-form-control-social{
+    width: 21.5vw;
+    padding: 1rem 1rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
 }
 
 .user__main-profile-form-control-edit-btn {

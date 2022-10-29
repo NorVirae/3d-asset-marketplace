@@ -3,9 +3,9 @@ import NavBar from "../component/navbar/navbar"
 import CatmanImg from "../assets/image/catman.jpg"
 import { RiInstagramFill } from "react-icons/ri"
 import { RiImageEditLine } from "react-icons/ri"
-import { FaArrowAltCircleDown, FaArrowCircleDown, FaArrowDown, FaDownload, FaEdit, FaLongArrowAltDown, FaPaypal, FaSearchLocation } from "react-icons/fa"
+import { FaArrowAltCircleDown, FaArrowCircleDown, FaArrowDown, FaDownload, FaEdit, FaFacebook, FaInstagram, FaLinkedin, FaLongArrowAltDown, FaPaypal, FaSearchLocation, FaTwitter } from "react-icons/fa"
 import { FaPlusCircle } from "react-icons/fa"
-import { MdCloudDownload, MdModeEditOutline } from "react-icons/md"
+import { MdCloudDownload, MdEdit, MdModeEditOutline } from "react-icons/md"
 import { GiPriceTag } from "react-icons/gi"
 import { useContext, useEffect, useState } from "react"
 import { MdAttachFile } from "react-icons/md"
@@ -66,13 +66,78 @@ const ProfileInput = ({ labelName, onChange, value, type }) => {
                 <div className="user__main-profile-skew-container">
                     <input type={type} disabled={save} onChange={onChange} value={value} className="user__main-profile-form-control" />
                     <span className="user__main-profile-form-control-edit-btn">
-                        {save ? <FaEdit onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} /> : <FaSave onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} />}
+                        {save ? <MdEdit onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} /> : <FaSave onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} />}
                     </span>
                 </div>
 
                 <span className="user__main-profile-info">
                     This name will appear on your customers billing statement
                 </span>
+            </section>
+        </div>
+    )
+}
+
+const SocialMediaInput = ({ labelName, onChange, value, type }) => {
+    const [save, setIsSave] = useState(true)
+
+    return (
+        <div className="user__main-profile-form-group">
+            <div className="user__label-container">
+
+                <label className="user__main-profile-label">
+                    <span className={"user__main-profile-label-inner"}>
+                        {labelName}
+                    </span>
+                </label>
+            </div>
+
+
+            <section className="user__main-profile-form-control-container-social">
+                <section className="user__main-profile-form-control-container-social-inner">
+                    <div className="user__main-profile-skew-container-social">
+                        <div className="user__main-profile-social-icon-container">
+                            <FaInstagram style={{ color: "385797", fontSize: "2.1rem", transform: "skewX(20deg)" }} />
+                        </div>
+                        <input type={type} disabled={save} onChange={onChange} value={value} className="user__main-profile-form-control-social" />
+                        <span className="user__main-profile-form-control-edit-btn">
+                            {save ? <MdEdit onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} /> : <FaSave onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} />}
+                        </span>
+                    </div>
+
+                    <div className="user__main-profile-skew-container-social">
+                        <div className="user__main-profile-social-icon-container">
+                            <FaTwitter style={{ color: "385797", fontSize: "2.1rem", transform: "skewX(20deg)" }} />
+                        </div>
+                        <input type={type} disabled={save} onChange={onChange} value={value} className="user__main-profile-form-control-social" />
+                        <span className="user__main-profile-form-control-edit-btn">
+                            {save ? <MdEdit onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} /> : <FaSave onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} />}
+                        </span>
+                    </div>
+                </section>
+
+                <section className="user__main-profile-form-control-container-social-inner">
+                    <div className="user__main-profile-skew-container-social">
+                        <div className="user__main-profile-social-icon-container">
+                            <FaFacebook style={{ color: "385797", fontSize: "2.1rem", transform: "skewX(20deg)" }} />
+                        </div>
+                        <input type={type} disabled={save} onChange={onChange} value={value} className="user__main-profile-form-control-social" />
+                        <span className="user__main-profile-form-control-edit-btn">
+                            {save ? <MdEdit onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} /> : <FaSave onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} />}
+                        </span>
+                    </div>
+
+                    <div className="user__main-profile-skew-container-social">
+                        <div className="user__main-profile-social-icon-container">
+                            <FaLinkedin style={{ color: "385797", fontSize: "2.1rem", transform: "skewX(20deg)" }} />
+                        </div>
+                        <input type={type} disabled={save} onChange={onChange} value={value} className="user__main-profile-form-control-social" />
+                        <span className="user__main-profile-form-control-edit-btn">
+                            {save ? <MdEdit onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} /> : <FaSave onClick={() => setIsSave(old => !old)} style={{ cursor: "pointer", transform: "skewX(20deg)" }} />}
+                        </span>
+                    </div>
+                </section>
+
             </section>
         </div>
     )
@@ -99,7 +164,7 @@ const Profile = () => {
                 <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} value={userDetails.description} onChange={e => setUserDetails(old => ({ ...old, description: e.target.value }))} labelName={"BIO"} />
                 <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} type={"date"} value={userDetails.birth_date} onChange={e => setUserDetails(old => ({ ...old, birth_date: e.target.value }))} labelName={"DOB"} />
                 <ProfileInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} value={userDetails.picture} onChange={e => setUserDetails(old => ({ ...old, picture: e.target.value }))} labelName={"PROFILE PICTURE"} />
-
+                <SocialMediaInput onClick={e => dispatch(updateUserAction({ updateData: userDetails, accessToken: user && user.user ? user.user.access_token : "" }))} value={userDetails.picture} onChange={e => setUserDetails(old => ({ ...old, socialMedia: e.target.value }))} labelName={"SOCIAL MEDIA LINKS"} />
             </form>
         </section>
     )
@@ -290,28 +355,28 @@ const ReceiverMsg = () => {
 const SuscribersCard = () => {
     return (
         <div className="users__suscribers-card">
-                <div className="users__top-bg-image">
-                    <img className="users__top-bg-image-img" src={WolfGuyImg} />
-                </div>
-
-                <div className="users__bottom-bg-image-container">
-                    <img className="users__top-bg-image-profile" src={CatmanImg} />
-                    <div className="users__suscribers-count-container">
-                        <h3 className="users__suscribers-count-title">Liqair Studios</h3>
-                        <small className="users__suscribers-count">219.9k suscribers</small>
-                    </div>
-
-                    <p className="users__suscribers-count-info">we can only accept the most qualified setters at the moment</p>
-                    <div className="users__suscribers-location">
-                        <FaSearchLocation /> Enugu, Nigeria.
-                    </div>
-                    <button className="users__suscribers-btn">
-                        <span>
-                            Suscribed
-                        </span>
-                    </button>
-                </div>
+            <div className="users__top-bg-image">
+                <img className="users__top-bg-image-img" src={WolfGuyImg} />
             </div>
+
+            <div className="users__bottom-bg-image-container">
+                <img className="users__top-bg-image-profile" src={CatmanImg} />
+                <div className="users__suscribers-count-container">
+                    <h3 className="users__suscribers-count-title">Liqair Studios</h3>
+                    <small className="users__suscribers-count">219.9k suscribers</small>
+                </div>
+
+                <p className="users__suscribers-count-info">we can only accept the most qualified setters at the moment</p>
+                <div className="users__suscribers-location">
+                    <FaSearchLocation /> Enugu, Nigeria.
+                </div>
+                <button className="users__suscribers-btn">
+                    <span>
+                        Suscribed
+                    </span>
+                </button>
+            </div>
+        </div>
     )
 }
 
