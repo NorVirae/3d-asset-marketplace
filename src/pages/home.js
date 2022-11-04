@@ -27,6 +27,7 @@ import Sidebar from "../component/sidebar/sidebar"
 import SignInModal from "../component/auth/signInModal"
 
 import { useMediaQuery } from "react-responsive"
+import FilterSystem from "../component/landing/FilterSystem"
 
 
 
@@ -168,27 +169,27 @@ const Home = () => {
                         </section>
 
                         <section id="products" style={{height: "15vh"}} className="landing__weekly-freebies-container">
-                                <button className="landing__weekly-freebies-btn">
-                                    <span style={{transform: "skewX(25deg)"}}>ALL&nbsp;PRODUCTS</span>
+                            <button className="landing__weekly-freebies-btn">
+                                <span style={{transform: "skewX(25deg)"}}>ALL&nbsp;PRODUCTS</span>
+                            </button>
+
+                            <div className="landing__daily-picks-filters-container">
+                                <button style={{backgroundColor: "#15151C", color:"#3E3E4F"}} className="landing__daily-picks-filters-btn">
+                                    <span style={{transform: "skewX(25deg"}}>POPULAR</span>
                                 </button>
-
-                                <div className="landing__daily-picks-filters-container">
-                                    <button style={{backgroundColor: "#15151C", color:"#3E3E4F"}} className="landing__daily-picks-filters-btn">
-                                        <span style={{transform: "skewX(25deg"}}>POPULAR</span>
-                                    </button>
-                                    <button style={{backgroundColor: "#1D1D28", color:"#ffffff"}} className="landing__daily-picks-filters-btn">
-                                        <span style={{transform: "skewX(25deg"}}>RECENT</span>
-                                    </button>
-                                    <button className="landing__daily-picks-filters-btn">
-                                        <span style={{transform: "skewX(25deg"}}>FREEBIES</span>
-                                    </button>
-                                    <button className="landing__daily-picks-filters-btn">
-                                        <span style={{transform: "skewX(25deg"}}>ON&amp;SALE</span>
-                                    </button>
-            
-                                </div>
+                                <button style={{backgroundColor: "#1D1D28", color:"#ffffff"}} className="landing__daily-picks-filters-btn">
+                                    <span style={{transform: "skewX(25deg"}}>RECENT</span>
+                                </button>
+                                <button className="landing__daily-picks-filters-btn">
+                                    <span style={{transform: "skewX(25deg"}}>FREEBIES</span>
+                                </button>
+                                <button className="landing__daily-picks-filters-btn">
+                                    <span style={{transform: "skewX(25deg"}}>ON&amp;SALE</span>
+                                </button>
+        
+                            </div>
                         </section>
-
+{/* 
                         <section className="landing__show-filters-container">
                             <div className="landing__show-filters-inner-container">
                                 <button className="landing__show-filters-btn">
@@ -197,7 +198,10 @@ const Home = () => {
                                     </span>
                                 </button>
                             </div>
-                        </section>
+
+                            
+                        </section> */}
+                        <FilterSystem/>
 
                         <section className="landing__all-products-container">
                             <div className="landing__all-products-inner-container">

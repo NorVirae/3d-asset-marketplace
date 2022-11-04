@@ -464,7 +464,6 @@
     
 }
 
-.
 
 .user__collection-drop-icon{
     color: #717196;
@@ -492,15 +491,11 @@
 
 .user__sales{
     background-color: #15151C;
-    
     height: 50vh;
-
     color: white;
-
     display: grid;
     grid-template-columns: 15% 75%;
     width: 100vw;
-    
 }
 
 
