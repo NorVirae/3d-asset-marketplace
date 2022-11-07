@@ -21,10 +21,10 @@ const FilterRating = () => {
         <div className="landing__filter-rating-container">
             <span>RATING</span>
             <div className="landing__filter-inner-rating">
-                <MdStarRate/>
-                <MdStarRate/>
-                <MdStarRate/>
-                <MdStarRate/>
+                <MdStarRate className="landing__filter-inner-rating-rate"/>
+                <MdStarRate className="landing__filter-inner-rating-rate"/>
+                <MdStarRate className="landing__filter-inner-rating-rate"/>
+                <MdStarRate className="landing__filter-inner-rating-rate"/>
             </div>
         </div>
     )
@@ -33,9 +33,10 @@ const FilterRating = () => {
 const FilterSlider = () => {
     const [sliderChange, setSliderChange] = useState({min: "20", max: "70"})
     const handleSliderChange = (e, type) => {
+        console.log(e, "TARGETTER")
         if (type==="max"){
             if (Number(e.target.value) <= Number(sliderChange.min)){
-                setSliderChange(old => ({...old, min: e.target.value}))
+                setSliderChange(old => ({...old, min: Number(e.target.value) - 1}))
             }
 
             setSliderChange(old =>({...old, max: e.target.value}))
@@ -43,7 +44,7 @@ const FilterSlider = () => {
 
         if (type==="min"){
             if (Number(e.target.value) >= Number(sliderChange.max)){
-                setSliderChange(old => ({...old, max: e.target.value}))
+                setSliderChange(old => ({...old, max: Number(e.target.value) + 1}))
             }
 
             setSliderChange(old =>({...old, min: e.target.value}))
@@ -52,14 +53,15 @@ const FilterSlider = () => {
     return (
         <div className="landing__filter-slider-container">
             <span className="landing__filter-slide-price">
-                $ 500
+                $ {sliderChange.max},000
             </span>
             <div className="landing__filter-main-slider">
-                <input onInput={e => handleSliderChange(e, "min")} min={"1"} max={"100"} value={sliderChange.min} type={"range"} className="landing__filter-slider"/>
-                <input onInput={e => handleSliderChange(e, "max")} min={"1"} max={"100"} value={sliderChange.max} type={"range"} className="landing__filter-slider"/>
+                
+                <input onInput={e => handleSliderChange(e, "max")} min={"1"} max={"100"} value={sliderChange.max} type={"range"} className="landing__filter-slider-max"/>
+                <input onInput={e => handleSliderChange(e, "min")} min={"1"} max={"100"} value={sliderChange.min} type={"range"} className="landing__filter-slider-min"/>
             </div>
             <span className="landing__filter-slide-price">
-                $ 500
+                $ {sliderChange.min},000
             </span>
         </div>
     )
