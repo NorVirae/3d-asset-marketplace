@@ -25,7 +25,6 @@ function App() {
       <RegisterProvider>
         <Routes>
           <Route path='/' element={
-              
                 <Home/>
               } exact/>
       
