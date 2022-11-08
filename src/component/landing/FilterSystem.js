@@ -75,15 +75,18 @@ const FilterSlider = () => {
     return (
         <div className="landing__filter-slider-container">
             <span className="landing__filter-slide-price">
-                $ {sliderChange.max},000
+                $ {sliderChange.min},000
             </span>
             <div className="landing__filter-main-slider">
-
                 <input onInput={e => handleSliderChange(e, "max")} min={"1"} max={"100"} value={sliderChange.max} type={"range"} className="landing__filter-slider-max" />
+
                 <input onInput={e => handleSliderChange(e, "min")} min={"1"} max={"100"} value={sliderChange.min} type={"range"} className="landing__filter-slider-min" />
+
+
             </div>
             <span className="landing__filter-slide-price">
-                $ {sliderChange.min},000
+                $ {sliderChange.max},000
+
             </span>
         </div>
     )
