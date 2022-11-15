@@ -8,11 +8,11 @@ import UploadPage from './pages/upload';
 import User from './pages/user';
 
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// test('renders learn react link', () => {
+//   render(<App />);
+//   const linkElement = screen.getByText(/learn react/i);
+//   expect(linkElement).toBeInTheDocument();
+// });
 
 test('renders Card Number Text', () => {
   render(<Cart />);
@@ -40,7 +40,7 @@ test('renders Track how you are doing Text', () => {
 
 test('renders Preview Image Text', () => {
   render(<UploadPage />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/Preview Image/i);
   expect(linkElement).toBeInTheDocument();
 });
 
