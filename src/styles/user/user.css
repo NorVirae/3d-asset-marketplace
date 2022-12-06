@@ -177,6 +177,98 @@
 
 }
 
+.user__admin-page-section-header-container-admin{
+    overflow-x: auto;
+    width: 100%;
+    padding: 0 2rem;
+    padding-top: 1.5rem;
+    /* padding-left: 30vw; */
+
+}
+
+.user__admin-page-section-header-container-admin-inner{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user__freebies-container {
+    /* padding: 4rem 1rem; */
+    background-color: #15151C;
+    height: 80vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+.user__freebies-sidebar{
+    height: 100%;
+    background-color: #232230;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 1rem; */
+}
+
+.user__freebies-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+}
+
+.user__sidebar-profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user__sidebar-img-container{
+    /* height: 30%; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.user__sidebar-img{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+}
+
+.user__sidebar-img::before{
+    content: " ";
+    height: 4rem;
+    background-color: red;
+}
+
+.user__freebies-inner-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__freebies-inner-container-inner{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    max-width: 90rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.user__separator{
+    height: 1rem;
+    background-color: #15151C;
+}
+
+
 .user__tags-container {
     display: flex;
     align-items: center;
@@ -208,6 +300,11 @@
     padding-top: 5rem;
     padding-bottom: 5rem;
 
+}
+
+.user__main{
+    display: flex;
+    flex-direction: column;
 }
 
 .user__main-profile-form {
@@ -1211,8 +1308,30 @@
     background-color: #191921;
 }
 
+.user__freebies-sidebar-header {
+    display: flex;
+    justify-content: space-around;
+    overflow-x: scroll;
+    padding: 1rem .5rem;
+    background-color: #191921;
+    width: 100%;
+    height: 5rem;
+}
+
 .user__message-sidebar-header-item {
     padding: .3rem 2rem;
+    position: relative;
+    width: 4rem;
+    cursor: pointer;
+    transition: border-bottom .4s ease-in-out;
+    border-bottom: .2rem solid transparent
+}
+
+.user__freebies-sidebar-header-item {
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     cursor: pointer;
     transition: border-bottom .4s ease-in-out;
@@ -1220,6 +1339,10 @@
 }
 
 .user__message-sidebar-header-item-active {
+    border-bottom: .2rem solid #7C187A;
+}
+
+.user__freebies-sidebar-header-item-active {
     border-bottom: .2rem solid #7C187A;
 }
 

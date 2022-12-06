@@ -115,9 +115,12 @@
 }
 
 .identity__btn {
-    padding: 1rem 2rem;
-    font-size: .7rem;
+    /* padding: 1rem 2rem; */
+    font-size: .9rem;
     background-color: #15151C;
+    justify-content: center;
+    align-items: center;
+
     transform: skewX(-25deg);
     color: white;
     border: none;
@@ -127,7 +130,6 @@
     transition: transform .3s ease-in-out;
     cursor: pointer;
     transition: margin .5s ease-in-out, border .3s ease-in-out, background-color .3s ease-in-out, transform .3s ease-in-out;
-
 }
 
 .identity__btn:active{

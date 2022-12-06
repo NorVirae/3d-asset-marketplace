@@ -611,7 +611,7 @@
     position: absolute;
     width: 100%;
     /* right: 2%; */
-    transform: scaleX(1) skewX(-40deg);
+    /* transform: scaleX(1) skewX(-40deg); */
     /* writing-mode: bt-lr; */
 }
 
@@ -620,7 +620,7 @@
     /* left: 2%; */
     width: 100%;
 
-    transform: scaleX(1) skewX(-40deg);
+    /* transform: scaleX(1) skewX(-40deg); */
     background-color: red;
 
 }
@@ -636,7 +636,11 @@
 .landing__filter-slider-min::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: #7AA41D;
+    background: transparent!important;
+    background-image: url("../../assets/image/slider/slider-head.png");
+    object-fit: cover;
+    transform: scaleX(1) skewX(-20deg)!important;
+    z-index: 100!important;
     /* height: 0.5rem; */
     /* opacity: 0; */
 
@@ -647,6 +651,23 @@
     appearance: none;
     /* background: #7AA41D; */
     /* height: 0.5rem; */
+}
+
+.landing__filter-slider-max::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent!important;
+
+    z-index: 100!important;
+
+    /* background: transparent!important; */
+    background-image: url("../../assets/image/slider/slider-head.png");
+    object-fit: cover;
+    transform: scaleX(1) skewX(-20deg)!important;
+
+    /* height: 0.5rem; */
+    /* opacity: 0; */
+
 }
 
 .landing__filter-rating-container {
@@ -699,89 +720,75 @@ Filter slider start
     font-size: 24px;
     color: #635a5a;
   }
-
-  input[type=range]::-webkit-slider-runnable-track {
-    /* -webkit-appearance: none;
-    pointer-events: all;
-    
-    
-    background-color: #fff; */
-    /* background-image: linear-gradient(to top, red, blue); */
-    /* border-radius: 50%;
-    
-    z-index: 30;
-    cursor: pointer; */
-    height: 24px;
-    width: 24px;
-  }
-
-  
-  input[type=range]::-webkit-slider-runnable-track {
-    height: 24px;
-    color: blue;
-    width: 24px;
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    pointer-events: all;
-    width: 24px;
-    height: 24px;
-    background-color: #fff;
-    transform: skewX(20deg);
-    /* background-image: linear-gradient(to top, red, blue); */
-    /* border-radius: 50%; */
-    box-shadow: 0 0 0 1px #C6C6C6;
-    z-index: 30;
-    cursor: pointer;
-  }
-  
-  input[type=range]::-moz-range-thumb {
-    -webkit-appearance: none;
-    pointer-events: all;
-    width: 24px;
-    height: 24px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px #C6C6C6;
-    cursor: pointer;  
-  }
-  
-  input[type=range]::-webkit-slider-thumb:hover {
-    background: #f7f7f7;
-  }
-  
-  input[type=range]::-webkit-slider-thumb:active {
-    box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
-    -webkit-box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
-  }
-  
-  input[type="number"] {
-    color: #8a8383;
-    width: 50px;
-    height: 30px;
-    font-size: 20px;
-    border: none;
-  }
-  
-  input[type=number]::-webkit-inner-spin-button, 
-  input[type=number]::-webkit-outer-spin-button {  
-     opacity: 1;
-  }
-  
-  input[type="range"] {
-    -webkit-appearance: none; 
-    appearance: none;
-    height: 5px;
-    width: 100%;
-    position: absolute;
-    background-color: #7AA41C;
-    pointer-events: none;
-  }
   
   #fromSlider {
     height: 0;
     z-index: 1;
+  }
+
+  /* Main slider */
+  .slider{
+    position: relative;
+    z-index: 1;
+    height: 10px;
+
+  }
+
+  .slider > .track{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: #c6aee7;
+  }
+
+  .slider > .range {
+    position: absolute;
+    z-index: 2;
+    left: 25%;
+    right: 25%;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: #6200ee;
+  }
+
+  .slider > .thumb {
+    position: absolute;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    background-color: #6200ee;
+    border-radius: 50%;
+    opacity: .3;
+  }
+
+  .slider > .thumb.left {
+    left: 25%;
+    transform: translate(-15px, -10px);
+  }
+
+  .slider > .thumb.right {
+    right: 25%;
+    transform: translate(15px, -10px);
+  }
+
+  input[type=range] {
+    position: absolute;
+    z-index: 4;
+    height: 10px;
+    width: 100%;
+  }
+
+  #input-left {
+    top: -100px
+  }
+
+  #input-right {
+    top: -50px
   }
 /* 
 FIlter slider end 
