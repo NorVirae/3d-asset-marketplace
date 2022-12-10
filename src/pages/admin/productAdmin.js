@@ -16,12 +16,15 @@ import coloredhouseImg from "../../assets/image/coloredhouse.webp";
 import SearchBar from "../../component/search/SearchBar";
 import {
   FaArrowAltCircleDown,
+  FaArrowDown,
   FaFacebook,
+  FaFacebookMessenger,
   FaInstagram,
   FaLinkedin,
   FaPaypal,
   FaPlusCircle,
   FaSave,
+  FaSearch,
   FaSearchLocation,
   FaStar,
   FaTwitter,
@@ -40,7 +43,7 @@ import NavBar from "../../component/navbar/navbar";
 import { GiPriceTag } from "react-icons/gi";
 import { BiMailSend } from "react-icons/bi";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { AiFillFileZip } from "react-icons/ai";
+import { AiFillFileZip, AiTwotoneMessage } from "react-icons/ai";
 import { GrStripe } from "react-icons/gr";
 import { RegisterContext } from "../../component/auth/context/registerContext";
 import FilterSystem from "../../component/landing/FilterSystem";
@@ -92,13 +95,50 @@ const Store = () => {
             </div>
             <h3>Beach House with Rumps</h3>
             <h6>By Pascal Garten in 3D assets</h6>
-            <div>
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
+            <div className="user__sidebar-rating-container">
+              <span className="user__main-rating-container">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <span>4</span>
+              </span>
+
+              <span className="user__sidebar-message-container">
+                <AiTwotoneMessage />
+                <span>0</span>
+              </span>
             </div>
           </div>
+
+          <section className="user__sidebar-info">
+            <div className="user__sidebar-info-field">
+              <span className="user__sidebar-info-field-left">Rating</span>
+              <span className="user__sidebar-info-field-right">Excellent</span>
+            </div>
+
+            <div className="user__sidebar-info-field">
+              <span className="user__sidebar-info-field-left">
+                views this month
+              </span>
+              <span className="user__sidebar-info-field-right">814</span>
+            </div>
+
+            <div className="user__sidebar-info-field">
+              <span className="user__sidebar-info-field-left">Total Views</span>
+              <span className="user__sidebar-info-field-right">714,436</span>
+            </div>
+
+            <div className="user__sidebar-info-field">
+              <span className="user__sidebar-info-field-left">WishList</span>
+              <span className="user__sidebar-info-field-right">49</span>
+            </div>
+
+            <div className="user__sidebar-info-field">
+              <span className="user__sidebar-info-field-left">Purchases</span>
+              <span className="user__sidebar-info-field-right">16</span>
+            </div>
+          </section>
         </div>
       </section>
       <div className="user__freebies-inner-container">
@@ -1308,46 +1348,40 @@ const Sales = () => {
   );
 };
 
+const FilterSearchBar = ({search, setSearch}) => {
+  return (
+    <div className="user__input-filter-search-bar">
+      <div className="user__input-filter-skew-container">
+        <input className="user__input-filter-form-control" value={search} onChange={e => setSearch(e.target.value)}/>
+        <button className="user__filter-search-button"><FaSearch style={{transform: "skewX(25deg)"}}/></button>
+      </div>
+      
+    </div>
+  )
+}
+
+const FilterSelector = () => {
+  return (
+    <section className="user_tags-filter-selector-container">
+      <div className="user_tags-filter-selector-container-inner">
+        <div className="user__filter-label">
+          Category
+        </div>
+        <div className="user__filter-main-value">
+          Show All <FaArrowDown/>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 const TagsComp = ({ selectedTag, setSelectedTag }) => {
   return (
     <section className="user__tags-container">
       <div className="user__feature-tags-container">
-        <span
-          onClick={(e) => setSelectedTag("feature")}
-          className={`user__feature-tags-item ${
-            selectedTag === "feature" && "user__feature-tags-item-active"
-          }`}
-        >
-          FEATURED
-        </span>
-
-        <span
-          onClick={(e) => setSelectedTag("popular")}
-          className={`user__feature-tags-item ${
-            selectedTag === "popular" && "user__feature-tags-item-active"
-          }`}
-        >
-          POPULAR
-        </span>
-        <span
-          onClick={(e) => setSelectedTag("recent")}
-          className={`user__feature-tags-item ${
-            selectedTag === "recent" && "user__feature-tags-item-active"
-          }`}
-        >
-          RECENT
-        </span>
-        <span
-          onClick={(e) => setSelectedTag("seller")}
-          className={`user__feature-tags-item ${
-            selectedTag === "seller" && "user__feature-tags-item-active"
-          }`}
-        >
-          BEST SELLERS
-        </span>
+        <FilterSearchBar />
+        <FilterSelector/>
       </div>
-
-      <SearchBar />
     </section>
   );
 };

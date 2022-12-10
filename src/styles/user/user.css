@@ -193,13 +193,75 @@
     gap: 1rem;
 }
 
+.user__sidebar-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user__sidebar-info-field{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-left: 15%;
+    border-bottom: .2rem solid #2A2A37;
+    padding-bottom: 1rem;
+}
+
+.user__sidebar-message-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+}
+
+.user__sidebar-info-field-right{
+    color: #5F5F74;
+    
+}
+
+.user_tags-filter-selector-container{
+    /* background-color: red; */
+    color: white;
+    transform: skewX(-25deg);
+    border: .2rem solid #2B2B38;
+}
+
+.user_tags-filter-selector-container-inner{
+    transform: skewX(25deg);
+    display: flex;
+    gap: 1rem;
+}
+
+.user__sidebar-rating-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.user__main-rating-container{
+    display: flex;
+    gap: .3rem;
+}
+.user__sidebar-info-field-left{
+    background-color: #44434F;
+    color: #5F5F74;
+    padding: .6rem;
+    width: 50%;
+}
+
 .user__freebies-container {
     /* padding: 4rem 1rem; */
     background-color: #15151C;
     height: 80vh;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     display: grid;
-    grid-template-columns: 25% 75%;
+    /* gap: 1rem; */
+    grid-template-columns: 23% 75%;
 }
 .user__freebies-sidebar{
     height: 100%;
@@ -217,14 +279,25 @@
     justify-content: center;
     align-items: center;
     color: white;
+    gap: 3rem;
     width: 100%;
 }
 
 .user__sidebar-profile-container{
     display: flex;
+    gap: .4rem;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.user__sidebar-profile-container h6{
+    color: #55545F;
+}
+
+.user__sidebar-profile-container span{
+    color: #55545F;
 }
 
 .user__sidebar-img-container{
@@ -232,19 +305,29 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    
 }
 
-
+.user__input-filter-search-bar{
+     padding: 1rem 0;
+     width: 30%;
+     /* width: auto; */
+}
 .user__sidebar-img{
     width: 7rem;
     height: 7rem;
+    z-index: 1;
     object-fit: cover;
 }
 
-.user__sidebar-img::before{
+.user__sidebar-img-container::before{
     content: " ";
-    height: 4rem;
-    background-color: red;
+    height: 6rem;
+    width: 9rem;
+    position: absolute;
+    top: -6%;
+    z-index: 0;
+    background-color: #44434F;
 }
 
 .user__freebies-inner-container {
@@ -252,15 +335,57 @@
     flex-direction: column;
 }
 
+
+
 .user__freebies-inner-container-inner{
     display: grid;
+    flex-wrap: wrap;
+    overflow-y: scroll;
     gap: 1rem;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
-
-    max-width: 90rem;
+    height: 60rem;
+    max-width: 80rem;
     margin: 0 auto;
     margin-bottom: 1rem;
+}
+
+.user__input-filter-search-bar{
+}
+
+.user__input-filter-skew-container{
+    background-color: #15151C;
+    transform: skewX(-25deg);
+    display: flex;
+    border: .2rem solid #282835;
+    width: 100%;
+}
+
+.user__input-filter-form-control{
+    background-color: transparent;
+    border: none;
+    color: white;
+    transform: skewX(25deg);
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.user__input-filter-form-control:focus{
+    outline: none;
+}
+
+.user__filter-search-button{
+    background-color: #38383E;
+    border: none;
+    padding: .6rem 1rem;
+    color: #EDEDED;
+    cursor: pointer;
+    display: flex;
+    /* transform: skewX(25deg); */
+}
+
+.user__filter-search-button:active{
+    transform: scale(1.1);
 }
 
 .user__separator{
@@ -280,7 +405,8 @@
 
 .user__feature-tags-container {
     display: flex;
-    gap: 4rem;
+    gap: 6rem;
+    width: 100%;
 }
 
 .user__feature-tags-item {
@@ -305,6 +431,7 @@
 .user__main{
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .user__main-profile-form {
@@ -661,7 +788,7 @@
     height: 100%;
     width: 100%;
     background-color: #15151C;
-    background-color: red!important;
+    /* background-color: red!important; */
 }
 
 .user__sales-mc-header{
