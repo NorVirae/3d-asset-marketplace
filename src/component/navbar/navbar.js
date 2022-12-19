@@ -89,6 +89,10 @@ const NavBar = ({search, style, shortSearch, pageType, loggedIn}) => {
     useEffect(() => {
         
         window.addEventListener("scroll", (e) =>handleScroll(e));
+        
+        return () => {
+            window.removeEventListener("scroll")
+        }
 
     },[])
 

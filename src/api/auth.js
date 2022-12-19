@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
 import { toast } from "react-toastify"
-import { signUp } from "../redux/reducers/authReducer"
+import { merchandiseStore, signUp } from "../redux/reducers/authReducer"
 const baseUrl = "https://server.loooty.com"
 let config = {
     Headers:{
@@ -35,6 +35,26 @@ export const signInAction = createAsyncThunk("auth/signin",
 
             const data = await axios.post(`${baseUrl}/api/auth/login`, params.signInData, config)
             thunkAPI.dispatch(signUp({user: data.data.data}))
+            console.log(data.data.data, "HOLA")
+            return data
+
+        }catch(err){
+            
+            // console.log(err.response)
+            console.log(err, "HAIL")
+            
+            return thunkAPI.rejectWithValue(err)
+        }
+    }
+)
+
+export const createMerchandiseStore = createAsyncThunk("store/store", 
+    async (params, thunkAPI) => {
+        try{
+            // console.log(params.signUpData, "DATA")
+
+            const data = await axios.post(`${baseUrl}/api/store/store`, params.storeInfo, config)
+            thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data}))
             console.log(data.data.data, "HOLA")
             return data
 

@@ -23,6 +23,8 @@ const SignInModal = () => {
     const handleSignIn = async (e) => {
         e.preventDefault()
         setIsLoading(true)
+        
+        console.log(loginInfo)
         const signUpData = await dispatch(signInAction({signInData: loginInfo})).unwrap()
         .then(async (result) => {
             console.log(result)
