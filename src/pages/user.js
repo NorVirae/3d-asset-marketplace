@@ -49,14 +49,24 @@ import { AiFillFileZip } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const Store = () => {
+  const products = useSelector((state) => state.products);
   return (
     <section className="user__store-freebies-container">
       <div className="user__store-freebies-inner-container">
-        <LandCard img={WolfGuyImg} title={""} titleAffirm={""} />
-        <LandCard img={TsunamiImg} title={""} titleAffirm={""} />
+        {products ? (
+          products.map((product) => (
+            <LandCard img={WolfGuyImg} title={""} titleAffirm={""} />
+          ))
+        ) : (
+          <div className="user__no-product-div">
+            You do not have any product yet!
+          </div>
+        )}
+
+        {/* <LandCard img={TsunamiImg} title={""} titleAffirm={""} />
         <LandCard img={ScaryImg} title={""} titleAffirm={""} />
         <LandCard img={CatmanImg} title={""} titleAffirm={""} />
-        <LandCard img={coloredhouseImg} title={""} titleAffirm={""} />
+        <LandCard img={coloredhouseImg} title={""} titleAffirm={""} /> */}
       </div>
     </section>
   );
@@ -1703,7 +1713,8 @@ const User = () => {
               onClick={(e) => navigate("/user/upload")}
               className="user__upload-products-btn-inner"
             >
-              UPLOAD&nbsp;PRODUCTS <FaPlusCircle style={{ fontSize: "1.3rem" }} />
+              UPLOAD&nbsp;PRODUCTS{" "}
+              <FaPlusCircle style={{ fontSize: "1.3rem" }} />
             </div>
           </button>
           <button className="user__upload-products-btn">
