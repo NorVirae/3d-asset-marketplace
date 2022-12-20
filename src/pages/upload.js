@@ -2,16 +2,53 @@ import { useState } from "react";
 import { FaEdit, FaMinus, FaPlus, FaPlusCircle, FaTag } from "react-icons/fa";
 import { GrEdit } from "react-icons/gr";
 import { MdEdit } from "react-icons/md";
+import { toast } from "react-toastify";
 import IdentityBtn from "../component/buttons/identityBtn";
 import CGBar, { CGBarSlim } from "../component/card/cbBar";
 import NavBar from "../component/navbar/navbar";
 import { OrderCheckbox } from "./user";
 
-export const MainTags = ({ text = "3D Assets", defaultState = false }) => {
+export const MainTags = ({
+  text = "3D Assets",
+  defaultState = false,
+  productInfo,
+  setProductInfo,
+}) => {
   const [isSelected, setIsSelected] = useState(defaultState);
+
+  const removeItemFromArray = (myArray, val) => {
+    console.log(myArray, val)
+
+    const index = myArray.indexOf(val);
+    if (index != -1) {
+      const x = myArray.splice(index, 1);
+      console.log(`myArray values: ${myArray}`);
+      console.log(`variable x value: ${x}`);
+      return myArray;
+    }
+
+    return -1;
+  };
   return (
     <button
-      onClick={(e) => setIsSelected(!isSelected)}
+      onClick={(e) => {
+        
+        let check = removeItemFromArray(productInfo.merchandise_tags, text);
+
+        if (check == -1) {
+          if (productInfo.merchandise_tags.length > 4){
+            toast.error("You can only choose up to five(5) tags")
+            return
+          }
+          let newArray = [...productInfo.merchandise_tags, text];
+          setProductInfo(old => ({...old, merchandise_tags: newArray}));
+          setIsSelected(!isSelected);
+          return;
+        }
+
+        setProductInfo(old => ({...old, merchandise_tags: check}));
+        setIsSelected(!isSelected);
+      }}
       className="upload__tag-btn"
     >
       {text}
@@ -30,7 +67,7 @@ const UploadPage = () => {
     store_id: "",
     merchandise_name: "",
     merchandise_description: "",
-    merchandise_tags: "",
+    merchandise_tags: ["3D Assets"],
     basic_price: "",
     commercial_price: "",
     explicit_content: "",
@@ -313,6 +350,13 @@ const UploadPage = () => {
           />
           <section className="upload__text-area-container">
             <textarea
+              onChange={(e) =>
+                setProductInfo((old) => ({
+                  ...old,
+                  merchandise_description: e.target.value,
+                }))
+              }
+              value={productInfo.merchandise_description}
               rows={8}
               cols={70}
               className="upload__text-area"
@@ -329,20 +373,20 @@ const UploadPage = () => {
               </div>
               <p className="upload__tag-select">
                 Choose up to five{" "}
-                <span style={{ color: "#B31FA6", fontSize: "1.1rem" }}>2/</span>
-                5 tags
+                <span style={{ color: "#B31FA6", fontSize: "1.1rem" }}>{productInfo.merchandise_tags.length}/</span>
+                8 tags
               </p>
             </div>
 
             <section className="upload__tags-inner-container">
-              <MainTags text="3D Assets" defaultState={false} />
-              <MainTags text="Games" defaultState={true} />
-              <MainTags text="Anime" defaultState={true} />
-              <MainTags text="2D Assets" defaultState={true} />
-              <MainTags text="compose" defaultState={true} />
-              <MainTags text="Cinema" defaultState={true} />
-              <MainTags text="Mesh" defaultState={true} />
-              <MainTags text="Topo" defaultState={true} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="3D Assets" defaultState={false} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="Games" defaultState={true} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="Anime" defaultState={true} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="2D Assets" defaultState={true} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="compose" defaultState={true} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="Cinema" defaultState={true} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="Mesh" defaultState={true} />
+              <MainTags setProductInfo={setProductInfo} productInfo={productInfo} text="Topo" defaultState={true} />
             </section>
           </section>
 
@@ -354,15 +398,17 @@ const UploadPage = () => {
                 />{" "}
                 Upload Files
               </div>
-              <input className="upload__main-files-upload" type={"file"} />
+              <input multiple onChange={e=> {
+                setProductInfo(old => ({...old, files: e.target.files}))
+              }} className="upload__main-files-upload" type={"file"} />
             </div>
           </section>
 
           <section className="upload__price-section">
             <div className="upload__price-inner-section">
               <h3>Price</h3>
-              <div className="upload__form-group">
-                <span className="upload__license-text"> Basic License</span>
+              <div className="upload__form-group-extra">
+                <span className="upload__license-text">Basic&nbsp;License</span>
                 <section className="upload__skew-container">
                   <div className="upload__main-control-container">
                     <div className="upload__control-switch-container">
@@ -388,7 +434,7 @@ const UploadPage = () => {
                 </section>
               </div>
 
-              <div className={`upload__form-group`}>
+              <div className={`upload__form-group-extra`}>
                 <span className="upload__license-text upload__form-group-commercial ">
                   <OrderCheckbox
                     isActive={isCommercialActive}
