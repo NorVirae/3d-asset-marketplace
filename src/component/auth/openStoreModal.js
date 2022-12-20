@@ -2,33 +2,55 @@ import { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { createMerchandiseStore } from "../../api/auth";
 import { RegisterContext } from "./context/registerContext";
 
 const OpenStoreModal = () => {
   const [active, setActive] = useState(false);
   const user = useSelector((state) => state.user.user);
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [isLoading, setIsLoading] = useState(false)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
   const [storeInfo, setStoreInfo] = useState({
-    name: "",
-    email: "",
-    why_loooty: "",
-    store_cover_picture: "",
-    portfolio_link: "",
+    store_name: "Realindiana",
+    store_email: user.email,
+    // store_cover_picture: new Blob(),
+    why_loooty: "Cause loooty is big",
+    portfolio_link: "www.realindiana.com",
   });
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
+
+  const convertToBase64 = (blob) => {
+    console.log("BLOB", blob.blob);
+    // var blob = new Blob([blob])
+    var reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onloadend = function () {
+      var base64data = reader.result;
+      console.log(base64data);
+      return base64data;
+    };
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setStoreInfo(old => ({...old, email: user.email}))
+    console.log(user.email, "HUA");
+    // setStoreInfo(old => ({...old, email: user.email}))
+    let data = new FormData()
 
-    console.log(storeInfo);
-   
-    const signUpData = await dispatch(({ storeInfo }))
+    data.append('store_name', storeInfo.store_name)
+    data.append('store_email', storeInfo.store_email)
+    // data.append('store_cover_picture', storeInfo.store_cover_picture)
+    data.append('why_loooty', storeInfo.why_loooty)
+    data.append('portfolio_link', storeInfo.portfolio_link)
+
+
+    console.log(data);
+
+    const signUpData = await dispatch(createMerchandiseStore({ storeInfo: data }))
       .unwrap()
       .then(async (result) => {
         console.log(result);
@@ -46,8 +68,6 @@ const OpenStoreModal = () => {
         }
       });
   };
-
-
 
   const handleKey = (e) => {
     if (e.key === "esc") {
@@ -92,32 +112,33 @@ const OpenStoreModal = () => {
           <div className="opn__open-store-form-control-container">
             <input
               onChange={(e) =>
-                setStoreInfo((old) => ({ ...old, name: e.target.value }))
+                setStoreInfo((old) => ({ ...old, store_name: e.target.value }))
               }
-              value={storeInfo.value}
+              value={storeInfo.store_name}
               className="opn__open-store-form-control"
             />
           </div>
         </div>
 
-        <div className="opn__open-store-form-group">
+        {/* <div className="opn__open-store-form-group">
           <label className="opn__open-store-form-label">
             <span style={{ transform: "skewX(25deg)" }}>Cover Picture</span>
           </label>
           <div className="opn__open-store-form-control-container">
             <input
               type={"file"}
+              multiple
               onChange={(e) =>
                 setStoreInfo((old) => ({
                   ...old,
-                  store_cover_picture: e.target.value,
+                  store_cover_picture: e.target.files,
                 }))
               }
-              value={storeInfo.value}
+              // value={storeInfo.value}
               className="opn__open-store-form-control"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="opn__open-store-form-group">
           <label className="opn__open-store-form-label">
@@ -163,7 +184,9 @@ const OpenStoreModal = () => {
 
         <div className="opn__open-store-btn-group">
           <button onClick={handleSubmit} className="opn__open-store-btn">
-            <span className="opn__open-store-btn-text">{isLoading?"Loading...":"SUBMIT"}</span>
+            <span className="opn__open-store-btn-text">
+              {isLoading ? "Loading..." : "SUBMIT"}
+            </span>
           </button>
         </div>
       </div>

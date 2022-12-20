@@ -214,7 +214,7 @@ export const LoootyLogo = ({ style, color = "#8383b2" }) => {
     window.addEventListener("scroll", (e) => handleScroll(e));
 
     return () => {
-        window.removeEventListener("scroll")
+        window.removeEventListener("scroll", (e) => handleScroll(e))
     }
   }, []);
 
