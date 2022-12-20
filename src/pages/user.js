@@ -302,7 +302,6 @@ const Profile = () => {
           value={userDetails.username}
           onChange={(e) => {
             setUserDetails((old) => ({ ...old, username: e.target.value }));
-            console.log("called");
           }}
           labelName={"USERNAME"}
         />
@@ -1643,7 +1642,6 @@ const User = () => {
         setShowRegModal({ ...showRegModal, login: false });
       })
       .catch((err) => {
-        // console.log(signUpData, "UL")
         if (err.response) {
           toast.error(err.response.data.message);
         }
@@ -1685,7 +1683,6 @@ const User = () => {
             </button>
           )}
 
-          {console.log(merchandiseStore)}
 
           <div className="user__profile-container">
             <img src={CatmanImg} className="user__profile-img" />

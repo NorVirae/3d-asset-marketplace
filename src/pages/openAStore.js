@@ -29,7 +29,6 @@ const OpenAStore = () => {
   }, [pathname]);
 
   useEffect(() => {
-    console.log(user)
     if (!user.user) {
       navigate("/");
     }

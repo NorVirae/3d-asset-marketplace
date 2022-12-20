@@ -9,7 +9,6 @@ const IdenttyBtnDropdown = ({dropDownList, setMainText}) => {
         <div onClick={e=>{ e.stopPropagation();}} className='identity__btn-skew-container'>
             <ul onClick={e=> e.stopPropagation()} className='identity__btn-dropdown'>
                 {dropDownList.map(item =>{
-                    console.log(item.toLowerCase(), "CHECK")
                     return <li onClick={ (e) => { dispatch(setSelectedSubPage({selected: item.toLowerCase()}));  setMainText(item)}} className='identity__btn-dropdown-item'>{item}</li>
                 })}
                 
@@ -21,7 +20,6 @@ const IdenttyBtnDropdown = ({dropDownList, setMainText}) => {
 const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
     const [showDropdown, setShowDropdown] = useState(false)
     const [mainText, setMainText] = useState(text)
-    console.log(dropDownList)
     const wrapHandler = (text) => {
         let newtext = text.split(' ')
         if (newtext.length > 1){

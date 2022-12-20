@@ -391,7 +391,6 @@ const Profile = () => {
           value={userDetails.username}
           onChange={(e) => {
             setUserDetails((old) => ({ ...old, username: e.target.value }));
-            console.log("called");
           }}
           labelName={"USERNAME"}
         />

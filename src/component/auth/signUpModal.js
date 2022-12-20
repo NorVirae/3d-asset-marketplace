@@ -34,7 +34,6 @@ const SignUpModal = () => {
         setIsLoading(true)
         const signUpData = await dispatch(signUpAction({signUpData: regInfo})).unwrap()
         .then(async (result) => {
-            console.log(result)
             setIsLoading(false)
             toast.success("Sign up was successful")
 
@@ -42,7 +41,6 @@ const SignUpModal = () => {
         })
         .catch((err) => {
             setIsLoading(false)
-            // console.log(signUpData, "UL")
             if (err.response){
                 toast.error(err.response.data.message)
             }

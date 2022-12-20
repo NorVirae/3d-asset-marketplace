@@ -23,13 +23,11 @@ const OpenStoreModal = () => {
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
 
   const convertToBase64 = (blob) => {
-    console.log("BLOB", blob.blob);
     // var blob = new Blob([blob])
     var reader = new FileReader();
     reader.readAsDataURL(blob);
     reader.onloadend = function () {
       var base64data = reader.result;
-      console.log(base64data);
       return base64data;
     };
   };
@@ -37,7 +35,6 @@ const OpenStoreModal = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log(user.email, "HUA");
     // setStoreInfo(old => ({...old, email: user.email}))
     let data = new FormData()
 
@@ -48,12 +45,10 @@ const OpenStoreModal = () => {
     data.append('portfolio_link', storeInfo.portfolio_link)
 
 
-    console.log(data);
 
     const signUpData = await dispatch(createMerchandiseStore({ storeInfo: data }))
       .unwrap()
       .then(async (result) => {
-        console.log(result);
         setIsLoading(false);
         toast.success("Sign in was successful");
 
@@ -62,7 +57,6 @@ const OpenStoreModal = () => {
       })
       .catch((err) => {
         setIsLoading(false);
-        // console.log(signUpData, "UL")
         if (err.response) {
           toast.error(err.response.data.message);
         }

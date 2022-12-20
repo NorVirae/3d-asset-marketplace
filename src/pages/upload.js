@@ -44,8 +44,8 @@ const UploadPage = () => {
   });
 
   const handlePublish = () => {
-    console.log(productInfo)  
-  }
+    console.log(productInfo);
+  };
 
   return (
     <div className="upload__container">
@@ -81,13 +81,24 @@ const UploadPage = () => {
 
             <section className="upload__image-dropbox-container">
               <div className="upload__image-dropbox-twin">
+                {productInfo.merchandise_cover_picture[0] ? (
+                  <img
+                    className="upload__image-form-control-image"
+                    src={URL.createObjectURL(
+                      productInfo.merchandise_cover_picture[0]
+                    )}
+                  />
+                ) : null}
                 <input
-                  onChange={(e) =>
+                  accept="image/*"
+                  onChange={(e) => {
+                    let newArray = productInfo.merchandise_cover_picture;
+                    newArray[0] = e.target.files[0];
                     setProductInfo((old) => ({
                       ...old,
-                      merchandise_cover_picture: e.target.files,
-                    }))
-                  }
+                      merchandise_cover_picture: newArray,
+                    }));
+                  }}
                   placeholder="none"
                   type={"file"}
                   className="upload__image-dropbox"
@@ -108,76 +119,183 @@ const UploadPage = () => {
             <section className="upload__image-preview">
               <div className="upload__image-preview-inner">
                 <div className="upload__image-item">
-                 {productInfo.merchandise_preview_pictures[0]? <img className="upload__image-form-control-image" src={ URL.createObjectURL(productInfo.merchandise_preview_pictures[0])} />: null}
-
+                  {productInfo.merchandise_preview_pictures[0] ? (
+                    <img
+                      className="upload__image-form-control-image"
+                      src={URL.createObjectURL(
+                        productInfo.merchandise_preview_pictures[0]
+                      )}
+                    />
+                  ) : null}
+                  <FaPlusCircle className="upload__image-iconister" />
+                  <p>Preview Image</p>
                   <input
-                    onChange={(e) =>{
+                    onChange={(e) => {
+                      let newArray = productInfo.merchandise_preview_pictures;
+                      newArray[0] = e.target.files[0];
+                      console.log(
+                        newArray,
+                        productInfo.merchandise_preview_pictures
+                      );
                       setProductInfo((old) => ({
                         ...old,
-                        merchandise_preview_pictures:
-                          old.merchandise_preview_pictures.push(
-                            e.target.files[0]
-                          ),
-                      }));}
-                    }
+                        merchandise_preview_pictures: newArray,
+                      }));
+                      console.log(newArray, "GAME ARRAY", e.target.files[0]);
+                    }}
                     type={"file"}
                     className="upload__image-form-control"
                   />
-                  <FaPlusCircle className="upload__image-iconister" />
-                  <p>Preview Image</p>
                 </div>
 
                 <div className="upload__image-item">
-                  <input onChange={(e) =>
-                      setProductInfo((old) => ({
-                        ...old,
-                        merchandise_preview_pictures:
-                          old.merchandise_preview_pictures.push(
-                            e.target.files[0]
-                          ),
-                      }))
-                    } type={"file"} className="upload__image-form-control" />
+                  {productInfo.merchandise_preview_pictures[1] ? (
+                    <img
+                      className="upload__image-form-control-image"
+                      src={URL.createObjectURL(
+                        productInfo.merchandise_preview_pictures[1]
+                      )}
+                    />
+                  ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
+                  <input
+                    onChange={(e) => {
+                      let newArray = productInfo.merchandise_preview_pictures;
+                      newArray[1] = e.target.files[0];
+                      console.log(
+                        newArray,
+                        productInfo.merchandise_preview_pictures
+                      );
+                      setProductInfo((old) => ({
+                        ...old,
+                        merchandise_preview_pictures: newArray,
+                      }));
+                      console.log(newArray, "GAME ARRAY", e.target.files[0]);
+                    }}
+                    type={"file"}
+                    className="upload__image-form-control"
+                  />
                 </div>
+
                 <div className="upload__image-item">
-                  <input onChange={(e) =>
-                      setProductInfo((old) => ({
-                        ...old,
-                        merchandise_preview_pictures:
-                          old.merchandise_preview_pictures.push(
-                            e.target.files[0]
-                          ),
-                      }))
-                    } type={"file"} className="upload__image-form-control" />
+                  {productInfo.merchandise_preview_pictures[2] ? (
+                    <img
+                      className="upload__image-form-control-image"
+                      src={URL.createObjectURL(
+                        productInfo.merchandise_preview_pictures[2]
+                      )}
+                    />
+                  ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
+                  <input
+                    onChange={(e) => {
+                      let newArray = productInfo.merchandise_preview_pictures;
+                      newArray[2] = e.target.files[0];
+                      console.log(
+                        newArray,
+                        productInfo.merchandise_preview_pictures
+                      );
+                      setProductInfo((old) => ({
+                        ...old,
+                        merchandise_preview_pictures: newArray,
+                      }));
+                      console.log(newArray, "GAME ARRAY", e.target.files[0]);
+                    }}
+                    type={"file"}
+                    className="upload__image-form-control"
+                  />
                 </div>
+
                 <div className="upload__image-item">
-                  <input onChange={(e) =>
-                      setProductInfo((old) => ({
-                        ...old,
-                        merchandise_preview_pictures:
-                          old.merchandise_preview_pictures.push(
-                            e.target.files[0]
-                          ),
-                      }))
-                    } type={"file"} className="upload__image-form-control" />
+                  {productInfo.merchandise_preview_pictures[3] ? (
+                    <img
+                      className="upload__image-form-control-image"
+                      src={URL.createObjectURL(
+                        productInfo.merchandise_preview_pictures[3]
+                      )}
+                    />
+                  ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
+                  <input
+                    onChange={(e) => {
+                      let newArray = productInfo.merchandise_preview_pictures;
+                      newArray[3] = e.target.files[0];
+                      console.log(
+                        newArray,
+                        productInfo.merchandise_preview_pictures
+                      );
+                      setProductInfo((old) => ({
+                        ...old,
+                        merchandise_preview_pictures: newArray,
+                      }));
+                      console.log(newArray, "GAME ARRAY", e.target.files[0]);
+                    }}
+                    type={"file"}
+                    className="upload__image-form-control"
+                  />
                 </div>
+
                 <div className="upload__image-item">
-                  <input onChange={(e) =>
-                      setProductInfo((old) => ({
-                        ...old,
-                        merchandise_preview_pictures:
-                          old.merchandise_preview_pictures.push(
-                            e.target.files[0]
-                          ),
-                      }))
-                    } type={"file"} className="upload__image-form-control" />
+                  {productInfo.merchandise_preview_pictures[4] ? (
+                    <img
+                      className="upload__image-form-control-image"
+                      src={URL.createObjectURL(
+                        productInfo.merchandise_preview_pictures[4]
+                      )}
+                    />
+                  ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
+                  <input
+                    onChange={(e) => {
+                      let newArray = productInfo.merchandise_preview_pictures;
+                      newArray[4] = e.target.files[0];
+                      console.log(
+                        newArray,
+                        productInfo.merchandise_preview_pictures
+                      );
+                      setProductInfo((old) => ({
+                        ...old,
+                        merchandise_preview_pictures: newArray,
+                      }));
+                      console.log(newArray, "GAME ARRAY", e.target.files[0]);
+                    }}
+                    type={"file"}
+                    className="upload__image-form-control"
+                  />
+                </div>
+
+                <div className="upload__image-item">
+                  {productInfo.merchandise_preview_pictures[5] ? (
+                    <img
+                      className="upload__image-form-control-image"
+                      src={URL.createObjectURL(
+                        productInfo.merchandise_preview_pictures[5]
+                      )}
+                    />
+                  ) : null}
+                  <FaPlusCircle className="upload__image-iconister" />
+                  <p>Preview Image</p>
+                  <input
+                    onChange={(e) => {
+                      let newArray = productInfo.merchandise_preview_pictures;
+                      newArray[5] = e.target.files[0];
+                      console.log(
+                        newArray,
+                        productInfo.merchandise_preview_pictures
+                      );
+                      setProductInfo((old) => ({
+                        ...old,
+                        merchandise_preview_pictures: newArray,
+                      }));
+                      console.log(newArray, "GAME ARRAY", e.target.files[0]);
+                    }}
+                    type={"file"}
+                    className="upload__image-form-control"
+                  />
                 </div>
               </div>
             </section>

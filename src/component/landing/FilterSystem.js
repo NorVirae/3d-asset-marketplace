@@ -58,7 +58,6 @@ const FilterSliderCustom = () => {
 const FilterSlider = () => {
     const [sliderChange, setSliderChange] = useState({ min: "20", max: "70" })
     const handleSliderChange = (e, type) => {
-        console.log(e, "TARGETTER")
         if (type === "max") {
             if (Number(e.target.value) <= Number(sliderChange.min)) {
                 setSliderChange(old => ({ ...old, min: Number(e.target.value) - 1 }))
