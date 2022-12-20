@@ -76,6 +76,8 @@ export const fetchMerchandiseStore = createAsyncThunk("api/store",
     }
 )
 
+
+
 export const fetchMerchandise = createAsyncThunk("api/store", 
     async (params, thunkAPI) => {
         try{
@@ -88,6 +90,24 @@ export const fetchMerchandise = createAsyncThunk("api/store",
 
         }catch(err){
                         
+            return thunkAPI.rejectWithValue(err)
+        }
+    }
+)
+
+export const createMerchandise = createAsyncThunk("api/store", 
+    async (params, thunkAPI) => {
+        try{
+            let state = thunkAPI.getState()
+            let teamKey = Object.keys(state.user.user.groups)[0]
+            const newConfig = {...config, "Content-Type": "application/form-data",  headers: {...config.headers, Team: teamKey, Authorization: `Bearer ${state.user.user.access_token}`, } }
+            const data = await axios.post(`${baseUrl}/api/merchandise/store`, params.productInfo, newConfig)
+            // thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data}))
+            return data
+
+        }catch(err){
+            
+            
             return thunkAPI.rejectWithValue(err)
         }
     }
