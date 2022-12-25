@@ -68,9 +68,9 @@ const UploadPage = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if(!user){
-      navigate("/")
-    }
+    // if(!user){
+    //   navigate("/")
+    // }
 
     console.log(merchandiseStore.data[0].id, "JOY")
 
