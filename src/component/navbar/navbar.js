@@ -28,6 +28,9 @@ const NavLoggedIn = () => {
             <li className="landing__navbar-logo-items"><FcSettings/></li>
             <li className="landing__navbar-logo-items"><RiNotification3Fill/></li>
             <li className="landing__navbar-logo-items"><GrMail/></li>
+            <li onClick={e=>navigate("/open/store")} className={"landing__nav-item"}>
+                <Link className="landing__nav-link" to={"/open/store"}>Open&nbsp;a&nbsp;Store</Link>
+            </li>
             <li className="landing__navbar-profile-container">
                 <div onClick={() => navigate("/user")} className="landing__navbar-profile-img-container">
                     <img src={CatmanImg} alt="" className="landing__navbar-profile-img"/>
@@ -48,9 +51,7 @@ const NavLoggedOut = () => {
     const navigate = useNavigate()
     return(
         <ul className="landing__navbar-inner-container">
-                <li onClick={e=>navigate("/open/store")} className={"landing__nav-item"}>
-                    <Link className="landing__nav-link" to={"/open/store"}>Open&nbsp;a&nbsp;Store</Link>
-                </li>
+                
 
                 <li className={"landing__nav-item"}>
                     <Link className="landing__nav-link" to={"#"}>Help</Link>
@@ -88,6 +89,10 @@ const NavBar = ({search, style, shortSearch, pageType, loggedIn}) => {
     useEffect(() => {
         
         window.addEventListener("scroll", (e) =>handleScroll(e));
+        
+        return () => {
+            window.removeEventListener("scroll", (e) =>handleScroll(e))
+        }
 
     },[])
 

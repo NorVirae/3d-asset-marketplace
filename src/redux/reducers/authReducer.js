@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    user: null
+    user: null,
+    merchandiseStore: null,
+    product: null
 }
 
 const authReducer = createSlice({
@@ -10,12 +12,20 @@ const authReducer = createSlice({
     reducers: {
         signUp(state, action){
             state.user = action.payload.user
+        },
+        merchandiseStore(state, action){
+            state.merchandiseStore = action.payload.merchandiseStore
+        },
+        products(state, action){
+            state.product = action.payload.product
         }
+
     }
 })
 
 export const {
-    signUp
+    signUp,
+    merchandiseStore
 } = authReducer.actions
 
 export default authReducer.reducer

@@ -1,16 +1,14 @@
-
-
 /* NEW MEDIA QUERIES BREAK POINT */
 
 /* Mobile devices */
 /* small mobile phone 320px  -  480px */
-@media screen  and (min-width: 0px) and (max-width: 480px){
-    /* .landing__main{
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  /* .landing__main{
         zoom: 90%; */
-        /* transform: scale(.3);
+  /* transform: scale(.3);
         transform-origin: 0 0; */
-    /* } */
-    /* .landing__main-app{
+  /* } */
+  /* .landing__main-app{
         zoom: 9%;
 
     }
@@ -18,11 +16,11 @@
     .landing__header{
         zoom: 90%;
     } */
-    /* body{
+  /* body{
         transform: scale(.2);
         transform-origin: 0 0;
     } */
-    /* .landing__instruct-btn-container{
+  /* .landing__instruct-btn-container{
         flex-direction: column;
     }
 
@@ -145,390 +143,419 @@
         font-size: 60%;
     } */
 
-    html{
-        font-size: 60%;
-    }
-    .landing__footer{
-        height: auto;
-       /* transform: scale(.6)!important; */
-       zoom: .5;
-    }
-    .landing__freebies-inner-container{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .landing__footer-inner{
-    }
-    .landing__post-container{
-        height: auto;
-       zoom: .5;
+  html {
+    font-size: 60%;
+  }
+  .landing__footer {
+    height: auto;
+    /* transform: scale(.6)!important; */
+    zoom: 0.5;
+  }
+  .landing__freebies-inner-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .landing__footer-inner {
+  }
+  .landing__post-container {
+    height: auto;
+    zoom: 0.5;
+  }
 
-    }
+  .landing__double-inner-container {
+    grid-template-columns: repeat(1, 1fr);
+    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-    .landing__double-inner-container{
-        grid-template-columns: repeat(1, 1fr);
-        height: auto;
-        padding-left:1rem;
-        padding-right: 1rem;
-
-    }
-
-    .landing__freebies-inner-container{
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-    .landing__all-products-inner-container{
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    .landing-card-img{
-        height: 15vh;
-     
-     }
-     .landing__slogan{
-        zoom: .8;
-     }
-
-     .search__skew-container{
-        zoom: .7;
-     }
-
-    .landing__cg-tutorials{
-       zoom: .5;
-
-    }
-
-    .landing__cg-card-container-slim{
-        
-        width: 100%;
-        top: 5%;
-        zoom: 2;
-        overflow-x: scroll;
-       
-    }
-
-    .landing__show-filters-container{
-        zoom: .6;
-        height: 12vh;
-        padding-top: 2rem;
-    }
-
-
-    .landing__search-section{
-        height: 10vh;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__filter-tags-btn-text{
-       
-        font-size: .7rem;
-    }
-
-    .landing__start-selling-text{
-        font-size: 1.5rem;
-    }
-    
-    .landing__start-selling-desc{
-        font-size: .6rem;
-        margin-bottom: 1.5rem;
-    }
-    .landing__slogan-browse-text, .landing__slogan-sell-text{
-       font-size: .9rem;
-    }
-    .landing__open-partner-container{
-        zoom: .3;
-    }
-
-    .landing__header{
-        height: 30vh;
-    }
-
-    .landing__open-partner-label-container{
-        width: 70%;
-      
-        
-    }
-
-    .landing__weekly-freebies-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-
-    }
-
-    .landing__freebies-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__weekly-freebies-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__freebies-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__weekly-freebies-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-    .landing__show-filters-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__filter-tag-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__all-products-container{
-        padding: 1rem;
-    }
-
-    .landing__weekly-freebies-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__weekly-freebies-container{
-        height: auto;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__double-img-normal{
-        width: 50%;
-        height: 25vh;
-        object-fit: cover;
-    }
-
-    .landing__double-img-grey{
-        width: 50%;
-        height: 25vh;
-        filter: grayscale(100%);
-        object-fit: cover;
-    
-    }
-
-    .landing__daily-picks-filters-container{
-        zoom: 1;
-        overflow-x: scroll;
-    }
-
-    .landing__weekly-freebies-container{
-        zoom: .8;
-    }
-
-    .landing__awesome-arts-sec{
-        height: 5vh;
-        max-width: auto;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    }
-
-    .landing__post-container{
-        flex-direction: column;
-        gap: 2rem;
-    }
-    .landing__footer{
-        height: auto;
-    }
-
-    /*preview */
-
-    .buy__buy-preview-container-inner{
-        flex-direction: column;
-        gap: 2rem!important;
-    }
-
-    .buy__carousel-container{
-        width: 100%!important;
-    }
-
-    /* modals */
-
-    .reg__sign-up-overlay{
-        padding: .8rem;
-        z-index: 25!important;
-
-    
-    }
-    
-
-    .reg__sign-up-modal{
-       
-        
-        width: 100%!important;
-        zoom: .7;
-       
-    }
-
-    .reg__btn-google, .reg__btn-facebook{
-        font-size: .9rem;
-    }
-
-    /* upload */
-
-    .upload__mock-up{
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .upload__title-section{
-        display: flex;
-        flex-direction: column;
-        flex: 2;
-        gap: 3rem;
-    }
-
-    .upload__image-preview{
-        
-        width: 100%;
-    }
-
-    .upload__description-section{
-        width: 100%;
-    }
-
-    .upload__publish-section{
-       zoom: .9;
-    }
-
-    .user__profile-caution {
-        width: 80%;
-    }
-
-    .user__product-action-container {
-        zoom: .7;
-    }
-
-    .user__upload-products-btn {
-       
-        width: 40%;
-    
-    }
-
-    .user__admin-visitor-container {
-        
-        right: 5%;
-        top: -40%;
-       
-    }
-
-    .user__main{
-        width: 100%;
-    }
-
-    .user__admin-page-section-header-container {
-        zoom: 1;
-        overflow-x: scroll;
-        padding-left: 20rem;
-
-        /* width: 50vw; */
-        /* background-color: red; */
-    }
-
-    .user__admin-page-section-header-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .sidebar{
-        width: 80%;
-    }
-
-   .user__main-lib-body{
+  .landing__freebies-inner-container {
     grid-template-columns: repeat(2, 1fr);
-   }
-
-   .user__library-inner{
-    flex-direction: column;
-   }
-
-   .user__main-lib-body-collections{
+  }
+  .landing__all-products-inner-container {
     grid-template-columns: repeat(2, 1fr);
+  }
 
-   }
+  .landing-card-img {
+    height: 15vh;
+  }
+  .landing__slogan {
+    zoom: 0.8;
+  }
 
-   .user__main-sett-body{
+  .search__skew-container {
+    zoom: 0.7;
+  }
+
+  .landing__cg-tutorials {
+    zoom: 0.5;
+  }
+
+  .landing__cg-card-container-slim {
+    width: 100%;
+    top: 5%;
+    zoom: 2;
+    overflow-x: scroll;
+  }
+
+  .landing__show-filters-container {
+    zoom: 0.6;
+    height: 12vh;
+    padding-top: 2rem;
+  }
+
+  .landing__search-section {
+    height: 10vh;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__filter-tags-btn-text {
+    font-size: 0.7rem;
+  }
+
+  .landing__start-selling-text {
+    font-size: 1.5rem;
+  }
+
+  .landing__start-selling-desc {
+    font-size: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .landing__slogan-browse-text,
+  .landing__slogan-sell-text {
+    font-size: 0.9rem;
+  }
+  .landing__open-partner-container {
+    zoom: 0.3;
+  }
+
+  .landing__header {
+    height: 30vh;
+  }
+
+  .landing__open-partner-label-container {
+    width: 70%;
+  }
+
+  .landing__weekly-freebies-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__freebies-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__weekly-freebies-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__freebies-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__weekly-freebies-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  .landing__show-filters-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__filter-tag-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__all-products-container {
+    padding: 1rem;
+  }
+
+  .landing__weekly-freebies-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__weekly-freebies-container {
+    height: auto;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__double-img-normal {
+    width: 50%;
+    height: 25vh;
+    object-fit: cover;
+  }
+
+  .landing__double-img-grey {
+    width: 50%;
+    height: 25vh;
+    filter: grayscale(100%);
+    object-fit: cover;
+  }
+
+  .landing__daily-picks-filters-container {
+    zoom: 1;
+    overflow-x: scroll;
+  }
+
+  .landing__weekly-freebies-container {
+    zoom: 0.8;
+  }
+
+  .landing__awesome-arts-sec {
+    height: 5vh;
+    max-width: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .landing__post-container {
     flex-direction: column;
-   }
+    gap: 2rem;
+  }
+  .landing__footer {
+    height: auto;
+  }
 
-   .user__settings-sidebar-body{
-    
+  /*preview */
+
+  .buy__buy-preview-container-inner {
+    flex-direction: column;
+    gap: 2rem !important;
+  }
+
+  .buy__carousel-container {
+    width: 100% !important;
+  }
+
+  /* modals */
+
+  .reg__sign-up-overlay {
+    padding: 0.8rem;
+    z-index: 25 !important;
+  }
+
+  .reg__sign-up-modal {
+    width: 100% !important;
+    zoom: 0.7;
+  }
+
+  .reg__btn-google,
+  .reg__btn-facebook {
+    font-size: 0.9rem;
+  }
+
+  /* upload */
+
+  .upload__mock-up {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .upload__title-section {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 3rem;
+  }
+
+  .upload__image-preview {
+    width: 100%;
+  }
+
+  .upload__description-section {
+    width: 100%;
+  }
+
+  .upload__publish-section {
+    zoom: 0.9;
+  }
+
+  .user__profile-caution {
+    width: 80%;
+  }
+
+  .user__product-action-container {
+    zoom: 0.7;
+  }
+
+  .user__upload-products-btn {
+    width: 40%;
+  }
+
+  .user__admin-visitor-container {
+    right: 5%;
+    top: -40%;
+  }
+
+  .user__main {
+    width: 100%;
+  }
+
+  .user__admin-page-section-header-container {
+    zoom: 1;
+    overflow-x: scroll;
+    padding-left: 20rem;
+
+    /* width: 50vw; */
+    /* background-color: red; */
+  }
+
+  .user__admin-page-section-header-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar {
+    width: 80%;
+  }
+
+  .user__main-lib-body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user__library-inner {
+    flex-direction: column;
+  }
+
+  .user__main-lib-body-collections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user__main-sett-body {
+    flex-direction: column;
+  }
+
+  .user__settings-sidebar-body {
     padding: 1rem 1rem;
+  }
 
-}
-
-.user__settings-item {
+  .user__settings-item {
     width: 100%;
-}
+  }
 
-.user__message-friend {
+  .user__message-friend {
     width: 100%;
-}
+  }
 
+  .user__freebies-inner-container-inner {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    max-width: 90rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
 }
 
 /* Ipads and Tablets */
-@media screen  and (min-width: 481px) and (max-width: 768px){
-    /* .buy_socials-container{
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* .buy_socials-container{
        
         margin-left: 6rem;
     
     } */
 
-    
+  .user__admin-page-section-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    .user__admin-page-section-header-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-    }
+  .user__freebies-inner-container-inner {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    max-width: 90rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
 }
 
-@media screen  and (min-width: 768px) and (max-width: 1024px){
-    /* .buy_socials-container{
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* .buy_socials-container{
       
         margin-left: 6rem;
     
     } */
+
+  .user__freebies-inner-container-inner {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    max-width: 90rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .user__freebies-container {
+    /* padding: 4rem 1rem; */
+    background-color: #15151c;
+    height: 80vh;
+    overflow-y: auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 35% 65%;
+  }
+
+  html {
+    font-size: 52.5%;
+  }
 }
 
 /* Desktops and large screens */
-@media screen  and (min-width: 1025px) and (max-width: 1200px){
-    /* .buy_socials-container{
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* .buy_socials-container{
         
         margin-left: 6rem;
     
     } */
+
+  .user__freebies-inner-container-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  html {
+    font-size: 72.5%;
+  }
 }
 
-@media screen  and (min-width: 1501px){
-    /* .buy_socials-container{
+@media screen and (min-width: 1501px) {
+  /* .buy_socials-container{
        
         margin-left: 6rem;
     

@@ -23,9 +23,9 @@ const SignInModal = () => {
     const handleSignIn = async (e) => {
         e.preventDefault()
         setIsLoading(true)
+        
         const signUpData = await dispatch(signInAction({signInData: loginInfo})).unwrap()
         .then(async (result) => {
-            console.log(result)
             setIsLoading(false)
             toast.success("Sign in was successful")
 
@@ -34,7 +34,6 @@ const SignInModal = () => {
         })
         .catch((err) => {
             setIsLoading(false)
-            // console.log(signUpData, "UL")
             if (err.response){
                 toast.error(err.response.data.message)
             }

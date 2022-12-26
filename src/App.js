@@ -16,11 +16,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from './component/sidebar/sidebar';
 import User from './pages/user';
 import UploadPage from './pages/upload';
+import ProductAdmin from './pages/admin/productAdmin';
 
 function App() {
 
   return (
     <>
+    
     <ToastContainer/>
       <RegisterProvider>
         <Routes>
@@ -35,6 +37,7 @@ function App() {
           <Route path='/cart' element={<Cart/>} exact />
           <Route path='/user' element={<User />} exact />
           <Route path='/user/upload' element={<UploadPage />} exact />
+          <Route path='/admin/product' element={<ProductAdmin />} exact />
 
 
         </Routes>
