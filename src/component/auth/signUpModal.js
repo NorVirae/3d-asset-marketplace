@@ -1,6 +1,5 @@
 import LoootyLogo from "../loootyLogo";
 import {FaEyeSlash, FaFacebookF} from "react-icons/fa"
-import googleImg from "../../assets/image/auth/google.svg"
 import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
 import { RegisterContext } from "./context/registerContext";
@@ -11,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { BsEyeFill } from "react-icons/bs";
 
 
+const googleImg = "../../assets/image/auth/google.svg"
 
 
 const SignUpModal = () => {

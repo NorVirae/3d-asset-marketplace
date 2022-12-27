@@ -9,7 +9,6 @@ import {FcSettings} from "react-icons/fc"
 import {FaTimes} from "react-icons/fa"
 import {RiNotification3Fill} from "react-icons/ri"
 import {GrMail} from "react-icons/gr"
-import CatmanImg from "../../assets/image/catman.jpg"
 import NavSearchBar from "../search/navSearch"
 import { useMediaQuery } from "react-responsive"
 import SignUpModal from "../auth/signUpModal"
@@ -18,6 +17,7 @@ import OpenStoreModal from "../auth/openStoreModal"
 import Sidebar from "../sidebar/sidebar"
 import { useSelector } from "react-redux"
 
+const CatmanImg = "../../assets/image/catman.jpg"
 
 const NavLoggedIn = () => {
     const navigate = useNavigate()

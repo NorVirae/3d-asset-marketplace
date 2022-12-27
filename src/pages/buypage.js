@@ -13,13 +13,15 @@ import {BsInstagram} from 'react-icons/bs'
 import {SiLinkedin} from 'react-icons/si'
 import "../styles/buy/buy.css"
 import {RiStarSFill} from "react-icons/ri"
-import WolfGuyImg from "../assets/image/wolfguyfeather.jpg"
-import CatmanImg from "../assets/image/catman.jpg"
-import MonkeyFaceImg from "../assets/image/monkeyface.jpg"
+
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { MainTags } from "./upload"
 
+
+const WolfGuyImg = "../assets/image/wolfguyfeather.jpg"
+const CatmanImg = "../assets/image/catman.jpg"
+const MonkeyFaceImg = "../assets/image/monkeyface.jpg"
 
 
 const Comment = ({comment="Hey there am commenting", author="Leo - Art Joourney"}) => {

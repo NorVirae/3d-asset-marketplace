@@ -9,7 +9,7 @@ import { createMerchandise } from "../api/auth";
 import IdentityBtn from "../component/buttons/identityBtn";
 import CGBar, { CGBarSlim } from "../component/card/cbBar";
 import NavBar from "../component/navbar/navbar";
-import { OrderCheckbox } from "./user";
+import OrderCheckbox from "../component/user/OrderCheckbox";
 
 export const MainTags = ({
   text = "3D Assets",

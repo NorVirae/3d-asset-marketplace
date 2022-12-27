@@ -1,6 +1,5 @@
 
 import "./auth.css"
-import googleImg from "../../assets/image/auth/google.svg"
 import { FaEyeSlash, FaFacebookF } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
 import { BsEyeFill } from "react-icons/bs"
@@ -9,6 +8,9 @@ import { useDispatch } from "react-redux"
 import { toast } from "react-toastify"
 import { signInAction } from "../../api/auth"
 import { RegisterContext } from "./context/registerContext"
+
+const googleImg = "/assets/image/auth/google.svg"
+
 
 const LoginModal = ({ onClick }) => {
     const [showRegModal, setShowRegModal] = useContext(RegisterContext)

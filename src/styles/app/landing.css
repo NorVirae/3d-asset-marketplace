@@ -86,7 +86,7 @@
 /* All header styles */
 .landing__header {
     background-color: #7C187A;
-    background-image: url("../../assets/image/homepage.jpg");
+    background-image: url("/public/assets/image/homepage.jpg");
     background-position: 0% 77%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -637,7 +637,7 @@
     -webkit-appearance: none;
     appearance: none;
     background: transparent!important;
-    background-image: url("../../assets/image/slider/slider-head.png");
+    background-image: url("/public/assets/image/slider/slider-head.png");
     object-fit: cover;
     transform: scaleX(1) skewX(-20deg)!important;
     z-index: 100!important;
@@ -661,7 +661,7 @@
     z-index: 100!important;
 
     /* background: transparent!important; */
-    background-image: url("../../assets/image/slider/slider-head.png");
+    background-image: url("/public/assets/image/slider/slider-head.png");
     object-fit: cover;
     transform: scaleX(1) skewX(-20deg)!important;
 
@@ -1084,7 +1084,7 @@ FIlter slider end
 }
 
 .landing__start-selling-container {
-    background-image: url("../../assets/image/carhang.jpg");
+    background-image: url("/public/assets/image/carhang.jpg");
     height: 40vh;
     background-position: 50% 80%;
     display: flex;
@@ -1775,7 +1775,7 @@ FIlter slider end
 }
 
 .landing__news-letter-form-control {
-    padding: 1rem 4rem;
+    padding: 1rem 1rem;
     background-color: transparent;
     transform: skewX(25deg);
 
@@ -1800,24 +1800,24 @@ FIlter slider end
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.4rem 2rem;
-    height: 2.5rem;
+    padding: 1rem 2rem;
+    /* height: 2.5rem; */
     border: none;
-    position: absolute;
-    top: 10%;
-    right: 1.2%;
+    position: relative;
+    /* top: 10%;
+    right: 1.2%; */
     cursor: pointer;
 }
 
-.landing__news-letter-btn-2 {
+/* .landing__news-letter-btn-2 {
 
     right: .5% !important;
     top: 3.5%;
-}
+} */
 
 .landing__news-letter-btn:active,
 .landing__news-letter-btn-2:active {
-    transform: scale(1.05) skewX(-20deg);
+    transform: scale(1.05);
 }
 
 .landing__news-letter-btn-text {

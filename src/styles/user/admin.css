@@ -1,5 +1,5 @@
 .admin__profile-preview-container {
-    background-image: url("../../assets/image/wooden-stilgt.webp");
+    background-image: url("/public/assets/image/wooden-stilgt.webp");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -325,8 +325,6 @@
     /* padding: 4rem 1rem; */
     background-color: #15151c;
     height: 100%;
-
-    background-color: red;
     /* overflow-y: auto; */
     display: grid;
     /* gap: 1rem; */
@@ -404,7 +402,6 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color: green;
   }
 
   * html .admin__freebies-inner-container-inner{ /*IE6 hack*/
