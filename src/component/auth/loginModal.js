@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux"
 import { toast } from "react-toastify"
 import { signInAction } from "../../api/auth"
 import { RegisterContext } from "./context/registerContext"
+import LoootyLoader from "../loader/loootyLoader"
 
 const googleImg = "/assets/image/auth/google.svg"
 
@@ -70,7 +71,7 @@ const LoginModal = ({ onClick }) => {
 
             <div className="lgn__form-btn-group">
                 <button onClick={e =>handleSignIn(e)} className="lgn__login-btn">
-                    <span className="lgn__login-btn-text">{isLoading?"Loading...":"SIGN IN"}</span>
+                    <span className="lgn__login-btn-text">{isLoading?<LoootyLoader/>:"SIGN IN"}</span>
                 </button>
             </div>
 

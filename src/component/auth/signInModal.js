@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { signInAction, signUpAction } from "../../api/auth";
 import { useDispatch } from "react-redux";
 import { BsEyeFill } from "react-icons/bs";
+import LoootyLoader from "../loader/loootyLoader";
 
 
 const googleImg = "assets/image/auth/google.svg"
@@ -89,6 +90,9 @@ const SignInModal = () => {
                             
                             <div className="reg__form-group">
                                 <input type={"email"} onChange={e => setLoginInfo(old =>({...old, email: e.target.value}))} value={loginInfo.email} className="reg__form-control" placeholder=" Email"/>
+                                <span style={{visibility: "hidden"}} className="sign__hide-sensitive-info-button">
+                                    <BsEyeFill className="lgn__hide-sensitive-ib-icon"/> 
+                                </span>
                             </div>
 
                             <div className="reg__form-group">
@@ -107,7 +111,7 @@ const SignInModal = () => {
 
                         <div className="reg__form-btn-group">
                             <button className="reg__login-btn">
-                                <span className="reg__login-btn-text">{isLoading ? "loading..." : "SIGN IN"}</span>
+                                <span className="reg__login-btn-text">{isLoading ? <LoootyLoader/> : "SIGN IN"}</span>
                             </button>
                         </div>
 

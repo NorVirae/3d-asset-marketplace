@@ -231,14 +231,14 @@ const FilePurchaseSec = ({descCommToggleMode, setDescCommToggleMode}) => {
                             </button>
                         </div>
 
-                        <form className="buy__copy-url-form">
+                        <div className="buy__copy-url-form">
                             <div className="buy__copy-url-form-group">
                                 <input placeholder="https://loooty.com/dcbucj3/283hbcjdc.blend" className="buy__copy-url-form-control" />
                                 <button className="buy__copy-url-btn">
                                     <span className="buy__copy-url-btn-text">Copy</span>
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </section>: <CommentSec />}
                 </section>
             </div>

@@ -8,6 +8,7 @@ import { signUp, signUpAction } from "../../api/auth";
 import { toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
 import { BsEyeFill } from "react-icons/bs";
+import LoootyLoader from "../loader/loootyLoader";
 
 
 const googleImg = "../../assets/image/auth/google.svg"
@@ -95,10 +96,16 @@ const SignUpModal = () => {
                         
                             <div className="reg__form-group">
                                 <input onChange={e => setRegInfo(old => ({...old, name: e.target.value}))} value={regInfo.name} className="reg__form-control" placeholder="Username"/>
+                                <span style={{visibility: "hidden"}} className="sign__hide-sensitive-info-button">
+                                    <BsEyeFill className="lgn__hide-sensitive-ib-icon"/> 
+                                </span>
                             </div>
 
                             <div className="reg__form-group">
                                 <input onChange={e => setRegInfo(old => ({...old, email: e.target.value}))} value={regInfo.email} className="reg__form-control" type={"email"} placeholder=" Email"/>
+                                <span style={{visibility: "hidden"}} className="sign__hide-sensitive-info-button">
+                                    <BsEyeFill className="lgn__hide-sensitive-ib-icon"/> 
+                                </span>
                             </div>
 
                             <div className="reg__form-group">
@@ -124,7 +131,7 @@ const SignUpModal = () => {
 
                         <div className="reg__form-btn-group">
                             <button onClick={handleSignUp} className="reg__login-btn">
-                                <span className="reg__login-btn-text"> {!isLoading?<>SIGN UP</>: <>Loading...</>}</span>
+                                <span className="reg__login-btn-text"> {!isLoading?<>SIGN UP</>: <LoootyLoader/>}</span>
                             </button>
                         </div>
 

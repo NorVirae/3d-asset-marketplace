@@ -13,13 +13,6 @@ import TagheaderCompDesktop from "../../component/admin/TagheaderCompDesktop";
 import TagheaderCompMobile from "../../component/admin/TagheaderCompMobile";
 
 
-const WolfGuyImg = "/assets/image/wolfguyfeather.jpg";
-const TsunamiImg = "/assets/image/tsunami.jpg";
-const ScaryImg = "/assets/image/scary.jpg";
-const CatmanImg = "/assets/image/catman.jpg";
-
-const coloredhouseImg = "/assets/image/coloredhouse.webp";
-
 const ProductAdmin = () => {
   const [toggleVisAdmin, setToggleVisAdmin] = useState(true);
   const isMobile = useMediaQuery({ minWidth: 481, maxWidth: 768 });
