@@ -16,6 +16,7 @@ import { toast } from "react-toastify";
 import TagheaderCompDesktop from "../component/user/TagsheaderCompDesktop";
 import TagheaderCompMobile from "../component/user/TagsHeaderCompMobile";
 import PageSelectComp from "../component/user/PageSelectComp";
+import UniversalTagHeaderDesktop from "../component/user/UniversalTagHeaderDesktop";
 
 const CatmanImg = "/assets/image/catman.jpg";
 
@@ -32,15 +33,38 @@ const CatmanImg = "/assets/image/catman.jpg";
 //     )
 // }
 
-
 const User = () => {
   const [toggleVisAdmin, setToggleVisAdmin] = useState(false);
   const isMobile = useMediaQuery({ minWidth: 481, maxWidth: 768 });
   const user = useSelector((state) => state.user);
   const merchandiseStore = useSelector((state) => state.user.merchandiseStore);
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
+  const [hasStore, setHasStore] = useState(false);
   const userSubPageSelected = useSelector((state) => state.userSubPageState);
   const dispatch = useDispatch();
+
+  const hasStoreTags = [
+    {
+      name: "store",
+      dropDownList: ["suscribers"]
+    },
+    {
+      name: "profile",
+    },
+    {
+      name: "library",
+    },
+    {
+      name: "messages",
+    },
+    {
+      name: "sales",
+    },
+    {
+      name: "settings",
+      dropDownList: ["affiliates"]
+    },
+  ];
 
   const [selectedTag, setSelectedTag] = useState("feature"); //Enum Types: feature, recent sellers, popular
   const activeInpageHeader = useSelector(
@@ -70,7 +94,7 @@ const User = () => {
       navigate("/");
       setShowRegModal({ ...showRegModal, login: true });
     }
-  }, [toggleVisAdmin]);
+  }, [toggleVisAdmin, user.user]);
   return (
     <section className="user__main-container">
       <header>
@@ -85,15 +109,29 @@ const User = () => {
       </header>
 
       <main className="user__main">
-        <section className="user__profile-preview-container">
-          <button className="user__change-cover-btn">
-            <div className="user__change-cover-btn-inner">
-              <RiImageEditLine style={{ color: "white", fontSize: "1.4rem" }} />
-              Change Cover
-            </div>
-          </button>
+        <section
+          style={{
+            backgroundImage: `url(${
+              merchandiseStore
+                ? "/assets/image/homepage.jpg"
+                : "/assets/image/background/empty-store.png"
+            })`,
+            backgroundSize: `${merchandiseStore ? "cover" : "contain"}`,
+          }}
+          className="user__profile-preview-container"
+        >
+          {merchandiseStore && (
+            <button className="user__change-cover-btn">
+              <div className="user__change-cover-btn-inner">
+                <RiImageEditLine
+                  style={{ color: "white", fontSize: "1.4rem" }}
+                />
+                Change Cover
+              </div>
+            </button>
+          )}
 
-          {!toggleVisAdmin && (
+          {toggleVisAdmin && merchandiseStore && (
             <button
               onClick={(e) => setToggleVisAdmin(true)}
               className="user__profile-switch-admin-btn"
@@ -102,21 +140,26 @@ const User = () => {
             </button>
           )}
 
-
           <div className="user__profile-container">
             <img src={CatmanImg} className="user__profile-img" />
             <h3 className="user__profile-name">
               {merchandiseStore
-                ? merchandiseStore.data[0].store_name
-                : "Fetching store name..."}
+                ? merchandiseStore.store_name
+                : user.user
+                ? user.user.name
+                : null}
             </h3>
-            <div className="user__profile-suscribers">219.9k Subscribers</div>
+            {hasStore && (
+              <div className="user__profile-suscribers">219.9k Subscribers</div>
+            )}
           </div>
 
           <div className="user__profile-caution">
             {merchandiseStore
-              ? merchandiseStore.data[0].why_loooty
-              : "Fetching store name..."}
+              ? merchandiseStore.why_loooty
+              : user.user
+              ? user.user.email
+              : null}
           </div>
 
           <div className="user__location-container">
@@ -124,49 +167,80 @@ const User = () => {
           </div>
         </section>
         <section className="user__product-action-container">
-          <button className="user__upload-products-btn">
-            <div
+          {merchandiseStore && (
+            <button
               onClick={(e) => navigate("/user/upload")}
-              className="user__upload-products-btn-inner"
+              className="user__upload-products-btn"
             >
-              UPLOAD&nbsp;PRODUCTS{" "}
-              <FaPlusCircle style={{ fontSize: "1.3rem" }} />
-            </div>
-          </button>
-          <button className="user__upload-products-btn">
-            <div className="user__upload-products-btn-inner">
-              DISCOUNTS{" "}
-              <GiPriceTag
-                style={{ fontSize: "1.3rem", transform: "scaleX(-1)" }}
-              />
-            </div>
-          </button>
+              <div className="user__upload-products-btn-inner">
+                UPLOAD&nbsp;PRODUCTS{" "}
+                <FaPlusCircle style={{ fontSize: "1.3rem" }} />
+              </div>
+            </button>
+          )}
 
-          <div className="user__admin-visitor-container">
+          {!merchandiseStore && (
             <button
-              onClick={(e) => setToggleVisAdmin(true)}
-              className={`user__AV-btn ${
-                toggleVisAdmin && "user_AV-btn-active"
-              }`}
+              onClick={(e) => navigate("/open/store")}
+              className="user__upload-products-btn"
             >
-              <span className="user__AV-btn-inner">Admin</span>
+              <div className="user__upload-products-btn-inner">
+                OPEN&nbsp;A&nbsp;STORE{" "}
+                {/* <FaPlusCircle style={{ fontSize: "1.3rem" }} /> */}
+              </div>
             </button>
-            <button
-              onClick={(e) => setToggleVisAdmin(false)}
-              className={`user__AV-btn ${
-                !toggleVisAdmin && "user_AV-btn-active-dup"
-              }`}
-            >
-              <span className="user__AV-btn-inner">Visitor</span>
+          )}
+
+          {merchandiseStore && (
+            <button className="user__upload-products-btn">
+              <div className="user__upload-products-btn-inner">
+                DISCOUNTS{" "}
+                <GiPriceTag
+                  style={{ fontSize: "1.3rem", transform: "scaleX(-1)" }}
+                />
+              </div>
             </button>
-          </div>
+          )}
+
+          {merchandiseStore && toggleVisAdmin && (
+            <div className="user__admin-visitor-container">
+              <button
+                onClick={(e) => setToggleVisAdmin(true)}
+                className={`user__AV-btn ${
+                  toggleVisAdmin && "user_AV-btn-active"
+                }`}
+              >
+                <span className="user__AV-btn-inner">Admin</span>
+              </button>
+              <button
+                onClick={(e) => setToggleVisAdmin(false)}
+                className={`user__AV-btn ${
+                  !toggleVisAdmin && "user_AV-btn-active-dup"
+                }`}
+              >
+                <span className="user__AV-btn-inner">Visitor</span>
+              </button>
+            </div>
+          )}
         </section>
 
         {!isMobile ? (
-          <TagheaderCompDesktop
-            toggleVisAdmin={toggleVisAdmin}
-            activeInpageHeader={activeInpageHeader}
-          />
+          merchandiseStore ? (
+            <UniversalTagHeaderDesktop
+              toggleVisAdmin={toggleVisAdmin}
+              activeInpageHeader={activeInpageHeader}
+              TagList={hasStoreTags}
+            />
+          ) : (
+            // <TagheaderCompDesktop
+            //   toggleVisAdmin={toggleVisAdmin}
+            //   activeInpageHeader={activeInpageHeader}
+            // />
+            <UniversalTagHeaderDesktop
+              toggleVisAdmin={toggleVisAdmin}
+              activeInpageHeader={activeInpageHeader}
+            />
+          )
         ) : (
           <TagheaderCompMobile
             toggleVisAdmin={toggleVisAdmin}

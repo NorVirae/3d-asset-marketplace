@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
 import { toast } from "react-toastify"
-import { merchandiseStore, signUp } from "../redux/reducers/authReducer"
+import { logout, merchandiseStore, signUp } from "../redux/reducers/authReducer"
 const baseUrl = "https://server.loooty.com"
 let config = {
     headers:{
@@ -47,8 +47,8 @@ export const createMerchandiseStore = createAsyncThunk("api/store",
             let state = thunkAPI.getState()
             const newConfig = {...config, "Content-Type": "application/form-data",  headers: {...config.headers, Authorization: `Bearer ${state.user.user.access_token}`, } }
             const data = await axios.post(`${baseUrl}/api/store/store`, params.storeInfo, newConfig)
-            thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data}))
-            return data
+            thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data.data[0]}))
+            return data.data.data.data[0]
 
         }catch(err){
             
@@ -65,8 +65,9 @@ export const fetchMerchandiseStore = createAsyncThunk("api/store",
             let teamKey = Object.keys(state.user.user.groups)[0]
             const newConfig = {...config, "Content-Type": "application/json",  headers: {...config.headers, Team: teamKey, Authorization: `Bearer ${state.user.user.access_token}`, } }
             const data = await axios.get(`${baseUrl}/api/store/me`, newConfig)
-            thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data}))
-            return data
+            thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data.data[0]}))
+            console.log(data.data.data.data[0], "DAT")
+            return data.data.data.data[0]
 
         }catch(err){
             
@@ -86,7 +87,8 @@ export const fetchMerchandise = createAsyncThunk("api/store",
             const newConfig = {...config, "Content-Type": "application/json",  headers: {...config.headers, Team: teamKey, Authorization: `Bearer ${state.user.user.access_token}`, } }
             const data = await axios.get(`${baseUrl}/api/store/me`, newConfig)
             thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data}))
-            return data
+            console.log(data.data.data)
+            return data.data.data
 
         }catch(err){
                         
@@ -132,7 +134,7 @@ export const updateUserAction = createAsyncThunk("user/update",
 export const logOutAction = createAsyncThunk("auth/logout", 
     async (_, thunkAPI) => {
         try{
-            thunkAPI.dispatch(signUp({user: null}))
+            thunkAPI.dispatch(logout())
             toast.success("Log out was successful!")
         }catch(err){
             toast.error(err.message)

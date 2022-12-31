@@ -291,6 +291,7 @@
     border: .2rem solid #2B2B38;
     /* #df4759 - bg danger */
     transform: skewX(-25deg);
+    transition: .4s ease-in-out border;
     /* width: 80%; */
 
 }
@@ -541,6 +542,7 @@
     background-color: #15151C;
     border: .2rem solid #2B2B38;
     transform: skewX(-25deg);
+    transition: .4s ease-in-out border;
 
 }
 

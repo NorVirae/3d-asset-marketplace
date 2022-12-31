@@ -32,7 +32,7 @@ const OpenAStore = () => {
     if (!user.user) {
       navigate("/");
     }
-  }, [user]);
+  }, [user.user]);
   const [faq, setFaq] = useState([
     {
       question: "How can i open a shop on Loooty?",
