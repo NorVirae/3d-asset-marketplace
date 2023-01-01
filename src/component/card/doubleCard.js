@@ -2,7 +2,7 @@
 
 
 
-const  DoubleCard = ({img}) => {
+const  DoubleCard = ({img, title, ownerName, firstTag}) => {
 
     return (
         <div className="landing__double-card">
@@ -13,11 +13,11 @@ const  DoubleCard = ({img}) => {
 
             <div className="landing__double-text-container">
                 <span className="landing__double-text-header">
-                    Beach house with house with Rumps
+                    {title}
                 </span>
 
                 <span className="landing__double-text-desc">
-                    by pascal gartens in 3d assets
+                    by {ownerName} in {firstTag}
                 </span>
             </div>
         </div>

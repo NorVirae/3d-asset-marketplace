@@ -191,8 +191,8 @@ const PartnerStore = () => {
           >
             <h2 className="landing__open-label-header">Open a Store</h2>
             <p className="landing__open-label-desc">
-              open a free store and easily start selling your digital assets
-              &amps; resources
+              <a href="/open/store">open a free store </a> and easily start selling your digital assets
+              &amp; resources
             </p>
           </div>
 

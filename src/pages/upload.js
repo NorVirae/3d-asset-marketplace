@@ -112,7 +112,6 @@ const UploadPage = () => {
     // setStoreInfo(old => ({...old, email: user.email}))
     let data = new FormData()
 
-
     data.append('store_id', productInfo.store_id )
     data.append('merchandise_name', productInfo.merchandise_name)
     data.append('merchandise_description', productInfo.merchandise_description)
@@ -122,7 +121,7 @@ const UploadPage = () => {
     data.append('explicit_content', productInfo.explicit_content)
     // data.append('base64_photos', productInfo.base64_photos)
     // data.append('photos', productInfo.photos)
-    data.append('merchandise_cover_picture', JSON.stringify(productInfo.merchandise_cover_picture) )
+    data.append('merchandise_cover_picture', productInfo.merchandise_cover_picture)
     // data.append('bas64_cover_picture', productInfo.bas64_cover_picture)
     data.append('merchandise_preview_pictures', JSON.stringify(productInfo.merchandise_preview_pictures) )
     // data.append('base64_preview_photos', productInfo.base64_preview_photos)
@@ -192,7 +191,7 @@ const UploadPage = () => {
                   accept="image/*"
                   onChange={(e) => {
                     let newArray = productInfo.merchandise_cover_picture;
-                    newArray[0] = e.target.files[0];
+                    newArray = e.target.files;
                     setProductInfo((old) => ({
                       ...old,
                       merchandise_cover_picture: newArray,

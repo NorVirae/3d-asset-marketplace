@@ -29,9 +29,9 @@ const OpenAStore = () => {
   }, [pathname]);
 
   useEffect(() => {
-    if (!user.user) {
-      navigate("/");
-    }
+    // if (!user.user) {
+    //   navigate("/");
+    // }
   }, [user.user]);
   const [faq, setFaq] = useState([
     {

@@ -11,7 +11,7 @@
 
 .lgn__login-modal:active{
    
-    transform: skewX(25deg) scale(.97);
+    transform: skewX(25deg) scale(1.01);
 }
 
 .lgn__fade-out-anim {

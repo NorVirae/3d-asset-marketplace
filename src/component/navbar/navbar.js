@@ -71,7 +71,8 @@ const NavLoggedOut = () => {
 
       <li
         onClick={(e) => {
-          setShowLogin(!showLogin);
+          // setShowLogin(!showLogin);
+          setShowRegModal({ ...showRegModal, loginDrop: !showRegModal.loginDrop })
           e.stopPropagation();
         }}
         className={"landing__nav-item login"}
@@ -79,7 +80,7 @@ const NavLoggedOut = () => {
         <Link className="landing__nav-link" to={"#"}>
           Sign&nbsp;In
         </Link>
-        {showLogin && <LoginModal onClick={(e) => e.stopPropagation()} />}
+        {showRegModal.loginDrop && <LoginModal onClick={(e) => e.stopPropagation()} />}
       </li>
 
       <li

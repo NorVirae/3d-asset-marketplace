@@ -7,7 +7,7 @@ export const RegisterContext = React.createContext()
 
 
 export const RegisterProvider = ({children}) => {
-    const [showRegModal, setShowRegModal] = useState({register:false, login: false, openStore: false, isSidebarOpen: false})
+    const [showRegModal, setShowRegModal] = useState({register:false, login: false, loginDrop: false, openStore: false, isSidebarOpen: false})
 
     return  (<RegisterContext.Provider value={[showRegModal, setShowRegModal]}>
                 {children}

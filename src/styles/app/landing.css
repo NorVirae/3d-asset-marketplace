@@ -161,11 +161,26 @@
     background-color: #7C187A;
     padding: .5rem 3rem;
 
-
 }
 
 .landing__nav-item.signup:hover {
     background-color: #7C187A;
+
+}
+
+.landing__nav-item.login {
+    background-color: #ffffff3d;
+    padding: .5rem 3rem;
+
+}
+
+.landing__nav-item.login:hover {
+    background-color: #7C187A;
+
+}
+
+.landing__nav-item.login:active {
+    transform: skewX(-25deg) scale(1);
 
 }
 
@@ -895,6 +910,29 @@ FIlter slider end
     transition: color .3s ease-in-out;
 }
 
+/* Rating */
+
+.landing__star-rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing__rating-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .landing__rating-on {
+    color: #FF9700;
+  }
+  .landing__rating-off {
+    color: #000000;
+  }
+
+  .landing__rating-active {
+    color: #FF9700;
+  }
 
 .landing__cg-text {
     /* height: 14vh; */
