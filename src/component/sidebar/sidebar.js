@@ -255,7 +255,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
 
           <section className="sidebar__footer">
             <div className="sidebar__top">
-              <LoootyLogo />
+              <LoootyLogo/>
               About
             </div>
 
@@ -293,10 +293,10 @@ const Sidebar = ({ className, pageType = "home" }) => {
                 <FaPrint />
                 Privacy Policy
               </li>
-              <li
+              {user.user && <li
                 style={{ marginTop: "1rem" }}
                 onClick={async () => dispatch(logOutAction())}
-                className={"landing__nav-item signup"}
+                className={"landing__nav-item logout"}
               >
                 <Link
                   onClick={(e) => e.stopPropagation()}
@@ -305,7 +305,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                 >
                   Log&nbsp;Out
                 </Link>
-              </li>
+              </li>}
             </ul>
           </section>
         </div>

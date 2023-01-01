@@ -4,7 +4,7 @@ import { BsSuitHeartFill } from "react-icons/bs";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const StarRating = ({rateNumber = 4}) => {
+export const StarRating = ({rateNumber = 4}) => {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
     return (
@@ -68,6 +68,7 @@ const WhiteList = ({
 };
 
 const LandCard = ({
+  onClick,
   img,
   title,
   owner,
@@ -81,7 +82,7 @@ const LandCard = ({
   const navigate = useNavigate();
   return (
     <div
-      onClick={(e) => navigate("/buy/page")}
+      onClick={onClick}
       onMouseEnter={(e) => setActiveCard(true)}
       onMouseLeave={(e) => setActiveCard(false)}
       className="landing__card"

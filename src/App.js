@@ -33,7 +33,7 @@ function App() {
           <Route path='/open/store' element={<OpenAStore/>} exact />
         
           <Route path='/experiment' element={<Experiment/>} exact />
-          <Route path='/buy/page' element={<BuyPage/>} exact />
+          <Route path='/buy/page/:id' element={<BuyPage/>} exact />
           <Route path='/cart' element={<Cart/>} exact />
           <Route path='/user' element={<User />} exact />
           <Route path='/user/upload' element={<UploadPage />} exact />

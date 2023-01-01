@@ -134,9 +134,11 @@ const Home = () => {
           <section className="landing__freebies-container">
             <div className="landing__freebies-inner-container">
               {data
-                ? data.products.slice(0, 5).map((prod) => {
+                ? data.products.slice(0, 5).map((prod, index) => {
                     return (
                       <LandCard
+                        key={prod.name}
+                        onClick={(e) => navigate(`/buy/page/${index}`)}
                         img={prod.image}
                         title={prod.title}
                         ratings={prod.ratings}
