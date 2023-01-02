@@ -4,32 +4,33 @@ import Messages from "./Messages";
 import Profile from "./Profile";
 import Sales from "./Sales";
 import Settings from "./Settings";
-import Store from "./Store";
+import Product from "./Product";
 import Suscribers from "./Suscribers";
+import HomeAdmin from "./HomeAdmin";
 
 const PageSelectComp = ({ inPageName }) => {
     switch (inPageName) {
-      case "profile":
-        return <Profile />;
-      case "store":
-        return <Store />;
+      case "home":
+        return <HomeAdmin />;
+      case "users":
+        return <Product />;
   
-      case "library":
+      case "stores":
         return <Library />;
   
-      case "collections":
+      case "affiliates":
         return <Collections />;
   
-      case "suscribers":
+      case "payouts":
         return <Suscribers />;
   
-      case "messages":
-        return <Messages />;
+      case "products":
+        return <Product />;
   
-      case "settings":
+      case "tags&categories":
         return <Settings />;
   
-      case "sales":
+      case "carts":
         return <Sales />;
   
       default:

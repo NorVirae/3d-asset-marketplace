@@ -9,9 +9,41 @@ import NavBar from "../../component/navbar/navbar";
 
 import { RegisterContext } from "../../component/auth/context/registerContext";
 import PageSelectComp from "../../component/admin/PageSelectComp";
-import TagheaderCompDesktop from "../../component/admin/TagheaderCompDesktop";
 import TagheaderCompMobile from "../../component/admin/TagheaderCompMobile";
+import { UniversalTagHeaderDesktopAdmin } from "../../component/user/UniversalTagHeaderDesktop";
 
+const hasStoreTags = [
+  {
+    name: "home",
+    // dropDownList: ["suscribers"],
+  },
+  {
+    name: "users",
+  },
+  {
+    name: "stores",
+  },
+  {
+    name: "affiliates",
+  },
+  {
+    name: "payouts",
+  },
+  {
+    name: "products",
+    // dropDownList: ["affiliates"],
+  },
+
+  {
+    name: "tages&categories",
+    // dropDownList: ["affiliates"],
+  },
+
+  {
+    name: "carts",
+    // dropDownList: ["affiliates"],
+  },
+];
 
 const ProductAdmin = () => {
   const [toggleVisAdmin, setToggleVisAdmin] = useState(true);
@@ -23,7 +55,7 @@ const ProductAdmin = () => {
 
   const [selectedTag, setSelectedTag] = useState("features"); //Enum Types: feature, recent sellers, popular
   const activeInpageHeader = useSelector(
-    (state) => state.userSubPageState.selected
+    (state) => state.userSubPageState.selectedAdmin
   ); //Enum types: store, profile, library, messages, sales, settings
   const navigate = useNavigate();
   useEffect(() => {
@@ -53,10 +85,14 @@ const ProductAdmin = () => {
 
       <main className="admin__main">
         <div className="admin__separator"></div>
+        {/*  */}
+
         {!isMobile ? (
-          <TagheaderCompDesktop
+          <UniversalTagHeaderDesktopAdmin
+            style={{ zoom: ".8" }}
             toggleVisAdmin={toggleVisAdmin}
             activeInpageHeader={activeInpageHeader}
+            TagList={hasStoreTags}
           />
         ) : (
           <TagheaderCompMobile

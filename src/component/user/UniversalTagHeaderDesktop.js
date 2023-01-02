@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setSelectedSubPage } from "../../redux/reducers/userStateReducer";
+import { setSelectedSubPage, setSelectedSubPageAdmin } from "../../redux/reducers/userStateReducer";
 import IdentityBtn from "../buttons/identityBtn";
 
 const defaultTags = [
@@ -21,14 +21,43 @@ const defaultTags = [
   },
 ];
 
-const UniversalTagHeaderDesktop = ({ activeInpageHeader, TagList = defaultTags }) => {
+const UniversalTagHeaderDesktop = ({ activeInpageHeader, TagList = defaultTags, style }) => {
   const dispatch = useDispatch();
   return (
-    <section className="user__admin-page-section-header-container">
+    <section style={style} className="user__admin-page-section-header-container">
       {TagList.map((tagsBtn) => (
         <IdentityBtn key={tagsBtn.name}
           onClick={(e) =>
             dispatch(setSelectedSubPage({ selected: tagsBtn.name }))
+          }
+          style={{
+            padding: "1rem 6rem",
+            backgroundColor: `${
+              activeInpageHeader === tagsBtn.name ? "#15151C" : "#191921"
+            }`,
+            color: `${
+              activeInpageHeader === tagsBtn.name ? "#CECED8" : "#4D4D6B"
+            }`,
+            borderLeft: `1rem solid ${
+              activeInpageHeader === tagsBtn.name ? "#7C187A" : "#353449"
+            }`,
+          }}
+          dropDownList={tagsBtn.dropDownList}
+          text={tagsBtn.name.toUpperCase()}
+        />
+      ))}
+    </section>
+  );
+};
+
+export const UniversalTagHeaderDesktopAdmin = ({ activeInpageHeader, TagList = defaultTags, style }) => {
+  const dispatch = useDispatch();
+  return (
+    <section style={style} className="user__admin-page-section-header-container">
+      {TagList.map((tagsBtn) => (
+        <IdentityBtn key={tagsBtn.name}
+          onClick={(e) =>
+            dispatch(setSelectedSubPageAdmin({ selected: tagsBtn.name }))
           }
           style={{
             padding: "1rem 6rem",

@@ -53,7 +53,7 @@
     {
       "image": "/assets/image/coloredhouse.webp",
       "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "ownerName": "Kai Williams",
       "firstTag": "Materials/Shaders",
       "ratings": 5,
       "numReviewers": 34,
@@ -63,7 +63,7 @@
     {
       "image": "/assets/image/monkeyface.jpg",
       "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "ownerName": "Eliana Williams",
       "firstTag": "plugins/tools",
       "ratings": 2,
       "numReviewers": 34,
@@ -73,7 +73,7 @@
     {
       "image": "/assets/image/cathat.jpg",
       "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "ownerName": "Jayden Silver",
       "firstTag": "3D assets",
       "ratings": 4,
       "numReviewers": 34,
@@ -83,72 +83,72 @@
     {
       "image": "/assets/image/catpin.jpg",
       "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "ownerName": "Ezra Hulio",
       "firstTag": "3D assets",
-      "ratings": 4,
-      "numReviewers": 34,
-      "numOfComments": 25,
-      "price": 3000
+      "ratings": 5,
+      "numReviewers": 344,
+      "numOfComments": 125,
+      "price": "3,000"
     },
     {
       "image": "/assets/image/monkeyheadset.jpg",
       "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "ownerName": "Luca Jackson",
       "firstTag": "3D assets",
-      "ratings": 4,
-      "numReviewers": 34,
-      "numOfComments": 25,
-      "price": 3000
+      "ratings": 3,
+      "numReviewers": 12,
+      "numOfComments": 454,
+      "price": 400
     },
     {
       "image": "/assets/image/wolfdog.jpg",
       "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "ownerName": "Rowan Williams",
       "firstTag": "3D assets",
-      "ratings": 4,
-      "numReviewers": 34,
-      "numOfComments": 25,
-      "price": 3000
+      "ratings": 2,
+      "numReviewers": 78,
+      "numOfComments": 89,
+      "price": 900
     },
     {
-      "image": "/assets/image/catman.jpg",
-      "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "image": "/assets/image/cathat.jpg",
+      "title": "Smoky Shoes asset",
+      "ownerName": "Nova Rowan",
       "firstTag": "3D assets",
-      "ratings": 4,
-      "numReviewers": 34,
-      "numOfComments": 25,
-      "price": 3000
+      "ratings": 1,
+      "numReviewers": 2,
+      "numOfComments": 67,
+      "price": 300
     },
     {
-      "image": "/assets/image/catman.jpg",
-      "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
-      "firstTag": "3D assets",
-      "ratings": 4,
-      "numReviewers": 34,
-      "numOfComments": 25,
-      "price": 3000
+      "image": "/assets/image/catpin.jpg",
+      "title": "House of Torns Maniple",
+      "ownerName": "Amara Jayden",
+      "firstTag": "2d assets",
+      "ratings": 1,
+      "numReviewers": 24,
+      "numOfComments": 890,
+      "price": "7,999"
     },
     {
-      "image": "/assets/image/catman.jpg",
-      "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "image": "/assets/image/monkeyheadset.jpg",
+      "title": "Resident house blueprint",
+      "ownerName": "Aaliyah Nova",
       "firstTag": "3D assets",
-      "ratings": 4,
-      "numReviewers": 34,
-      "numOfComments": 25,
-      "price": 3000
+      "ratings": 5,
+      "numReviewers": 354,
+      "numOfComments": 67,
+      "price": "2,907"
     },
     {
-      "image": "/assets/image/catman.jpg",
-      "title": "Beach house with rumps",
-      "ownerName": "Jay Williams",
+      "image": "/assets/image/wolfdog.jpg",
+      "title": "Santiago bay 3d",
+      "ownerName": "Finn Ezra",
       "firstTag": "3D assets",
       "ratings": 4,
-      "numReviewers": 34,
-      "numOfComments": 25,
-      "price": 3000
+      "numReviewers": 35,
+      "numOfComments": 898,
+      "price": "3,000"
     }
   ]
 }
