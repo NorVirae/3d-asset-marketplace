@@ -2603,7 +2603,9 @@ input[type="number"] {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
-  /* max-width: 100rem; */
+  max-width: 100rem;
+  width: 100%;
+
   /* margin: 0 auto; */
 }
 
@@ -2616,6 +2618,9 @@ input[type="number"] {
   position: relative;
 }
 
+.oso{
+  background-color: red;
+}
 .admin__home-card-child-container{
   display: flex;
   gap: .5rem;
@@ -2694,7 +2699,9 @@ input[type="number"] {
   grid-template-columns: 75% 25%;
   color: white;
   gap: 1rem;
-  /* width: 100%; */
+  max-width: 100rem;
+
+  width: 100%;
 }
 
 .admin__home-ra-inner{
@@ -2706,6 +2713,9 @@ input[type="number"] {
 .admin__home-ra-header{
   background-color: #232230;
   padding: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  color: #8A8A91;
 }
 
 .admin__home-ra-content{
@@ -2726,7 +2736,7 @@ input[type="number"] {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 20%;
+  width: 15%;
   color: #484854;
 }
 

@@ -1,8 +1,8 @@
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 
-import { Calendar, DateRangePicker } from "react-date-range";
-import { BsTriangleFill } from "react-icons/bs";
+import { Calendar, DateRange, DateRangePicker } from "react-date-range";
+import { BsBack, BsTriangleFill } from "react-icons/bs";
 import { GoMail } from "react-icons/go";
 import { GrMail } from "react-icons/gr";
 import { BiCopy } from "react-icons/bi";
@@ -228,7 +228,7 @@ const HomeAdmin = () => {
               : null}
           </div>
         </div>
-        <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
+        <DateRange  color={"#000000"} className="oso" ranges={[selectionRange]} onChange={handleSelect} />
       </section>
     </div>
   );
