@@ -5,6 +5,7 @@ import { Calendar, DateRangePicker } from "react-date-range";
 import { BsTriangleFill } from "react-icons/bs";
 import { GoMail } from "react-icons/go";
 import { GrMail } from "react-icons/gr";
+import { BiCopy } from "react-icons/bi";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 const HomeCard = ({
@@ -46,23 +47,34 @@ const HomeCard = ({
 const ContentHeaderField = ({ text, active }) => {
   return (
     <span className={` admin__home-ra-cr-header-field ${active && "active"} `}>
-      Blocked
+      {text}
     </span>
   );
 };
 
-const ContentField = ({ text }) => {
-  return <span className="admin__home-ra-cr-field">Nov 5, 2022</span>;
+const ContentField = ({ style, text = "Nov 5, 2022" }) => {
+  return (
+    <span style={style} className="admin__home-ra-cr-field">
+      {text}
+    </span>
+  );
 };
 
-const ContentRow = () => {
+const ContentRow = ({ active, header, date, email, target, adminName }) => {
   return (
     <div className="admin__home-ra-content-row">
-      <ContentHeaderField />
-      <ContentField />
-      <ContentField />
-      <ContentField />
-      <ContentField />
+      <ContentHeaderField text={header} active={active} />
+      <ContentField text={date} />
+      <ContentField text={target} />
+      <ContentField
+        style={{ width: "30%" }}
+        text={
+          <div style={{ display: "flex", gap: ".4rem" }}>
+            {email} <BiCopy />
+          </div>
+        }
+      />
+      <ContentField text={adminName} />
     </div>
   );
 };
@@ -73,6 +85,49 @@ const HomeAdmin = () => {
     endDate: new Date(),
     key: "selection",
   };
+
+  const recentActivitiesData = [
+    {
+      header: "Blocked",
+      date: "Nov 5, 2022",
+      target: "User",
+      email: "Stevenjames82939@gmail.com",
+      adminName: "@Admin.joe",
+      active: false,
+    },
+    {
+      header: "Approved",
+      date: "Nov 4, 2022",
+      target: "Store",
+      email: "Jat@gmail.com",
+      adminName: "@Admin.katsi",
+      active: false,
+    },
+    {
+      header: "Paid",
+      date: "Nov 1, 2022",
+      target: "User",
+      email: "Osos@gmail.com",
+      adminName: "@Admin.muscow",
+      active: true,
+    },
+    {
+      header: "Postponed",
+      date: "Oct 5, 2022",
+      target: "Affiliate",
+      email: "Keenman@gmail.com",
+      adminName: "@Admin.rosco",
+      active: true,
+    },
+    {
+      header: "Paid",
+      date: "Sept 24, 2022",
+      target: "Store",
+      email: "ajasco@gmail.com",
+      adminName: "@Admin.cumsou",
+      active: true,
+    },
+  ];
 
   const handleSelect = (ranges) => {
     console.log(ranges);
@@ -144,8 +199,11 @@ const HomeAdmin = () => {
           textHeaderRight={"Total Balance"}
           newActive={true}
           childrenComp={
-            <div style={{color: "#FF9700"}} className="admin__home-card-child-container">
-             <GrMail /> 52 
+            <div
+              style={{ color: "#FF9700" }}
+              className="admin__home-card-child-container"
+            >
+              <GrMail /> 52
             </div>
           }
         />
@@ -154,11 +212,20 @@ const HomeAdmin = () => {
         <div className="admin__home-ra-inner">
           <h3 className="admin__home-ra-header">Recent Activities</h3>
           <div className="admin__home-ra-content">
-            <ContentRow />
-            <ContentRow />
-            <ContentRow />
-            <ContentRow />
-            <ContentRow />
+            {recentActivitiesData
+              ? recentActivitiesData.map((rowItem) => {
+                  return (
+                    <ContentRow
+                      header={rowItem.header}
+                      date={rowItem.date}
+                      email={rowItem.email}
+                      adminName={rowItem.adminName}
+                      target={rowItem.target}
+                      active={rowItem.active}
+                    />
+                  );
+                })
+              : null}
           </div>
         </div>
         <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />

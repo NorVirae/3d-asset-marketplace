@@ -2694,13 +2694,13 @@ input[type="number"] {
   grid-template-columns: 75% 25%;
   color: white;
   gap: 1rem;
+  /* width: 100%; */
 }
 
 .admin__home-ra-inner{
   display: flex;
   flex-direction: column;
   gap: .6rem;
-  background-color: #5912b6;
 }
 
 .admin__home-ra-header{
@@ -2720,5 +2720,30 @@ input[type="number"] {
 }
 
 .admin__home-ra-cr-header-field{
+  background-color: #232230;
+  border-right: .4rem solid #353449;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+  color: #484854;
+}
+
+.admin__home-ra-cr-header-field.active{
   
+  border-right: .4rem solid #C47607;
+  color: #C47607;
+}
+
+.admin__home-ra-cr-field{
+  background-color: #15151C;
+  border: 2px solid #1C1B25;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: center;
+  align-items: center;
+  color: #484854;
+  width: 20%;
+
 }
