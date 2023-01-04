@@ -8,6 +8,15 @@ import { GrMail } from "react-icons/gr";
 import { BiCopy } from "react-icons/bi";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
+export const CardArrowPointer = ({style}) => {
+  return (
+    <BsTriangleFill
+      className={"admin__home-card-arrow-pointer"}
+      style={style}
+    />
+  );
+};
+
 const HomeCard = ({
   textHeaderLeft = "Users",
   textHeaderRight = "Total",
@@ -19,8 +28,7 @@ const HomeCard = ({
   return (
     <section className={`admin__home-card ${newActive && "bordered"}`}>
       {newActive && (
-        <BsTriangleFill
-          className={"admin__home-card-arrow-pointer"}
+        <CardArrowPointer
           style={{ color: "#7C187A" }}
         />
       )}
@@ -228,7 +236,7 @@ const HomeAdmin = () => {
               : null}
           </div>
         </div>
-        <DateRange  color={"#000000"} className="oso" ranges={[selectionRange]} onChange={handleSelect} />
+        {/* <DateRange  color={"#000000"} className="oso" ranges={[selectionRange]} onChange={handleSelect} /> */}
       </section>
     </div>
   );

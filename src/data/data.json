@@ -1,4 +1,90 @@
 {
+  "usersList":[
+    {
+      "image": "/assets/image/catman.jpg",
+      "name": "Jay Williams",
+      "location": "Enugu, Nigeria",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": true
+    },
+    {
+      "image": "/assets/image/wolfguyfeather.jpg",
+      "name": "Nelson Vunder",
+      "location": "Accra, Ghana",
+      "emails": "hatack@yahoo.com",
+      "phone": "+1 235 7838 3737",
+      "isVerified": true
+    },
+    {
+      "image": "/assets/image/tsunami.jpg",
+      "name": "Alto Bahemian",
+      "location": "Indiana, Valencia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": true,
+      "isRequested": true
+    },
+    {
+      "image": "/assets/image/scary.jpg",
+      "name": "Siri Undervolt",
+      "location": "Hamburg, Eurasia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": true,
+      "isRequested": true
+
+    },
+    {
+      "image": "/assets/image/catman.jpg",
+      "name": "Oscar Jender",
+      "location": "Norweig, Norway",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false
+
+    },
+    {
+      "image": "/assets/image/coloredhouse.webp",
+      "name": "Kai Williams",
+      "location": "Boston, America",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false
+    },
+    {
+      "image": "/assets/image/monkeyface.jpg",
+      "name": "Eliana Williams",
+      "location": "Moscow, Russia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false
+    },
+    {
+      "image": "/assets/image/cathat.jpg",
+      "name": "Jayden Silver",
+      "location": "Rika, Croatia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false
+    },
+    {
+      "image": "/assets/image/catpin.jpg",
+      "name": "Ezra Hulio",
+      "location": "Hundu, Bahamas",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false
+    },
+    {
+      "image": "/assets/image/monkeyheadset.jpg",
+      "name": "Luca Jackson",
+      "location": "WestMinister, London",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false
+    }
+  ],
   "products": [
     {
       "image": "/assets/image/catman.jpg",
