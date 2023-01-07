@@ -56,6 +56,7 @@ const AdminFreebiesSidebar = ({
     <section className="admin__freebies-sidebar">
       <div className={`admin__freebies-header ${isStoreOwner && "store-owner"}`}>
         <SidebarTabNavigation
+          isPayoutsPage={isPayoutsPage}
           setActiveSideTab={setActiveSideTab}
           activeSideTab={activeSideTab}
         />
