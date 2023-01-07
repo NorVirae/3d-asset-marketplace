@@ -1,15 +1,5 @@
 import LandCard from "../component/card/landCard";
-import WolfGuyImg from "../assets/image/wolfguyfeather.jpg";
-import TsunamiImg from "../assets/image/tsunami.jpg";
-import ScaryImg from "../assets/image/scary.jpg";
-import CatmanImg from "../assets/image/catman.jpg";
-import coloredhouseImg from "../assets/image/coloredhouse.webp";
 
-import MonkeyFaceImg from "../assets/image/monkeyface.jpg";
-import CatHatImg from "../assets/image/cathat.jpg";
-import CatPinImg from "../assets/image/catpin.jpg";
-import MonkeyheadsetImg from "../assets/image/monkeyheadset.jpg";
-import WolfDogImg from "../assets/image/wolfdog.jpg";
 import NavBar from "../component/navbar/navbar";
 import Slogan from "../component/landing/slogan";
 import SearchBar from "../component/search/SearchBar";
@@ -25,16 +15,35 @@ import OpenStoreModal from "../component/auth/openStoreModal";
 import CGBar, { CGBarSlim } from "../component/card/cbBar";
 import Sidebar from "../component/sidebar/sidebar";
 import SignInModal from "../component/auth/signInModal";
-
+import data from "../data/data.json";
 import { useMediaQuery } from "react-responsive";
 import FilterSystem from "../component/landing/FilterSystem";
 import { useNavigate } from "react-router-dom";
 
+const WolfGuyImg = process.env.PUBLIC_URL + "/assets/image/wolfguyfeather.jpg";
+const TsunamiImg = process.env.PUBLIC_URL + "/assets/image/tsunami.jpg";
+const ScaryImg = process.env.PUBLIC_URL + "/assets/image/scary.jpg";
+const CatmanImg = process.env.PUBLIC_URL + "/assets/image/catman.jpg";
+const coloredhouseImg =
+  process.env.PUBLIC_URL + "/assets/image/coloredhouse.webp";
+
+const MonkeyFaceImg = process.env.PUBLIC_URL + "/assets/image/monkeyface.jpg";
+const CatHatImg = process.env.PUBLIC_URL + "/assets/image/cathat.jpg";
+const CatPinImg = process.env.PUBLIC_URL + "/assets/image/catpin.jpg";
+const MonkeyheadsetImg =
+  process.env.PUBLIC_URL + "/assets/image/monkeyheadset.jpg";
+const WolfDogImg = process.env.PUBLIC_URL + "/assets/image/wolfdog.jpg";
+
 const Home = () => {
   const [yScroll, setYScroll] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [weeklyFreebiesProduct, setWeeklyFreebiesProduct] = useState();
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ minWidth: 320, maxWidth: 480 });
+
+  const handleMainAppClick = () => {
+    setShowRegModal((old) => ({ ...old, loginDrop: false }));
+  };
 
   const handleScroll = (event) => {
     setYScroll(window.scrollY);
@@ -98,7 +107,7 @@ const Home = () => {
   };
 
   return (
-    <section className="landing__main-app">
+    <section onClick={handleMainAppClick} className="landing__main-app">
       <div className="landing__app-container">
         <header className="landing__header">
           <NavBar
@@ -124,11 +133,24 @@ const Home = () => {
 
           <section className="landing__freebies-container">
             <div className="landing__freebies-inner-container">
-              <LandCard img={WolfGuyImg} title={""} titleAffirm={""} />
-              <LandCard img={TsunamiImg} title={""} titleAffirm={""} />
-              <LandCard img={ScaryImg} title={""} titleAffirm={""} />
-              <LandCard img={CatmanImg} title={""} titleAffirm={""} />
-              <LandCard img={coloredhouseImg} title={""} titleAffirm={""} />
+              {data
+                ? data.products.slice(0, 5).map((prod, index) => {
+                    return (
+                      <LandCard
+                        key={prod.name}
+                        onClick={(e) => navigate(`/buy/page/${index}`)}
+                        img={prod.image}
+                        title={prod.title}
+                        ratings={prod.ratings}
+                        owner={prod.ownerName}
+                        numOfComments={prod.numOfComments}
+                        numReviewers={prod.numReviewers}
+                        price={prod.price}
+                        firstTag={prod.firstTag}
+                      />
+                    );
+                  })
+                : null}
             </div>
           </section>
 
@@ -150,11 +172,22 @@ const Home = () => {
 
           <section className="landing__freebies-container">
             <div className="landing__freebies-inner-container">
-              <LandCard img={MonkeyFaceImg} title={""} titleAffirm={""} />
-              <LandCard img={CatHatImg} title={""} titleAffirm={""} />
-              <LandCard img={CatPinImg} title={""} titleAffirm={""} />
-              <LandCard img={MonkeyheadsetImg} title={""} titleAffirm={""} />
-              <LandCard img={WolfDogImg} title={""} titleAffirm={""} />
+              {data
+                ? data.products.slice(0, 5).map((prod) => {
+                    return (
+                      <LandCard
+                        img={prod.image}
+                        title={prod.title}
+                        ratings={prod.ratings}
+                        owner={prod.ownerName}
+                        numOfComments={prod.numOfComments}
+                        numReviewers={prod.numReviewers}
+                        price={prod.price}
+                        firstTag={prod.firstTag}
+                      />
+                    );
+                  })
+                : null}
             </div>
           </section>
 
@@ -206,21 +239,22 @@ const Home = () => {
 
           <section className="landing__all-products-container">
             <div className="landing__all-products-inner-container">
-              <LandCard img={MonkeyFaceImg} title={""} titleAffirm={""} />
-              <LandCard img={CatHatImg} title={""} titleAffirm={""} />
-              <LandCard img={CatPinImg} title={""} titleAffirm={""} />
-              <LandCard img={WolfGuyImg} title={""} titleAffirm={""} />
-              <LandCard img={TsunamiImg} title={""} titleAffirm={""} />
-              <LandCard img={ScaryImg} title={""} titleAffirm={""} />
-              <LandCard img={CatmanImg} title={""} titleAffirm={""} />
-              <LandCard img={coloredhouseImg} title={""} titleAffirm={""} />
-              <LandCard img={CatPinImg} title={""} titleAffirm={""} />
-              <LandCard img={MonkeyheadsetImg} title={""} titleAffirm={""} />
-              <LandCard img={WolfDogImg} title={""} titleAffirm={""} />
-              <LandCard img={WolfGuyImg} title={""} titleAffirm={""} />
-              <LandCard img={TsunamiImg} title={""} titleAffirm={""} />
-              <LandCard img={ScaryImg} title={""} titleAffirm={""} />
-              <LandCard img={CatmanImg} title={""} titleAffirm={""} />
+              {data
+                ? data.products.map((prod) => {
+                    return (
+                      <LandCard
+                        img={prod.image}
+                        title={prod.title}
+                        ratings={prod.ratings}
+                        owner={prod.ownerName}
+                        numOfComments={prod.numOfComments}
+                        numReviewers={prod.numReviewers}
+                        price={prod.price}
+                        firstTag={prod.firstTag}
+                      />
+                    );
+                  })
+                : null}
             </div>
           </section>
 
@@ -249,8 +283,18 @@ const Home = () => {
 
           <section className="landing__latest-collection-cont">
             <div className="landing__double-inner-container">
-              <DoubleCard img={CatmanImg} />
-              <DoubleCard img={MonkeyFaceImg} />
+              {data
+                ? data.products.slice(0, 2).map((prod) => {
+                    return (
+                      <DoubleCard
+                        title={prod.title}
+                        img={prod.image}
+                        owner={prod.ownerName}
+                        firstTag={prod.firstTag}
+                      />
+                    );
+                  })
+                : null}
             </div>
           </section>
 

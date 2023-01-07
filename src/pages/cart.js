@@ -1,15 +1,15 @@
 
 import NavBar from "../component/navbar/navbar"
 import { useNavigate } from "react-router-dom"
-import CGBar, { CGBarSlim } from "../component/card/cbBar"
-import WolfGuyImg from "../assets/image/wolfguyfeather.jpg"
 import {AiFillCreditCard} from "react-icons/ai"
 import {FaStripeS} from "react-icons/fa"
 import {SiFlutter} from "react-icons/si"
 import "../styles/cart/cart.css"
 import {VscTriangleUp} from "react-icons/vsc"
 import { useState } from "react"
-import { OrderCheckbox } from "./user"
+import OrderCheckbox from "../component/user/OrderCheckbox"
+
+const WolfGuyImg = "../assets/image/wolfguyfeather.jpg"
 
 const CartItem = ({title}) => {
     const [isActive, setIsActive] = useState(false)

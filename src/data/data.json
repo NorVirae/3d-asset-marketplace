@@ -1,0 +1,252 @@
+{
+  "usersList":[
+    {
+      "image": "/assets/image/catman.jpg",
+      "name": "Jay Williams",
+      "location": "Enugu, Nigeria",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": true,
+      "isPayoutRequested": true
+
+    },
+    {
+      "image": "/assets/image/wolfguyfeather.jpg",
+      "name": "Nelson Vunder",
+      "location": "Accra, Ghana",
+      "emails": "hatack@yahoo.com",
+      "phone": "+1 235 7838 3737",
+      "isVerified": true
+    },
+    {
+      "image": "/assets/image/tsunami.jpg",
+      "name": "Alto Bahemian",
+      "location": "Indiana, Valencia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": true,
+      "isRequested": true,
+      "isPayoutRequested": true
+    },
+    {
+      "image": "/assets/image/scary.jpg",
+      "name": "Siri Undervolt",
+      "location": "Hamburg, Eurasia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": true,
+      "isRequested": true
+
+    },
+    {
+      "image": "/assets/image/catman.jpg",
+      "name": "Oscar Jender",
+      "location": "Norweig, Norway",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false
+
+    },
+    {
+      "image": "/assets/image/coloredhouse.webp",
+      "name": "Kai Williams",
+      "location": "Boston, America",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false, 
+      "isPaid": true
+
+    },
+    {
+      "image": "/assets/image/monkeyface.jpg",
+      "name": "Eliana Williams",
+      "location": "Moscow, Russia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false,
+      "isPaid": true
+    },
+    {
+      "image": "/assets/image/cathat.jpg",
+      "name": "Jayden Silver",
+      "location": "Rika, Croatia",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false,
+      "isPayoutRequested": true
+
+    },
+    {
+      "image": "/assets/image/catpin.jpg",
+      "name": "Ezra Hulio",
+      "location": "Hundu, Bahamas",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false,
+      "isPayoutRequested": true
+
+    },
+    {
+      "image": "/assets/image/monkeyheadset.jpg",
+      "name": "Luca Jackson",
+      "location": "WestMinister, London",
+      "emails": "norbertmbafrank@gmail.com",
+      "phone": "+234 70 235 47584",
+      "isVerified": false,
+      "isPayoutRequested": true
+
+    }
+  ],
+  "products": [
+    {
+      "image": "/assets/image/catman.jpg",
+      "title": "Beach house with rumps",
+      "ownerName": "Jay Williams",
+      "firstTag": "2D assets",
+      "ratings": 4,
+      "numReviewers": 23,
+      "numOfComments": 25,
+      "price": 700
+    },
+    {
+      "image": "/assets/image/wolfguyfeather.jpg",
+      "title": "The Catman on Cue",
+      "ownerName": "Nelson Vunderbag",
+      "firstTag": "3D assets",
+      "ratings": 3,
+      "numReviewers": 12,
+      "numOfComments": 565,
+      "price": 900
+    },
+    {
+      "image": "/assets/image/tsunami.jpg",
+      "title": "The PumpKin Guy",
+      "ownerName": "Alto Bahemian",
+      "firstTag": "plugins/tools",
+      "ratings": 2,
+      "numReviewers": 890,
+      "numOfComments": 67,
+      "price": "3,000"
+    },
+    {
+      "image": "/assets/image/scary.jpg",
+      "title": "The Owl Girly",
+      "ownerName": "Siri Undervolt",
+      "firstTag": "Materials/Shaders",
+      "ratings": 3,
+      "numReviewers": 567,
+      "numOfComments": 56,
+      "price": 471
+    },
+    {
+      "image": "/assets/image/catman.jpg",
+      "title": "Esoteric Orb monster",
+      "ownerName": "Oscar Jender",
+      "firstTag": "Software Brushes",
+      "ratings": 4,
+      "numReviewers": 45,
+      "numOfComments": 78,
+      "price": "3,000"
+    },
+    {
+      "image": "/assets/image/coloredhouse.webp",
+      "title": "Beach house with rumps",
+      "ownerName": "Kai Williams",
+      "firstTag": "Materials/Shaders",
+      "ratings": 5,
+      "numReviewers": 34,
+      "numOfComments": 25,
+      "price": 200
+    },
+    {
+      "image": "/assets/image/monkeyface.jpg",
+      "title": "Beach house with rumps",
+      "ownerName": "Eliana Williams",
+      "firstTag": "plugins/tools",
+      "ratings": 2,
+      "numReviewers": 34,
+      "numOfComments": 25,
+      "price": 100
+    },
+    {
+      "image": "/assets/image/cathat.jpg",
+      "title": "Beach house with rumps",
+      "ownerName": "Jayden Silver",
+      "firstTag": "3D assets",
+      "ratings": 4,
+      "numReviewers": 34,
+      "numOfComments": 25,
+      "price": "5,000"
+    },
+    {
+      "image": "/assets/image/catpin.jpg",
+      "title": "Beach house with rumps",
+      "ownerName": "Ezra Hulio",
+      "firstTag": "3D assets",
+      "ratings": 5,
+      "numReviewers": 344,
+      "numOfComments": 125,
+      "price": "3,000"
+    },
+    {
+      "image": "/assets/image/monkeyheadset.jpg",
+      "title": "Beach house with rumps",
+      "ownerName": "Luca Jackson",
+      "firstTag": "3D assets",
+      "ratings": 3,
+      "numReviewers": 12,
+      "numOfComments": 454,
+      "price": 400
+    },
+    {
+      "image": "/assets/image/wolfdog.jpg",
+      "title": "Beach house with rumps",
+      "ownerName": "Rowan Williams",
+      "firstTag": "3D assets",
+      "ratings": 2,
+      "numReviewers": 78,
+      "numOfComments": 89,
+      "price": 900
+    },
+    {
+      "image": "/assets/image/cathat.jpg",
+      "title": "Smoky Shoes asset",
+      "ownerName": "Nova Rowan",
+      "firstTag": "3D assets",
+      "ratings": 1,
+      "numReviewers": 2,
+      "numOfComments": 67,
+      "price": 300
+    },
+    {
+      "image": "/assets/image/catpin.jpg",
+      "title": "House of Torns Maniple",
+      "ownerName": "Amara Jayden",
+      "firstTag": "2d assets",
+      "ratings": 1,
+      "numReviewers": 24,
+      "numOfComments": 890,
+      "price": "7,999"
+    },
+    {
+      "image": "/assets/image/monkeyheadset.jpg",
+      "title": "Resident house blueprint",
+      "ownerName": "Aaliyah Nova",
+      "firstTag": "3D assets",
+      "ratings": 5,
+      "numReviewers": 354,
+      "numOfComments": 67,
+      "price": "2,907"
+    },
+    {
+      "image": "/assets/image/wolfdog.jpg",
+      "title": "Santiago bay 3d",
+      "ownerName": "Finn Ezra",
+      "firstTag": "3D assets",
+      "ratings": 4,
+      "numReviewers": 35,
+      "numOfComments": 898,
+      "price": "3,000"
+    }
+  ]
+}

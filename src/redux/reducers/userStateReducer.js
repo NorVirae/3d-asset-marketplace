@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    selected: "store"
+    selected: "store",
+    selectedAdmin: "tags&categories"
 }
 
 const userStateReducer = createSlice({
@@ -10,12 +11,16 @@ const userStateReducer = createSlice({
     reducers: {
         setSelectedSubPage(state, action){
             state.selected = action.payload.selected
+        }, 
+        setSelectedSubPageAdmin(state, action){
+            state.selectedAdmin = action.payload.selected
         }
     }
 })
 
 export const {
-    setSelectedSubPage
+    setSelectedSubPage,
+    setSelectedSubPageAdmin
 } = userStateReducer.actions
 
 export default userStateReducer.reducer

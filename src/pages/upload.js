@@ -8,8 +8,9 @@ import { toast } from "react-toastify";
 import { createMerchandise } from "../api/auth";
 import IdentityBtn from "../component/buttons/identityBtn";
 import CGBar, { CGBarSlim } from "../component/card/cbBar";
+import LoootyLoader from "../component/loader/loootyLoader";
 import NavBar from "../component/navbar/navbar";
-import { OrderCheckbox } from "./user";
+import OrderCheckbox from "../component/user/OrderCheckbox";
 
 export const MainTags = ({
   text = "3D Assets",
@@ -18,6 +19,7 @@ export const MainTags = ({
   setProductInfo,
 }) => {
   const [isSelected, setIsSelected] = useState(defaultState);
+
   const removeItemFromArray = (myArray, val) => {
 
     const index = myArray.indexOf(val);
@@ -62,6 +64,8 @@ export const MainTags = ({
 const UploadPage = () => {
   const [isCommercialActive, setIsCommercialActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false)
+  const [clickProtect, setClickProtect] = useState(false)
+
   const dispatch = useDispatch()
   const merchandiseStore = useSelector(state => state.user.merchandiseStore)
   const user = useSelector(state => state.user.user)
@@ -71,16 +75,18 @@ const UploadPage = () => {
     // if(!user){
     //   navigate("/")
     // }
+    if(merchandiseStore){
+      console.log(merchandiseStore.id, "JOY")
 
-    console.log(merchandiseStore.data[0].id, "JOY")
+    }
 
-    // if(!merchandiseStore){
-    //   navigate("/user")
-    // }
+    if(!merchandiseStore){
+      navigate("/user")
+    }
   }, [user, merchandiseStore])
 
   const [productInfo, setProductInfo] = useState({
-    store_id: merchandiseStore.data[0].id,
+    store_id: merchandiseStore? merchandiseStore.id: "",
     merchandise_name: "",
     merchandise_description: "",
     merchandise_tags: ["3D Assets"],
@@ -90,7 +96,7 @@ const UploadPage = () => {
     // base64_photos: "",
     // photos: "",
     merchandise_cover_picture: [],
-    // bas64_cover_picture: "",
+    // bas64_cover_picture: [],
     merchandise_preview_pictures: [],
     // base64_preview_photos: [],
     file: [],
@@ -101,14 +107,15 @@ const UploadPage = () => {
   const handlePublish = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setClickProtect(true)
+
     // setStoreInfo(old => ({...old, email: user.email}))
     let data = new FormData()
-
 
     data.append('store_id', productInfo.store_id )
     data.append('merchandise_name', productInfo.merchandise_name)
     data.append('merchandise_description', productInfo.merchandise_description)
-    data.append('merchandise_tags', productInfo.merchandise_tags)
+    data.append('merchandise_tags', JSON.stringify(productInfo.merchandise_tags) )
     data.append('basic_price', productInfo.basic_price)
     data.append('commercial_price', productInfo.commercial_price)
     data.append('explicit_content', productInfo.explicit_content)
@@ -116,9 +123,9 @@ const UploadPage = () => {
     // data.append('photos', productInfo.photos)
     data.append('merchandise_cover_picture', productInfo.merchandise_cover_picture)
     // data.append('bas64_cover_picture', productInfo.bas64_cover_picture)
-    data.append('merchandise_preview_pictures', productInfo.merchandise_preview_pictures)
+    data.append('merchandise_preview_pictures', JSON.stringify(productInfo.merchandise_preview_pictures) )
     // data.append('base64_preview_photos', productInfo.base64_preview_photos)
-    data.append('file', productInfo.file)
+    data.append('file', JSON.stringify(productInfo.file) )
 
     const uploadProduct = await dispatch(createMerchandise({ productInfo: data }))
       .unwrap()
@@ -131,6 +138,7 @@ const UploadPage = () => {
       })
       .catch((err) => {
         setIsLoading(false);
+        setClickProtect(false)
         if (err.response) {
           toast.error(err.response.data.message);
         }
@@ -183,7 +191,7 @@ const UploadPage = () => {
                   accept="image/*"
                   onChange={(e) => {
                     let newArray = productInfo.merchandise_cover_picture;
-                    newArray[0] = e.target.files[0];
+                    newArray = e.target.files;
                     setProductInfo((old) => ({
                       ...old,
                       merchandise_cover_picture: newArray,
@@ -612,8 +620,8 @@ const UploadPage = () => {
               <span>Draft</span>
             </button>
 
-            <button onClick={handlePublish} className="upload__publish-btn">
-              <span>{isLoading? "Loading...": "Publish"}</span>
+            <button disabled={clickProtect} opacity={clickProtect?"0.6": "1"} onClick={handlePublish} className="upload__publish-btn">
+              <span>{isLoading? <LoootyLoader />: "Publish"}</span>
             </button>
           </section>
         </section>

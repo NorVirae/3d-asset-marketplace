@@ -16,7 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from './component/sidebar/sidebar';
 import User from './pages/user';
 import UploadPage from './pages/upload';
-import ProductAdmin from './pages/admin/productAdmin';
+import Admin from './pages/admin/Admin';
 
 function App() {
 
@@ -33,11 +33,11 @@ function App() {
           <Route path='/open/store' element={<OpenAStore/>} exact />
         
           <Route path='/experiment' element={<Experiment/>} exact />
-          <Route path='/buy/page' element={<BuyPage/>} exact />
+          <Route path='/buy/page/:id' element={<BuyPage/>} exact />
           <Route path='/cart' element={<Cart/>} exact />
           <Route path='/user' element={<User />} exact />
           <Route path='/user/upload' element={<UploadPage />} exact />
-          <Route path='/admin/product' element={<ProductAdmin />} exact />
+          <Route path='/admin/product' element={<Admin />} exact />
 
 
         </Routes>

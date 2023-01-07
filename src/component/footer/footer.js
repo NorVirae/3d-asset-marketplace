@@ -6,14 +6,14 @@ import {RiInstagramFill} from "react-icons/ri"
 
 export const SuscribeInput = ({style, btnStyle, controlStyle}) => {
     return (
-        <form style={style} className="landing__news-letter-form">
+        <div style={style} className="landing__news-letter-form">
             <div className="landing__news-letter-form-group">
                 <input style={controlStyle} placeholder="Email Address" className="landing__news-letter-form-control" />
                 <button style={btnStyle} className="landing__news-letter-btn-2">
                     <span className="landing__news-letter-btn-text">SUSCRIBE</span>
                 </button>
             </div>
-        </form>
+        </div>
     )
 }
 
@@ -21,7 +21,7 @@ const Footer = () => {
 
     return <div className="landing__footer-inner">
                 <div className="landing__footer-socials">
-                    <LoootyLogo style={{height: "60px"}}/>
+                    <LoootyLogo style={{height: "60px", zIndex: "0"}}/>
                     <div className="landing__socials-container">
                         <RiInstagramFill style={{fontSize: "1.5rem", padding: ".2rem", borderRadius: ".4rem", color:"white", backgroundColor: "#D22D89"}}/>
                         <FaTwitter style={{fontSize: "1.5rem", padding: ".2rem", borderRadius: ".4rem", color:"#54ABEE", backgroundColor: "transparent"}}/>

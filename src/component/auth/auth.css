@@ -11,7 +11,7 @@
 
 .lgn__login-modal:active{
    
-    transform: skewX(25deg) scale(.97);
+    transform: skewX(25deg) scale(1.01);
 }
 
 .lgn__fade-out-anim {
@@ -51,11 +51,12 @@
     border: .2rem solid #2B2B38;
     transform: skewX(-25deg);
     position: relative;
+    display: flex;
 }
 
 
 .lgn__hide-sensitive-info-button, .sign__hide-sensitive-info-button{
-    position: absolute;
+    /* position: absolute; */
     background-color: #2A162F;
     padding: 1.05rem 1.5rem;
     right: 1.5%;
@@ -259,7 +260,7 @@
 
 .reg__loooty-features-item{
     list-style-type:georgian;
-    list-style-image: url("../../assets/image/logo/loooty\ logo.svg");
+    list-style-image: url("/public/assets/image/logo/logo.svg");
     color: #BCBCBC;
 }
 
@@ -285,16 +286,19 @@
 }
 
 .reg__form-group{
+    display: flex;
     background-color: #15151C;
     border: .2rem solid #2B2B38;
+    /* #df4759 - bg danger */
     transform: skewX(-25deg);
-    width: 80%;
+    transition: .4s ease-in-out border;
+    /* width: 80%; */
 
 }
 
 .reg__form-control{
-    padding: 1rem 4rem;
-    width: 100%;
+    padding: 1rem 2rem;
+    /* width: 100%; */
     font-size: 1rem;
     background-color: transparent;
     border: none;
@@ -538,6 +542,7 @@
     background-color: #15151C;
     border: .2rem solid #2B2B38;
     transform: skewX(-25deg);
+    transition: .4s ease-in-out border;
 
 }
 

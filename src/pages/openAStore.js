@@ -29,10 +29,10 @@ const OpenAStore = () => {
   }, [pathname]);
 
   useEffect(() => {
-    if (!user.user) {
-      navigate("/");
-    }
-  }, [user]);
+    // if (!user.user) {
+    //   navigate("/");
+    // }
+  }, [user.user]);
   const [faq, setFaq] = useState([
     {
       question: "How can i open a shop on Loooty?",

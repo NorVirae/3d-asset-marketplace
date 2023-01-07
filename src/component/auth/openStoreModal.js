@@ -3,20 +3,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { createMerchandiseStore } from "../../api/auth";
+import LoootyLoader from "../loader/loootyLoader";
 import { RegisterContext } from "./context/registerContext";
 
 const OpenStoreModal = () => {
   const [active, setActive] = useState(false);
   const user = useSelector((state) => state.user.user);
+  const [errors, setErrors] = useState({
+    store_name: false,
+    store_email: false,
+    base64_photo: false,
+    why_loooty: false,
+    portfolio_link: false,
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const [clickProtect, setClickProtect] = useState(false);
 
   const [storeInfo, setStoreInfo] = useState({
     store_name: "Realindiana",
     store_email: user.email,
-    // store_cover_picture: new Blob(),
+    base64_photo: [],
     why_loooty: "Cause loooty is big",
     portfolio_link: "www.realindiana.com",
   });
@@ -24,41 +33,84 @@ const OpenStoreModal = () => {
 
   const convertToBase64 = (blob) => {
     // var blob = new Blob([blob])
-    var reader = new FileReader();
-    reader.readAsDataURL(blob);
-    reader.onloadend = function () {
-      var base64data = reader.result;
-      return base64data;
-    };
+    // console.log(blob, "BLUBALAL")
+    // var reader = new FileReader();
+    // reader.readAsDataURL(blob);
+    // reader.onloadend = function () {
+    //   var base64data = reader.result;
+    //   return base64data;
+    // };
+
+    return new Promise((resolve, _) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        // console.log(reader.result, "HUZ")
+        setStoreInfo((old) => ({
+          ...old,
+          base64_photo: [reader.result.split(",")[1]],
+        }));
+        return resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setClickProtect(true);
     // setStoreInfo(old => ({...old, email: user.email}))
-    let data = new FormData()
+    let data = new FormData();
 
-    data.append('store_name', storeInfo.store_name)
-    data.append('store_email', storeInfo.store_email)
+    // data.append("store_name", storeInfo.store_name);
+    // data.append("store_email", storeInfo.store_email);
     // data.append('store_cover_picture', storeInfo.store_cover_picture)
-    data.append('why_loooty', storeInfo.why_loooty)
-    data.append('portfolio_link', storeInfo.portfolio_link)
-
-
-
-    const signUpData = await dispatch(createMerchandiseStore({ storeInfo: data }))
+    // data.append("why_loooty", storeInfo.why_loooty);
+    // data.append("portfolio_link", storeInfo.portfolio_link);
+    console.log(storeInfo, "HONE");
+    const signUpData = await dispatch(
+      createMerchandiseStore({ storeInfo: storeInfo })
+    )
       .unwrap()
       .then(async (result) => {
         setIsLoading(false);
         toast.success("Sign in was successful");
 
         setShowRegModal({ ...showRegModal, login: false });
-        navigate("/user");
+        // navigate("/user");
       })
       .catch((err) => {
         setIsLoading(false);
+        setClickProtect(false);
+
         if (err.response) {
           toast.error(err.response.data.message);
+          if (err.response.data.errors) {
+            if (err.response.data.errors.store_name) {
+              setErrors((old) => ({ ...old, store_name: true }));
+              toast.error(err.response.data.errors.store_name[0]);
+            }
+
+            if (err.response.data.errors.store_email) {
+              setErrors((old) => ({ ...old, store_email: true }));
+              toast.error(err.response.data.errors.store_email[0]);
+            }
+
+            if (err.response.data.errors.base64_photo) {
+              setErrors((old) => ({ ...old, base64_photo: true }));
+              toast.error(err.response.data.errors.base64_photo[0]);
+            }
+
+            if (err.response.data.errors.why_loooty) {
+              setErrors((old) => ({ ...old, why_loooty: true }));
+              toast.error(err.response.data.errors.why_loooty[0]);
+            }
+
+            if (err.response.data.errors.portfolio_link) {
+              setErrors((old) => ({ ...old, portfolio_link: true }));
+              toast.error(err.response.data.errors.portfolio_link[0]);
+            }
+          }
         }
       });
   };
@@ -103,36 +155,57 @@ const OpenStoreModal = () => {
           <label className="opn__open-store-form-label">
             <span style={{ transform: "skewX(25deg)" }}>name</span>
           </label>
-          <div className="opn__open-store-form-control-container">
+          <div
+            style={{
+              border: errors.store_name
+                ? ".2rem solid #df4759"
+                : " .2rem solid #2B2B38",
+            }}
+            className="opn__open-store-form-control-container"
+          >
             <input
               onChange={(e) =>
                 setStoreInfo((old) => ({ ...old, store_name: e.target.value }))
               }
+              onFocus={() => {
+                setErrors((old) => ({ ...old, store_name: false }));
+              }}
               value={storeInfo.store_name}
               className="opn__open-store-form-control"
             />
           </div>
         </div>
 
-        {/* <div className="opn__open-store-form-group">
+        <div className="opn__open-store-form-group">
           <label className="opn__open-store-form-label">
             <span style={{ transform: "skewX(25deg)" }}>Cover Picture</span>
           </label>
-          <div className="opn__open-store-form-control-container">
+          <div
+            style={{
+              border: errors.base64_photo
+                ? ".2rem solid #df4759"
+                : " .2rem solid #2B2B38",
+            }}
+            className="opn__open-store-form-control-container"
+          >
             <input
               type={"file"}
               multiple
-              onChange={(e) =>
+              onFocus={() => {
+                setErrors((old) => ({ ...old, base64_photo: false }));
+              }}
+              onChange={(e) => {
+                setErrors((old) => ({ ...old, base64_photo: false }));
                 setStoreInfo((old) => ({
                   ...old,
-                  store_cover_picture: e.target.files,
-                }))
-              }
+                  base64_photo: [convertToBase64(e.target.files[0])],
+                }));
+              }}
               // value={storeInfo.value}
               className="opn__open-store-form-control"
             />
           </div>
-        </div> */}
+        </div>
 
         <div className="opn__open-store-form-group">
           <label className="opn__open-store-form-label">
@@ -140,8 +213,18 @@ const OpenStoreModal = () => {
               Links to your portfolio
             </span>
           </label>
-          <div className="opn__open-store-form-control-container">
+          <div
+            style={{
+              border: errors.portfolio_link
+                ? ".2rem solid #df4759"
+                : " .2rem solid #2B2B38",
+            }}
+            className="opn__open-store-form-control-container"
+          >
             <input
+              onFocus={() => {
+                setErrors((old) => ({ ...old, portfolio_link: false }));
+              }}
               onChange={(e) =>
                 setStoreInfo((old) => ({
                   ...old,
@@ -160,8 +243,18 @@ const OpenStoreModal = () => {
               why do you want to sell on loooty?
             </span>
           </label>
-          <div className="opn__open-store-form-control-container">
+          <div
+            style={{
+              border: errors.why_loooty
+                ? ".2rem solid #df4759"
+                : " .2rem solid #2B2B38",
+            }}
+            className="opn__open-store-form-control-container"
+          >
             <input
+              onFocus={() => {
+                setErrors((old) => ({ ...old, why_loooty: false }));
+              }}
               onChange={(e) =>
                 setStoreInfo((old) => ({ ...old, why_loooty: e.target.value }))
               }
@@ -177,9 +270,9 @@ const OpenStoreModal = () => {
         </p>
 
         <div className="opn__open-store-btn-group">
-          <button onClick={handleSubmit} className="opn__open-store-btn">
+          <button disabled={clickProtect} style={{opacity: clickProtect?"0.6": "1"}} onClick={handleSubmit} className="opn__open-store-btn">
             <span className="opn__open-store-btn-text">
-              {isLoading ? "Loading..." : "SUBMIT"}
+              {isLoading ? <LoootyLoader /> : "SUBMIT"}
             </span>
           </button>
         </div>

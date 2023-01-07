@@ -35,6 +35,18 @@
     animation: .3s fade-active ease-in-out;
 }
 
+.loooty__loader-container{
+    /* width: 100%;
+    height: 100%; */
+    /* background-color: red; */
+}
+
+.loooty__loader{
+    width: 4rem;
+    height: 1rem;
+    object-fit: cover;
+}
+
 @keyframes fade-active {
     0%{
         opacity: 0;
