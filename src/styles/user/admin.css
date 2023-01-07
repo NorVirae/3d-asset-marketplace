@@ -2956,6 +2956,7 @@ input[type="number"] {
   align-items: center;
 }
 
+
 .admin__report-message-notify {
   height: 0.2rem;
   width: 0.2rem;
@@ -3334,4 +3335,11 @@ Tags and Categories
 
 .admin__listed-user-payment-request-icon.sub{
   font-size: 1rem;
+}
+
+.amdin__sidebar-payment-details{
+  background-color: #2E2D3B;
+  padding: 1rem 23%;
+  color: #4E4D58;
+  font-weight: bolder;
 }

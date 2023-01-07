@@ -50,6 +50,7 @@ const AdminFreebiesSidebar = ({
   activeSideTab,
   actionButtonText = "EXPAND",
   actionButtonOnclick,
+  isPayoutsPage
 }) => {
   return (
     <section className="admin__freebies-sidebar">
@@ -59,7 +60,9 @@ const AdminFreebiesSidebar = ({
           activeSideTab={activeSideTab}
         />
         {type=="user"?<UserInfoProfile/>:  <ProductInfoProfile />}
-
+        {isPayoutsPage && <div className="amdin__sidebar-payment-details">
+          PAYMENT DETAILS
+        </div>}
         <section className="admin__sidebar-info">
           {sidebarMaininfoIts
             ? sidebarMaininfoIts.map((sidebarMainItem) => {

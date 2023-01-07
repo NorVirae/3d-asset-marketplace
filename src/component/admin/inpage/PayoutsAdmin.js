@@ -40,6 +40,7 @@ const PayoutsAdmin = () => {
   return (
     <div className="admin__users-container">
       <AdminFreebiesSidebar
+        isPayoutsPage={true}
         isStoreOwner={isStoreOwner}
         type="user"
         setActiveSideTab={setActiveSideTab}
