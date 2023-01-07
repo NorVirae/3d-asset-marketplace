@@ -1,7 +1,4 @@
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
 
-import { Calendar, DateRange, DateRangePicker } from "react-date-range";
 import { BsBack, BsTriangleFill } from "react-icons/bs";
 import { GoMail } from "react-icons/go";
 import { GrMail } from "react-icons/gr";
