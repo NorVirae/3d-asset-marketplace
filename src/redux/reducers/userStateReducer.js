@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     selected: "store",
-    selectedAdmin: "affiliates"
+    selectedAdmin: "tags&categories"
 }
 
 const userStateReducer = createSlice({

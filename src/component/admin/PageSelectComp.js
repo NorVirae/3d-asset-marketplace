@@ -1,15 +1,13 @@
-import Collections from "./Collections";
-import Library from "./Library";
-import Messages from "./Messages";
-import Profile from "./Profile";
-import Sales from "./Sales";
-import Settings from "./Settings";
-import Product from "./Product";
-import Suscribers from "./Suscribers";
-import HomeAdmin from "./HomeAdmin";
-import UsersAdmin from "./UsersAdmin";
-import StoreAdmin from "./StoreAdmin";
-import AffiliateAdmin from "./AfiliatesAdmin";
+import Suscribers from "../user/Suscribers";
+import AffiliateAdmin from "./inpage/AfiliatesAdmin";
+import CartsAdmin from "./inpage/CartsAdmin";
+import HomeAdmin from "./inpage/HomeAdmin";
+import PayoutsAdmin from "./inpage/PayoutsAdmin";
+import ProductAdmin from "./inpage/ProductAdmin";
+import StoreAdmin from "./inpage/StoreAdmin";
+import TagsCatAdmin from "./inpage/TagsCatAdmin";
+import UsersAdmin from "./inpage/UsersAdmin";
+
 
 const PageSelectComp = ({ inPageName }) => {
     switch (inPageName) {
@@ -25,16 +23,16 @@ const PageSelectComp = ({ inPageName }) => {
         return <AffiliateAdmin />;
   
       case "payouts":
-        return <Suscribers />;
+        return <PayoutsAdmin />;
   
       case "products":
-        return <Product />;
+        return <ProductAdmin />;
   
       case "tags&categories":
-        return <Settings />;
+        return <TagsCatAdmin />;
   
-      case "carts":
-        return <Sales />;
+      case "carts&wishlist":
+        return <CartsAdmin />;
   
       default:
         return <></>;

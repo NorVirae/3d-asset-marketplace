@@ -1,47 +1,46 @@
-import AdminFreebiesSidebar from "./AdminFreebiesSidebar";
-import TagsComp from "./TagsComp";
-import { ListedUser } from "./UsersAdmin";
-import data from "../../data/data.json";
+
+
 import { useState } from "react";
+import data from "../../../data/data.json";
+import AdminFreebiesSidebar from "../AdminFreebiesSidebar";
+import ListedUserCarts from "../features/ListedUserCarts";
+import TagsComp from "../TagsComp";
 
-const sidebarMaininfo = [
-  {
-    leftInfo: "Name",
-    rightInfo: "Steven James",
-    showEditableSign: true,
-  },
-
-  {
-    leftInfo: "Status",
-    rightInfo: "Verified",
-    showVerifySign: true,
-    showEditableSign: true,
-  },
-
-  {
-    leftInfo: "Products",
-    rightInfo: "50 uploads",
-  },
-
-  {
-    leftInfo: "Sales",
-    rightInfo: "25,100.00",
-  },
-
-  {
-    leftInfo: "Balance",
-    rightInfo: "1,500.00",
-  },
-];
-
-const StoreAdmin = () => {
+const CartsAdmin = () => {
   const [activeSideTab, setActiveSideTab] = useState("features");
   const [selected, setSelected] = useState(0);
-  const [isStoreOwner, setIsStoreOwner] = useState(true)
+  const [isStoreOwner, setIsStoreOwner] = useState(true);
+
+  const sidebarMaininfo = [
+    {
+      leftInfo: "Total Products",
+      rightInfo: "10 products",
+      // showEditableSign: true,
+    },
+
+    {
+      leftInfo: "Total Sales",
+      rightInfo: "72 Sales",
+      // showVerifySign: true,
+      // showEditableSign: true,
+    },
+
+    {
+      leftInfo: "Total Wishlist",
+      rightInfo: "2430",
+      showHeartIcon: true
+    },
+
+    {
+      leftInfo: "Sales",
+      rightInfo: "25,100.00",
+      showCartIcon: true
+    },
+  ];
   return (
     <div className="admin__users-container">
       <AdminFreebiesSidebar
-        isStoreOwner={isStoreOwner}
+        // isStoreOwner={isStoreOwner}
         type="user"
         setActiveSideTab={setActiveSideTab}
         activeSideTab={activeSideTab}
@@ -53,10 +52,16 @@ const StoreAdmin = () => {
           {data
             ? data.usersList.map((user, index) => {
                 return (
-                  <ListedUser
+                  <ListedUserCarts
+                    isCarts={true}
+                    isAffiliated={true}
                     isRequested={user.isRequested}
                     showVerifySign={user.isVerified}
-                    styleVerifySign={{position: "absolute", top: "25%", left: "5%"}}
+                    styleVerifySign={{
+                      position: "absolute",
+                      top: "25%",
+                      left: "5%",
+                    }}
                     id={index}
                     key={index}
                     selected={index == selected}
@@ -76,4 +81,4 @@ const StoreAdmin = () => {
   );
 };
 
-export default StoreAdmin;
+export default CartsAdmin;

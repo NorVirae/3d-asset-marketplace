@@ -6,7 +6,9 @@
       "location": "Enugu, Nigeria",
       "emails": "norbertmbafrank@gmail.com",
       "phone": "+234 70 235 47584",
-      "isVerified": true
+      "isVerified": true,
+      "isPayoutRequested": true
+
     },
     {
       "image": "/assets/image/wolfguyfeather.jpg",
@@ -23,7 +25,8 @@
       "emails": "norbertmbafrank@gmail.com",
       "phone": "+234 70 235 47584",
       "isVerified": true,
-      "isRequested": true
+      "isRequested": true,
+      "isPayoutRequested": true
     },
     {
       "image": "/assets/image/scary.jpg",
@@ -50,7 +53,9 @@
       "location": "Boston, America",
       "emails": "norbertmbafrank@gmail.com",
       "phone": "+234 70 235 47584",
-      "isVerified": false
+      "isVerified": false, 
+      "isPaid": true
+
     },
     {
       "image": "/assets/image/monkeyface.jpg",
@@ -58,7 +63,8 @@
       "location": "Moscow, Russia",
       "emails": "norbertmbafrank@gmail.com",
       "phone": "+234 70 235 47584",
-      "isVerified": false
+      "isVerified": false,
+      "isPaid": true
     },
     {
       "image": "/assets/image/cathat.jpg",
@@ -66,7 +72,9 @@
       "location": "Rika, Croatia",
       "emails": "norbertmbafrank@gmail.com",
       "phone": "+234 70 235 47584",
-      "isVerified": false
+      "isVerified": false,
+      "isPayoutRequested": true
+
     },
     {
       "image": "/assets/image/catpin.jpg",
@@ -74,7 +82,9 @@
       "location": "Hundu, Bahamas",
       "emails": "norbertmbafrank@gmail.com",
       "phone": "+234 70 235 47584",
-      "isVerified": false
+      "isVerified": false,
+      "isPayoutRequested": true
+
     },
     {
       "image": "/assets/image/monkeyheadset.jpg",
@@ -82,7 +92,9 @@
       "location": "WestMinister, London",
       "emails": "norbertmbafrank@gmail.com",
       "phone": "+234 70 235 47584",
-      "isVerified": false
+      "isVerified": false,
+      "isPayoutRequested": true
+
     }
   ],
   "products": [

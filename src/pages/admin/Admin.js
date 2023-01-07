@@ -35,17 +35,17 @@ const hasStoreTags = [
   },
 
   {
-    name: "tages&categories",
+    name: "tags&categories",
     // dropDownList: ["affiliates"],
   },
 
   {
-    name: "carts",
+    name: "carts&wishlist",
     // dropDownList: ["affiliates"],
   },
 ];
 
-const ProductAdmin = () => {
+const Admin = () => {
   const [toggleVisAdmin, setToggleVisAdmin] = useState(true);
   const isMobile = useMediaQuery({ minWidth: 481, maxWidth: 768 });
   const user = useSelector((state) => state.user);
@@ -109,4 +109,4 @@ const ProductAdmin = () => {
   );
 };
 
-export default ProductAdmin;
+export default Admin;

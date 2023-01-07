@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { AiTwotoneMessage } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
-import LandCard from "../card/landCard";
-import TagsComp from "./TagsComp";
+import LandCard from "../../card/landCard";
+import TagsComp from "../TagsComp";
 
-import data from "../../data/data.json";
-import UserPurpleInnerStripeBtn from "../buttons/UserPurpleButton";
-import AdminFreebiesSidebar from "./AdminFreebiesSidebar";
+import data from "../../../data/data.json";
+import UserPurpleInnerStripeBtn from "../../buttons/UserPurpleButton";
+import AdminFreebiesSidebar from "../AdminFreebiesSidebar";
 
 const TsunamiImg = "/assets/image/tsunami.jpg";
 const ScaryImg = "/assets/image/scary.jpg";
@@ -16,7 +16,7 @@ const coloredhouseImg = "/assets/image/coloredhouse.webp";
 
 
 
-const Product = () => {
+const ProductAdmin = () => {
   const [activeSideTab, setActiveSideTab] = useState("features");
   const handleProductClick = () => {
     
@@ -85,4 +85,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductAdmin;

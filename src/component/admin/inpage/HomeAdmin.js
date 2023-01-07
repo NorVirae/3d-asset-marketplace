@@ -7,85 +7,18 @@ import { GoMail } from "react-icons/go";
 import { GrMail } from "react-icons/gr";
 import { BiCopy } from "react-icons/bi";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import HomeCard from "../home/HomeCard";
+import ContentRow from "../home/ContentRow";
 
-export const CardArrowPointer = ({style}) => {
-  return (
-    <BsTriangleFill
-      className={"admin__home-card-arrow-pointer"}
-      style={style}
-    />
-  );
-};
 
-const HomeCard = ({
-  textHeaderLeft = "Users",
-  textHeaderRight = "Total",
-  mainFigure = "10.74m",
-  mainFigureDescription = "Newly Signed up",
-  newActive = false,
-  childrenComp = <span>20,000</span>,
-}) => {
-  return (
-    <section className={`admin__home-card ${newActive && "bordered"}`}>
-      {newActive && (
-        <CardArrowPointer
-          style={{ color: "#7C187A" }}
-        />
-      )}
-      <div className="admin__home-card-title-header">
-        <span className="admin__home-card-title-left">{textHeaderLeft}</span>
-        <span className="admin__home-card-title-right">{textHeaderRight}</span>
-      </div>
-      <div className="admin__home-card-title-body">
-        <div
-          className={`admin__hc-inactive-box ${newActive && "purpled"}`}
-        ></div>
-        <div className="admin__hc-inner-total-container">
-          <h3 className="admin__hc-content-first-header">{mainFigure}</h3>
-          <h4 className="admin__hc-content-second-header">
-            {mainFigureDescription}
-          </h4>
-          <h5 className="admin__hc-content-third-header">{childrenComp}</h5>
-        </div>
-      </div>
-    </section>
-  );
-};
 
-const ContentHeaderField = ({ text, active }) => {
-  return (
-    <span className={` admin__home-ra-cr-header-field ${active && "active"} `}>
-      {text}
-    </span>
-  );
-};
 
-const ContentField = ({ style, text = "Nov 5, 2022" }) => {
-  return (
-    <span style={style} className="admin__home-ra-cr-field">
-      {text}
-    </span>
-  );
-};
 
-const ContentRow = ({ active, header, date, email, target, adminName }) => {
-  return (
-    <div className="admin__home-ra-content-row">
-      <ContentHeaderField text={header} active={active} />
-      <ContentField text={date} />
-      <ContentField text={target} />
-      <ContentField
-        style={{ width: "30%" }}
-        text={
-          <div style={{ display: "flex", gap: ".4rem" }}>
-            {email} <BiCopy />
-          </div>
-        }
-      />
-      <ContentField text={adminName} />
-    </div>
-  );
-};
+
+
+
+
+
 
 const HomeAdmin = () => {
   const selectionRange = {

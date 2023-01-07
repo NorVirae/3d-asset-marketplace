@@ -1,9 +1,10 @@
-import { useState } from "react";
-import AdminFreebiesSidebar from "./AdminFreebiesSidebar";
-import TagsComp from "./TagsComp";
-import { ListedUser } from "./UsersAdmin";
 
-import data from "../../data/data.json";
+
+import { useState } from "react";
+import data from "../../../data/data.json";
+import AdminFreebiesSidebar from "../AdminFreebiesSidebar";
+import ListedUser from "../features/ListedUser";
+import TagsComp from "../TagsComp";
 
 const AffiliateAdmin = () => {
   const [activeSideTab, setActiveSideTab] = useState("features");
