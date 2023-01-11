@@ -203,7 +203,18 @@ const SignInModal = () => {
                 <p>
                   {" "}
                   Don't have an account?{" "}
-                  <span style={{ color: "#FF9700" }}>Sign up! </span>
+                  <span
+                    onClick={(e) =>
+                      setShowRegModal({
+                        ...showRegModal,
+                        register: true,
+                        login: false,
+                      })
+                    }
+                    style={{ color: "#FF9700", cursor: "pointer" }}
+                  >
+                    Sign up!{" "}
+                  </span>
                 </p>
               </div>
             </div>

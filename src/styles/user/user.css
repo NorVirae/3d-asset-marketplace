@@ -19,8 +19,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
+
+.user__profile-container.admin {
+  flex-direction: row;
+}
+
+
+.admin__profile-container{
+  flex-direction: column;
+}
+
+.user__profile-container-admin{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .user__profile-img {
   height: 7rem;
@@ -29,8 +44,15 @@
   border-radius: 100%;
 }
 
+.user__profile-img.admin {
+  height: 5rem;
+  width: 5rem;
+  
+}
+
 .user__profile-name {
   font-size: 1.6rem;
+  color: white;
 }
 
 .user__profile-suscribers {
@@ -724,7 +746,7 @@
 
 .user__sales {
   background-color: #15151c;
-  height: 50vh;
+  height: 100%;
   color: white;
   display: grid;
   grid-template-columns: 15% 75%;

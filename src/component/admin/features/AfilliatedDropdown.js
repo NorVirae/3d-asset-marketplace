@@ -1,12 +1,12 @@
-import AffiliatedItemCarts from "./AffiliatedItemCarts";
+import AffiliatedItem from "./AffiliatedItem";
 
 const AfilliatedDropdown = () => {
   return (
     <section className="admin__listed-users-afilliated-container">
       <div className="admin__listed-users-afilliated-container-inner">
-        <AffiliatedItemCarts />
-        <AffiliatedItemCarts />
-        <AffiliatedItemCarts />
+        <AffiliatedItem />
+        <AffiliatedItem />
+        <AffiliatedItem />
       </div>
     </section>
   );
