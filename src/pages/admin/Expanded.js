@@ -167,6 +167,7 @@ const Expanded = () => {
               toggleVisAdmin={toggleVisAdmin}
               activeInpageHeader={activeInpageHeaderAdmin}
               TagList={adminTags}
+              onClick={() => navigate("/admin/product")}
             />
             <UniversalTagHeaderDesktop
               style={{ zoom: ".8", marginBottom: "2rem" }}

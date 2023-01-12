@@ -7,6 +7,7 @@ import SidebarTabNavigation from "./features/SidebarTabNavigation";
 import UserInfoProfile from "./features/UserInfoProfile";
 import ProductInfoProfile from "./features/ProductInfoProfile";
 import SidebarInfoField from "./features/SidebarInfoField";
+import { useNavigate } from "react-router-dom";
 
 const WolfGuyImg = "/assets/image/wolfguyfeather.jpg";
 const CatmanImg = "/assets/image/catman.jpg";
@@ -50,8 +51,10 @@ const AdminFreebiesSidebar = ({
   activeSideTab,
   actionButtonText = "EXPAND",
   actionButtonOnclick,
-  isPayoutsPage
+  isPayoutsPage,
+  sideActionOnclick
 }) => {
+  const navigate = useNavigate()
   return (
     <section className="admin__freebies-sidebar">
       <div className={`admin__freebies-header ${isStoreOwner && "store-owner"}`}>
@@ -110,6 +113,13 @@ const AdminFreebiesSidebar = ({
 
           <div className="admin__sidebar-info-field btn">
             <UserPurpleInnerStripeBtn
+              onClick={() => {
+                if (sideActionOnclick){
+                  sideActionOnclick()
+                  return
+                }
+                navigate("/admin/expanded")
+              }}
               actionButtonText={actionButtonText}
               actionButtonOnclick={actionButtonOnclick}
               style={{ width: "40%" }}

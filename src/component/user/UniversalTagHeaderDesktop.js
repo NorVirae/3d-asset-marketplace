@@ -21,14 +21,18 @@ const defaultTags = [
   },
 ];
 
-const UniversalTagHeaderDesktop = ({ activeInpageHeader, TagList = defaultTags, style }) => {
+const UniversalTagHeaderDesktop = ({ activeInpageHeader, TagList = defaultTags, style, onClick }) => {
   const dispatch = useDispatch();
   return (
     <section style={style} className="user__admin-page-section-header-container">
       {TagList.map((tagsBtn) => (
         <IdentityBtn key={tagsBtn.name}
-          onClick={(e) =>
-            dispatch(setSelectedSubPage({ selected: tagsBtn.name }))
+          onClick={(e) =>{
+            if (onClick){
+              onClick()
+              // return
+            }
+            dispatch(setSelectedSubPage({ selected: tagsBtn.name }))}
           }
           style={{
             padding: "1rem 6rem",
@@ -50,14 +54,18 @@ const UniversalTagHeaderDesktop = ({ activeInpageHeader, TagList = defaultTags, 
   );
 };
 
-export const UniversalTagHeaderDesktopAdmin = ({ activeInpageHeader, TagList = defaultTags, style }) => {
+export const UniversalTagHeaderDesktopAdmin = ({ activeInpageHeader, TagList = defaultTags, style, onClick }) => {
   const dispatch = useDispatch();
   return (
     <section style={style} className="user__admin-page-section-header-container">
       {TagList.map((tagsBtn) => (
         <IdentityBtn key={tagsBtn.name}
-          onClick={(e) =>
-            dispatch(setSelectedSubPageAdmin({ selected: tagsBtn.name }))
+          onClick={(e) =>{
+            if (onClick){
+              onClick()
+              // return
+            }
+            dispatch(setSelectedSubPageAdmin({ selected: tagsBtn.name }))}
           }
           style={{
             padding: "1rem 6rem",

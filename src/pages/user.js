@@ -145,10 +145,10 @@ const User = () => {
         }
       });
 
-    if (!user.user) {
-      navigate("/");
-      setShowRegModal({ ...showRegModal, login: true });
-    }
+    // if (!user.user) {
+    //   navigate("/");
+    //   setShowRegModal({ ...showRegModal, login: true });
+    // }
   }, [toggleVisAdmin, user.user]);
   return (
     <section className="user__main-container">

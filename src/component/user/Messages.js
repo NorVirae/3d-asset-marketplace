@@ -70,6 +70,9 @@ const Messages = () => {
             <div className="user__main-msg-body">
               <SenderMsg />
               <ReceiverMsg />
+              <SenderMsg />
+              
+
             </div>
   
             <div className="user__main-msg-footer">

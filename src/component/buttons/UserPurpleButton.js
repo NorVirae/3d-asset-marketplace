@@ -1,5 +1,6 @@
-const UserPurpleInnerStripeBtn = ({text, style, innerTextStyle}) => (
+const UserPurpleInnerStripeBtn = ({text, style, innerTextStyle, onClick}) => (
   <button
+    onClick={onClick}
     style={style}
     className="user__upload-products-btn"
   >

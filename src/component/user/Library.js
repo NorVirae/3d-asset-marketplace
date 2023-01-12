@@ -74,9 +74,9 @@ const Library = () => {
               <SuscribeInput
                 style={{}}
                 btnStyle={{
-                  padding: ".1rem 2rem",
-                  height: "1.7rem",
-                  right: "1.7%",
+                  padding: ".4rem 2rem",
+                  // height: "1.7rem",
+                  // right: "1.7%",
                 }}
                 controlStyle={{ padding: ".4rem 8rem" }}
               />
