@@ -2804,6 +2804,12 @@ input[type="number"] {
   grid-template-columns: 23% 75%;
 }
 
+.admin__users-container.affiliates {
+ 
+  grid-template-columns: 1fr;
+  max-width: 110rem;
+  margin: 0 auto;
+}
 .admin__users-list-container {
   display: flex;
   flex-direction: column;

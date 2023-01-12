@@ -154,11 +154,12 @@
 
 .identity__btn-dropdown{
     background-color: #38383E;
-    position: absolute;
     transform: skewX(25deg);
-    bottom: -210%;
+    position: absolute;
+    bottom: -200%;
     left: 5%;
     width: 12rem;
+    color: white;
 
 }
 

@@ -101,7 +101,7 @@ const User = () => {
   const hasStoreTags = [
     {
       name: "store",
-      dropDownList: ["suscribers"],
+      dropDownList: ["suscribers", "store"],
     },
     {
       name: "profile",
@@ -117,7 +117,7 @@ const User = () => {
     },
     {
       name: "settings",
-      dropDownList: ["affiliates"],
+      dropDownList: ["affiliates", "settings"],
     },
   ];
 

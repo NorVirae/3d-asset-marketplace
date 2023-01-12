@@ -19,17 +19,86 @@ import { useSelector } from "react-redux";
 
 const CatmanImg = "../../assets/image/catman.jpg";
 
+const NotificationItem = ({ selected, setSelected, index }) => {
+  return (
+    <div
+      onClick={() => setSelected(index)}
+      className={`landing__notification-item ${
+        selected === index && "selected"
+      }`}
+    >
+      <div className="landing__notification-img-container">
+        <img src={CatmanImg} className="landing__notification-img" />
+      </div>
+      <div className="landing__notification-body">
+        <h3 className="landing__notification-text">
+          Loooty Your product - Sony Vision S has been published.
+        </h3>
+        <span className="landing__notification-sub">about a month ago</span>
+      </div>
+    </div>
+  );
+};
+
+const NotificationDropModal = ({ onMouseEnter, onMouseLeave }) => {
+  const [selected, setSelected] = useState(0);
+  return (
+    <section
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className="landing__notification-modal"
+    >
+      <div className="landing__notifier-arrow-up"></div>
+      <div className="landing__notification-body">
+        <NotificationItem
+          index={0}
+          selected={selected}
+          setSelected={setSelected}
+        />
+        <NotificationItem
+          index={1}
+          selected={selected}
+          setSelected={setSelected}
+        />
+        <NotificationItem
+          index={2}
+          selected={selected}
+          setSelected={setSelected}
+        />
+        <NotificationItem
+          index={3}
+          selected={selected}
+          setSelected={setSelected}
+        />
+      </div>
+      <div className="landing__notification-footer">
+        <span className="landing__footer-text">all notifications</span>
+      </div>
+    </section>
+  );
+};
+
 const NavLoggedIn = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-
+  const [showModal, setShowModal] = useState(false);
   return (
     <ul className="landing__navbar-inner-container-li">
       <li className="landing__navbar-logo-items">
         <FcSettings />
       </li>
       <li className="landing__navbar-logo-items">
-        <RiNotification3Fill />
+        <RiNotification3Fill onMouseEnter={() => setShowModal(true)} />
+        {showModal && (
+          <NotificationDropModal
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setShowModal(false);
+              }, 500);
+            }}
+            onMouseEnter={() => setShowModal(true)}
+          />
+        )}
       </li>
       <li className="landing__navbar-logo-items">
         <GrMail />
@@ -72,7 +141,10 @@ const NavLoggedOut = () => {
       <li
         onClick={(e) => {
           // setShowLogin(!showLogin);
-          setShowRegModal({ ...showRegModal, loginDrop: !showRegModal.loginDrop })
+          setShowRegModal({
+            ...showRegModal,
+            loginDrop: !showRegModal.loginDrop,
+          });
           e.stopPropagation();
         }}
         className={"landing__nav-item login"}
@@ -80,7 +152,9 @@ const NavLoggedOut = () => {
         <Link className="landing__nav-link" to={"#"}>
           Sign&nbsp;In
         </Link>
-        {showRegModal.loginDrop && <LoginModal onClick={(e) => e.stopPropagation()} />}
+        {showRegModal.loginDrop && (
+          <LoginModal onClick={(e) => e.stopPropagation()} />
+        )}
       </li>
 
       <li

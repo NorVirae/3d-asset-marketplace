@@ -40,6 +40,7 @@ function App() {
           <Route path='/user/upload' element={<UploadPage />} exact />
           <Route path='/admin/product' element={<Admin />} exact />
           <Route path='/admin/expanded' element={<Expanded />} exact />
+          <Route path='/notification' element={<Expanded />} exact />
 
 
         </Routes>

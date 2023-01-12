@@ -466,6 +466,7 @@
 .user__main {
   display: flex;
   flex-direction: column;
+  background-color: #15151c;
 }
 
 .user__main-profile-form {
@@ -1413,6 +1414,7 @@
   height: 100%;
 
 }
+
 
 .user__message-sidebar {
   display: flex;
