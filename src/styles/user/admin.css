@@ -16,10 +16,10 @@
 
 .admin__profile-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .admin__profile-img {
@@ -2804,6 +2804,12 @@ input[type="number"] {
   grid-template-columns: 23% 75%;
 }
 
+.admin__users-container.affiliates {
+ 
+  grid-template-columns: 1fr;
+  max-width: 110rem;
+  margin: 0 auto;
+}
 .admin__users-list-container {
   display: flex;
   flex-direction: column;
@@ -3342,4 +3348,58 @@ Tags and Categories
   padding: 1rem 23%;
   color: #4E4D58;
   font-weight: bolder;
+}
+
+/* Expanded pages */
+.admin__tags-compose-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 3rem; */
+  background-color: #232230;
+
+}
+
+/* minimised banner */
+.admin__banner-container{
+  background-color: red;
+  height: 12vh;
+  background-image: url("/public/assets/image/homepage.jpg");
+  object-fit: cover;
+  margin-bottom: .5rem;
+}
+
+.admin__banner-container::before{
+  content: " ";
+
+  background-color: #15151C;
+  width: 100vw;
+  display: block;
+  height: .7rem;
+}
+
+.admin__banner-container-inner{
+  height: 100%;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin__profile-banner-container{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.admin__profile-location-container{
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  color: #656E81;
+}
+
+.admin__fire-button-container{
+  display: flex;
+  gap: 2rem;
 }

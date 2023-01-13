@@ -50,7 +50,6 @@ const SignUpModal = () => {
         toast.success("Sign up was successful");
 
         setShowRegModal({ ...showRegModal, register: false, login: true });
-
       })
       .catch((err) => {
         setIsLoading(false);
@@ -276,7 +275,12 @@ const SignUpModal = () => {
             </div>
 
             <div className="reg__form-btn-group">
-              <button disabled={clickProtect} style={{opacity: clickProtect? "0.6": "1"}} onClick={handleSignUp} className="reg__login-btn">
+              <button
+                disabled={clickProtect}
+                style={{ opacity: clickProtect ? "0.6" : "1" }}
+                onClick={handleSignUp}
+                className="reg__login-btn"
+              >
                 <span className="reg__login-btn-text">
                   {" "}
                   {!isLoading ? <>SIGN UP</> : <LoootyLoader />}
@@ -307,7 +311,18 @@ const SignUpModal = () => {
                 <p>
                   {" "}
                   Don't have an account?{" "}
-                  <span style={{ color: "#FF9700" }}>Sign up! </span>
+                  <span
+                    onClick={(e) =>
+                      setShowRegModal({
+                        ...showRegModal,
+                        register: false,
+                        login: true,
+                      })
+                    }
+                    style={{ color: "#FF9700", cursor: "pointer" }}
+                  >
+                    Sign in!{" "}
+                  </span>
                 </p>
               </div>
             </div>

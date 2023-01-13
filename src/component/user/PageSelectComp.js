@@ -1,3 +1,4 @@
+import Affiliates from "./Affiliates";
 import Collections from "./Collections";
 import Library from "./Library";
 import Messages from "./Messages";
@@ -32,6 +33,8 @@ const PageSelectComp = ({ inPageName }) => {
   
       case "sales":
         return <Sales />;
+      case "affiliates":
+        return <Affiliates/>
   
       default:
         return <Store />;

@@ -17,6 +17,7 @@ import Sidebar from './component/sidebar/sidebar';
 import User from './pages/user';
 import UploadPage from './pages/upload';
 import Admin from './pages/admin/Admin';
+import Expanded from './pages/admin/Expanded';
 
 function App() {
 
@@ -38,6 +39,8 @@ function App() {
           <Route path='/user' element={<User />} exact />
           <Route path='/user/upload' element={<UploadPage />} exact />
           <Route path='/admin/product' element={<Admin />} exact />
+          <Route path='/admin/expanded' element={<Expanded />} exact />
+          <Route path='/notification' element={<Expanded />} exact />
 
 
         </Routes>

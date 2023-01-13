@@ -209,12 +209,100 @@
     color: #7E8993;
     cursor: pointer;
     transition: .4s color ease-in;
+    position: relative;
 }
 
 
 .landing__navbar-logo-items:hover {
     color: white;
 }
+
+/* notification modal */
+.landing__notification-modal{
+    display: flex;
+    flex-direction: column;
+    background-color: #302F42;
+    position: absolute;
+    width: 25rem;
+    left: -1400%;
+    top: 200%;
+}
+
+.landing__notifier-arrow-up{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: -3%;
+    left: 55%;
+    background-color: #302F42;
+    /* background-color: red; */
+    z-index: 0;
+    transform: rotate(45deg);
+}
+
+.landing__notification-body{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    gap: .4rem;
+}
+
+.landing__notification-item{
+    display: flex;
+    padding: .8rem 2rem;
+    gap: 1rem;
+    background-color: #38374A;
+    border: .2rem solid transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.landing__notification-item.selected{
+    border: .2rem solid #626171;
+}
+
+.landing__notification-item:active{
+    background-color: #919198;
+}
+.landing__notification-img-container{
+    width: 4rem;
+    height: 4rem;
+}
+
+.landing__notification-img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.landing__notification-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.landing__notification-text{
+    color: white;
+    word-wrap:break-word;
+}
+
+.landing__notification-sub{
+    color:#646482;
+}
+
+.landing__notification-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #302F42;
+}
+
+.landing__notification-footer:active{
+    background-color: #919198;
+}
+/* notification modal end */
 
 .landing__navbar-profile-container {
     display: flex;

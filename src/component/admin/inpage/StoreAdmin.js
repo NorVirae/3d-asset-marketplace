@@ -1,9 +1,11 @@
-
 import data from "../../../data/data.json";
 import { useState } from "react";
 import AdminFreebiesSidebar from "../AdminFreebiesSidebar";
 import TagsComp from "../TagsComp";
 import ListedUser from "../features/ListedUser";
+import { setSelectedSubPage } from "../../../redux/reducers/userStateReducer";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const sidebarMaininfo = [
   {
@@ -38,7 +40,9 @@ const sidebarMaininfo = [
 const StoreAdmin = () => {
   const [activeSideTab, setActiveSideTab] = useState("features");
   const [selected, setSelected] = useState(0);
-  const [isStoreOwner, setIsStoreOwner] = useState(true)
+  const [isStoreOwner, setIsStoreOwner] = useState(true);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className="admin__users-container">
       <AdminFreebiesSidebar
@@ -47,6 +51,10 @@ const StoreAdmin = () => {
         setActiveSideTab={setActiveSideTab}
         activeSideTab={activeSideTab}
         sidebarMaininfoIts={sidebarMaininfo}
+        sideActionOnclick={() => {
+          navigate("/admin/expanded");
+          dispatch(setSelectedSubPage({ selected: "store" }));
+        }}
       />
       <section className="admin__users-list-container">
         <TagsComp />
@@ -57,7 +65,11 @@ const StoreAdmin = () => {
                   <ListedUser
                     isRequested={user.isRequested}
                     showVerifySign={user.isVerified}
-                    styleVerifySign={{position: "absolute", top: "25%", left: "5%"}}
+                    styleVerifySign={{
+                      position: "absolute",
+                      top: "25%",
+                      left: "5%",
+                    }}
                     id={index}
                     key={index}
                     selected={index == selected}

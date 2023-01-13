@@ -1,7 +1,10 @@
 
 
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import data from "../../../data/data.json";
+import { setSelectedSubPage } from "../../../redux/reducers/userStateReducer";
 import AdminFreebiesSidebar from "../AdminFreebiesSidebar";
 import ListedUser from "../features/ListedUser";
 import TagsComp from "../TagsComp";
@@ -10,7 +13,8 @@ const AffiliateAdmin = () => {
   const [activeSideTab, setActiveSideTab] = useState("features");
   const [selected, setSelected] = useState(0);
   const [isStoreOwner, setIsStoreOwner] = useState(true);
-
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const sidebarMaininfo = [
     {
       leftInfo: "Name",
@@ -48,6 +52,10 @@ const AffiliateAdmin = () => {
         setActiveSideTab={setActiveSideTab}
         activeSideTab={activeSideTab}
         sidebarMaininfoIts={sidebarMaininfo}
+        sideActionOnclick={() => {
+          navigate("/admin/expanded");
+          dispatch(setSelectedSubPage({ selected: "affiliate" }));
+        }}
       />
       <section className="admin__users-list-container">
         <TagsComp />

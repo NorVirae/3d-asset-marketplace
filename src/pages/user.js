@@ -33,6 +33,61 @@ const CatmanImg = "/assets/image/catman.jpg";
 //     )
 // }
 
+export const ChangeCoverBtn = ({ style }) => {
+  return (
+    <button style={style} className="user__change-cover-btn">
+      <div className="user__change-cover-btn-inner">
+        <RiImageEditLine style={{ color: "white", fontSize: "1.4rem" }} />
+        Change Cover
+      </div>
+    </button>
+  );
+};
+
+export const ProfileUser = ({ merchandiseStore, user, hasStore, style }) => {
+  return (
+    <div className="user__profile-container">
+      <img src={CatmanImg} className="user__profile-img" />
+      <h3 className="user__profile-name">
+        {merchandiseStore
+          ? merchandiseStore.store_name
+          : user.user
+          ? user.user.name
+          : null}
+      </h3>
+      {hasStore && (
+        <div className="user__profile-suscribers">219.9k Subscribers</div>
+      )}
+    </div>
+  );
+};
+
+export const ProfileUserAdmin = ({
+  merchandiseStore,
+  user,
+  hasStore,
+  style,
+}) => {
+  return (
+    <div style={style} className="user__profile-container admin">
+      <img src={CatmanImg} className="user__profile-img admin" />
+      <div className="user__profile-container-admin">
+        <h3 className="user__profile-name">
+          {/* {merchandiseStore
+            ? merchandiseStore.store_name
+            : user.user
+            ? user.user.name
+            : null} */}
+            Jasmine
+        </h3>
+        {hasStore && (
+          <div className="user__profile-suscribers">219.9k Subscribers</div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const User = () => {
   const [toggleVisAdmin, setToggleVisAdmin] = useState(false);
   const isMobile = useMediaQuery({ minWidth: 481, maxWidth: 768 });
@@ -46,7 +101,7 @@ const User = () => {
   const hasStoreTags = [
     {
       name: "store",
-      dropDownList: ["suscribers"]
+      dropDownList: ["suscribers", "store"],
     },
     {
       name: "profile",
@@ -62,7 +117,7 @@ const User = () => {
     },
     {
       name: "settings",
-      dropDownList: ["affiliates"]
+      dropDownList: ["affiliates", "settings"],
     },
   ];
 
@@ -90,10 +145,10 @@ const User = () => {
         }
       });
 
-    if (!user.user) {
-      navigate("/");
-      setShowRegModal({ ...showRegModal, login: true });
-    }
+    // if (!user.user) {
+    //   navigate("/");
+    //   setShowRegModal({ ...showRegModal, login: true });
+    // }
   }, [toggleVisAdmin, user.user]);
   return (
     <section className="user__main-container">
@@ -120,16 +175,7 @@ const User = () => {
           }}
           className="user__profile-preview-container"
         >
-          {merchandiseStore && (
-            <button className="user__change-cover-btn">
-              <div className="user__change-cover-btn-inner">
-                <RiImageEditLine
-                  style={{ color: "white", fontSize: "1.4rem" }}
-                />
-                Change Cover
-              </div>
-            </button>
-          )}
+          {merchandiseStore && <ChangeCoverBtn />}
 
           {toggleVisAdmin && merchandiseStore && (
             <button
@@ -140,19 +186,11 @@ const User = () => {
             </button>
           )}
 
-          <div className="user__profile-container">
-            <img src={CatmanImg} className="user__profile-img" />
-            <h3 className="user__profile-name">
-              {merchandiseStore
-                ? merchandiseStore.store_name
-                : user.user
-                ? user.user.name
-                : null}
-            </h3>
-            {hasStore && (
-              <div className="user__profile-suscribers">219.9k Subscribers</div>
-            )}
-          </div>
+          <ProfileUser
+            merchandiseStore={merchandiseStore}
+            user={user}
+            hasStore={hasStore}
+          />
 
           <div className="user__profile-caution">
             {merchandiseStore
