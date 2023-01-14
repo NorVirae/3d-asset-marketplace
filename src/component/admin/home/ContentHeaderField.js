@@ -6,4 +6,12 @@ const ContentHeaderField = ({ text, active }) => {
     );
   };
 
+  export const ContentHeaderFieldSales = ({ text, active }) => {
+    return (
+      <span className={` admin__home-ra-cr-header-field sales ${active && "active"} `}>
+        {text}
+      </span>
+    );
+  };
+
   export default ContentHeaderField

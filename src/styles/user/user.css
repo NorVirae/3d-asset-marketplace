@@ -26,16 +26,14 @@
   flex-direction: row;
 }
 
-
-.admin__profile-container{
+.admin__profile-container {
   flex-direction: column;
 }
 
-.user__profile-container-admin{
+.user__profile-container-admin {
   display: flex;
   flex-direction: column;
 }
-
 
 .user__profile-img {
   height: 7rem;
@@ -47,7 +45,6 @@
 .user__profile-img.admin {
   height: 5rem;
   width: 5rem;
-  
 }
 
 .user__profile-name {
@@ -1412,9 +1409,7 @@
   display: flex;
   gap: 1rem;
   height: 100%;
-
 }
-
 
 .user__message-sidebar {
   display: flex;
@@ -2089,27 +2084,25 @@
   padding-right: 0.2rem;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
 .upload__form-group-extra {
-    display: flex;
-    border: 0.3rem solid #2b2b39;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 0.4rem;
-    position: relative;
-    padding: .5rem;
-  }
-
-
+  display: flex;
+  border: 0.3rem solid #2b2b39;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.4rem;
+  position: relative;
+  padding: 0.5rem;
+}
 
 .upload__form-control {
   background-color: transparent;
@@ -2550,4 +2543,246 @@ input[type=number] {
   color: white;
   border: none;
   background-color: #ff9700;
+}
+
+/* user sales balance */
+
+.user__sales-balance-body {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.user__sales-balance-first-row {
+  display: flex;
+  gap: 1rem;
+  height: 50vh;
+}
+
+.user__sales-balance-announcer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.user__sales-balance-ann-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  font-size: .9rem;
+  padding: 1rem 3rem;
+  background-color: #232230;
+}
+
+.user__sales-balance-ann-card.selected-yellow {
+  border-bottom: .4rem solid #FF9700;
+}
+
+.user__sales-balance-ann-card.selected-purple {
+  border-bottom: .4rem solid #7C187A;
+}
+
+.user__sales-balance-ann-card-title {
+  color: #50505b;
+}
+
+.user__sales-balance-ann-card-value {
+  color: #909096;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+.user__sales-statistics-box {
+  display: flex;
+  flex-direction: column;
+  flex: 6;
+  /* background-color: red; */
+  width: 100%;
+}
+
+.user__sales-statistics-box-header {
+  display: flex;
+  gap: 0.5rem;
+
+  font-size: 1.2rem;
+}
+
+.user__sales-header-text {
+  color: #53535d;
+  background-color: #232230;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 9;
+}
+
+.user__sales-statistics-time-dropdown {
+  display: flex;
+  padding: 0.5rem 2rem;
+  border: 0.2rem solid #2b2b38;
+  position: relative;
+  flex: 1;
+}
+
+.user__sales-statistics-time-dropdown-icon {
+  position: absolute;
+  right: 1%;
+  top: 30%;
+}
+
+.user__sales-statistics-time-dropdown-modal {
+  position: absolute;
+  background-color: #232230;
+  bottom: -414%;
+  left: 0%;
+
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.user__sales-statistics-time-dropdown:hover
+  ~ .user__sales-statistics-time-dropdown-modal {
+  display: flex;
+}
+
+.user__sales-statistics-drop-item {
+  cursor: pointer;
+  border-bottom: 0.2rem solid #2b2b39;
+  padding: 1rem 2rem;
+}
+
+.user__sales-statistics-drop-item:active {
+  background-color: #353449;
+}
+.user__sales-statistics-drop-item:hover {
+  cursor: pointer;
+}
+
+.user__sales-statistics-box-body {
+  display: flex;
+  height: 100%;
+}
+
+.user__sales-stats-side {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem 1rem;
+}
+
+.user__sales-stats-side-count {
+  color: #6d6d72;
+}
+
+.user__sales-statistics-box-body-inner {
+  display: flex;
+  width: 100%;
+}
+
+.user__sales-statistics-box-body-inner:last-child {
+  border-right: 0.2rem solid #1b1b25;
+}
+.user__sales-statistics-bar {
+  padding: 0.3rem 0.2rem;
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-left: 0.2rem solid #1b1b25;
+}
+
+.user__sales-statistics-bar-percentage {
+  background-color: #7c187a;
+  width: 100%;
+  height: 2%;
+}
+
+.user__sales-statistics-bar-dater {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.user__sales-balance-second-row {
+  display: flex;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+
+.user__sales-next-payout {
+  flex: 2;
+}
+
+.user__sales-next-payout-text {
+  background-color: #232230;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.admin__home-ra-inner {
+  flex: 6;
+}
+
+.user__sales-next-payouts {
+  flex: 2;
+  position: relative;
+}
+
+
+.user__sales-payout-withdraw-btn{
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+
+.user__sales-irregular-btn {
+  background-color: #353449;
+  border: 0.2rem solid #4e4e5e;
+  padding: 1rem 1rem;
+  transform: skewX(-25deg);
+  cursor: pointer;
+  /* clip-path: polygon(0% 0%, 0% 100%, 100% 100%); */
+}
+
+.user__sales-irregular-btn:active {
+  
+  transform: scale(1.05) skewX(-25deg);
+
+  /* clip-path: polygon(0% 0%, 0% 100%, 100% 100%); */
+}
+
+.user__sales-irregular-spacer {
+  content: " ";
+  width: 100%;
+  height :116%;
+  border: 0.2rem solid #4f4f5a;
+  border-left: 0.1rem solid transparent;
+  background-color: #353449;
+  transform: skewX(25deg);
+  padding: 0 .5rem;
+  top: -7%;
+  right: -70%;
+  /* display: block; */
+  width: 2rem;
+  position: absolute;
+}
+
+.user__sales-next-payouts{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.user__sales-irregular-btn-icon {
+  transform: skewX(25deg);
+  position: absolute;
+  z-index: 2;
 }

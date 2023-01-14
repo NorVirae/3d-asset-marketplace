@@ -114,6 +114,7 @@ const User = () => {
     },
     {
       name: "sales",
+      dropDownList: ["sales", "balance"],
     },
     {
       name: "settings",
