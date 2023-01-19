@@ -47,12 +47,14 @@ const LoginModal = ({ onClick }) => {
     <div onClick={(e) => e.stopPropagation()} className="lgn__login-modal">
       <div className="lgn__arrow"></div>
       <form
+      autoComplete="off"
         onSubmit={handleSignIn}
         onClick={(e) => e.stopPropagation()}
         className="lgn__login-form"
       >
         <div className="lgn__form-group">
           <input
+          autocomplete="off"
             value={loginInfo.email}
             onChange={(e) =>
               setLoginInfo((old) => ({ ...old, email: e.target.value }))
@@ -64,6 +66,7 @@ const LoginModal = ({ onClick }) => {
 
         <div className="lgn__form-group">
           <input
+          autocomplete="off"
             value={loginInfo.password}
             onChange={(e) =>
               setLoginInfo((old) => ({ ...old, password: e.target.value }))

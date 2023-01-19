@@ -233,18 +233,18 @@ const NavBar = ({ search, style, shortSearch, pageType, loggedIn }) => {
         />
         {/* :<FaTimes className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:false}))} style={{color: "white", fontSize: "2rem"}} /> */}
         {/* } */}
-        {search && (
+        {/* {search && ( */}
           <div>
-            <NavSearchBar short={shortSearch} />
+            <NavSearchBar containerStyle={{visibility: search ? "visible":"hidden"}} short={shortSearch} />
           </div>
-        )}
+        {/* )} */}
       </div>
 
       <Link className="landing__navbar-brand" to="/">
         {/* <LoootyLogo color={"white"} style={{marginLeft: shortSearch? "-90%": "200%"}}/> */}
         <LoootyLogo
           color={"white"}
-          style={{ marginLeft: isMobile ? 0 : shortSearch ? "-98%" : "193%" }}
+          // style={{ marginLeft: isMobile ? 0 : shortSearch ? "-98%" : "193%" }}
         />
       </Link>
 

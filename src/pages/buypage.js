@@ -14,11 +14,12 @@ import {SiLinkedin} from 'react-icons/si'
 import "../styles/buy/buy.css"
 import {RiStarSFill} from "react-icons/ri"
 
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { MainTags } from "./upload"
 import CarouselSec from "../component/buy/CarouselSec"
 import FilePurchaseSec from "../component/buy/FilePurchaseSec"
+import { RegisterContext } from "../component/auth/context/registerContext"
 
 
 
@@ -36,8 +37,12 @@ import FilePurchaseSec from "../component/buy/FilePurchaseSec"
 const BuyPage = () => {
     const [descCommToggleMode, setDescCommToggleMode] = useState(true)
     const navigate = useNavigate()
+  const [showRegModal, setShowRegModal] = useContext(RegisterContext);
+  const handleMainAppClick = () => {
+    setShowRegModal((old) => ({ ...old, loginDrop: false }));
+  };
     return (
-        <div>
+        <div onClick={handleMainAppClick}>
             <header>
                 <NavBar shortSearch={true} search={true}/>
             </header>

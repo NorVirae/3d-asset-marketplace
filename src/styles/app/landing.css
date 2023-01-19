@@ -129,7 +129,7 @@
 .landing__navbar-inner-container {
     display: flex;
     gap: .8rem;
-
+    width: 20%
 }
 
 
@@ -203,6 +203,8 @@
     align-items: center;
     color: white;
     gap: 1rem;
+    width: 20%;
+    
 }
 
 .landing__navbar-logo-items {
@@ -1457,6 +1459,7 @@ FIlter slider end
 }
 
 .landing__bg-label-partner {
+    cursor: pointer;
     padding-left: 8%;
     display: flex;
     align-items: flex-start;
@@ -1475,6 +1478,11 @@ FIlter slider end
     transition: background-color .4s ease-in-out, color .4s ease-in-out, opacity .4s ease-in-out;
 
 }
+
+/* .landing__bg-label-partner:active {
+    background-color: blue;
+
+} */
 
 .landing__bg-label-open {
     padding-right: 8%;

@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const manImg = "/assets/image/man.jpg";
 const deadManImg = "/assets/image/deadman.jpg";
@@ -144,6 +145,7 @@ const PartnerStoreDesktop = () => {
 
 const PartnerStore = () => {
   const [partnerOpen, setPartnerOpen] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <section className="landing__open-partner-container">
@@ -182,6 +184,7 @@ const PartnerStore = () => {
         >
           <div
             onMouseEnter={(e) => setPartnerOpen(false)}
+            onClick={() => navigate("/open/store")}
             style={{
               backgroundColor: !partnerOpen ? "#fff" : "#16151C",
               color: partnerOpen ? "#fff" : "#16151C",

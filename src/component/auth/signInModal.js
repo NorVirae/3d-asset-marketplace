@@ -1,4 +1,4 @@
-import LoootyLogo from "../loootyLogo";
+import LoootyLogo, { LoootyLogoStatic } from "../loootyLogo";
 import { FaEyeSlash, FaFacebookF } from "react-icons/fa";
 import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
@@ -84,7 +84,7 @@ const SignInModal = () => {
         </div>
         <div className="reg__loooty-innitials-container">
           <div className="reg_logo-container">
-            <LoootyLogo style={{ width: "15rem" }} />
+            <LoootyLogoStatic style={{ width: "15rem" }} />
           </div>
           <div className="reg__loooty-about">
             <div>Welcome back, Cap'n</div>
@@ -107,11 +107,12 @@ const SignInModal = () => {
         </div>
 
         <div className="reg__sign-up-forms-container">
-          <form onSubmit={handleSignIn} className="reg__sign-up-form">
+          <form autocomplete="off" onSubmit={handleSignIn} className="reg__sign-up-form">
             <div className="reg__form-group-container">
               <div style={{border: errors.email?".2rem solid #df4759": ".2rem solid #2B2B38"}} className="reg__form-group">
                 <input
                   type={"email"}
+                  autocomplete="off"
                   onFocus={() => {
                     setErrors((old) => ({ ...old, email: false }));
                   }}

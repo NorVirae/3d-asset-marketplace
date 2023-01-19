@@ -23,13 +23,19 @@ const OpenStoreModal = () => {
   const [clickProtect, setClickProtect] = useState(false);
 
   const [storeInfo, setStoreInfo] = useState({
-    store_name: "Realindiana",
-    store_email: user.email,
+    store_name: "",
+    store_email: user ? user.email : "huz@gmail.com",
     base64_photo: [],
-    why_loooty: "Cause loooty is big",
-    portfolio_link: "www.realindiana.com",
+    why_loooty: "",
+    portfolio_link: "",
   });
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+      setShowRegModal({ ...showRegModal, login: true, openStore: false });
+    }
+  }, [user]);
 
   const convertToBase64 = (blob) => {
     // var blob = new Blob([blob])
@@ -74,10 +80,10 @@ const OpenStoreModal = () => {
       .unwrap()
       .then(async (result) => {
         setIsLoading(false);
-        toast.success("Sign in was successful");
+        toast.success("Store Creation was successful");
 
         setShowRegModal({ ...showRegModal, login: false });
-        // navigate("/user");
+        navigate("/user");
       })
       .catch((err) => {
         setIsLoading(false);
@@ -164,6 +170,7 @@ const OpenStoreModal = () => {
             className="opn__open-store-form-control-container"
           >
             <input
+              placeholder="Loooty Collosal, Aristocrati etc.."
               onChange={(e) =>
                 setStoreInfo((old) => ({ ...old, store_name: e.target.value }))
               }
@@ -191,6 +198,7 @@ const OpenStoreModal = () => {
             <input
               type={"file"}
               multiple
+
               onFocus={() => {
                 setErrors((old) => ({ ...old, base64_photo: false }));
               }}
@@ -222,6 +230,8 @@ const OpenStoreModal = () => {
             className="opn__open-store-form-control-container"
           >
             <input
+            placeholder="http://myportfolio.com"
+
               onFocus={() => {
                 setErrors((old) => ({ ...old, portfolio_link: false }));
               }}
@@ -252,6 +262,8 @@ const OpenStoreModal = () => {
             className="opn__open-store-form-control-container"
           >
             <input
+            placeholder="I want my work to reach the wider african audience"
+
               onFocus={() => {
                 setErrors((old) => ({ ...old, why_loooty: false }));
               }}
@@ -270,7 +282,12 @@ const OpenStoreModal = () => {
         </p>
 
         <div className="opn__open-store-btn-group">
-          <button disabled={clickProtect} style={{opacity: clickProtect?"0.6": "1"}} onClick={handleSubmit} className="opn__open-store-btn">
+          <button
+            disabled={clickProtect}
+            style={{ opacity: clickProtect ? "0.6" : "1" }}
+            onClick={handleSubmit}
+            className="opn__open-store-btn"
+          >
             <span className="opn__open-store-btn-text">
               {isLoading ? <LoootyLoader /> : "SUBMIT"}
             </span>

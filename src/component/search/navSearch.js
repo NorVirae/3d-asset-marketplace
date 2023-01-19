@@ -2,10 +2,10 @@
 import {FaSearch} from 'react-icons/fa'
 
 
-const NavSearchBar = ({short, style}) => {
+const NavSearchBar = ({short, style, containerStyle}) => {
 
     return (
-            <section  className='search__nav-search-skew-container'>
+            <section style={containerStyle} className='search__nav-search-skew-container'>
                 <div style={{...style}} className="search__group-container">
                     <input style={{padding: ".7rem 3rem"}} placeholder="Search for products artist or stores" className="search__input" />
 

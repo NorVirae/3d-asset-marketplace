@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RegisterContext } from "../auth/context/registerContext";
 import LoginModal from "../auth/loginModal";
 import IdentityBtn from "../buttons/identityBtn";
-import LoootyLogo from "../loootyLogo";
+import LoootyLogo, { LoootyLogoStatic } from "../loootyLogo";
 import { FaMailBulk, FaTimes, FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
@@ -165,6 +165,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                   onClick={() => setActiveSidebar(1)}
                   style={{
                     width: "100%",
+                    fontSize: ".7rem",
                     borderLeft: `1rem solid ${
                       activeSidebar == 1 ? "#7C187A" : "#353449"
                     }`,
@@ -180,6 +181,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                   onClick={() => setActiveSidebar(2)}
                   style={{
                     width: "100%",
+                    fontSize: ".7rem",
                     borderLeft: `1rem solid ${
                       activeSidebar == 2 ? "#7C187A" : "#353449"
                     }`,
@@ -195,6 +197,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                   onClick={() => setActiveSidebar(3)}
                   style={{
                     width: "100%",
+                    fontSize: ".7rem",
                     borderLeft: `1rem solid ${
                       activeSidebar == 3 ? "#7C187A" : "#353449"
                     }`,
@@ -210,6 +213,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                   onClick={() => setActiveSidebar(4)}
                   style={{
                     width: "100%",
+                    fontSize: ".7rem",
                     borderLeft: `1rem solid ${
                       activeSidebar == 4 ? "#7C187A" : "#353449"
                     }`,
@@ -225,6 +229,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                   onClick={() => setActiveSidebar(5)}
                   style={{
                     width: "100%",
+                    fontSize: ".7rem",
                     borderLeft: `1rem solid ${
                       activeSidebar == 5 ? "#7C187A" : "#353449"
                     }`,
@@ -240,6 +245,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                   onClick={() => setActiveSidebar(6)}
                   style={{
                     width: "100%",
+                    fontSize: ".7rem",
                     borderLeft: `1rem solid ${
                       activeSidebar == 6 ? "#7C187A" : "#353449"
                     }`,
@@ -255,7 +261,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
 
           <section className="sidebar__footer">
             <div className="sidebar__top">
-              <LoootyLogo/>
+              <LoootyLogoStatic/>
               About
             </div>
 

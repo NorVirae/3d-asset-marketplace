@@ -21,8 +21,11 @@ const OpenAStore = () => {
   const [oddActive, setOddActive] = useState(1);
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const { pathname } = useLocation();
 
+  const { pathname } = useLocation();
+  const handleMainAppClick = () => {
+    setShowRegModal((old) => ({ ...old, loginDrop: false }));
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -60,7 +63,7 @@ const OpenAStore = () => {
   ]);
 
   return (
-    <div className="opnstore__app-container">
+    <div onClick={handleMainAppClick} className="opnstore__app-container">
       {showRegModal.register && <SignUpModal />}
       {showRegModal.openStore && (
         <OpenStoreModal

@@ -1,4 +1,4 @@
-import LoootyLogo from "../loootyLogo";
+import LoootyLogo, { LoootyLogoStatic } from "../loootyLogo";
 import { FaEyeSlash, FaFacebookF } from "react-icons/fa";
 import CheckButtons from "../buttons/checkButtons";
 import { useContext, useState } from "react";
@@ -105,7 +105,7 @@ const SignUpModal = () => {
         </div>
         <div className="reg__loooty-innitials-container">
           <div className="reg_logo-container">
-            <LoootyLogo style={{ width: "15rem" }} />
+            <LoootyLogoStatic style={{ width: "15rem" }} />
           </div>
           <div className="reg__loooty-about">
             <div>Welcome to our little vault.</div>
