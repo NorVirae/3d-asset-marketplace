@@ -40,19 +40,15 @@ const CartAndHeartSelected = ({style, selected}) => {
 
 
 export const ListedUserCarts = ({
+  isUser=false,
   id,
   selected,
   isAffiliated,
-  isRequested,
-  styleVerifySign,
   setSelected,
-  showVerifySign,
-  extra,
   image,
   name,
   location,
   emails,
-  phone,
 }) => {
   return (
     <section className="admin__users-listed-outer">
@@ -73,8 +69,8 @@ export const ListedUserCarts = ({
         </div>
         <div className="admin__users-listed-item email">{emails}</div>
         <div className="admin__users-listed-item email">59 products</div>
-        <div className="admin__users-listed-item extra-container">
-          {selected ? (
+        {!isUser && <div className="admin__users-listed-item extra-container">
+          {selected && !isUser ? (
             <div style={{left: '-40%'}} className="admin__users-listed-item extra">
               {/* <NotifierMail isUrgent={true} /> */}
               {/* <FireMailButton /> */}
@@ -97,7 +93,7 @@ export const ListedUserCarts = ({
             // />
             <CartAndHeart/>
           )}
-        </div>
+        </div>}
         <CardArrowPointer
           style={{
             top: "40%",

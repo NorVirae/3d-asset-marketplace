@@ -3023,6 +3023,33 @@ input[type="number"] {
 
 .admin__listed-users-afilliated-container {
   padding: 2rem 4rem;
+  animation: .4s expose-dropdown ease-in-out;
+}
+
+@keyframes expose-dropdown {
+  0% {
+    overflow-y: scroll;
+    height: 0rem;
+  }
+
+  25% {
+  overflow-y: scroll;
+
+    height: 4rem;
+  }
+
+  50% {
+  overflow-y: scroll;
+
+    height: 8rem;
+    
+  }
+  100% {
+  overflow-y: scroll;
+
+    height: auto;
+    
+  }
 }
 
 .admin__listed-users-afilliated-container-inner {

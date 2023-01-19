@@ -1,19 +1,15 @@
-
 import { useState } from "react";
 
 import data from "../../data/data.json";
-
 
 import ListedUser from "../admin/features/ListedUser";
 import TagsComp from "../admin/TagsComp";
 
 const Affiliates = () => {
   const [selected, setSelected] = useState(0);
-  
-  
+
   return (
     <div className="admin__users-container affiliates">
-      
       <section className="admin__users-list-container">
         <TagsComp />
         <section className="admin__users-list-body">
@@ -21,7 +17,8 @@ const Affiliates = () => {
             ? data.usersList.map((user, index) => {
                 return (
                   <ListedUser
-                  isAffiliated={true}
+                    isUser={true}
+                    isAffiliated={true}
                     isRequested={user.isRequested}
                     showVerifySign={user.isVerified}
                     styleVerifySign={{

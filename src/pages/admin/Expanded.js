@@ -71,7 +71,7 @@ const userTags = [
   },
   {
     name: "settings",
-    // dropDownList: ["affiliates"],
+    dropDownList: ["affiliates"],
   },
 ];
 
