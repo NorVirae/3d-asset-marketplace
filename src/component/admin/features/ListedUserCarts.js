@@ -3,12 +3,8 @@ import { FaLocationArrow, FaShoppingCart } from "react-icons/fa";
 import { RiMailSendFill } from "react-icons/ri";
 import UserPurpleInnerStripeBtn from "../../buttons/UserPurpleButton";
 import CardArrowPointer from "../home/CardArrowPointer";
-import AfilliatedDropdownCarts from "./AfilliatedDropdown";
-import FireMailButton from "./FireMailButton";
+import AfilliatedDropdownCarts from "./AfilliatedDropdownCarts";
 import LongSelectedCone from "./LongSelectedCone";
-import NotifierMail from "./NotifierMail";
-import ReportMessageNotifier from "./ReportMessageNotifier";
-import VerifiedLogo from "./VerifiedLogo";
 import {GoLocation} from "react-icons/go"
 
 const CartAndHeart = ({style, selected}) => {
