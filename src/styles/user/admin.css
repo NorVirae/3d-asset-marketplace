@@ -2860,6 +2860,10 @@ input[type="number"] {
   background-color: #87868d;
 }
 
+.admin__users-listed-user:hover {
+  background-color: #292835;
+}
+
 .admin__users-selelected-logo-container {
   display: flex;
   position: absolute;
