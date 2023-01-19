@@ -54,7 +54,7 @@ const AffiliateAdmin = () => {
         sidebarMaininfoIts={sidebarMaininfo}
         sideActionOnclick={() => {
           navigate("/admin/expanded");
-          dispatch(setSelectedSubPage({ selected: "affiliate" }));
+          dispatch(setSelectedSubPage({ selected: "affiliates" }));
         }}
       />
       <section className="admin__users-list-container">

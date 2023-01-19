@@ -106,7 +106,7 @@ const HomeAdmin = () => {
         />
         <HomeCard
           mainFigure="10.8k"
-          mainFigureDescription="Products on wishlist & cart"
+          mainFigureDescription="Wishlist & Cart"
           textHeaderLeft={"Products"}
           textHeaderRight={"Total"}
           childrenComp={
@@ -128,7 +128,7 @@ const HomeAdmin = () => {
           textHeaderLeft={"Revenue"}
           textHeaderRight={"Total Revenue Generated"}
           newActive={true}
-          childrenComp={<span>$99m</span>}
+          childrenComp={<span style={{color:"#919198"}}>$99m</span>}
         />
         <HomeCard
           mainFigure="$1.9m"

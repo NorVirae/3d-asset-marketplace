@@ -68,10 +68,12 @@ const userTags = [
   },
   {
     name: "sales",
+    dropDownList: ["sales", "balance"]
+
   },
   {
     name: "settings",
-    dropDownList: ["affiliates"],
+    dropDownList: ["affiliates", "settings"],
   },
 ];
 
