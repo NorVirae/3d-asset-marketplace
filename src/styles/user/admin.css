@@ -2633,6 +2633,7 @@ input[type="number"] {
   background-color: #15151c;
   padding-top: 4rem;
   gap: 5rem;
+  height: 100%;
 }
 
 .admin__home-inner-container {
