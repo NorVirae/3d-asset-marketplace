@@ -5,7 +5,7 @@ import LoginModal from "../auth/loginModal";
 import LoootyLogo from "../loootyLogo";
 import SearchBar from "../search/SearchBar";
 import { GoThreeBars } from "react-icons/go";
-import { FcSettings } from "react-icons/fc";
+import { IoSettingsSharp } from "react-icons/io5";
 import { FaTimes } from "react-icons/fa";
 import { RiNotification3Fill } from "react-icons/ri";
 import { GrMail } from "react-icons/gr";
@@ -95,7 +95,7 @@ const NavLoggedIn = () => {
         }}
         className="landing__navbar-logo-items"
       >
-        <FcSettings />
+        <IoSettingsSharp />
       </li>
       <li className="landing__navbar-logo-items">
         <RiNotification3Fill onMouseEnter={() => setShowModal(true)} />
