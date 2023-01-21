@@ -1,0 +1,10 @@
+.notify__container{
+    height: 100%;
+    width: 100%;
+    background-color: #181820;
+}
+
+.notify__container-inner{
+    display: flex;
+    flex-direction: column;
+}

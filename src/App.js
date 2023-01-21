@@ -18,6 +18,7 @@ import User from './pages/user';
 import UploadPage from './pages/upload';
 import Admin from './pages/admin/Admin';
 import Expanded from './pages/admin/Expanded';
+import NotificationPage from './pages/notificationpage';
 
 function App() {
 
@@ -36,11 +37,11 @@ function App() {
           <Route path='/experiment' element={<Experiment/>} exact />
           <Route path='/buy/page/:id' element={<BuyPage/>} exact />
           <Route path='/cart' element={<Cart/>} exact />
-          <Route path='/user' element={<User />} exact />
+          <Route path='/user/:subpage' element={<User />} exact />
           <Route path='/user/upload' element={<UploadPage />} exact />
           <Route path='/admin/product' element={<Admin />} exact />
           <Route path='/admin/expanded' element={<Expanded />} exact />
-          <Route path='/notification' element={<Expanded />} exact />
+          <Route path='/notification' element={<NotificationPage />} exact />
 
 
         </Routes>

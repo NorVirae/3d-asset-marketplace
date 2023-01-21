@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   setSelectedSubPage,
   setSelectedSubPageAdmin,
@@ -31,6 +32,7 @@ const UniversalTagHeaderDesktop = ({
   onClick,
 }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   return (
     <section
@@ -46,6 +48,7 @@ const UniversalTagHeaderDesktop = ({
               // return
             }
             dispatch(setSelectedSubPage({ selected: tagsBtn.name }));
+            navigate(`/user/${tagsBtn.name}`)
           }}
           style={{
             padding: "1rem 6rem",

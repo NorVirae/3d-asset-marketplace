@@ -75,10 +75,10 @@ const UploadPage = () => {
     // if(!user){
     //   navigate("/")
     // }
-    if(merchandiseStore){
-      console.log(merchandiseStore.id, "JOY")
+    // if(merchandiseStore){
+    //   console.log(merchandiseStore.id, "JOY")
 
-    }
+    // }
 
     if(!merchandiseStore){
       navigate("/user")

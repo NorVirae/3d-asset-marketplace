@@ -15,7 +15,8 @@ import SignUpModal from "../auth/signUpModal";
 import SignInModal from "../auth/signInModal";
 import OpenStoreModal from "../auth/openStoreModal";
 import Sidebar from "../sidebar/sidebar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedSubPage } from "../../redux/reducers/userStateReducer";
 
 const CatmanImg = "../../assets/image/catman.jpg";
 
@@ -82,9 +83,17 @@ const NavLoggedIn = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch()
   return (
     <ul className="landing__navbar-inner-container-li">
-      <li className="landing__navbar-logo-items">
+      <li
+        onClick={() => {
+          dispatch(setSelectedSubPage({ selected: "settings" }));
+
+          navigate(`/user/${"settings"}?subpage=${"settings"}`);
+        }}
+        className="landing__navbar-logo-items"
+      >
         <FcSettings />
       </li>
       <li className="landing__navbar-logo-items">
@@ -100,7 +109,11 @@ const NavLoggedIn = () => {
           />
         )}
       </li>
-      <li className="landing__navbar-logo-items">
+      <li onClick={() => {
+          dispatch(setSelectedSubPage({ selected: "messages" }));
+
+          navigate(`/user/${"messages"}?subpage=${"messages"}`);
+        }} className="landing__navbar-logo-items">
         <GrMail />
       </li>
       {/* 
@@ -110,13 +123,13 @@ const NavLoggedIn = () => {
              */}
       <li className="landing__navbar-profile-container">
         <div
-          onClick={() => navigate("/user")}
+          onClick={() => navigate(`/user?subpage=${"store"}`)}
           className="landing__navbar-profile-img-container"
         >
           <img src={CatmanImg} alt="" className="landing__navbar-profile-img" />
         </div>
         <div
-          onClick={() => navigate("/user")}
+          onClick={() => navigate(`/user?subpage=${"store"}`)}
           className="landing__navbar-user-name"
         >
           {user && user.user ? user.user.name : "Login"}
@@ -234,9 +247,12 @@ const NavBar = ({ search, style, shortSearch, pageType, loggedIn }) => {
         {/* :<FaTimes className="landing__sidebar-toggler" onClick={() => setShowRegModal(old => ({...old, isSidebarOpen:false}))} style={{color: "white", fontSize: "2rem"}} /> */}
         {/* } */}
         {/* {search && ( */}
-          <div>
-            <NavSearchBar containerStyle={{visibility: search ? "visible":"hidden"}} short={shortSearch} />
-          </div>
+        <div>
+          <NavSearchBar
+            containerStyle={{ visibility: search ? "visible" : "hidden" }}
+            short={shortSearch}
+          />
+        </div>
         {/* )} */}
       </div>
 

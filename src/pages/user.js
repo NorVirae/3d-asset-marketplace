@@ -6,7 +6,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { GiPriceTag } from "react-icons/gi";
 import { useContext, useEffect, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { RegisterContext } from "../component/auth/context/registerContext";
@@ -97,7 +97,7 @@ const User = () => {
   const [hasStore, setHasStore] = useState(false);
   const userSubPageSelected = useSelector((state) => state.userSubPageState);
   const dispatch = useDispatch();
-
+  const params = useParams()
   const hasStoreTags = [
     {
       name: "store",
@@ -123,15 +123,18 @@ const User = () => {
   ];
 
   const [selectedTag, setSelectedTag] = useState("feature"); //Enum Types: feature, recent sellers, popular
-  const activeInpageHeader = useSelector(
+  const activeInpageHeaderRedux = useSelector(
     (state) => state.userSubPageState.selected
   ); //Enum types: store, profile, library, messages, sales, settings
+  const [activeInpageHeader, setActiveInPageHeader] = useState(params.subpage? params.subpage: "store")
   const navigate = useNavigate();
   useEffect(() => {
-    if (!toggleVisAdmin) {
-      dispatch(setSelectedSubPage({ selected: "store" }));
-      // setActiveInPageHeader("store")
-    }
+    // console.log(params, params.subpage, "PARAMS")
+    // if (!toggleVisAdmin) {
+    //   dispatch(setSelectedSubPage({ selected: params.subpage?params.subpage:"store" }));
+    //   // setActiveInPageHeader("store")
+    // }
+    setActiveInPageHeader(params.subpage)
 
     dispatch(fetchMerchandiseStore({}))
       .unwrap()
@@ -150,7 +153,7 @@ const User = () => {
     //   navigate("/");
     //   setShowRegModal({ ...showRegModal, login: true });
     // }
-  }, [toggleVisAdmin, user.user]);
+  }, [toggleVisAdmin, user.user, params]);
   return (
     <section className="user__main-container">
       <header>

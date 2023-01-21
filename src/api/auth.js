@@ -66,7 +66,6 @@ export const fetchMerchandiseStore = createAsyncThunk("api/store",
             const newConfig = {...config, "Content-Type": "application/json",  headers: {...config.headers, Team: teamKey, Authorization: `Bearer ${state.user.user.access_token}`, } }
             const data = await axios.get(`${baseUrl}/api/store/me`, newConfig)
             thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data.data[0]}))
-            console.log(data.data.data.data[0], "DAT")
             return data.data.data.data[0]
 
         }catch(err){
@@ -87,7 +86,6 @@ export const fetchMerchandise = createAsyncThunk("api/store",
             const newConfig = {...config, "Content-Type": "application/json",  headers: {...config.headers, Team: teamKey, Authorization: `Bearer ${state.user.user.access_token}`, } }
             const data = await axios.get(`${baseUrl}/api/store/me`, newConfig)
             thunkAPI.dispatch(merchandiseStore({merchandiseStore: data.data.data}))
-            console.log(data.data.data)
             return data.data.data
 
         }catch(err){

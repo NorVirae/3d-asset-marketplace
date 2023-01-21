@@ -73,7 +73,7 @@ const OpenStoreModal = () => {
     // data.append('store_cover_picture', storeInfo.store_cover_picture)
     // data.append("why_loooty", storeInfo.why_loooty);
     // data.append("portfolio_link", storeInfo.portfolio_link);
-    console.log(storeInfo, "HONE");
+    // console.log(storeInfo, "HONE");
     const signUpData = await dispatch(
       createMerchandiseStore({ storeInfo: storeInfo })
     )

@@ -32,6 +32,10 @@ const Sidebar = ({ className, pageType = "home" }) => {
     "MESSAGES",
     "SALES",
     "SETTINGS",
+    "AFFILIATES",
+    "BALANCE",
+    "SUSCRIBERS"
+
   ]);
   const [userNavSelected, setUserNavSelected] = useState("STORE");
 
@@ -100,6 +104,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                           key={item}
                           onClick={() => {
                             setUserNavSelected(item);
+                            navigate(`/user/${item.toLowerCase()}`)
                             dispatch(
                               setSelectedSubPage({
                                 selected: item.toLowerCase(),
