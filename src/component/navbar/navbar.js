@@ -43,6 +43,7 @@ const NotificationItem = ({ selected, setSelected, index }) => {
 
 const NotificationDropModal = ({ onMouseEnter, onMouseLeave }) => {
   const [selected, setSelected] = useState(0);
+  const navigate = useNavigate()
   return (
     <section
       onMouseEnter={onMouseEnter}
@@ -73,7 +74,7 @@ const NotificationDropModal = ({ onMouseEnter, onMouseLeave }) => {
         />
       </div>
       <div className="landing__notification-footer">
-        <span className="landing__footer-text">all notifications</span>
+        <span onClick={() => navigate("/notification")} className="landing__footer-text">all notifications</span>
       </div>
     </section>
   );

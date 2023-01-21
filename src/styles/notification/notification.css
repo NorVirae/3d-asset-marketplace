@@ -6,5 +6,88 @@
 
 .notify__container-inner{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
     flex-direction: column;
+    padding-top: 5rem;
+}
+
+.notify__card{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.notify__image-container{
+    width: 6rem;
+    height: 6rem;
+
+}
+
+.notify__image{
+    width: 100%;
+    height: 100%;
+}
+
+.notify__body{
+    background-color: #242331;
+    padding: 1rem 1rem;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all .4s ease-in-out;
+    border: .2rem solid transparent;
+
+}
+
+
+.notify__body:hover{
+    cursor: pointer;
+    background-color: #302F42;
+}
+
+.notify__image-body-container{
+    width: 3rem;
+    height: 3rem;
+}
+
+.notify__image-body{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.notify__close{
+    position: absolute;
+    right: -6%;
+    color :#6B6E77;
+    background-color: #232230;
+    padding: .5rem .5rem;
+    cursor: pointer;
+
+}
+
+.notify__close:active{
+    transform: scale(1.01);
+
+}
+
+.notify__item{
+    padding: .4rem 1rem;
+    color: #8E8D99;
+}
+
+.notify__item.month{
+    border-left: .2rem solid #454758;
+}
+
+.notify__body.active{
+    background-color: #302F42;
+    border: .2rem solid #595865;
 }
