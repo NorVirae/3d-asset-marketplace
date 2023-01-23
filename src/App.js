@@ -19,6 +19,7 @@ import UploadPage from './pages/upload';
 import Admin from './pages/admin/Admin';
 import Expanded from './pages/admin/Expanded';
 import NotificationPage from './pages/notificationpage';
+import ComingSoon from './pages/comingSoon';
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
           <Route path='/admin/product' element={<Admin />} exact />
           <Route path='/admin/expanded' element={<Expanded />} exact />
           <Route path='/notification' element={<NotificationPage />} exact />
+          <Route path='/coming/soon' element={<ComingSoon />} exact />
 
 
         </Routes>

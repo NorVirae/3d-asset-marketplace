@@ -8,4 +8,5 @@ import "../styles/user/user.css";
 import "../styles/user/admin.css";
 import "../styles/sidebar/sidebar.css"
 import "../styles/notification/notification.css"
+import "../styles/comingsoon/comingsoon.css"
 import "../styles/media.css"

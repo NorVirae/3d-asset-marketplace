@@ -1,20 +1,45 @@
-import { useState } from 'react';
-import {BsDot} from 'react-icons/bs'
-import {FaTimes} from 'react-icons/fa'
-import data from "../../data/data.json"
+import { useEffect, useState } from "react";
+import { BsDot } from "react-icons/bs";
+import { FaTimes } from "react-icons/fa";
+import data from "../../data/data.json";
 
-const NotifyCard = ({ firstImg, secondImg, active, setActive, index }) => {
+const NotifyCard = ({
+  img,
+  setNotificationz,
+  notificationz,
+  active,
+  setActive,
+  index,
+}) => {
+  const handleClose = () => {
+    setNotificationz((old) => {
+      let newNotification = old;
+      newNotification.splice(index, 1);
+      console.log(newNotification);
+
+      return newNotification;
+    });
+  };
   return (
     <div onClick={() => setActive(index)} className="notify__card">
-      {active === index && <div className='notify__close'>
-        <FaTimes/>
-      </div>}
-      <div className="notify__image-container">
-        <img draggable={false} className="notify__image" src={data.usersList[0].image} alt="img" />
+      {active === index && (
+        <div onClick={handleClose} className="notify__close">
+          <FaTimes />
+        </div>
+      )}
+      <div
+        className={`notify__image-container ${active === index && "active"}`}
+      >
+        <img draggable={false} className="notify__image" src={img} alt="img" />
       </div>
       <div className={`notify__body ${active === index && "active"} `}>
         <div className="notify__image-body-container">
-          <img draggable={false} className="notify__image-body" src={data.usersList[1].image} alt="img" />
+          <img
+            draggable={false}
+            className="notify__image-body"
+            src={data.usersList[1].image}
+            alt="img"
+          />
         </div>
         <span className="notify__item">Your Product</span>
         <span className="notify__item">
@@ -29,14 +54,30 @@ const NotifyCard = ({ firstImg, secondImg, active, setActive, index }) => {
 };
 
 const AllNotificationPage = () => {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(0);
+  const [notificationz, setNotificationz] = useState(data.notifications);
+
+  useEffect(() => {
+    setNotificationz(notificationz);
+  }, [notificationz]);
 
   return (
     <section className="notify__container">
       <div className="notify__container-inner">
-        <NotifyCard index={0} active={active} setActive={setActive}/>
-        <NotifyCard index={1} active={active} setActive={setActive}/>
-        <NotifyCard index={2} active={active} setActive={setActive}/>
+        {notificationz &&
+          notificationz.map((noti, index) => {
+            return (
+              <NotifyCard
+                key={index}
+                img={noti.image}
+                index={index}
+                active={active}
+                setActive={setActive}
+                notificationz={notificationz}
+                setNotificationz={setNotificationz}
+              />
+            );
+          })}
       </div>
     </section>
   );

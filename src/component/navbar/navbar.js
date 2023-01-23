@@ -28,7 +28,7 @@ const NotificationItem = ({ selected, setSelected, index }) => {
         selected === index && "selected"
       }`}
     >
-      <div className="landing__notification-img-container">
+      <div className={`landing__notification-img-container `}>
         <img src={CatmanImg} className="landing__notification-img" />
       </div>
       <div className="landing__notification-body">

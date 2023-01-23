@@ -1,15 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
 
 import { useMediaQuery } from "react-responsive";
-import { useNavigate } from "react-router-dom";
 import { setSelectedSubPage } from "../redux/reducers/userStateReducer";
 import NavBar from "../component/navbar/navbar";
 
 import { RegisterContext } from "../component/auth/context/registerContext";
 import PageSelectComp from "../component/admin/PageSelectComp";
 import TagheaderCompMobile from "../component/admin/TagheaderCompMobile";
+
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { UniversalTagHeaderDesktopAdmin } from "../component/user/UniversalTagHeaderDesktop";
 import Footer from "../component/footer/footer";
 import PageSelectCompNotifier from "../component/admin/PageSelectCompNotifier";

@@ -1,4 +1,22 @@
 {
+  "notifications":[
+    {
+      "image": "/assets/image/catman.jpg",
+      "notificationTitle": "Sony Vision S"
+    },
+    {
+      "image": "/assets/image/wolfguyfeather.jpg",
+      "notificationTitle": "Sauvage Entre"
+    },
+    {
+      "image": "/assets/image/tsunami.jpg",
+      "notificationTitle": "Nutzy Special"
+    },
+    {
+      "image": "/assets/image/scary.jpg",
+      "notificationTitle": "Valentine compre"
+    }
+  ],
   "usersList":[
     {
       "image": "/assets/image/catman.jpg",
