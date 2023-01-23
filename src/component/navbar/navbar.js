@@ -43,7 +43,7 @@ const NotificationItem = ({ selected, setSelected, index }) => {
 
 const NotificationDropModal = ({ onMouseEnter, onMouseLeave }) => {
   const [selected, setSelected] = useState(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <section
       onMouseEnter={onMouseEnter}
@@ -74,7 +74,12 @@ const NotificationDropModal = ({ onMouseEnter, onMouseLeave }) => {
         />
       </div>
       <div className="landing__notification-footer">
-        <span onClick={() => navigate("/notification")} className="landing__footer-text">all notifications</span>
+        <span
+          onClick={() => navigate("/notification")}
+          className="landing__footer-text"
+        >
+          all notifications
+        </span>
       </div>
     </section>
   );
@@ -84,7 +89,7 @@ const NavLoggedIn = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const [showModal, setShowModal] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <ul className="landing__navbar-inner-container-li">
       <li
@@ -110,11 +115,14 @@ const NavLoggedIn = () => {
           />
         )}
       </li>
-      <li onClick={() => {
+      <li
+        onClick={() => {
           dispatch(setSelectedSubPage({ selected: "messages" }));
 
           navigate(`/user/${"messages"}?subpage=${"messages"}`);
-        }} className="landing__navbar-logo-items">
+        }}
+        className="landing__navbar-logo-items"
+      >
         <GrMail />
       </li>
       {/* 
@@ -185,12 +193,21 @@ const NavLoggedOut = () => {
   );
 };
 
-const NavBar = ({ search, style, shortSearch, pageType, loggedIn }) => {
+const NavBar = ({
+  search,
+  style,
+  shortSearch,
+  pageType,
+  loggedIn,
+  isComingSoon,
+}) => {
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
   const isMobile = useMediaQuery({ minWidth: 320, maxWidth: 480 });
   const user = useSelector((state) => state.user);
   const [yScroll, setYScroll] = useState(0);
   const [slideIn, setSlideIn] = useState(false);
+
+
 
   const handleScroll = (event) => {
     setYScroll(window.scrollY);
@@ -224,6 +241,7 @@ const NavBar = ({ search, style, shortSearch, pageType, loggedIn }) => {
 
       {showRegModal.isSidebarOpen && (
         <Sidebar
+          isComingSoon={isComingSoon}
           pageType={pageType}
           className={slideIn ? "fade-out-sidebar" : ""}
         />
@@ -265,12 +283,32 @@ const NavBar = ({ search, style, shortSearch, pageType, loggedIn }) => {
         />
       </Link>
 
-      {!isMobile ? (
-        user && user.user ? (
-          <NavLoggedIn />
-        ) : (
-          <NavLoggedOut />
-        )
+      {isComingSoon && !isMobile && (
+        <div className="coming__soon-navbar-request-access">
+          <a
+            target={"_blank"}
+            href="https://docs.google.com/forms/d/1kAtVYoDY54AB-mnQ-MFLvxiIO7fkdBzqUDxwVUsPyqw/edit?usp=drivesdk"
+            className="coming__soon-navbar-request-btn"
+          >
+            <span>Request Access</span>
+          </a>
+          <button
+            onClick={() => setShowRegModal((old) => ({ ...old, login: true }))}
+            className="coming__soon-navbar-request-btn orange"
+          >
+            <span>sign in</span>
+          </button>
+        </div>
+      )}
+
+      {!isComingSoon ? (
+        !isMobile ? (
+          user && user.user ? (
+            <NavLoggedIn />
+          ) : (
+            <NavLoggedOut />
+          )
+        ) : null
       ) : null}
     </nav>
   );

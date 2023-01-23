@@ -17,7 +17,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { logOutAction } from "../../api/auth";
 import { setSelectedSubPage } from "../../redux/reducers/userStateReducer";
 
-const Sidebar = ({ className, pageType = "home" }) => {
+const userSubNavl = [
+  "STORE",
+  "PROFILE",
+  "LIBRARY",
+  "MESSAGES",
+  "SALES",
+  "SETTINGS",
+  "BALANCE",
+  "SUSCRIBERS",
+];
+
+const comingSoonList = [
+  "Battlecry",
+  "Loooty was born..",
+  "Features",
+  "Are you a creator?",
+  "What would you sell?",
+  "Loooty is for everyone",
+  "Launch with us!",
+];
+
+const Sidebar = ({
+  className,
+  pageType = "home",
+  // userSubNavList = userSubNavl,
+  isComingSoon,
+}) => {
   const [showLogin, setShowLogin] = useState(false);
   const [activeSidebar, setActiveSidebar] = useState(1);
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
@@ -25,18 +51,9 @@ const Sidebar = ({ className, pageType = "home" }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [slideIn, setSlideIn] = useState(false);
-  const [userSubNavs, setUserSubNavs] = useState([
-    "STORE",
-    "PROFILE",
-    "LIBRARY",
-    "MESSAGES",
-    "SALES",
-    "SETTINGS",
-    "AFFILIATES",
-    "BALANCE",
-    "SUSCRIBERS"
-
-  ]);
+  const [userSubNavs, setUserSubNavs] = useState(
+    isComingSoon ? comingSoonList : userSubNavl
+  );
   const [userNavSelected, setUserNavSelected] = useState("STORE");
 
   return (
@@ -104,7 +121,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
                           key={item}
                           onClick={() => {
                             setUserNavSelected(item);
-                            navigate(`/user/${item.toLowerCase()}`)
+                            navigate(`/user/${item.toLowerCase()}`);
                             dispatch(
                               setSelectedSubPage({
                                 selected: item.toLowerCase(),
@@ -124,6 +141,32 @@ const Sidebar = ({ className, pageType = "home" }) => {
                   </>
                 )}
               </>
+            ) : isComingSoon ? (
+              <div
+                style={{
+                  flexDirection: "column",
+                  width: "100%",
+                }}
+                className="coming__soon-navbar-request-access"
+              >
+                <a
+                  style={{ width: "90%" }}
+                  target={"_blank"}
+                  href="https://docs.google.com/forms/d/1kAtVYoDY54AB-mnQ-MFLvxiIO7fkdBzqUDxwVUsPyqw/edit?usp=drivesdk"
+                  className="coming__soon-navbar-request-btn"
+                >
+                  <span>Request Access</span>
+                </a>
+                <button
+                  style={{ width: "90%" }}
+                  onClick={() =>
+                    setShowRegModal((old) => ({ ...old, login: true }))
+                  }
+                  className="coming__soon-navbar-request-btn orange"
+                >
+                  <span>Sign In</span>
+                </button>
+              </div>
             ) : (
               <>
                 <li
@@ -163,7 +206,7 @@ const Sidebar = ({ className, pageType = "home" }) => {
             )}
           </section>
 
-          {pageType === "home" && (
+          {pageType === "home" && !isComingSoon && (
             <section className="sidebar__tags">
               <Links offset={-100} to="freebies" spy={true} smooth={true}>
                 <IdentityBtn
@@ -264,17 +307,152 @@ const Sidebar = ({ className, pageType = "home" }) => {
             </section>
           )}
 
+          {/* coming soon */}
+          {isComingSoon && (
+            <section className="sidebar__tags">
+              <Links offset={-100} to="battlecry" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(1)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 1 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 1 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"Battlecry"}
+                />
+              </Links>
+              <Links offset={-100} to="born" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(2)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 2 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 2 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"Loooty was born.."}
+                />
+              </Links>
+              {/* <Links offset={-100} to="products" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(3)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 3 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 3 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"Features"}
+                />
+              </Links> */}
+              <Links offset={-200} to="creator" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(4)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 4 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 4 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"Are you a creator?"}
+                />
+              </Links>
+              <Links offset={-100} to="tosell" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(5)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 5 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 5 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"What would you sell?"}
+                />
+              </Links>
+              <Links offset={-100} to="everyone" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(6)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 6 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 6 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"Loooty is for everyone"}
+                />
+              </Links>
+              <Links offset={-100} to="supporters" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(7)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 7 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 7 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"Launch with us!"}
+                />
+              </Links>
+
+              <Links offset={-100} to="footer" spy={true} smooth={true}>
+                <IdentityBtn
+                  onClick={() => setActiveSidebar(8)}
+                  style={{
+                    width: "100%",
+                    fontSize: ".7rem",
+                    borderLeft: `1rem solid ${
+                      activeSidebar == 8 ? "#7C187A" : "#353449"
+                    }`,
+                    transform: `translateX(${
+                      activeSidebar == 8 ? "0rem" : "-2rem"
+                    }) skewX(-25deg)`,
+                  }}
+                  text={"Know when we Launch!"}
+                />
+              </Links>
+            </section>
+          )}
+
           <section className="sidebar__footer">
             <div className="sidebar__top">
-              <LoootyLogoStatic/>
+              <LoootyLogoStatic />
               About
             </div>
 
             <ul className="sidebar__socials">
-              <li className="sidebar__socials-item">
+              {!isComingSoon && <li className="sidebar__socials-item">
                 <FaMailBulk />
                 Newsletter
-              </li>
+              </li>}
               <li className="sidebar__socials-item">
                 <FaFacebook />
                 Facebook
@@ -289,9 +467,14 @@ const Sidebar = ({ className, pageType = "home" }) => {
                 <FaTwitter />
                 Twitter
               </li>
+
+              <li className="sidebar__socials-item">
+                <FaTwitter />
+                Twitter
+              </li>
             </ul>
 
-            <ul className="sidebar__bottom">
+            {!isComingSoon && <ul className="sidebar__bottom">
               <li className="sidebar__bottom-item">
                 <FaQq />
                 F.A.Q
@@ -304,20 +487,22 @@ const Sidebar = ({ className, pageType = "home" }) => {
                 <FaPrint />
                 Privacy Policy
               </li>
-              {user.user && <li
-                style={{ marginTop: "1rem" }}
-                onClick={async () => dispatch(logOutAction())}
-                className={"landing__nav-item logout"}
-              >
-                <Link
-                  onClick={(e) => e.stopPropagation()}
-                  className="landing__nav-link"
-                  to={"#"}
+              {user.user && (
+                <li
+                  style={{ marginTop: "1rem" }}
+                  onClick={async () => dispatch(logOutAction())}
+                  className={"landing__nav-item logout"}
                 >
-                  Log&nbsp;Out
-                </Link>
-              </li>}
-            </ul>
+                  <Link
+                    onClick={(e) => e.stopPropagation()}
+                    className="landing__nav-link"
+                    to={"#"}
+                  >
+                    Log&nbsp;Out
+                  </Link>
+                </li>
+              )}
+            </ul>}
           </section>
         </div>
       </section>

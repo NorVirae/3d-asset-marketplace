@@ -205,13 +205,13 @@ const SignInModal = () => {
                   {" "}
                   Don't have an account?{" "}
                   <span
-                    onClick={(e) =>
-                      setShowRegModal({
-                        ...showRegModal,
-                        register: true,
-                        login: false,
-                      })
-                    }
+                    // onClick={(e) =>
+                    //   setShowRegModal({
+                    //     ...showRegModal,
+                    //     register: true,
+                    //     login: false,
+                    //   })
+                    // }
                     style={{ color: "#FF9700", cursor: "pointer" }}
                   >
                     Sign up!{" "}

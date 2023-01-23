@@ -12,7 +12,7 @@ const CSNavbar = () => {
       <LoootyLogo />
       <div className="landing__instruct-btn-container">
         <button className="landing__slogan-browse">
-          <span className="landing__slogan-browse-text">Request Access</span>
+          <span className="landing__slogan-browse-text">REQUEST ACCESS</span>
         </button>
 
         <button className="landing__slogan-sell">
@@ -43,9 +43,9 @@ const CsSubNav = () => {
   );
 };
 
-const BattleCryBanner = () => {
+const BattleCryBanner = ({id}) => {
   return (
-    <div className="coming__soon-battlecry-container">
+    <div id={id} className="coming__soon-battlecry-container">
       <img
         className="coming__soon-battlecry-img"
         src="/assets/image/comingsoon/homebattlecry.png"
@@ -54,9 +54,9 @@ const BattleCryBanner = () => {
   );
 };
 
-const Supporters = () => {
+const Supporters = ({id}) => {
   return (
-    <div className="coming__soon-supporters-container">
+    <div id={id} className="coming__soon-supporters-container">
       <div className="coming__soon-tag-button-container">
         <button className="coming__soon-tag-button">
           <span>Happy supporters & Launchers</span>
@@ -120,9 +120,10 @@ const LoootyAssetExplain = ({
   title = "Loooty was born from the wishes of",
   description = bornParagraph,
   direction = "row",
+  id
 }) => {
   return (
-    <div className={`coming__soon-loooty-born-container ${direction}`}>
+    <div id={id} className={`coming__soon-loooty-born-container ${direction}`}>
       <div className="coming__soon-born-image-container">
         <img src={img} alt="shield" className="coming__soon-born-image" />
       </div>
@@ -134,11 +135,11 @@ const LoootyAssetExplain = ({
   );
 };
 
-const EarlyLauchersTag = () => {
+const EarlyLauchersTag = ({id}) => {
   return (
-    <div className="coming__soon-early-launchers-tag-container">
+    <div id={id} className="coming__soon-early-launchers-tag-container">
       <button className="coming__soon-tag-button orange">
-        <span>Happy supporters & Launchers</span>
+        <span>Featured Works from our Early Launchers</span>
       </button>
     </div>
   );
@@ -159,9 +160,9 @@ const AssetCard = ({
     </div>
   );
 };
-const EarlyLaunchAsset = () => {
+const EarlyLaunchAsset = ({id}) => {
   return (
-    <div className="coming__soon-early-lauch-asset">
+    <div id={id} className="coming__soon-early-lauch-asset">
       <div className="coming__soon-early-lauch-asset-inner">
         <AssetCard
           img={"/assets/image/comingsoon/takouba.png"}
@@ -186,9 +187,9 @@ const EarlyLaunchAsset = () => {
   );
 };
 
-const ToSell = () => {
+const ToSell = ({id}) => {
   return (
-    <div className="coming__soon-to-sell">
+    <div id={id} className="coming__soon-to-sell">
       <h3 className="coming__soon-to-sell-title">
         What do you want to sell on Loooty?
       </h3>
@@ -200,17 +201,22 @@ const ToSell = () => {
           <ul className="coming__soon-tags-list-inner">
             <li className="coming__soon-tags-list-item">
               <IoTriangle className="coming__soon-tags-list-item-pointer" />
-              <span>2D</span>
+              <span>2D Assets</span>
             </li>
             <li className="coming__soon-tags-list-item">
               <IoTriangle className="coming__soon-tags-list-item-pointer faint" />
 
-              <span>3D</span>
+              <span>3D Assets</span>
             </li>
             <li className="coming__soon-tags-list-item">
               <IoTriangle className="coming__soon-tags-list-item-pointer" />
 
               <span>AR/VR Assets</span>
+            </li>
+            <li className="coming__soon-tags-list-item">
+              <IoTriangle className="coming__soon-tags-list-item-pointer" />
+
+              <span>VFX Packs</span>
             </li>
             <li className="coming__soon-tags-list-item">
               <IoTriangle className="coming__soon-tags-list-item-pointer faint" />
@@ -222,7 +228,7 @@ const ToSell = () => {
             <li className="coming__soon-tags-list-item">
               <IoTriangle className="coming__soon-tags-list-item-pointer faint" />
 
-              <span>Even Plugins</span>
+              <span>Plugins</span>
             </li>
             <li className="coming__soon-tags-list-item">
               <IoTriangle className="coming__soon-tags-list-item-pointer" />
@@ -237,12 +243,12 @@ const ToSell = () => {
             <li className="coming__soon-tags-list-item">
               <IoTriangle className="coming__soon-tags-list-item-pointer" />
 
-              <span>etc</span>
+              <span>and more</span>
             </li>
           </ul>
         </ul>
         <p className="coming__soon-sell-announce-header">
-          That can aid fellow creators to tell their stories through their
+          Anything that can aid fellow creators to tell their stories through their
           various media.
         </p>
       </div>
@@ -250,9 +256,9 @@ const ToSell = () => {
   );
 };
 
-const ForEveryOne = () => {
+const ForEveryOne = ({id}) => {
   return (
-    <div className="coming__soon-for-everyone">
+    <div id={id} className="coming__soon-for-everyone">
       <ul className="coming__soon-for-everyone-lister">
         <li className="coming__soon-for-everyone-lister-item">
           Loooty is not just for creators,
@@ -308,7 +314,7 @@ const BeFirst = () => {
           <span>Request Access</span>
         </a>
 
-        <a href="mailto:norbertmbafrank@gmail.com" className="coming__soon-first-email-btn">
+        <a href="mailto:contact@loooty.com" className="coming__soon-first-email-btn">
           <span>EMAIL US</span>
         </a>
       </div>
@@ -333,9 +339,9 @@ const FooterInner = () => {
   );
 };
 
-const Footer = () => {
+const Footer = ({id}) => {
   return (
-    <div className="coming__soon-footer">
+    <div id={id} className="coming__soon-footer">
       <div className="coming__soon-footer-inner">
         <BeFirst />
         <FooterInner />
@@ -344,20 +350,30 @@ const Footer = () => {
   );
 };
 
+const creatorParagraph = `
+As one of the amazing creators in the African space, we know you share the vision
+of Africataking the global market by storm, and one of the ways we inch closer to that is to not
+only create short films, games etc but to upload assets from this projects for other passionate
+people to use, you would be surprised the amazing stories that your creation will feature in overtime, You will
+be properly credited and compensated on your own terms, You get to set
+the cost and we don't demand exlusively at all, you can have your assets on any other marketplace.
+we just want to make one for Africa as Africans.
+`;
+
 const ComingSoon = () => {
   return (
     <div className="coming__soon-container">
-      <NavBar />
-      <CsSubNav />
-      <BattleCryBanner />
-      <Supporters />
-      <LoootyAssetExplain img="/assets/image/comingsoon/nzappa.png" />
-      <EarlyLauchersTag />
+      <NavBar isComingSoon={true}/>
+      {/* <CsSubNav /> */}
+      <BattleCryBanner id={"battlecry"}/>
+      <Supporters id={"supporters"}/>
+      <LoootyAssetExplain id={"born"} img="/assets/image/comingsoon/nzappa.png" />
+      <EarlyLauchersTag id={"launch"}/>
       <EarlyLaunchAsset />
-      <LoootyAssetExplain direction="inverse" />
-      <ToSell />
-      <ForEveryOne />
-      <Footer />
+      <LoootyAssetExplain id={"creator"} title="Are you a Creator?" description={creatorParagraph} direction="inverse" />
+      <ToSell id={"tosell"}/>
+      <ForEveryOne id={"everyone"}/>
+      <Footer id="footer"/>
     </div>
   );
 };
