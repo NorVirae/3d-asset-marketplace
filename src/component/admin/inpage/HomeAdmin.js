@@ -68,7 +68,6 @@ const HomeAdmin = () => {
   ];
 
   const handleSelect = (ranges) => {
-    // console.log(ranges);
     // {
     //   selection: {
     //     startDate: [native Date Object],

@@ -15,7 +15,6 @@ const NotifyCard = ({
     setNotificationz((old) => {
       let newNotification = old;
       newNotification.splice(index, 1);
-      console.log(newNotification);
 
       return newNotification;
     });

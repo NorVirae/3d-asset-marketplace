@@ -53,12 +53,27 @@
   /* background-image: url(/public/assets/image/comingsoon/homebattlecry.png); */
   background-position: contain;
   /* background-repeat: no-repeat; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.coming__soon-battlecry-container h3{
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  color: white;
+  line-height: 3rem;
+  width: 70%;
+  font-size: 1.5rem;
 }
 
 .coming__soon-battlecry-img {
   width: 100vw;
   object-fit: cover;
   height: 70vh;
+
 }
 
 

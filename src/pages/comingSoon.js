@@ -54,6 +54,12 @@ const BattleCryBanner = ({ id }) => {
   const mobile = useMediaQuery({ minWidth: 320, maxWidth: 480 });
   return (
     <div id={id} className="coming__soon-battlecry-container">
+       {mobile ? (<h3>
+        It is time for Africa! We must build our own! Our story is ours to tell!
+        Loooty is calling on all African Creators to assemble and show the world
+        the amazing skills we PossibleTypeExtensionsRule. As Animation and
+        Gaming Studios rise in Africa, we need a marketplace for us
+      </h3>):null}
       {mobile ? (
         <img
           className="coming__soon-battlecry-img mobile"
@@ -452,7 +458,7 @@ const RequestAccessFormControl = ({
       <FormControlTitle text={titleText} />
       <div className="coming__soon-form-control-skew-container">
         <input
-        required={true}
+          required={true}
           type={type}
           value={value}
           onChange={onChange}
@@ -530,35 +536,34 @@ const RequestAccessModal = () => {
       //   timestamp: new Date(),
       //   tags: JSON.stringify(old.tags),
       // }));
-      let stringifiedTags = ""
+      let stringifiedTags = "";
 
-      for (let i = 0; i < finalData.tags.length; i ++){
-        stringifiedTags += `${finalData.tags[i] }, `
+      for (let i = 0; i < finalData.tags.length; i++) {
+        stringifiedTags += `${finalData.tags[i]}, `;
       }
       finalData.tags = stringifiedTags;
 
-      console.log(finalData);
       await requestAccess(finalData);
       toast.success("Request was submitted successfuly");
       templateParams.to_email = finalData.email;
+      templateParams.to_name = finalData.nickname;
       emailjs
         .send(
-          "service_iajmoqf",
+          "service_2vounar",
           "template_n7nbm6c",
           templateParams,
           "YrIOqot5XGcYDpulZ"
         )
         .then(
           function (response) {
-            console.log("SUCCESS!", response.status, response.text);
+            // console.log("SUCCESS!", response.status, response.text);
           },
           function (err) {
-            console.log("FAILED...", err);
+            // console.log("FAILED...", err);
           }
         );
       setLoading(false);
     } catch (err) {
-      console.log(err);
       setLoading(false);
 
       toast.error("Unable to complete Request");
@@ -566,31 +571,20 @@ const RequestAccessModal = () => {
   };
 
   const handleCheckboxClick = (text) => {
-    console.log(text, "EVERY")
-
-    console.log("called", requestDetails.tags);
-
     let realTags = requestDetails.tags;
     if (realTags.includes(text)) {
-      console.log("is in the list");
-
       const getIndex = realTags.indexOf(text);
       if (getIndex != -1) {
         realTags.splice(getIndex, 1);
-
-        console.log("got in", getIndex, realTags);
 
         setRequestAccess({ ...requestDetails, tags: realTags });
       }
       // return { ...old, tags: realTags };
     } else {
       realTags.push(text);
-      console.log("is not in te list", realTags);
 
-      setRequestAccess({...requestDetails, tags:realTags });
+      setRequestAccess({ ...requestDetails, tags: realTags });
     }
-
-    
   };
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
 

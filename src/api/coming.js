@@ -16,11 +16,9 @@ export const requestAccess = async (data) => {
     try{
 
         const response = await axios.post(`https://sheet.best/api/sheets/0cb12ec3-67a8-48a4-b267-82255fc13a9b`, data, {headers: {'Content-Type': 'application/json'}})
-        console.log(response)
         return response
 
     }catch(err){
-        console.log(err)
 
         throw new Error(err.message)
     }
