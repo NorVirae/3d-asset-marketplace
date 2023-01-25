@@ -1,4 +1,4 @@
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { useContext, useState } from "react";
 import { FaDiscord, FaFacebookF, FaTimes, FaTwitter } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
@@ -440,6 +440,7 @@ const FormControlTitle = ({ style, text = "Nickname" }) => {
 };
 
 const RequestAccessFormControl = ({
+  type,
   style,
   value,
   onChange,
@@ -451,6 +452,8 @@ const RequestAccessFormControl = ({
       <FormControlTitle text={titleText} />
       <div className="coming__soon-form-control-skew-container">
         <input
+        required={true}
+          type={type}
           value={value}
           onChange={onChange}
           style={style}
@@ -501,7 +504,7 @@ const RequestAccessModal = () => {
     country: "",
     email: "",
     wouldSell: "yes",
-    workTeam: "",
+    workTeam: "No, Am an Individual",
     tags: [],
     hearAbout: "",
     portfolio: "",
@@ -522,17 +525,29 @@ const RequestAccessModal = () => {
       e.preventDefault();
       let finalData = requestDetails;
       finalData.timestamp = new Date();
-      finalData.tags = JSON.stringify(finalData.tags);
-      setRequestAccess((old) => ({
-        ...old,
-        timestamp: new Date(),
-        tags: JSON.stringify(old.tags),
-      }));
+      // setRequestAccess((old) => ({
+      //   ...old,
+      //   timestamp: new Date(),
+      //   tags: JSON.stringify(old.tags),
+      // }));
+      let stringifiedTags = ""
+
+      for (let i = 0; i < finalData.tags.length; i ++){
+        stringifiedTags += `${finalData.tags[i] }, `
+      }
+      finalData.tags = stringifiedTags;
+
       console.log(finalData);
       await requestAccess(finalData);
       toast.success("Request was submitted successfuly");
+      templateParams.to_email = finalData.email;
       emailjs
-        .send("service_iajmoqf", "template_n7nbm6c", templateParams, "YrIOqot5XGcYDpulZ")
+        .send(
+          "service_iajmoqf",
+          "template_n7nbm6c",
+          templateParams,
+          "YrIOqot5XGcYDpulZ"
+        )
         .then(
           function (response) {
             console.log("SUCCESS!", response.status, response.text);
@@ -543,7 +558,7 @@ const RequestAccessModal = () => {
         );
       setLoading(false);
     } catch (err) {
-      console.log(err)
+      console.log(err);
       setLoading(false);
 
       toast.error("Unable to complete Request");
@@ -551,27 +566,31 @@ const RequestAccessModal = () => {
   };
 
   const handleCheckboxClick = (text) => {
-    setRequestAccess((old) => {
-      console.log("called", old);
+    console.log(text, "EVERY")
 
-      let realTags = old.tags;
-      if (realTags.includes(text)) {
-        console.log("is in the list");
+    console.log("called", requestDetails.tags);
 
-        const getIndex = realTags.indexOf(text);
-        if (getIndex != -1) {
-          realTags.splice(getIndex, 1);
+    let realTags = requestDetails.tags;
+    if (realTags.includes(text)) {
+      console.log("is in the list");
 
-          console.log("got in", getIndex, realTags);
+      const getIndex = realTags.indexOf(text);
+      if (getIndex != -1) {
+        realTags.splice(getIndex, 1);
 
-          return { ...old, tags: realTags };
-        }
-        return { ...old, tags: realTags };
+        console.log("got in", getIndex, realTags);
+
+        setRequestAccess({ ...requestDetails, tags: realTags });
       }
-      console.log("is not in te list", realTags);
+      // return { ...old, tags: realTags };
+    } else {
       realTags.push(text);
-      return { ...old, tags: realTags };
-    });
+      console.log("is not in te list", realTags);
+
+      setRequestAccess({...requestDetails, tags:realTags });
+    }
+
+    
   };
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
 
@@ -619,6 +638,7 @@ const RequestAccessModal = () => {
               <RequestAccessFormControl
                 placeholder="eg, hackone@gmail.com"
                 value={requestDetails.email}
+                type="email"
                 onChange={(e) =>
                   setRequestAccess((old) => ({
                     ...old,
@@ -729,7 +749,7 @@ const RequestAccessModal = () => {
             </div>
             <div className="coming__soon-first-row">
               <RequestAccessFormControl
-                placeholder="eg, hackone@gmail.com"
+                placeholder="eg, Facebook"
                 value={requestDetails.hearAbout}
                 onChange={(e) =>
                   setRequestAccess((old) => ({
@@ -741,7 +761,7 @@ const RequestAccessModal = () => {
               />
 
               <RequestAccessFormControl
-                placeholder="eg, hackone@gmail.com"
+                placeholder="eg, www.myportfolio.com"
                 value={requestDetails.portfolio}
                 onChange={(e) =>
                   setRequestAccess((old) => ({
