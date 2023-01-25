@@ -2,7 +2,7 @@ import "./styles/cssLoader";
 
 import Home from "./pages/home";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { RegisterProvider } from "./component/auth/context/registerContext";
 import OpenAStore from "./pages/openAStore";
 import Experiment from "./pages/experiment";
@@ -27,52 +27,52 @@ function App() {
       <ToastContainer />
       <RegisterProvider>
         <Routes>
-          <Route path="/" element={user ? <Home /> : <ComingSoon />} exact />
+          <Route path="/" element={user ? <Home /> : <Navigate to="/coming/soon"/>} exact />
           {/* <Route path="/*" element={user ? <Home /> : <ComingSoon />} exact /> */}
           <Route
             path="/open/store"
-            element={user ? <OpenAStore /> : <ComingSoon />}
+            element={user ? <OpenAStore /> : <Navigate to="/coming/soon" />}
             exact
           />
 
           <Route
             path="/experiment"
-            element={user ? <Experiment /> : <ComingSoon />}
+            element={user ? <Experiment /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route
             path="/buy/page/:id"
-            element={user ? <BuyPage /> : <ComingSoon />}
+            element={user ? <BuyPage /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route
             path="/cart"
-            element={user ? <Cart /> : <ComingSoon />}
+            element={user ? <Cart /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route
             path="/user/:subpage"
-            element={user ? <User /> : <ComingSoon />}
+            element={user ? <User /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route
             path="/user/upload"
-            element={user ? <UploadPage /> : <ComingSoon />}
+            element={user ? <UploadPage /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route
             path="/admin/product"
-            element={user ? <Admin /> : <ComingSoon />}
+            element={user ? <Admin /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route
             path="/admin/expanded"
-            element={user ? <Expanded /> : <ComingSoon />}
+            element={user ? <Expanded /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route
             path="/notification"
-            element={user ? <NotificationPage /> : <ComingSoon />}
+            element={user ? <NotificationPage /> : <Navigate to="/coming/soon" />}
             exact
           />
           <Route path="/coming/soon" element={<ComingSoon />} exact />

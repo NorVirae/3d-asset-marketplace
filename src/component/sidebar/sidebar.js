@@ -151,8 +151,14 @@ const Sidebar = ({
               >
                 <a
                   style={{ width: "90%" }}
-                  target={"_blank"}
-                  href="https://docs.google.com/forms/d/1kAtVYoDY54AB-mnQ-MFLvxiIO7fkdBzqUDxwVUsPyqw/edit?usp=drivesdk"
+                  onClick={() => {
+                    setShowRegModal((old) => ({
+                      ...old,
+                      isComingSoonOpen: true,
+                    }));
+                  }}
+                  // target={"_blank"}
+                  // href="https://docs.google.com/forms/d/1kAtVYoDY54AB-mnQ-MFLvxiIO7fkdBzqUDxwVUsPyqw/edit?usp=drivesdk"
                   className="coming__soon-navbar-request-btn"
                 >
                   <span>Request Access</span>
@@ -449,10 +455,12 @@ const Sidebar = ({
             </div>
 
             <ul className="sidebar__socials">
-              {!isComingSoon && <li className="sidebar__socials-item">
-                <FaMailBulk />
-                Newsletter
-              </li>}
+              {!isComingSoon && (
+                <li className="sidebar__socials-item">
+                  <FaMailBulk />
+                  Newsletter
+                </li>
+              )}
               <li className="sidebar__socials-item">
                 <FaFacebook />
                 Facebook
@@ -474,35 +482,37 @@ const Sidebar = ({
               </li>
             </ul>
 
-            {!isComingSoon && <ul className="sidebar__bottom">
-              <li className="sidebar__bottom-item">
-                <FaQq />
-                F.A.Q
-              </li>
-              <li className="sidebar__bottom-item">
-                <FaTerminal />
-                Terms of Service
-              </li>
-              <li className="sidebar__bottom-item">
-                <FaPrint />
-                Privacy Policy
-              </li>
-              {user.user && (
-                <li
-                  style={{ marginTop: "1rem" }}
-                  onClick={async () => dispatch(logOutAction())}
-                  className={"landing__nav-item logout"}
-                >
-                  <Link
-                    onClick={(e) => e.stopPropagation()}
-                    className="landing__nav-link"
-                    to={"#"}
-                  >
-                    Log&nbsp;Out
-                  </Link>
+            {!isComingSoon && (
+              <ul className="sidebar__bottom">
+                <li className="sidebar__bottom-item">
+                  <FaQq />
+                  F.A.Q
                 </li>
-              )}
-            </ul>}
+                <li className="sidebar__bottom-item">
+                  <FaTerminal />
+                  Terms of Service
+                </li>
+                <li className="sidebar__bottom-item">
+                  <FaPrint />
+                  Privacy Policy
+                </li>
+                {user.user && (
+                  <li
+                    style={{ marginTop: "1rem" }}
+                    onClick={async () => dispatch(logOutAction())}
+                    className={"landing__nav-item logout"}
+                  >
+                    <Link
+                      onClick={(e) => e.stopPropagation()}
+                      className="landing__nav-link"
+                      to={"#"}
+                    >
+                      Log&nbsp;Out
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            )}
           </section>
         </div>
       </section>

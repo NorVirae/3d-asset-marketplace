@@ -285,13 +285,18 @@ const NavBar = ({
 
       {isComingSoon && !isMobile && (
         <div className="coming__soon-navbar-request-access">
-          <a
-            target={"_blank"}
-            href="https://docs.google.com/forms/d/1kAtVYoDY54AB-mnQ-MFLvxiIO7fkdBzqUDxwVUsPyqw/edit?usp=drivesdk"
+          <button
+          onClick={ () => {
+            setShowRegModal((old) => ({ ...old, isComingSoonOpen: true }))
+          }}
+
+
+            // target={"_blank"}
+            // href="https://docs.google.com/forms/d/1kAtVYoDY54AB-mnQ-MFLvxiIO7fkdBzqUDxwVUsPyqw/edit?usp=drivesdk"
             className="coming__soon-navbar-request-btn"
           >
             <span>Request Access</span>
-          </a>
+          </button>
           <button
             onClick={() => setShowRegModal((old) => ({ ...old, login: true }))}
             className="coming__soon-navbar-request-btn orange"

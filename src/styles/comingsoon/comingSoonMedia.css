@@ -14,10 +14,10 @@
   }
 
   /* battle cry */
-  .coming__soon-battlecry-img {
-    width: 170%;
-    object-fit: contain;
-    height: 70vh;
+  .coming__soon-battlecry-img.mobile {
+    width: 100%;
+    object-fit: cover;
+    /* height: 70vh; */
   }
 
   .coming__soon-battlecry-container {
@@ -51,9 +51,11 @@
 
   .coming__soon-early-lauch-asset-inner {
     flex-direction: column;
-    padding: 2rem;
+    padding: 0 8rem;
    
   }
+  
+
 
   .coming__soon-asset-image-container {
     width: 40%;
@@ -68,9 +70,22 @@
   }
 
   .coming__soon-for-everyone {
+    
+  
+  }
+
+  .coming__soon-for-everyone-inner{
     display: flex;
     flex-direction: column-reverse;
-  
+  }
+
+  .coming__soon-born-header{
+    text-align: center;
+  }
+
+  .coming__soon-born-paragraph {
+
+    text-align: center;
   }
 
   .coming__soon-for-everyone-header-container {
@@ -99,12 +114,26 @@
   }
 
   .coming__soon-early-launchers-tag-container{
-    
-    width: 100%;
+    padding: 0.7rem 1rem;
+    width: 70%;
     display: flex;
     justify-content: center;
   }
-  
+
+  .coming__soon-first-access-container{
+    flex-direction: column;
+
+  }
+
+  .coming__soon-request-access-modal{
+    width: 97%;
+  }
+  .coming__soon-request-access-modal-overlay{
+    padding: .4rem .3rem;
+    align-items: center;
+    /* width: 100%; */
+    right: 0%;
+  }
 }
 
 /* 
