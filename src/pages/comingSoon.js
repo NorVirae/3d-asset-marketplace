@@ -544,7 +544,7 @@ const RequestAccessModal = () => {
       finalData.tags = stringifiedTags;
 
       await requestAccess(finalData);
-      toast.success("Request was submitted successfuly");
+      toast.success("Request was submitted successfuly, Thank you!");
       templateParams.to_email = finalData.email;
       templateParams.to_name = finalData.nickname;
       emailjs
@@ -563,6 +563,8 @@ const RequestAccessModal = () => {
           }
         );
       setLoading(false);
+      setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
+
     } catch (err) {
       setLoading(false);
 
@@ -589,8 +591,8 @@ const RequestAccessModal = () => {
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
 
   return (
-    <div className="coming__soon-request-access-modal-overlay">
-      <section className="coming__soon-request-access-modal">
+    <div onClick={() => setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }))  } className="coming__soon-request-access-modal-overlay">
+      <section onClick={e => e.stopPropagation()} className="coming__soon-request-access-modal">
         <div
           onClick={() => {
             setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
