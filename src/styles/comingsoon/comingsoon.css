@@ -602,7 +602,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  zoom: .8;
+  overflow-y: scroll;
+  padding: 4rem 0;
 }
 
 .coming__soon-request-access-modal{
@@ -610,6 +611,7 @@
   background-color: #15151C;
   border: .3rem solid #4A4A60;
   position: relative;
+  margin-top: 30rem;
 }
 
 .coming__soon-close-btn{
@@ -696,7 +698,7 @@ width: 100%;
   transform: skewX(-25deg);
   border: .3rem solid #4A4A60;
   background-color: #15151C;
-
+  transition: all .4s ease-in-out;
   width: 70%;
 }
 

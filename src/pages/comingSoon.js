@@ -54,12 +54,15 @@ const BattleCryBanner = ({ id }) => {
   const mobile = useMediaQuery({ minWidth: 320, maxWidth: 480 });
   return (
     <div id={id} className="coming__soon-battlecry-container">
-       {mobile ? (<h3>
-        It is time for Africa! We must build our own! Our story is ours to tell!
-        Loooty is calling on all African Creators to assemble and show the world
-        the amazing skills we PossibleTypeExtensionsRule. As Animation and
-        Gaming Studios rise in Africa, we need a marketplace for us
-      </h3>):null}
+      {mobile ? (
+        <h3>
+          It is time for Africa! We must build our own! Our story is ours to
+          tell! Loooty is calling on all African Creators to assemble and show
+          the world the amazing skills we PossibleTypeExtensionsRule. As
+          Animation and Gaming Studios rise in Africa, we need a marketplace for
+          us
+        </h3>
+      ) : null}
       {mobile ? (
         <img
           className="coming__soon-battlecry-img mobile"
@@ -213,7 +216,7 @@ const EarlyLaunchAsset = ({ id }) => {
         />
 
         <AssetCard
-          img={"/assets/image/comingsoon/nzappa.png"}
+          img={"/assets/image/comingsoon/ozappa.png"}
           title={"3D Nzappa"}
         />
       </div>
@@ -435,17 +438,29 @@ the cost and we don't demand exlusively at all, you can have your assets on any 
 we just want to make one for Africa as Africans.
 `;
 
-const FormControlTitle = ({ style, text = "Nickname" }) => {
+const FormControlTitle = ({
+  style,
+  text = "Nickname",
+  isCompulsory = true,
+}) => {
   return (
     <div className="coming__soon-form-control-title-container">
       <h3 style={style} className="coming__soon-form-control-title">
-        <span>{text}</span>
+        <span>
+          {text}{" "}
+          {isCompulsory && (
+            <span style={{ fontSize: "1.1rem", color: "#df4759" }}>*</span>
+          )}
+        </span>
       </h3>
     </div>
   );
 };
 
 const RequestAccessFormControl = ({
+  error,
+  onClick,
+  isCompulsory,
   type,
   style,
   value,
@@ -455,9 +470,13 @@ const RequestAccessFormControl = ({
 }) => {
   return (
     <div className="coming__soon-form-group">
-      <FormControlTitle text={titleText} />
-      <div className="coming__soon-form-control-skew-container">
+      <FormControlTitle isCompulsory={isCompulsory} text={titleText} />
+      <div
+        style={{ border: `.3rem solid ${error ? "#df4759" : "#4A4A60"} ` }}
+        className="coming__soon-form-control-skew-container"
+      >
         <input
+          onClick={onClick}
           required={true}
           type={type}
           value={value}
@@ -509,14 +528,27 @@ const RequestAccessModal = () => {
     nickname: "",
     country: "",
     email: "",
-    wouldSell: "yes",
+    wouldSell: "Yes",
     workTeam: "No, Am an Individual",
     tags: [],
     hearAbout: "",
     portfolio: "",
   });
+
+  const [errors, setErrors] = useState({
+    timestamp: false,
+    nickname: false,
+    country: false,
+    email: false,
+    wouldSell: "Yes",
+    workTeam: "No, Am an Individual",
+    tags: [],
+    hearAbout: false,
+    portfolio: false,
+  });
   const [selected, setSelected] = useState({ first: 1, second: 1 });
   const [loading, setLoading] = useState(false);
+  const [proceed, setProceed] = useState(true);
 
   let templateParams = {
     from_name: "Loooty Admin",
@@ -525,46 +557,79 @@ const RequestAccessModal = () => {
     message: "Thank you for being part of the early launchers see you soon!",
   };
 
+  const errorHandler = () => {
+    setProceed(true)
+    if (!requestDetails.country || requestDetails.country === "") {
+      setErrors((old) => ({ ...old, country: true }));
+      setProceed(false);
+    }
+    if (!requestDetails.nickname || requestDetails.nickname === "") {
+      setErrors((old) => ({ ...old, nickname: true }));
+      setProceed(false);
+    }
+    if (!requestDetails.email || requestDetails.email === "") {
+      setErrors((old) => ({ ...old, email: true }));
+      setProceed(false);
+    }
+
+    if (!requestDetails.hearAbout || requestDetails.hearAbout === "") {
+      setErrors((old) => ({ ...old, hearAbout: true }));
+      setProceed(false);
+    }
+
+    if (requestDetails.tags.length == 0 && requestDetails.wouldSell === "Yes") {
+      toast.error("Please select what you would like to sell on Loooty");
+      setProceed(false);
+    }
+
+    if (!proceed){
+      toast.error("Selected fields are required!");
+
+    }
+    
+  };
+
   const handleRequestAccess = async (e) => {
     setLoading(true);
     try {
       e.preventDefault();
       let finalData = requestDetails;
       finalData.timestamp = new Date();
-      // setRequestAccess((old) => ({
-      //   ...old,
-      //   timestamp: new Date(),
-      //   tags: JSON.stringify(old.tags),
-      // }));
-      let stringifiedTags = "";
-
-      for (let i = 0; i < finalData.tags.length; i++) {
-        stringifiedTags += `${finalData.tags[i]}, `;
+      errorHandler();
+      if (proceed) {
+        // setRequestAccess((old) => ({
+        //   ...old,
+        //   timestamp: new Date(),
+        // //   tags: JSON.stringify(old.tags),
+        // // }));
+        // let stringifiedTags = "";
+        // for (let i = 0; i < finalData.tags.length; i++) {
+        //   stringifiedTags += `${finalData.tags[i]}, `;
+        // }
+        // finalData.tags = stringifiedTags;
+        // await requestAccess(finalData);
+        // toast.success("Request was submitted successfuly, Thank you!");
+        // templateParams.to_email = finalData.email;
+        // templateParams.to_name = finalData.nickname;
+        // emailjs
+        //   .send(
+        //     "service_2vounar",
+        //     "template_n7nbm6c",
+        //     templateParams,
+        //     "YrIOqot5XGcYDpulZ"
+        //   )
+        //   .then(
+        //     function (response) {
+        //       // console.log("SUCCESS!", response.status, response.text);
+        //     },
+        //     function (err) {
+        //       // console.log("FAILED...", err);
+        //     }
+        //   );
+        
+        // setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
       }
-      finalData.tags = stringifiedTags;
-
-      await requestAccess(finalData);
-      toast.success("Request was submitted successfuly, Thank you!");
-      templateParams.to_email = finalData.email;
-      templateParams.to_name = finalData.nickname;
-      emailjs
-        .send(
-          "service_2vounar",
-          "template_n7nbm6c",
-          templateParams,
-          "YrIOqot5XGcYDpulZ"
-        )
-        .then(
-          function (response) {
-            // console.log("SUCCESS!", response.status, response.text);
-          },
-          function (err) {
-            // console.log("FAILED...", err);
-          }
-        );
       setLoading(false);
-      setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
-
     } catch (err) {
       setLoading(false);
 
@@ -573,6 +638,7 @@ const RequestAccessModal = () => {
   };
 
   const handleCheckboxClick = (text) => {
+    setProceed(true)
     let realTags = requestDetails.tags;
     if (realTags.includes(text)) {
       const getIndex = realTags.indexOf(text);
@@ -591,8 +657,16 @@ const RequestAccessModal = () => {
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
 
   return (
-    <div onClick={() => setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }))  } className="coming__soon-request-access-modal-overlay">
-      <section onClick={e => e.stopPropagation()} className="coming__soon-request-access-modal">
+    <div
+      onClick={() =>
+        setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }))
+      }
+      className="coming__soon-request-access-modal-overlay"
+    >
+      <section
+        onClick={(e) => e.stopPropagation()}
+        className="coming__soon-request-access-modal"
+      >
         <div
           onClick={() => {
             setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
@@ -605,41 +679,55 @@ const RequestAccessModal = () => {
         </div>
         <div className="coming__soon-request-access-modal-inner">
           <h3>REQUEST ACCESS</h3>
-          <form className="coming__soon-request-access-form">
+          <form
+            onSubmit={handleRequestAccess}
+            className="coming__soon-request-access-form"
+          >
             <div className="coming__soon-first-row">
               <RequestAccessFormControl
+                onClick={() =>
+                  setErrors((old) => ({ ...old, nickname: false }))
+                }
+                error={errors.nickname}
                 placeholder="Adams"
                 value={requestDetails.nickname}
-                onChange={(e) =>
+                onChange={(e) =>{
+                  setProceed(true)
                   setRequestAccess((old) => ({
                     ...old,
                     nickname: e.target.value,
-                  }))
+                  }))}
                 }
                 titleText={"Nickname"}
               />
 
               <RequestAccessFormControl
+                onClick={() => setErrors((old) => ({ ...old, country: false }))}
+                error={errors.country}
                 placeholder="eg, South Africa"
                 value={requestDetails.country}
-                onChange={(e) =>
+                onChange={(e) =>{
+                  setProceed(true)
                   setRequestAccess((old) => ({
                     ...old,
                     country: e.target.value,
-                  }))
+                  }))}
                 }
                 titleText={"Country"}
               />
 
               <RequestAccessFormControl
+                onClick={() => setErrors((old) => ({ ...old, email: false }))}
+                error={errors.email}
                 placeholder="eg, hackone@gmail.com"
                 value={requestDetails.email}
                 type="email"
-                onChange={(e) =>
+                onChange={(e) =>{
+                  setProceed(true)
                   setRequestAccess((old) => ({
                     ...old,
                     email: e.target.value,
-                  }))
+                  }))}
                 }
                 titleText={"Email"}
               />
@@ -664,6 +752,7 @@ const RequestAccessModal = () => {
                   options={true}
                   text="No"
                   onClick={() => {
+                    setProceed(true)
                     setRequestAccess((old) => ({ ...old, wouldSell: "No" }));
                     setSelected((old) => ({ ...old, first: 2 }));
                   }}
@@ -703,55 +792,66 @@ const RequestAccessModal = () => {
               </div>
             </div>
 
-            <div className="coming__soon-third-row">
-              <FormControlTitle text="Do you work with a Team?" />
-              <div className="coming__soon-third-row-inner">
-                <div className="coming__soon-third-row-inner-box">
-                  <RequestAccessCheckbox
-                    onClick={() => handleCheckboxClick("2D")}
-                    text="2D"
-                  />
-                  <RequestAccessCheckbox
-                    onClick={() => handleCheckboxClick("Plugins/ Script")}
-                    text="Plugins/ Script"
-                  />
-                  <RequestAccessCheckbox
-                    onClick={() => handleCheckboxClick("Game Ready Assets")}
-                    text="Game Ready Assets"
-                  />
-                </div>
-                <div className="coming__soon-third-row-inner-box">
-                  <RequestAccessCheckbox
-                    onClick={() => handleCheckboxClick("3D")}
-                    text="3D"
-                  />
-                  <RequestAccessCheckbox
-                    onClick={() => handleCheckboxClick("AR/VR Assets")}
-                    text="AR/VR Assets"
-                  />
-                  <RequestAccessCheckbox
-                    onClick={() => handleCheckboxClick("Sounds")}
-                    text="Sounds"
-                  />
-                </div>
+            {requestDetails.wouldSell === "Yes" && (
+              <div className="coming__soon-third-row">
+                <FormControlTitle text="What would you like to sell on Loooty?" />
+                <div className="coming__soon-third-row-inner">
+                  <div className="coming__soon-third-row-inner-box">
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("2D")}
+                      text="2D"
+                    />
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("Plugins/ Script")}
+                      text="Plugins/ Script"
+                    />
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("Game Ready Assets")}
+                      text="Game Ready Assets"
+                    />
+                  </div>
+                  <div className="coming__soon-third-row-inner-box">
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("3D")}
+                      text="3D"
+                    />
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("AR/VR Assets")}
+                      text="AR/VR Assets"
+                    />
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("Sounds")}
+                      text="Sounds"
+                    />
+                  </div>
 
-                <div className="coming__soon-third-row-inner-box">
-                  <RequestAccessCheckbox
-                    onClick={() => handleCheckboxClick("UI/UX Template")}
-                    text="UI/UX Template"
-                  />
+                  <div className="coming__soon-third-row-inner-box">
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("UI/UX Template")}
+                      text="UI/UX Template"
+                    />
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("VFX packs")}
+                      text="VFX packs"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             <div className="coming__soon-first-row">
               <RequestAccessFormControl
+                onClick={() =>
+                  setErrors((old) => ({ ...old, hearAbout: false }))
+                }
+                error={errors.hearAbout}
                 placeholder="eg, Facebook"
                 value={requestDetails.hearAbout}
-                onChange={(e) =>
+                onChange={(e) =>{
+                  setProceed(true)
                   setRequestAccess((old) => ({
                     ...old,
                     hearAbout: e.target.value,
-                  }))
+                  }))}
                 }
                 titleText={"How Did you hear about Loooty?"}
               />
@@ -759,6 +859,7 @@ const RequestAccessModal = () => {
               <RequestAccessFormControl
                 placeholder="eg, www.myportfolio.com"
                 value={requestDetails.portfolio}
+                isCompulsory={false}
                 onChange={(e) =>
                   setRequestAccess((old) => ({
                     ...old,
@@ -770,6 +871,7 @@ const RequestAccessModal = () => {
             </div>
 
             <button
+              type="submit"
               onClick={(e) => handleRequestAccess(e)}
               className="coming__soon-navbar-request-btn orange"
             >
@@ -796,7 +898,7 @@ const ComingSoon = () => {
       <Supporters id={"supporters"} />
       <LoootyAssetExplain
         id={"born"}
-        img="/assets/image/comingsoon/nzappa.png"
+        img="/assets/image/comingsoon/ozappa.png"
       />
       <section className="coming__soon-image-background">
         <img
