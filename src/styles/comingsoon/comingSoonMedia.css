@@ -1,0 +1,168 @@
+/* 
+    Mobile devices
+*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .coming__soon-cs-sub-navbar {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .coming__soon-subnav-btn {
+    
+    width: 100%;
+    
+  }
+
+  /* battle cry */
+  .coming__soon-battlecry-img.mobile {
+    width: 100%;
+    object-fit: cover;
+    /* height: 70vh; */
+  }
+
+  .coming__soon-battlecry-container {
+    overflow-x: scroll;
+  }
+
+  /* born */
+  .coming__soon-loooty-born-container {
+   
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .coming__soon-loooty-born-container.inverse {
+    flex-direction: column;
+  }
+
+  .coming__soon-born-image-container {
+    width: 100%;
+  
+  }
+
+  .coming__soon-born-body {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .coming__soon-early-lauch-asset-inner {
+    flex-direction: column;
+    padding: 0 8rem;
+   
+  }
+  
+
+
+  .coming__soon-asset-image-container {
+    width: 40%;
+    transform: skewX(10deg);
+  }
+
+  /* to sell */
+
+  .coming__soon-to-sell-title {
+    width: 75%;
+    
+  }
+
+  .coming__soon-for-everyone {
+    
+  
+  }
+
+  .coming__soon-for-everyone-inner{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .coming__soon-born-header{
+    text-align: center;
+  }
+
+  .coming__soon-born-paragraph {
+
+    text-align: center;
+  }
+
+  .coming__soon-for-everyone-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .coming__soon-first-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coming__soon-first-container-title {
+    width: 100%;
+   
+   text-align: center;
+  }
+
+  .coming__soon-social-medias{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .coming__soon-early-launchers-tag-container{
+    padding: 0.7rem 1rem;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .coming__soon-first-access-container{
+    flex-direction: column;
+
+  }
+
+  .coming__soon-request-access-modal{
+    width: 97%;
+  }
+  .coming__soon-request-access-modal-overlay{
+    padding: .4rem .3rem;
+    align-items: center;
+    /* width: 100%; */
+    right: 0%;
+  }
+}
+
+/* 
+    iPads, Tablets
+*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  
+}
+
+
+/* 
+    Small screens, laptops
+*/
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  
+}
+
+
+/* 
+    Desktops, large screens
+*/
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  
+}
+
+/* 
+  Extra large screens, TV
+*/
+
+@media screen and (min-width: 1201px) {
+  
+}

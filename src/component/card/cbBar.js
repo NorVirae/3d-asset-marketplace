@@ -1,7 +1,7 @@
 import CGCard, { CGCardSlim } from "./CGCard"
-import CatmanImg from "../../assets/image/tsunami.jpg"
 
 
+const CatmanImg = "../../assets/image/tsunami.jpg"
 
 const CGBar = ({slim, style}) => {
 

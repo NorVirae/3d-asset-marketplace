@@ -1,4 +1,4 @@
-import LoootyLogo from "../loootyLogo"
+import LoootyLogo, { LoootyLogoStatic } from "../loootyLogo"
 
 
 
@@ -9,7 +9,7 @@ const OddCard = ({style, active}) => {
             <div className="opnstore__odd-card-logo-overplace-container">
                 <div className="opnstore__odd-card-logo-overplace" style={{top: active?"-20%":"-30%", padding: active?"2rem 4rem":".4rem 2rem"}}>
                     <div className="opnstore__odd-card-logo-backtrack">
-                        <LoootyLogo style={{width: "7rem"}} />
+                        <LoootyLogoStatic style={{width: "7rem"}} />
                     </div>
                 </div>
             </div>

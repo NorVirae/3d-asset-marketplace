@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import {MdOutlineArrowDropDown} from 'react-icons/md'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { setSelectedSubPage } from '../../redux/reducers/userStateReducer'
 
-const IdenttyBtnDropdown = ({dropDownList, setMainText}) => {
+const IdenttyBtnDropdown = ({dropDownList, dropdownOnclick, setMainText}) => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     return(
         <div onClick={e=>{ e.stopPropagation();}} className='identity__btn-skew-container'>
             <ul onClick={e=> e.stopPropagation()} className='identity__btn-dropdown'>
                 {dropDownList.map(item =>{
-                    console.log(item.toLowerCase(), "CHECK")
-                    return <li onClick={ (e) => { dispatch(setSelectedSubPage({selected: item.toLowerCase()}));  setMainText(item)}} className='identity__btn-dropdown-item'>{item}</li>
+                    return <li onClick={ (e) => { dispatch(setSelectedSubPage({selected: item.toLowerCase()})); navigate(`/user/${item.toLowerCase()}`);  setMainText(item)}} className='identity__btn-dropdown-item'>{item}</li>
                 })}
                 
             </ul>
@@ -18,10 +19,9 @@ const IdenttyBtnDropdown = ({dropDownList, setMainText}) => {
     )
 }
 
-const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
+const IdentityBtn = ({text, type, style, dropDownList, dropdownOnclick, onClick}) => {
     const [showDropdown, setShowDropdown] = useState(false)
     const [mainText, setMainText] = useState(text)
-    console.log(dropDownList)
     const wrapHandler = (text) => {
         let newtext = text.split(' ')
         if (newtext.length > 1){
@@ -48,7 +48,7 @@ const IdentityBtn = ({text, type, style, dropDownList, onClick}) => {
                         right:"-75%"}}/>}
                     
                 </span>
-                {dropDownList && (showDropdown && <IdenttyBtnDropdown setMainText={setMainText} dropDownList={dropDownList}/>)}
+                {dropDownList && (showDropdown && <IdenttyBtnDropdown dropdownOnclick={dropdownOnclick} setMainText={setMainText} dropDownList={dropDownList}/>)}
             </button>
         </div>
             // {/* </div> */}
