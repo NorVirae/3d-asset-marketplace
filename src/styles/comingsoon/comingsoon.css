@@ -19,7 +19,7 @@
   position: absolute;
   /* top: 100%; */
   object-fit: cover;
-  object-position: 100% 18.67%;
+  object-position: 100% 15.97%;
   opacity: 0.4;
 }
 
@@ -171,7 +171,7 @@
   position: absolute;
   /* top: 100%; */
   object-fit: cover;
-  object-position: 100% 10.37%;
+  object-position: 100% 11.3%;
   opacity: 0.4;
 }
 
@@ -285,7 +285,7 @@
   position: absolute;
   /* top: 100%; */
   object-fit: cover;
-  object-position: 100% 27.72%;
+  object-position: 100% 26.5%;
   opacity: 0.4;
 }
 
@@ -367,7 +367,7 @@
   position: absolute;
   /* top: 100%; */
   object-fit: cover;
-  object-position: 100% 33.82%;
+  object-position: 100% 32.29%;
   opacity: 0.4;
 }
 
@@ -428,7 +428,7 @@
   position: absolute;
   /* top: 100%; */
   object-fit: cover;
-  object-position: 100% 37.26%;
+  object-position: 100% 27.31%;
   opacity: 0.4;
 }
 
@@ -753,7 +753,7 @@ width: 100%;
 
 
 .coming__soon-request-access-checkbox-text{
-  color: #323240;
+  color: #5b5b73;
   font-weight: bold;
   
 }

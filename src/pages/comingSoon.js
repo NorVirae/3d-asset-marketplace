@@ -57,10 +57,9 @@ const BattleCryBanner = ({ id }) => {
       {mobile ? (
         <h3>
           It is time for Africa! We must build our own! Our story is ours to
-          tell! Loooty is calling on all African Creators to assemble and show
-          the world the amazing skills we PossibleTypeExtensionsRule. As
-          Animation and Gaming Studios rise in Africa, we need a marketplace for
-          us
+          tell! We need a marketplace for us, by us, where we can trade
+          professionally made African assets to inject our culture into the
+          mainstream
         </h3>
       ) : null}
       {mobile ? (
@@ -136,13 +135,9 @@ const Supporters = ({ id }) => {
   );
 };
 const bornParagraph = `
-passionate African creators in the Game and Animation creative spaces
-          who yearn to tell authentic African stories and have had to create
-          everything they use from scratch. We lack a CG Marketplace where our
-          African culture is its centerpiece. We wanted to take action soon as
-          possible, so we used "Loooty" as the name we're launching with,
-          inspired by voyagers and adventurers, a treasure trove at the end of a
-          long journey, a "Loot".
+passionate African creators in the Game and Animation creative spaces who yearn to
+tell authentic African stories and have had to create everything they use from scratch. We lack a CG Markketplace where 
+our African culture is its centrepiece.
 `;
 
 const LoootyAssetExplain = ({
@@ -255,11 +250,7 @@ const ToSell = ({ id }) => {
 
                 <span>AR/VR Assets</span>
               </li>
-              <li className="coming__soon-tags-list-item">
-                <IoTriangle className="coming__soon-tags-list-item-pointer" />
 
-                <span>VFX Packs</span>
-              </li>
               <li className="coming__soon-tags-list-item">
                 <IoTriangle className="coming__soon-tags-list-item-pointer faint" />
 
@@ -285,13 +276,13 @@ const ToSell = ({ id }) => {
               <li className="coming__soon-tags-list-item">
                 <IoTriangle className="coming__soon-tags-list-item-pointer" />
 
-                <span>and more</span>
+                <span>VFX Packs etc</span>
               </li>
             </ul>
           </ul>
           <p className="coming__soon-sell-announce-header shorten">
-            Anything that can aid fellow creators to tell their stories through
-            their various media.
+            That can aid fellow creators to tell their stories through their
+            various media.
           </p>
         </div>
       </section>
@@ -429,13 +420,10 @@ const Footer = ({ id }) => {
 };
 
 const creatorParagraph = `
-As one of the amazing creators in the African space, we know you share the vision
-of Africataking the global market by storm, and one of the ways we inch closer to that is to not
-only create short films, games etc but to upload assets from this projects for other passionate
-people to use, you would be surprised the amazing stories that your creation will feature in overtime, You will
-be properly credited and compensated on your own terms, You get to set
-the cost and we don't demand exlusively at all, you can have your assets on any other marketplace.
-we just want to make one for Africa as Africans.
+As one of the amazing creators in the African space,
+ we know you share the vision of Africa taking the global market by storm.
+  We can inch closer by making digital assets we create, open for other creators to use.
+   You would be surprised by the amazing stories that your creation will feature over time. 
 `;
 
 const FormControlTitle = ({
@@ -558,7 +546,7 @@ const RequestAccessModal = () => {
   };
 
   const errorHandler = () => {
-    setProceed(true)
+    setProceed(true);
     if (!requestDetails.country || requestDetails.country === "") {
       setErrors((old) => ({ ...old, country: true }));
       setProceed(false);
@@ -582,11 +570,9 @@ const RequestAccessModal = () => {
       setProceed(false);
     }
 
-    if (!proceed){
+    if (!proceed) {
       toast.error("Selected fields are required!");
-
     }
-    
   };
 
   const handleRequestAccess = async (e) => {
@@ -626,7 +612,6 @@ const RequestAccessModal = () => {
         //       // console.log("FAILED...", err);
         //     }
         //   );
-        
         // setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
       }
       setLoading(false);
@@ -638,7 +623,7 @@ const RequestAccessModal = () => {
   };
 
   const handleCheckboxClick = (text) => {
-    setProceed(true)
+    setProceed(true);
     let realTags = requestDetails.tags;
     if (realTags.includes(text)) {
       const getIndex = realTags.indexOf(text);
@@ -691,13 +676,13 @@ const RequestAccessModal = () => {
                 error={errors.nickname}
                 placeholder="Adams"
                 value={requestDetails.nickname}
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     nickname: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"Nickname"}
               />
 
@@ -706,13 +691,13 @@ const RequestAccessModal = () => {
                 error={errors.country}
                 placeholder="eg, South Africa"
                 value={requestDetails.country}
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     country: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"Country"}
               />
 
@@ -722,13 +707,13 @@ const RequestAccessModal = () => {
                 placeholder="eg, hackone@gmail.com"
                 value={requestDetails.email}
                 type="email"
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     email: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"Email"}
               />
             </div>
@@ -752,7 +737,7 @@ const RequestAccessModal = () => {
                   options={true}
                   text="No"
                   onClick={() => {
-                    setProceed(true)
+                    setProceed(true);
                     setRequestAccess((old) => ({ ...old, wouldSell: "No" }));
                     setSelected((old) => ({ ...old, first: 2 }));
                   }}
@@ -826,13 +811,14 @@ const RequestAccessModal = () => {
                   </div>
 
                   <div className="coming__soon-third-row-inner-box">
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("UI/UX Template")}
-                      text="UI/UX Template"
-                    />
+                    
                     <RequestAccessCheckbox
                       onClick={() => handleCheckboxClick("VFX packs")}
                       text="VFX packs"
+                    />
+                    <RequestAccessCheckbox
+                      onClick={() => handleCheckboxClick("UI/UX Template")}
+                      text="UI/UX Template"
                     />
                   </div>
                 </div>
@@ -846,13 +832,13 @@ const RequestAccessModal = () => {
                 error={errors.hearAbout}
                 placeholder="eg, Facebook"
                 value={requestDetails.hearAbout}
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     hearAbout: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"How Did you hear about Loooty?"}
               />
 
@@ -884,6 +870,15 @@ const RequestAccessModal = () => {
   );
 };
 
+const benefitsParagraph = `
+As a Creator on our marketplace,
+ you will be properly credited and
+  compensated on your own terms.
+   You get to set the cost and we don’t 
+   demand exclusivity at all (you can post your work anywhere else),
+    amongst other benefits.
+`
+
 const ComingSoon = () => {
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
 
@@ -900,6 +895,15 @@ const ComingSoon = () => {
         id={"born"}
         img="/assets/image/comingsoon/ozappa.png"
       />
+
+      <LoootyAssetExplain
+        id={"creator"}
+        title="Benefits"
+        img="/assets/image/comingsoon/takouba.png"
+        description={benefitsParagraph}
+        direction="inverse"
+        imageStyle={{ objectPosition: "100% 19.36%" }}
+      />
       <section className="coming__soon-image-background">
         <img
           src="/assets/image/comingsoon/BGPattern.png"
@@ -914,7 +918,7 @@ const ComingSoon = () => {
         title="Are you a Creator?"
         description={creatorParagraph}
         direction="inverse"
-        imageStyle={{ objectPosition: "100% 19.95%" }}
+        imageStyle={{ objectPosition: "100% 21.17%" }}
       />
       <ToSell id={"tosell"} />
       <ForEveryOne id={"everyone"} />
