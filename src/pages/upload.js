@@ -184,19 +184,23 @@ const UploadPage = () => {
                   <img
                     className="upload__image-form-control-image"
                     src={
-                      productInfo.bas64_cover_picture[0]
+                      productInfo.bas64_cover_picture
                     }
                   />
                 ) : null}
                 <input
                   accept="image/*"
-                  onChange={(e) => {
+                  onChange={async (e) => {
                     let newArray = productInfo.bas64_cover_picture;
                     newArray = e.target.files;
-                    setProductInfo((old) => ({
+                    console.log("Got here")
+                    const baseFile = await convertToBase64(e.target.files[0])
+                    setProductInfo((old) => {
+                      console.log(productInfo.bas64_cover_picture, "PRODUCT")
+                      return {
                       ...old,
-                      bas64_cover_picture: convertToBase64(e.target.files[0]),
-                    }));
+                      bas64_cover_picture: baseFile,
+                    }});
                   }}
                   placeholder="none"
                   type={"file"}
@@ -229,9 +233,9 @@ const UploadPage = () => {
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       let newArray = productInfo.base64_preview_photos;
-                      newArray[0] = convertToBase64(e.target.files[0]);
+                      newArray[0] = await convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
@@ -255,9 +259,9 @@ const UploadPage = () => {
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       let newArray = productInfo.base64_preview_photos;
-                      newArray[1] = convertToBase64(e.target.files[0]);
+                      newArray[1] = await convertToBase64(e.target.files[0]);
                      
                       setProductInfo((old) => ({
                         ...old,
@@ -281,9 +285,9 @@ const UploadPage = () => {
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       let newArray = productInfo.base64_preview_photos;
-                      newArray[2] = convertToBase64(e.target.files[0]);
+                      newArray[2] = await convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
@@ -307,9 +311,9 @@ const UploadPage = () => {
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       let newArray = productInfo.base64_preview_photos;
-                      newArray[3] = convertToBase64(e.target.files[0]);
+                      newArray[3] = await convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
@@ -333,9 +337,9 @@ const UploadPage = () => {
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       let newArray = productInfo.base64_preview_photos;
-                      newArray[4] = convertToBase64(e.target.files[0]);
+                      newArray[4] = await convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
@@ -359,9 +363,9 @@ const UploadPage = () => {
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       let newArray = productInfo.base64_preview_photos;
-                      newArray[5] = convertToBase64(e.target.files[0]);
+                      newArray[5] = await convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
@@ -481,7 +485,9 @@ const UploadPage = () => {
               <input
                 multiple
                 onChange={(e) => {
-                  setProductInfo((old) => ({ ...old, file: e.target.files }));
+                  setProductInfo((old) => {
+                    console.log(e.target.files, productInfo.file, "HAKA")
+                    return { ...old, file: e.target.files }});
                 }}
                 className="upload__main-files-upload"
                 type={"file"}

@@ -133,7 +133,7 @@ export const createMerchandise = createAsyncThunk(
       let teamKey = Object.keys(state.user.user.groups)[0];
       const newConfig = {
         ...config,
-        "Content-Type": "application/form-data",
+        "Content-Type": "application/json",
         headers: {
           ...config.headers,
           Team: teamKey,

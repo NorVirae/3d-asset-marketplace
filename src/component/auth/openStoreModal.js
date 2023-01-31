@@ -14,11 +14,12 @@ export const convertToBase64 = (blob) => {
   //   var base64data = reader.result;
   //   return base64data;
   // };
+  console.log("GOT IN")
 
   return new Promise((resolve, _) => {
     const reader = new FileReader();
     reader.onloadend = () => {
-      // console.log(reader.result, "HUZ")
+      console.log(reader.result, "HUZ")
       // setStoreInfo((old) => ({
       //   ...old,
       //   base64_photo: [reader.result],
