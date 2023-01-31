@@ -18,6 +18,7 @@ import Expanded from "./pages/admin/Expanded";
 import NotificationPage from "./pages/notificationpage";
 import ComingSoon from "./pages/comingSoon";
 import { useSelector } from "react-redux";
+import SignUpExperimental from "./pages/signupExperimental";
 
 function App() {
   const user = useSelector((state) => state.user.user);
@@ -27,7 +28,11 @@ function App() {
       <ToastContainer />
       <RegisterProvider>
         <Routes>
-          <Route path="/" element={user ? <Home /> : <Navigate to="/coming/soon"/>} exact />
+          <Route
+            path="/"
+            element={user ? <Home /> : <Navigate to="/coming/soon" />}
+            exact
+          />
           {/* <Route path="/*" element={user ? <Home /> : <ComingSoon />} exact /> */}
           <Route
             path="/open/store"
@@ -72,7 +77,17 @@ function App() {
           />
           <Route
             path="/notification"
-            element={user ? <NotificationPage /> : <Navigate to="/coming/soon" />}
+            element={
+              user ? <NotificationPage /> : <Navigate to="/coming/soon" />
+            }
+            exact
+          />
+
+          <Route
+            path="/signup/experimental"
+            element={
+              <SignUpExperimental /> 
+            }
             exact
           />
           <Route path="/coming/soon" element={<ComingSoon />} exact />

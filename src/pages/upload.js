@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { createMerchandise } from "../api/auth";
+import { convertToBase64 } from "../component/auth/openStoreModal";
 import IdentityBtn from "../component/buttons/identityBtn";
 import CGBar, { CGBarSlim } from "../component/card/cbBar";
 import LoootyLoader from "../component/loader/loootyLoader";
@@ -95,10 +96,10 @@ const UploadPage = () => {
     explicit_content: 1,
     // base64_photos: "",
     // photos: "",
-    merchandise_cover_picture: [],
-    // bas64_cover_picture: [],
-    merchandise_preview_pictures: [],
-    // base64_preview_photos: [],
+    // merchandise_cover_picture: [],
+    bas64_cover_picture: [],
+    // merchandise_preview_pictures: [],
+    base64_preview_photos: [],
     file: [],
   });
 
@@ -110,24 +111,24 @@ const UploadPage = () => {
     setClickProtect(true)
 
     // setStoreInfo(old => ({...old, email: user.email}))
-    let data = new FormData()
+    // let data = new FormData()
 
-    data.append('store_id', productInfo.store_id )
-    data.append('merchandise_name', productInfo.merchandise_name)
-    data.append('merchandise_description', productInfo.merchandise_description)
-    data.append('merchandise_tags', JSON.stringify(productInfo.merchandise_tags) )
-    data.append('basic_price', productInfo.basic_price)
-    data.append('commercial_price', productInfo.commercial_price)
-    data.append('explicit_content', productInfo.explicit_content)
+    // data.append('store_id', productInfo.store_id )
+    // data.append('merchandise_name', productInfo.merchandise_name)
+    // data.append('merchandise_description', productInfo.merchandise_description)
+    // data.append('merchandise_tags', JSON.stringify(productInfo.merchandise_tags) )
+    // data.append('basic_price', productInfo.basic_price)
+    // data.append('commercial_price', productInfo.commercial_price)
+    // data.append('explicit_content', productInfo.explicit_content)
     // data.append('base64_photos', productInfo.base64_photos)
     // data.append('photos', productInfo.photos)
-    data.append('merchandise_cover_picture', productInfo.merchandise_cover_picture)
+    // data.append('merchandise_cover_picture', productInfo.merchandise_cover_picture)
     // data.append('bas64_cover_picture', productInfo.bas64_cover_picture)
-    data.append('merchandise_preview_pictures', JSON.stringify(productInfo.merchandise_preview_pictures) )
+    // data.append('merchandise_preview_pictures', JSON.stringify(productInfo.merchandise_preview_pictures) )
     // data.append('base64_preview_photos', productInfo.base64_preview_photos)
-    data.append('file', JSON.stringify(productInfo.file) )
+    // data.append('file', JSON.stringify(productInfo.file) )
 
-    const uploadProduct = await dispatch(createMerchandise({ productInfo: data }))
+    const uploadProduct = await dispatch(createMerchandise({ productInfo: productInfo }))
       .unwrap()
       .then(async (result) => {
         setIsLoading(false);
@@ -179,22 +180,22 @@ const UploadPage = () => {
 
             <section className="upload__image-dropbox-container">
               <div className="upload__image-dropbox-twin">
-                {productInfo.merchandise_cover_picture[0] ? (
+                {productInfo.bas64_cover_picture[0] ? (
                   <img
                     className="upload__image-form-control-image"
-                    src={URL.createObjectURL(
-                      productInfo.merchandise_cover_picture[0]
-                    )}
+                    src={
+                      productInfo.bas64_cover_picture[0]
+                    }
                   />
                 ) : null}
                 <input
                   accept="image/*"
                   onChange={(e) => {
-                    let newArray = productInfo.merchandise_cover_picture;
+                    let newArray = productInfo.bas64_cover_picture;
                     newArray = e.target.files;
                     setProductInfo((old) => ({
                       ...old,
-                      merchandise_cover_picture: newArray,
+                      bas64_cover_picture: convertToBase64(e.target.files[0]),
                     }));
                   }}
                   placeholder="none"
@@ -217,24 +218,24 @@ const UploadPage = () => {
             <section className="upload__image-preview">
               <div className="upload__image-preview-inner">
                 <div className="upload__image-item">
-                  {productInfo.merchandise_preview_pictures[0] ? (
+                  {productInfo.base64_preview_photos[0] ? (
                     <img
                       className="upload__image-form-control-image"
-                      src={URL.createObjectURL(
-                        productInfo.merchandise_preview_pictures[0]
-                      )}
+                      src={
+                        productInfo.base64_preview_photos[0]
+                      }
                     />
                   ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
                     onChange={(e) => {
-                      let newArray = productInfo.merchandise_preview_pictures;
-                      newArray[0] = e.target.files[0];
+                      let newArray = productInfo.base64_preview_photos;
+                      newArray[0] = convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
-                        merchandise_preview_pictures: newArray,
+                        base64_preview_photos: newArray,
                       }));
                     }}
                     type={"file"}
@@ -243,24 +244,24 @@ const UploadPage = () => {
                 </div>
 
                 <div className="upload__image-item">
-                  {productInfo.merchandise_preview_pictures[1] ? (
+                  {productInfo.base64_preview_photos[1] ? (
                     <img
                       className="upload__image-form-control-image"
-                      src={URL.createObjectURL(
-                        productInfo.merchandise_preview_pictures[1]
-                      )}
+                      src={
+                        productInfo.base64_preview_photos[1]
+                      }
                     />
                   ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
                     onChange={(e) => {
-                      let newArray = productInfo.merchandise_preview_pictures;
-                      newArray[1] = e.target.files[0];
+                      let newArray = productInfo.base64_preview_photos;
+                      newArray[1] = convertToBase64(e.target.files[0]);
                      
                       setProductInfo((old) => ({
                         ...old,
-                        merchandise_preview_pictures: newArray,
+                        base64_preview_photos: newArray,
                       }));
                     }}
                     type={"file"}
@@ -269,24 +270,24 @@ const UploadPage = () => {
                 </div>
 
                 <div className="upload__image-item">
-                  {productInfo.merchandise_preview_pictures[2] ? (
+                  {productInfo.base64_preview_photos[2] ? (
                     <img
                       className="upload__image-form-control-image"
-                      src={URL.createObjectURL(
-                        productInfo.merchandise_preview_pictures[2]
-                      )}
+                      src={
+                        productInfo.base64_preview_photos[2]
+                      }
                     />
                   ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
                     onChange={(e) => {
-                      let newArray = productInfo.merchandise_preview_pictures;
-                      newArray[2] = e.target.files[0];
+                      let newArray = productInfo.base64_preview_photos;
+                      newArray[2] = convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
-                        merchandise_preview_pictures: newArray,
+                        base64_preview_photos: newArray,
                       }));
                     }}
                     type={"file"}
@@ -295,24 +296,24 @@ const UploadPage = () => {
                 </div>
 
                 <div className="upload__image-item">
-                  {productInfo.merchandise_preview_pictures[3] ? (
+                  {productInfo.base64_preview_photos[3] ? (
                     <img
                       className="upload__image-form-control-image"
-                      src={URL.createObjectURL(
-                        productInfo.merchandise_preview_pictures[3]
-                      )}
+                      src={
+                        productInfo.base64_preview_photos[3]
+                      }
                     />
                   ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
                     onChange={(e) => {
-                      let newArray = productInfo.merchandise_preview_pictures;
-                      newArray[3] = e.target.files[0];
+                      let newArray = productInfo.base64_preview_photos;
+                      newArray[3] = convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
-                        merchandise_preview_pictures: newArray,
+                        base64_preview_photos: newArray,
                       }));
                     }}
                     type={"file"}
@@ -321,24 +322,24 @@ const UploadPage = () => {
                 </div>
 
                 <div className="upload__image-item">
-                  {productInfo.merchandise_preview_pictures[4] ? (
+                  {productInfo.base64_preview_photos[4] ? (
                     <img
                       className="upload__image-form-control-image"
-                      src={URL.createObjectURL(
-                        productInfo.merchandise_preview_pictures[4]
-                      )}
+                      src={
+                        productInfo.base64_preview_photos[4]
+                      }
                     />
                   ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
                     onChange={(e) => {
-                      let newArray = productInfo.merchandise_preview_pictures;
-                      newArray[4] = e.target.files[0];
+                      let newArray = productInfo.base64_preview_photos;
+                      newArray[4] = convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
-                        merchandise_preview_pictures: newArray,
+                        base64_preview_photos: newArray,
                       }));
                     }}
                     type={"file"}
@@ -347,24 +348,24 @@ const UploadPage = () => {
                 </div>
 
                 <div className="upload__image-item">
-                  {productInfo.merchandise_preview_pictures[5] ? (
+                  {productInfo.base64_preview_photos[5] ? (
                     <img
                       className="upload__image-form-control-image"
-                      src={URL.createObjectURL(
-                        productInfo.merchandise_preview_pictures[5]
-                      )}
+                      src={
+                        productInfo.base64_preview_photos[5]
+                      }
                     />
                   ) : null}
                   <FaPlusCircle className="upload__image-iconister" />
                   <p>Preview Image</p>
                   <input
                     onChange={(e) => {
-                      let newArray = productInfo.merchandise_preview_pictures;
-                      newArray[5] = e.target.files[0];
+                      let newArray = productInfo.base64_preview_photos;
+                      newArray[5] = convertToBase64(e.target.files[0]);
                       
                       setProductInfo((old) => ({
                         ...old,
-                        merchandise_preview_pictures: newArray,
+                        base64_preview_photos: newArray,
                       }));
                     }}
                     type={"file"}

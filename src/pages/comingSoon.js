@@ -4,6 +4,7 @@ import { FaDiscord, FaFacebookF, FaTimes, FaTwitter } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
 import { IoTriangle } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
+import { VscTriangleUp } from "react-icons/vsc";
 import { useMediaQuery } from "react-responsive";
 import { toast } from "react-toastify";
 import { requestAccess } from "../api/coming";
@@ -400,6 +401,29 @@ const FooterInner = () => {
   );
 };
 
+const FormDropdown = ({ style }) => {
+  const [selected, setSelected] = useState("- select option -");
+  const [showDropdown, setShowDropdown] = useState(false);
+  return (
+    <div
+      style={style}
+      onMouseEnter={() => setShowDropdown(true)}
+      onMouseLeave={() => setShowDropdown(false)}
+      className="coming__soon-dropdown"
+    >
+      <span>{selected}</span>
+      <VscTriangleUp className="coming__soon-dropdown-arrow" />
+      {showDropdown && (
+        <ul>
+          <li>- select option -</li>
+          <li>- select option -</li>
+          <li>- select option -</li>
+        </ul>
+      )}
+    </div>
+  );
+};
+
 const Footer = ({ id }) => {
   return (
     <div id={id} className="coming__soon-footer">
@@ -460,7 +484,7 @@ const RequestAccessFormControl = ({
     <div className="coming__soon-form-group">
       <FormControlTitle isCompulsory={isCompulsory} text={titleText} />
       <div
-        style={{ border: `.3rem solid ${error ? "#df4759" : "#4A4A60"} ` }}
+        style={{ border: `.25rem solid ${error ? "#df4759" : "#4D4D63"} ` }}
         className="coming__soon-form-control-skew-container"
       >
         <input
@@ -721,59 +745,14 @@ const RequestAccessModal = () => {
             <div className="coming__soon-second-row">
               <FormControlTitle text="Would you like to sell on Loooty?" />
               <div className="coming__soon-second-row-inner">
-                <RequestAccessCheckbox
-                  optionSelected={selected.first}
-                  id={1}
-                  options={true}
-                  text="Yes"
-                  onClick={() => {
-                    setRequestAccess((old) => ({ ...old, wouldSell: "Yes" }));
-                    setSelected((old) => ({ ...old, first: 1 }));
-                  }}
-                />
-                <RequestAccessCheckbox
-                  optionSelected={selected.first}
-                  id={2}
-                  options={true}
-                  text="No"
-                  onClick={() => {
-                    setProceed(true);
-                    setRequestAccess((old) => ({ ...old, wouldSell: "No" }));
-                    setSelected((old) => ({ ...old, first: 2 }));
-                  }}
-                />
+                <FormDropdown />
               </div>
             </div>
 
             <div className="coming__soon-second-row">
               <FormControlTitle text="Do you work with a Team" />
               <div className="coming__soon-second-row-inner">
-                <RequestAccessCheckbox
-                  optionSelected={selected.second}
-                  id={1}
-                  options={true}
-                  text="No, I'm an Individual"
-                  onClick={() => {
-                    setSelected((old) => ({ ...old, second: 1 }));
-                    setRequestAccess((old) => ({
-                      ...old,
-                      workTeam: "No, I'm an Individual",
-                    }));
-                  }}
-                />
-                <RequestAccessCheckbox
-                  optionSelected={selected.second}
-                  id={2}
-                  options={true}
-                  text="yes, A studio"
-                  onClick={() => {
-                    setSelected((old) => ({ ...old, second: 2 }));
-                    setRequestAccess((old) => ({
-                      ...old,
-                      workTeam: "yes, A studio",
-                    }));
-                  }}
-                />
+                <FormDropdown />
               </div>
             </div>
 
@@ -781,46 +760,7 @@ const RequestAccessModal = () => {
               <div className="coming__soon-third-row">
                 <FormControlTitle text="What would you like to sell on Loooty?" />
                 <div className="coming__soon-third-row-inner">
-                  <div className="coming__soon-third-row-inner-box">
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("2D")}
-                      text="2D"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("Plugins/ Script")}
-                      text="Plugins/ Script"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("Game Ready Assets")}
-                      text="Game Ready Assets"
-                    />
-                  </div>
-                  <div className="coming__soon-third-row-inner-box">
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("3D")}
-                      text="3D"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("AR/VR Assets")}
-                      text="AR/VR Assets"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("Sounds")}
-                      text="Sounds"
-                    />
-                  </div>
-
-                  <div className="coming__soon-third-row-inner-box">
-                    
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("VFX packs")}
-                      text="VFX packs"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("UI/UX Template")}
-                      text="UI/UX Template"
-                    />
-                  </div>
+                  <FormDropdown />
                 </div>
               </div>
             )}
@@ -877,7 +817,7 @@ As a Creator on our marketplace,
    You get to set the cost and we don’t 
    demand exclusivity at all (you can post your work anywhere else),
     amongst other benefits.
-`
+`;
 
 const ComingSoon = () => {
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);

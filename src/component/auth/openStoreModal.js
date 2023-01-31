@@ -6,6 +6,29 @@ import { createMerchandiseStore } from "../../api/auth";
 import LoootyLoader from "../loader/loootyLoader";
 import { RegisterContext } from "./context/registerContext";
 
+export const convertToBase64 = (blob) => {
+  // var blob = new Blob([blob])
+  // var reader = new FileReader();
+  // reader.readAsDataURL(blob);
+  // reader.onloadend = function () {
+  //   var base64data = reader.result;
+  //   return base64data;
+  // };
+
+  return new Promise((resolve, _) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      // console.log(reader.result, "HUZ")
+      // setStoreInfo((old) => ({
+      //   ...old,
+      //   base64_photo: [reader.result],
+      // }));
+      return resolve(reader.result);
+    };
+    reader.readAsDataURL(blob);
+  });
+};
+
 const OpenStoreModal = () => {
   const [active, setActive] = useState(false);
   const user = useSelector((state) => state.user.user);
@@ -28,6 +51,7 @@ const OpenStoreModal = () => {
     base64_photo: [],
     why_loooty: "",
     portfolio_link: "",
+    // store_cover_picture: [],
   });
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
   useEffect(() => {
@@ -37,39 +61,21 @@ const OpenStoreModal = () => {
     }
   }, [user]);
 
-  const convertToBase64 = (blob) => {
-    // var blob = new Blob([blob])
-    // var reader = new FileReader();
-    // reader.readAsDataURL(blob);
-    // reader.onloadend = function () {
-    //   var base64data = reader.result;
-    //   return base64data;
-    // };
-
-    return new Promise((resolve, _) => {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        // console.log(reader.result, "HUZ")
-        setStoreInfo((old) => ({
-          ...old,
-          base64_photo: [reader.result.split(",")[1]],
-        }));
-        return resolve(reader.result);
-      };
-      reader.readAsDataURL(blob);
-    });
-  };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setClickProtect(true);
+    // let submitData = storeInfo
     // setStoreInfo(old => ({...old, email: user.email}))
-    let data = new FormData();
+    // let data = new FormData();
 
     // data.append("store_name", storeInfo.store_name);
     // data.append("store_email", storeInfo.store_email);
     // data.append('store_cover_picture', storeInfo.store_cover_picture)
+    // submitData.store_cover_picture = data
+
     // data.append("why_loooty", storeInfo.why_loooty);
     // data.append("portfolio_link", storeInfo.portfolio_link);
     const signUpData = await dispatch(
@@ -196,7 +202,6 @@ const OpenStoreModal = () => {
             <input
               type={"file"}
               multiple
-
               onFocus={() => {
                 setErrors((old) => ({ ...old, base64_photo: false }));
               }}
@@ -207,6 +212,14 @@ const OpenStoreModal = () => {
                   base64_photo: [convertToBase64(e.target.files[0])],
                 }));
               }}
+
+              // onChange={(e) => {
+              //   setErrors((old) => ({ ...old, base64_photo: false }));
+              //   setStoreInfo((old) => ({
+              //     ...old,
+              //     store_cover_picture: e.target.files,
+              //   }));
+              // }}
               // value={storeInfo.value}
               className="opn__open-store-form-control"
             />
@@ -228,8 +241,7 @@ const OpenStoreModal = () => {
             className="opn__open-store-form-control-container"
           >
             <input
-            placeholder="http://myportfolio.com"
-
+              placeholder="http://myportfolio.com"
               onFocus={() => {
                 setErrors((old) => ({ ...old, portfolio_link: false }));
               }}
@@ -260,8 +272,7 @@ const OpenStoreModal = () => {
             className="opn__open-store-form-control-container"
           >
             <input
-            placeholder="I want my work to reach the wider african audience"
-
+              placeholder="I want my work to reach the wider african audience"
               onFocus={() => {
                 setErrors((old) => ({ ...old, why_loooty: false }));
               }}
