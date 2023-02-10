@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { FaDiscord, FaFacebookF, FaTimes, FaTwitter } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
 import { IoTriangle } from "react-icons/io5";
@@ -55,14 +55,6 @@ const BattleCryBanner = ({ id }) => {
   const mobile = useMediaQuery({ minWidth: 320, maxWidth: 480 });
   return (
     <div id={id} className="coming__soon-battlecry-container">
-      {mobile ? (
-        <h3>
-          It is time for Africa! We must build our own! Our story is ours to
-          tell! We need a marketplace for us, by us, where we can trade
-          professionally made African assets to inject our culture into the
-          mainstream
-        </h3>
-      ) : null}
       {mobile ? (
         <img
           className="coming__soon-battlecry-img mobile"
@@ -401,7 +393,75 @@ const FooterInner = () => {
   );
 };
 
-const FormDropdown = ({ style }) => {
+const FormDropdownContent = ({
+  selected,
+  setSelected,
+  dropItems = ["one", "two", "three"],
+}) => {
+  return (
+    <section className="coming__soon-form-dropdown">
+      {dropItems.map((itm) => (
+        <div
+          onClick={() => setSelected(itm)}
+          style={{
+            color: `${selected === itm ? "#5e5e63" : "white"}`,
+          }}
+        >
+          {itm}
+        </div>
+      ))}
+    </section>
+  );
+};
+
+const FormDropdownContentMultiSelect = ({
+  setShowDropdown,
+  setRequestAccess,
+  requestDetails,
+  dropItems = ["one", "two", "three"],
+}) => {
+  const handleSelect = (text) => {
+    let realTags = requestDetails.tags;
+    console.log(realTags);
+    if (realTags.includes(text)) {
+      const getIndex = realTags.indexOf(text);
+      if (getIndex != -1) {
+        realTags.splice(getIndex, 1);
+
+        setRequestAccess({ ...requestDetails, tags: realTags });
+      }
+    } else {
+      realTags.push(text);
+
+      setRequestAccess({ ...requestDetails, tags: realTags });
+    }
+  };
+
+  useLayoutEffect(() => {
+    // setRequestAccess()
+  }, [requestDetails]);
+
+  return (
+    <section className="coming__soon-form-dropdown multi-select">
+      {dropItems.map((itm) => (
+        <div
+          key={itm}
+          onClick={() =>{ 
+            handleSelect(itm)
+            setShowDropdown(false)
+          }}
+          style={{
+            color: `${requestDetails.tags.includes(itm) ? "#5e5e63" : "white"}`,
+          }}
+        >
+          {itm}
+        </div>
+      ))}
+    </section>
+  );
+};
+
+const FormDropdown = ({ style, dropItems }) => {
   const [selected, setSelected] = useState("- select option -");
   const [showDropdown, setShowDropdown] = useState(false);
   return (
@@ -412,14 +472,43 @@ const FormDropdown = ({ style }) => {
       className="coming__soon-dropdown"
     >
       <span>{selected}</span>
-      <VscTriangleUp className="coming__soon-dropdown-arrow" />
       {showDropdown && (
-        <ul>
-          <li>- select option -</li>
-          <li>- select option -</li>
-          <li>- select option -</li>
-        </ul>
+        <FormDropdownContent
+          dropItems={dropItems}
+          selected={selected}
+          setSelected={setSelected}
+        />
       )}
+      <VscTriangleUp className="coming__soon-dropdown-arrow" />
+    </div>
+  );
+};
+
+const FormDropdownMultiSelect = ({
+  style,
+  dropItems,
+  setRequestAccess,
+  requestDetails,
+}) => {
+  const [selected, setSelected] = useState("- select option -");
+  const [showDropdown, setShowDropdown] = useState(false);
+  return (
+    <div
+      style={style}
+      onMouseEnter={() => setShowDropdown(true)}
+      onMouseLeave={() => setShowDropdown(false)}
+      className="coming__soon-dropdown"
+    >
+      <span>{selected}</span>
+      {showDropdown && (
+        <FormDropdownContentMultiSelect
+          setShowDropdown={setShowDropdown}
+          dropItems={dropItems}
+          setRequestAccess={setRequestAccess}
+          requestDetails={requestDetails}
+        />
+      )}
+      <VscTriangleUp className="coming__soon-dropdown-arrow" />
     </div>
   );
 };
@@ -558,7 +647,6 @@ const RequestAccessModal = () => {
     hearAbout: false,
     portfolio: false,
   });
-  const [selected, setSelected] = useState({ first: 1, second: 1 });
   const [loading, setLoading] = useState(false);
   const [proceed, setProceed] = useState(true);
 
@@ -607,36 +695,36 @@ const RequestAccessModal = () => {
       finalData.timestamp = new Date();
       errorHandler();
       if (proceed) {
-        // setRequestAccess((old) => ({
-        //   ...old,
-        //   timestamp: new Date(),
-        // //   tags: JSON.stringify(old.tags),
-        // // }));
-        // let stringifiedTags = "";
-        // for (let i = 0; i < finalData.tags.length; i++) {
-        //   stringifiedTags += `${finalData.tags[i]}, `;
-        // }
-        // finalData.tags = stringifiedTags;
-        // await requestAccess(finalData);
-        // toast.success("Request was submitted successfuly, Thank you!");
-        // templateParams.to_email = finalData.email;
-        // templateParams.to_name = finalData.nickname;
-        // emailjs
-        //   .send(
-        //     "service_2vounar",
-        //     "template_n7nbm6c",
-        //     templateParams,
-        //     "YrIOqot5XGcYDpulZ"
-        //   )
-        //   .then(
-        //     function (response) {
-        //       // console.log("SUCCESS!", response.status, response.text);
-        //     },
-        //     function (err) {
-        //       // console.log("FAILED...", err);
-        //     }
-        //   );
-        // setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
+        setRequestAccess((old) => ({
+          ...old,
+          timestamp: new Date(),
+          tags: JSON.stringify(old.tags),
+        }));
+        let stringifiedTags = "";
+        for (let i = 0; i < finalData.tags.length; i++) {
+          stringifiedTags += `${finalData.tags[i]}, `;
+        }
+        finalData.tags = stringifiedTags;
+        await requestAccess(finalData);
+        toast.success("Request was submitted successfuly, Thank you!");
+        templateParams.to_email = finalData.email;
+        templateParams.to_name = finalData.nickname;
+        emailjs
+          .send(
+            "service_2vounar",
+            "template_n7nbm6c",
+            templateParams,
+            "YrIOqot5XGcYDpulZ"
+          )
+          .then(
+            function (response) {
+              // console.log("SUCCESS!", response.status, response.text);
+            },
+            function (err) {
+              // console.log("FAILED...", err);
+            }
+          );
+        setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
       }
       setLoading(false);
     } catch (err) {
@@ -745,14 +833,14 @@ const RequestAccessModal = () => {
             <div className="coming__soon-second-row">
               <FormControlTitle text="Would you like to sell on Loooty?" />
               <div className="coming__soon-second-row-inner">
-                <FormDropdown />
+                <FormDropdown style={{ zIndex: 3 }} />
               </div>
             </div>
 
             <div className="coming__soon-second-row">
               <FormControlTitle text="Do you work with a Team" />
               <div className="coming__soon-second-row-inner">
-                <FormDropdown />
+                <FormDropdown style={{ zIndex: 2 }} />
               </div>
             </div>
 
@@ -760,7 +848,21 @@ const RequestAccessModal = () => {
               <div className="coming__soon-third-row">
                 <FormControlTitle text="What would you like to sell on Loooty?" />
                 <div className="coming__soon-third-row-inner">
-                  <FormDropdown />
+                  <FormDropdownMultiSelect
+                    dropItems={[
+                      "2D",
+                      "3D",
+                      "AR/VR Assets",
+                      "Sounds Packs",
+                      "Even Plugins",
+                      "Tools",
+                      "Scripts",
+                      "VFX packs",
+                    ]}
+                    requestAccess={requestAccess}
+                    requestDetails={requestDetails}
+                    style={{ zIndex: 1 }}
+                  />
                 </div>
               </div>
             )}
