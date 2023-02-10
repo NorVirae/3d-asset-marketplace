@@ -34,6 +34,7 @@ const SignInModal = () => {
     const signUpData = await dispatch(signInAction({ signInData: loginInfo }))
       .unwrap()
       .then(async (result) => {
+        console.log(result)
         setIsLoading(false);
         toast.success("Sign in was successful");
 

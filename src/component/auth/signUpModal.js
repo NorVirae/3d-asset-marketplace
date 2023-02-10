@@ -17,6 +17,7 @@ const SignUpModal = () => {
   const [fadeOut, setFadeOut] = useState(false);
   const dispatch = useDispatch();
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
+  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false);
   const [hidePassword, setHidePassword] = useState({
     pass: true,
@@ -48,6 +49,7 @@ const SignUpModal = () => {
       .then(async (result) => {
         setIsLoading(false);
         toast.success("Sign up was successful");
+        navigate("/")
 
         setShowRegModal({ ...showRegModal, register: false, login: true });
       })

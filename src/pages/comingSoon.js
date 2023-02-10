@@ -1,9 +1,10 @@
 import emailjs from "@emailjs/browser";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { FaDiscord, FaFacebookF, FaTimes, FaTwitter } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
 import { IoTriangle } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
+import { VscTriangleUp } from "react-icons/vsc";
 import { useMediaQuery } from "react-responsive";
 import { toast } from "react-toastify";
 import { requestAccess } from "../api/coming";
@@ -54,15 +55,6 @@ const BattleCryBanner = ({ id }) => {
   const mobile = useMediaQuery({ minWidth: 320, maxWidth: 480 });
   return (
     <div id={id} className="coming__soon-battlecry-container">
-      {mobile ? (
-        <h3>
-          It is time for Africa! We must build our own! Our story is ours to
-          tell! Loooty is calling on all African Creators to assemble and show
-          the world the amazing skills we PossibleTypeExtensionsRule. As
-          Animation and Gaming Studios rise in Africa, we need a marketplace for
-          us
-        </h3>
-      ) : null}
       {mobile ? (
         <img
           className="coming__soon-battlecry-img mobile"
@@ -136,13 +128,9 @@ const Supporters = ({ id }) => {
   );
 };
 const bornParagraph = `
-passionate African creators in the Game and Animation creative spaces
-          who yearn to tell authentic African stories and have had to create
-          everything they use from scratch. We lack a CG Marketplace where our
-          African culture is its centerpiece. We wanted to take action soon as
-          possible, so we used "Loooty" as the name we're launching with,
-          inspired by voyagers and adventurers, a treasure trove at the end of a
-          long journey, a "Loot".
+passionate African creators in the Game and Animation creative spaces who yearn to
+tell authentic African stories and have had to create everything they use from scratch. We lack a CG Markketplace where 
+our African culture is its centrepiece.
 `;
 
 const LoootyAssetExplain = ({
@@ -255,11 +243,7 @@ const ToSell = ({ id }) => {
 
                 <span>AR/VR Assets</span>
               </li>
-              <li className="coming__soon-tags-list-item">
-                <IoTriangle className="coming__soon-tags-list-item-pointer" />
 
-                <span>VFX Packs</span>
-              </li>
               <li className="coming__soon-tags-list-item">
                 <IoTriangle className="coming__soon-tags-list-item-pointer faint" />
 
@@ -285,13 +269,13 @@ const ToSell = ({ id }) => {
               <li className="coming__soon-tags-list-item">
                 <IoTriangle className="coming__soon-tags-list-item-pointer" />
 
-                <span>and more</span>
+                <span>VFX Packs etc</span>
               </li>
             </ul>
           </ul>
           <p className="coming__soon-sell-announce-header shorten">
-            Anything that can aid fellow creators to tell their stories through
-            their various media.
+            That can aid fellow creators to tell their stories through their
+            various media.
           </p>
         </div>
       </section>
@@ -409,6 +393,126 @@ const FooterInner = () => {
   );
 };
 
+const FormDropdownContent = ({
+  selected,
+  setSelected,
+  dropItems = ["one", "two", "three"],
+}) => {
+  return (
+    <section className="coming__soon-form-dropdown">
+      {dropItems.map((itm) => (
+        <div
+          onClick={() => setSelected(itm)}
+          style={{
+            color: `${selected === itm ? "#5e5e63" : "white"}`,
+          }}
+        >
+          {itm}
+        </div>
+      ))}
+    </section>
+  );
+};
+
+const FormDropdownContentMultiSelect = ({
+  setShowDropdown,
+  setRequestAccess,
+  requestDetails,
+  dropItems = ["one", "two", "three"],
+}) => {
+  const handleSelect = (text) => {
+    let realTags = requestDetails.tags;
+    console.log(realTags);
+    if (realTags.includes(text)) {
+      const getIndex = realTags.indexOf(text);
+      if (getIndex != -1) {
+        realTags.splice(getIndex, 1);
+
+        setRequestAccess({ ...requestDetails, tags: realTags });
+      }
+    } else {
+      realTags.push(text);
+
+      setRequestAccess({ ...requestDetails, tags: realTags });
+    }
+  };
+
+  useLayoutEffect(() => {
+    // setRequestAccess()
+  }, [requestDetails]);
+
+  return (
+    <section className="coming__soon-form-dropdown multi-select">
+      {dropItems.map((itm) => (
+        <div
+          key={itm}
+          onClick={() =>{ 
+            handleSelect(itm)
+            setShowDropdown(false)
+          }}
+          style={{
+            color: `${requestDetails.tags.includes(itm) ? "#5e5e63" : "white"}`,
+          }}
+        >
+          {itm}
+        </div>
+      ))}
+    </section>
+  );
+};
+
+const FormDropdown = ({ style, dropItems }) => {
+  const [selected, setSelected] = useState("- select option -");
+  const [showDropdown, setShowDropdown] = useState(false);
+  return (
+    <div
+      style={style}
+      onMouseEnter={() => setShowDropdown(true)}
+      onMouseLeave={() => setShowDropdown(false)}
+      className="coming__soon-dropdown"
+    >
+      <span>{selected}</span>
+      {showDropdown && (
+        <FormDropdownContent
+          dropItems={dropItems}
+          selected={selected}
+          setSelected={setSelected}
+        />
+      )}
+      <VscTriangleUp className="coming__soon-dropdown-arrow" />
+    </div>
+  );
+};
+
+const FormDropdownMultiSelect = ({
+  style,
+  dropItems,
+  setRequestAccess,
+  requestDetails,
+}) => {
+  const [selected, setSelected] = useState("- select option -");
+  const [showDropdown, setShowDropdown] = useState(false);
+  return (
+    <div
+      style={style}
+      onMouseEnter={() => setShowDropdown(true)}
+      onMouseLeave={() => setShowDropdown(false)}
+      className="coming__soon-dropdown"
+    >
+      <span>{selected}</span>
+      {showDropdown && (
+        <FormDropdownContentMultiSelect
+          setShowDropdown={setShowDropdown}
+          dropItems={dropItems}
+          setRequestAccess={setRequestAccess}
+          requestDetails={requestDetails}
+        />
+      )}
+      <VscTriangleUp className="coming__soon-dropdown-arrow" />
+    </div>
+  );
+};
+
 const Footer = ({ id }) => {
   return (
     <div id={id} className="coming__soon-footer">
@@ -429,13 +533,10 @@ const Footer = ({ id }) => {
 };
 
 const creatorParagraph = `
-As one of the amazing creators in the African space, we know you share the vision
-of Africataking the global market by storm, and one of the ways we inch closer to that is to not
-only create short films, games etc but to upload assets from this projects for other passionate
-people to use, you would be surprised the amazing stories that your creation will feature in overtime, You will
-be properly credited and compensated on your own terms, You get to set
-the cost and we don't demand exlusively at all, you can have your assets on any other marketplace.
-we just want to make one for Africa as Africans.
+As one of the amazing creators in the African space,
+ we know you share the vision of Africa taking the global market by storm.
+  We can inch closer by making digital assets we create, open for other creators to use.
+   You would be surprised by the amazing stories that your creation will feature over time. 
 `;
 
 const FormControlTitle = ({
@@ -472,7 +573,7 @@ const RequestAccessFormControl = ({
     <div className="coming__soon-form-group">
       <FormControlTitle isCompulsory={isCompulsory} text={titleText} />
       <div
-        style={{ border: `.3rem solid ${error ? "#df4759" : "#4A4A60"} ` }}
+        style={{ border: `.25rem solid ${error ? "#df4759" : "#4D4D63"} ` }}
         className="coming__soon-form-control-skew-container"
       >
         <input
@@ -546,7 +647,6 @@ const RequestAccessModal = () => {
     hearAbout: false,
     portfolio: false,
   });
-  const [selected, setSelected] = useState({ first: 1, second: 1 });
   const [loading, setLoading] = useState(false);
   const [proceed, setProceed] = useState(true);
 
@@ -558,7 +658,7 @@ const RequestAccessModal = () => {
   };
 
   const errorHandler = () => {
-    setProceed(true)
+    setProceed(true);
     if (!requestDetails.country || requestDetails.country === "") {
       setErrors((old) => ({ ...old, country: true }));
       setProceed(false);
@@ -582,11 +682,9 @@ const RequestAccessModal = () => {
       setProceed(false);
     }
 
-    if (!proceed){
+    if (!proceed) {
       toast.error("Selected fields are required!");
-
     }
-    
   };
 
   const handleRequestAccess = async (e) => {
@@ -597,37 +695,36 @@ const RequestAccessModal = () => {
       finalData.timestamp = new Date();
       errorHandler();
       if (proceed) {
-        // setRequestAccess((old) => ({
-        //   ...old,
-        //   timestamp: new Date(),
-        // //   tags: JSON.stringify(old.tags),
-        // // }));
-        // let stringifiedTags = "";
-        // for (let i = 0; i < finalData.tags.length; i++) {
-        //   stringifiedTags += `${finalData.tags[i]}, `;
-        // }
-        // finalData.tags = stringifiedTags;
-        // await requestAccess(finalData);
-        // toast.success("Request was submitted successfuly, Thank you!");
-        // templateParams.to_email = finalData.email;
-        // templateParams.to_name = finalData.nickname;
-        // emailjs
-        //   .send(
-        //     "service_2vounar",
-        //     "template_n7nbm6c",
-        //     templateParams,
-        //     "YrIOqot5XGcYDpulZ"
-        //   )
-        //   .then(
-        //     function (response) {
-        //       // console.log("SUCCESS!", response.status, response.text);
-        //     },
-        //     function (err) {
-        //       // console.log("FAILED...", err);
-        //     }
-        //   );
-        
-        // setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
+        setRequestAccess((old) => ({
+          ...old,
+          timestamp: new Date(),
+          tags: JSON.stringify(old.tags),
+        }));
+        let stringifiedTags = "";
+        for (let i = 0; i < finalData.tags.length; i++) {
+          stringifiedTags += `${finalData.tags[i]}, `;
+        }
+        finalData.tags = stringifiedTags;
+        await requestAccess(finalData);
+        toast.success("Request was submitted successfuly, Thank you!");
+        templateParams.to_email = finalData.email;
+        templateParams.to_name = finalData.nickname;
+        emailjs
+          .send(
+            "service_2vounar",
+            "template_n7nbm6c",
+            templateParams,
+            "YrIOqot5XGcYDpulZ"
+          )
+          .then(
+            function (response) {
+              // console.log("SUCCESS!", response.status, response.text);
+            },
+            function (err) {
+              // console.log("FAILED...", err);
+            }
+          );
+        setShowRegModal((old) => ({ ...old, isComingSoonOpen: false }));
       }
       setLoading(false);
     } catch (err) {
@@ -638,7 +735,7 @@ const RequestAccessModal = () => {
   };
 
   const handleCheckboxClick = (text) => {
-    setProceed(true)
+    setProceed(true);
     let realTags = requestDetails.tags;
     if (realTags.includes(text)) {
       const getIndex = realTags.indexOf(text);
@@ -691,13 +788,13 @@ const RequestAccessModal = () => {
                 error={errors.nickname}
                 placeholder="Adams"
                 value={requestDetails.nickname}
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     nickname: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"Nickname"}
               />
 
@@ -706,13 +803,13 @@ const RequestAccessModal = () => {
                 error={errors.country}
                 placeholder="eg, South Africa"
                 value={requestDetails.country}
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     country: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"Country"}
               />
 
@@ -722,13 +819,13 @@ const RequestAccessModal = () => {
                 placeholder="eg, hackone@gmail.com"
                 value={requestDetails.email}
                 type="email"
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     email: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"Email"}
               />
             </div>
@@ -736,59 +833,14 @@ const RequestAccessModal = () => {
             <div className="coming__soon-second-row">
               <FormControlTitle text="Would you like to sell on Loooty?" />
               <div className="coming__soon-second-row-inner">
-                <RequestAccessCheckbox
-                  optionSelected={selected.first}
-                  id={1}
-                  options={true}
-                  text="Yes"
-                  onClick={() => {
-                    setRequestAccess((old) => ({ ...old, wouldSell: "Yes" }));
-                    setSelected((old) => ({ ...old, first: 1 }));
-                  }}
-                />
-                <RequestAccessCheckbox
-                  optionSelected={selected.first}
-                  id={2}
-                  options={true}
-                  text="No"
-                  onClick={() => {
-                    setProceed(true)
-                    setRequestAccess((old) => ({ ...old, wouldSell: "No" }));
-                    setSelected((old) => ({ ...old, first: 2 }));
-                  }}
-                />
+                <FormDropdown style={{ zIndex: 3 }} />
               </div>
             </div>
 
             <div className="coming__soon-second-row">
               <FormControlTitle text="Do you work with a Team" />
               <div className="coming__soon-second-row-inner">
-                <RequestAccessCheckbox
-                  optionSelected={selected.second}
-                  id={1}
-                  options={true}
-                  text="No, I'm an Individual"
-                  onClick={() => {
-                    setSelected((old) => ({ ...old, second: 1 }));
-                    setRequestAccess((old) => ({
-                      ...old,
-                      workTeam: "No, I'm an Individual",
-                    }));
-                  }}
-                />
-                <RequestAccessCheckbox
-                  optionSelected={selected.second}
-                  id={2}
-                  options={true}
-                  text="yes, A studio"
-                  onClick={() => {
-                    setSelected((old) => ({ ...old, second: 2 }));
-                    setRequestAccess((old) => ({
-                      ...old,
-                      workTeam: "yes, A studio",
-                    }));
-                  }}
-                />
+                <FormDropdown style={{ zIndex: 2 }} />
               </div>
             </div>
 
@@ -796,45 +848,21 @@ const RequestAccessModal = () => {
               <div className="coming__soon-third-row">
                 <FormControlTitle text="What would you like to sell on Loooty?" />
                 <div className="coming__soon-third-row-inner">
-                  <div className="coming__soon-third-row-inner-box">
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("2D")}
-                      text="2D"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("Plugins/ Script")}
-                      text="Plugins/ Script"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("Game Ready Assets")}
-                      text="Game Ready Assets"
-                    />
-                  </div>
-                  <div className="coming__soon-third-row-inner-box">
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("3D")}
-                      text="3D"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("AR/VR Assets")}
-                      text="AR/VR Assets"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("Sounds")}
-                      text="Sounds"
-                    />
-                  </div>
-
-                  <div className="coming__soon-third-row-inner-box">
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("UI/UX Template")}
-                      text="UI/UX Template"
-                    />
-                    <RequestAccessCheckbox
-                      onClick={() => handleCheckboxClick("VFX packs")}
-                      text="VFX packs"
-                    />
-                  </div>
+                  <FormDropdownMultiSelect
+                    dropItems={[
+                      "2D",
+                      "3D",
+                      "AR/VR Assets",
+                      "Sounds Packs",
+                      "Even Plugins",
+                      "Tools",
+                      "Scripts",
+                      "VFX packs",
+                    ]}
+                    requestAccess={requestAccess}
+                    requestDetails={requestDetails}
+                    style={{ zIndex: 1 }}
+                  />
                 </div>
               </div>
             )}
@@ -846,13 +874,13 @@ const RequestAccessModal = () => {
                 error={errors.hearAbout}
                 placeholder="eg, Facebook"
                 value={requestDetails.hearAbout}
-                onChange={(e) =>{
-                  setProceed(true)
+                onChange={(e) => {
+                  setProceed(true);
                   setRequestAccess((old) => ({
                     ...old,
                     hearAbout: e.target.value,
-                  }))}
-                }
+                  }));
+                }}
                 titleText={"How Did you hear about Loooty?"}
               />
 
@@ -884,6 +912,15 @@ const RequestAccessModal = () => {
   );
 };
 
+const benefitsParagraph = `
+As a Creator on our marketplace,
+ you will be properly credited and
+  compensated on your own terms.
+   You get to set the cost and we don’t 
+   demand exclusivity at all (you can post your work anywhere else),
+    amongst other benefits.
+`;
+
 const ComingSoon = () => {
   const [showRegModal, setShowRegModal] = useContext(RegisterContext);
 
@@ -900,6 +937,15 @@ const ComingSoon = () => {
         id={"born"}
         img="/assets/image/comingsoon/ozappa.png"
       />
+
+      <LoootyAssetExplain
+        id={"creator"}
+        title="Benefits"
+        img="/assets/image/comingsoon/takouba.png"
+        description={benefitsParagraph}
+        direction="inverse"
+        imageStyle={{ objectPosition: "100% 19.36%" }}
+      />
       <section className="coming__soon-image-background">
         <img
           src="/assets/image/comingsoon/BGPattern.png"
@@ -914,7 +960,7 @@ const ComingSoon = () => {
         title="Are you a Creator?"
         description={creatorParagraph}
         direction="inverse"
-        imageStyle={{ objectPosition: "100% 19.95%" }}
+        imageStyle={{ objectPosition: "100% 21.17%" }}
       />
       <ToSell id={"tosell"} />
       <ForEveryOne id={"everyone"} />

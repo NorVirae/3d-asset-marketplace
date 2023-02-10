@@ -132,13 +132,13 @@ const NavLoggedIn = () => {
              */}
       <li className="landing__navbar-profile-container">
         <div
-          onClick={() => navigate(`/user?subpage=${"store"}`)}
+          onClick={() => navigate(`/user/store`)}
           className="landing__navbar-profile-img-container"
         >
           <img src={CatmanImg} alt="" className="landing__navbar-profile-img" />
         </div>
         <div
-          onClick={() => navigate(`/user?subpage=${"store"}`)}
+          onClick={() => navigate(`/user/store`)}
           className="landing__navbar-user-name"
         >
           {user && user.user ? user.user.name : "Login"}
