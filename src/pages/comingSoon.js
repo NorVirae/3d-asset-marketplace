@@ -446,9 +446,9 @@ const FormDropdownContentMultiSelect = ({
       {dropItems.map((itm) => (
         <div
           key={itm}
-          onClick={() =>{ 
-            handleSelect(itm)
-            setShowDropdown(false)
+          onClick={() => {
+            handleSelect(itm);
+            setShowDropdown(false);
           }}
           style={{
             color: `${requestDetails.tags.includes(itm) ? "#5e5e63" : "white"}`,
@@ -461,7 +461,12 @@ const FormDropdownContentMultiSelect = ({
   );
 };
 
-const FormDropdown = ({ style, dropItems }) => {
+const FormDropdown = ({
+  style,
+  dropItems,
+  requestAccess,
+  setRequestAccess,
+}) => {
   const [selected, setSelected] = useState("- select option -");
   const [showDropdown, setShowDropdown] = useState(false);
   return (
@@ -478,8 +483,8 @@ const FormDropdown = ({ style, dropItems }) => {
           selected={selected}
           setSelected={setSelected}
         />
-      )}
-      <VscTriangleUp className="coming__soon-dropdown-arrow" />
+      )} 
+      <VscTriangleUp style={{transform: `skewX(25deg) rotate(${showDropdown?"0deg": "180deg"})`}} className="coming__soon-dropdown-arrow" />
     </div>
   );
 };
@@ -508,7 +513,7 @@ const FormDropdownMultiSelect = ({
           requestDetails={requestDetails}
         />
       )}
-      <VscTriangleUp className="coming__soon-dropdown-arrow" />
+      <VscTriangleUp style={{transform: `skewX(25deg) rotate(${showDropdown?"0deg": "180deg"})`}} className="coming__soon-dropdown-arrow" />
     </div>
   );
 };
@@ -688,7 +693,10 @@ const RequestAccessModal = () => {
   };
 
   const handleRequestAccess = async (e) => {
+    e.preventDefault()
     setLoading(true);
+    console.log(requestDetails)
+
     try {
       e.preventDefault();
       let finalData = requestDetails;
@@ -833,14 +841,30 @@ const RequestAccessModal = () => {
             <div className="coming__soon-second-row">
               <FormControlTitle text="Would you like to sell on Loooty?" />
               <div className="coming__soon-second-row-inner">
-                <FormDropdown style={{ zIndex: 3 }} />
+                <FormDropdown
+                  dropItems={[
+                    "Yes",
+                    "No",
+                  ]}
+                  requestAccess={requestAccess}
+                  requestDetails={requestDetails}
+                  style={{ zIndex: 3 }}
+                />
               </div>
             </div>
 
             <div className="coming__soon-second-row">
               <FormControlTitle text="Do you work with a Team" />
               <div className="coming__soon-second-row-inner">
-                <FormDropdown style={{ zIndex: 2 }} />
+                <FormDropdown
+                  dropItems={[
+                    "No, I'm an Individual",
+                    "yes, A studio",
+                  ]}
+                  requestAccess={requestAccess}
+                  requestDetails={requestDetails}
+                  style={{ zIndex: 2 }}
+                />
               </div>
             </div>
 
